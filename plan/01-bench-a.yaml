@@ -28,13 +28,15 @@ steps:
         text: >-
           A wipe of isopropyl alcohol on the silicone blocks makes them slide in.
       - type: warn
-        by: "if you chose the larger bucket"
+        by: "your build"
+        when: [bucket]
         text: >-
           Follow Prusa's larger-bucket article for the bin parts instead of the stock Wiper-base.
 
   - id: p1b
     refs: ["5.25", "5.26", "5.33", "5.34"]
     kind: moved
+    unless: [dryer]
     tools: ["T10"]
     text: >-
       All eight puck holders.
@@ -80,9 +82,11 @@ steps:
       Check no plate got bent.
     notes:
       - type: warn
-        by: "if you printed the chamber light mount"
+        by: "your build"
+        when: [light]
         text: >-
-          Fit its holders here in place of the stock ones and keep the stock set.
+          Chamber light mount:
+          fit its holders here in place of the stock ones and keep the stock set.
           The light bar step in Phase 11 changes with it.
 
   - id: p1e

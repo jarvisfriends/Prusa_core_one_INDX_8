@@ -20,12 +20,13 @@ steps:
     kind: asis
     text: >-
       Upgrade sticker on the door beside ONE, pressed down before the clear layer is peeled;
-      with Gen 2 fitted the plus sticker to use is the orange one.
+      if you fitted Gen 2, the plus sticker to use is the orange one.
       INDX serial number label on the back, above the existing serial label.
 
   - id: p12b2
     refs: ["G5.2"]
     kind: gen2
+    when: [gen2]
     text: >-
       The Gen 2 serial number sticker also goes on the back, above the original serial number sticker.
 
@@ -37,11 +38,27 @@ steps:
   - id: p12d
     refs: ["6.1", "6.2", "6.3"]
     kind: asis
+    unless: [dryer]
     text: >-
       An O-ring onto each of the eight telescopic spool holders.
       Push each into a puck and lock it clockwise.
       To extend one, turn it gently anticlockwise until it clicks, pull, and lock it clockwise again.
       Forcing it can pop it out of the puck.
+
+  - id: p12dd
+    refs: ["6.1", "6.2", "6.3"]
+    kind: skip
+    when: [dryer]
+    text: >-
+      Skip the telescopic spool holders.
+      Stand a dryer box at each side of the printer and lead its four filaments up to the matching ports of the sensor block on that side, entering from below.
+      Keep every path smooth, with no tight bend and no rubbing on a panel edge.
+    notes:
+      - type: warn
+        by: "unverified"
+        text: >-
+          How to hold a tube at the sensor inlet is not covered by Prusa's guide.
+          Hand-feed one filament the full way to a tool and check it slides freely before you tube up all eight.
 
   - id: p12e
     refs: ["6.4"]

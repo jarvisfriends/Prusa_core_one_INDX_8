@@ -1,22 +1,27 @@
 # Phase 5. Row ids are the keys for saved ticks: never rename or reuse one.
 id: p5
 name: "Z-axis"
-title: "Z-axis: spacers, offset sensor, expansion joints, heatbed"
+title: "Z-axis: spacers, offset sensor, heatbed"
 power: "off"
 where: "Printer and bench"
 note: >-
   Bench jobs first while the heatbed is out, then the Allen key work on the three Z corners, then the Torx work.
-  The Gen 2 expansion joints go on the bare Z-carriage just before the heatbed returns, and the bed stays only loosely screwed until Phase 9.
+  With Gen 2 ticked, the new expansion joints go on the bare Z-carriage just before the heatbed returns, and the bed stays only loosely screwed until Phase 9.
 steps:
 
   - id: p5a
-    refs: ["3.1", "3.2"]
+    refs: ["3.1"]
     kind: asis
+    text: "Chapter 3 tools: 2.5 mm Allen key, T10, cutters."
+
+  - id: p5a2
+    refs: ["3.2"]
+    kind: opt
+    when: [camera]
     text: >-
-      Chapter 3 tools:
-      2.5 mm Allen key, T10, cutters.
-      If you own a Buddy3D camera, install its USB-C cable now with the camera's own guide;
-      the camera itself goes on in Phase 11.
+      Buddy3D camera:
+      install its USB-C cable now, following the camera's own guide.
+      The camera itself goes on in Phase 11.
 
   - id: p5b
     refs: ["3.3"]
@@ -41,6 +46,16 @@ steps:
   - id: p5d
     refs: ["3.5"]
     kind: asis
+    unless: [gen2]
+    text: >-
+      Lift the heatbed out with its cables and take it to the bench.
+      A small spacer is left loose on the Z-carriage:
+      keep it.
+
+  - id: p5dg
+    refs: ["3.5"]
+    kind: asis
+    when: [gen2]
     text: >-
       Lift the heatbed out with its cables and take it to the bench.
       A small spacer is left loose on the Z-carriage.
@@ -132,6 +147,27 @@ steps:
   - id: p5k
     refs: ["3.16", "3.17"]
     kind: asis
+    unless: [gen2]
+    tools: ["2.5 mm", "Cutters"]
+    text: >-
+      Plug the cable into the sensor board.
+      Seat the pocket on the underside of the holder onto the Z-carriage so the shapes mate and the screw holes line up, exactly as in the manual's photo, and fix it from below with one kept `M3x10`.
+      It cuts its own thread, so stop when it is snug.
+      Loop a zip tie round the screw in the LED panel assembly, pass the cable through, tighten and trim.
+    notes:
+      - type: tip
+        by: "forum digest"
+        text: "That `M3x10` is a blind reach and strips easily."
+      - type: tip
+        by: "kicker22004, forum"
+        text: >-
+          The sensor face must stay clean and flat.
+          Lay a strip of paper tape over it until its sticker goes on in Phase 11.
+
+  - id: p5kg
+    refs: ["3.16", "3.17"]
+    kind: asis
+    when: [gen2]
     tools: ["2.5 mm", "Cutters"]
     text: >-
       Plug the cable into the sensor board.
@@ -163,6 +199,7 @@ steps:
   - id: g4a
     refs: ["G4.4"]
     kind: gen2
+    when: [gen2]
     tools: ["2.0 mm"]
     text: >-
       Old expansion joints off the bare Z-carriage.
@@ -185,6 +222,7 @@ steps:
   - id: g4b
     refs: ["G4.5", "G4.6", "G4.7"]
     kind: gen2
+    when: [gen2]
     text: >-
       New expansion joints.
       At each of the eight threaded holes round the Z-carriage:
@@ -196,6 +234,7 @@ steps:
   - id: g4c
     refs: ["G4.8"]
     kind: gen2
+    when: [gen2]
     text: >-
       Go round all eight once more:
       every groove faces outward.
@@ -210,6 +249,18 @@ steps:
   - id: p5m
     refs: ["3.23", "3.24", "3.25"]
     kind: asis
+    unless: [gen2]
+    tools: ["T10"]
+    text: >-
+      Heatbed back in.
+      Set the small spacer over the centre hole of the Z-carriage, lower the bed onto it, and start the `M3x12bT` in the centre and the eight `M3x4bT` around it, all loose.
+      Tighten centre first, then the four edge screws, then the four corners.
+      Go round at least twice, gently but firmly.
+
+  - id: p5mg
+    refs: ["3.23", "3.24", "3.25"]
+    kind: asis
+    when: [gen2]
     tools: ["T10"]
     text: >-
       Heatbed back in, Gen 2 version.

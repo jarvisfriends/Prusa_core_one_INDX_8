@@ -11,21 +11,46 @@ note: >-
   The manual names the nut pocket by the arrow printed beside it:
   always the pocket nearer the top edge of the tool, except rear top left, which uses the pocket nearer the bottom edge.
   Match how the tool sits to the manual photo for each corner.
+  With dryer boxes ticked, this whole phase is one skip row.
 steps:
+
+  - id: p10x
+    refs: ["5.25", "5.26", "5.27", "5.28", "5.29", "5.30", "5.31", "5.32", "5.33", "5.34", "5.35", "5.36", "5.37", "5.38", "5.39", "5.40", "5.41", "5.42", "5.43", "5.44", "5.45", "5.46", "5.47", "5.48", "5.49", "5.50", "5.51", "5.52", "5.53", "5.54", "5.55", "5.56", "5.57", "5.58"]
+    kind: skip
+    when: [dryer]
+    text: >-
+      Skip the puck holders entirely:
+      no puck holder assembly, no corner screws or rivets to remove, and no tilting the printer.
+      Leave the corner `M3x4rT` screws in both side panels.
+    notes:
+      - type: why
+        by: "your build"
+        text: >-
+          Puck holders only carry the telescopic spool holders.
+          With dryer boxes beside the printer there is nothing to hang on them.
+      - type: tip
+        by: "gb160, Scotttomo, forum"
+        text: >-
+          A builder asked whether the spool holder steps could be skipped;
+          another who had finished the conversion thought it should be fine.
+          Nobody reported trying it.
 
   - id: p10a
     refs: ["5.27", "5.28"]
     kind: asis
+    unless: [dryer]
     tools: ["Rivet tool", "T10"]
     text: >-
       Left side.
-      If a rivet sits in either marked hole at each lower corner, pull it (with three rivets in the panel they are probably empty).
+      Pull the rivets from the two marked holes at each lower corner;
+      if this panel went back on with three rivets after Gen 2, those holes are already empty.
       Remove the upper `M3x4rT` from the front and back corners of the panel.
       Hang a Puck holder bottom in the rear corner and one in the front corner, each the right way round, each with one `M3x12rT`.
 
   - id: p10b
     refs: ["5.29", "5.30"]
     kind: asis
+    unless: [dryer]
     tools: ["T10"]
     text: >-
       Front bottom left.
@@ -35,6 +60,7 @@ steps:
   - id: p10c
     refs: ["5.31", "5.32"]
     kind: asis
+    unless: [dryer]
     tools: ["T10"]
     text: >-
       Rear bottom left.
@@ -44,9 +70,10 @@ steps:
   - id: p10d
     refs: ["5.35", "5.36", "5.37"]
     kind: asis
+    unless: [dryer]
     tools: ["Rivet tool", "T10"]
     text: >-
-      Pull any rivet from the two marked holes at each top corner on the left.
+      Pull the rivets from the two marked holes at each top corner on the left, if any are there.
       Front top left:
       two nuts in the tool as in the manual's photo, hook it on the profile and push gently upward.
       Start an `M3x12rT` in the puck holder top before offering it up, then tighten the top screw and the lower screw.
@@ -54,6 +81,7 @@ steps:
   - id: p10e
     refs: ["5.38", "5.39"]
     kind: asis
+    unless: [dryer]
     tools: ["T10"]
     text: >-
       Rear top left.
@@ -63,6 +91,7 @@ steps:
   - id: p10f
     refs: ["5.40", "5.41"]
     kind: asis
+    unless: [dryer]
     tools: ["T10"]
     text: >-
       Right side.
@@ -72,6 +101,7 @@ steps:
   - id: p10g
     refs: ["5.42", "5.43"]
     kind: asis
+    unless: [dryer]
     tools: ["T10"]
     text: >-
       Front bottom right.
@@ -81,6 +111,7 @@ steps:
   - id: p10h
     refs: ["5.44", "5.45"]
     kind: asis
+    unless: [dryer]
     tools: ["T10"]
     text: >-
       Rear bottom right.
@@ -90,6 +121,7 @@ steps:
   - id: p10i
     refs: ["5.55", "5.56"]
     kind: moved
+    unless: [dryer]
     tools: ["T10"]
     text: >-
       Front top right.
@@ -106,6 +138,7 @@ steps:
   - id: p10j
     refs: ["5.57", "5.58"]
     kind: moved
+    unless: [dryer]
     tools: ["T10"]
     text: >-
       Rear top right.
@@ -115,6 +148,7 @@ steps:
   - id: p10k
     refs: ["5.46"]
     kind: asis
+    unless: [dryer]
     text: >-
       Tilt.
       Take the box off the heatbed and stand it behind the printer.
@@ -125,6 +159,7 @@ steps:
   - id: p10l
     refs: ["5.47", "5.48"]
     kind: asis
+    unless: [dryer]
     tools: ["T10"]
     text: >-
       Rear bottom left, from underneath.
@@ -134,6 +169,7 @@ steps:
   - id: p10m
     refs: ["5.49", "5.50"]
     kind: asis
+    unless: [dryer]
     tools: ["T10"]
     text: >-
       Front bottom left.
@@ -143,12 +179,14 @@ steps:
   - id: p10n
     refs: ["5.51", "5.52"]
     kind: asis
+    unless: [dryer]
     tools: ["T10"]
     text: "Rear bottom right. One nut, arrow UP. Hook, push up, drive the screw."
 
   - id: p10o
     refs: ["5.53", "5.54"]
     kind: asis
+    unless: [dryer]
     tools: ["T10"]
     text: >-
       Front bottom right.

@@ -12,9 +12,10 @@ steps:
   - id: p4a
     refs: []
     kind: opt
+    when: [bucket]
     tools: ["Step drill"]
     text: >-
-      Larger bucket only:
+      Larger bucket:
       tape around the drilling area on the right side panel, set the printed drill guide on the panel's pre-installed nuts, and step-drill the 32 mm hole.
       Collect the swarf with a magnet wrapped in plastic.
       Do this away from the printer.

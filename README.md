@@ -1,7 +1,7 @@
 # Prusa CORE One → INDX 8-tool + Gen 2: one build order
 
-A single checklist for converting a stock Prusa CORE One to the INDX 8-tool toolchanger
-and fitting the Gen 2 upgrade in the same build.
+A single checklist for converting a stock Prusa CORE One to the INDX 8-tool toolchanger,
+with the Gen 2 upgrade and other add-ons merged in when you tick them.
 
 Prusa documents this job across two manuals and a companion article that tells you when to
 jump between them. This repo merges all of it into one order, so that:
@@ -9,7 +9,9 @@ jump between them. This repo merges all of it into one order, so that:
 - nothing is fitted and then taken off again,
 - the printer is powered only at the very start and the very end,
 - the same tool stays in your hand for as long as possible,
-- every row shows Prusa's own pictures and step text, so you never switch documents.
+- every row shows Prusa's own pictures and step text, so you never switch documents,
+- options at the top of the page (Gen 2, dryer boxes instead of spool holders, camera,
+  larger waste bucket, printed chamber light mount) add, change or remove rows.
 
 It also carries tips collected from the Prusa forum, each attributed to who reported it.
 
@@ -50,6 +52,7 @@ embedded JPEGs straight out of your PDFs. No screenshots, no re-hosting. `manual
 |---|---|
 | `plan/00-prepare.yaml` … `plan/13-preflight.yaml` | The build, one file per phase, in order. This is what most pull requests touch. |
 | `plan/intro.yaml` | Page title, summary of what the order changes, assumptions, legend. |
+| `plan/options.yaml` | The "Your build" choices at the top of the page. |
 | `plan/prints.yaml` | Helper prints to make before teardown, with a verdict on each. |
 | `plan/hardware.yaml` | Table of removed hardware that is needed again. |
 | `plan/gen2-unused.yaml` | Gen 2 guide steps a combined build skips, and why. |
@@ -83,6 +86,10 @@ A row looks like this:
 - **`kind`** is one of `asis` (manual order kept), `moved` (same step, different moment),
   `gen2` (from the Gen 2 guide or Prusa's companion article), `added` (not in either manual),
   `opt` (only if it applies), `skip` (deliberately not done).
+- **`when`** and **`unless`** tie a row (or a single note) to the options in
+  `plan/options.yaml`. `when: [gen2]` shows it only with Gen 2 ticked; `unless: [dryer]` hides
+  it when dryer boxes are ticked. Where an option changes an instruction, write two rows with
+  different ids, one `when` and one `unless`, both citing the same manual step.
 - **`notes`** have a `type` of `why` (reason for a move), `tip` (community experience) or
   `warn`. Always say who it comes from in `by`.
 - Text may use `` `code` `` for part and screw names and `[label](https://…)` for links.
@@ -90,11 +97,18 @@ A row looks like this:
 - **Never rename or reuse a row `id`.** Saved ticks are stored by id.
 - To reorder, move the row. To move a row to another phase, move it to that file.
 
-Then run `python tools/check.py`. It fails if:
+Then run `python tools/check.py`. For every combination of options it fails if:
 
-- an INDX manual step is not covered by exactly one row,
-- a Gen 2 step is neither used by a row nor listed in `plan/gen2-unused.yaml`,
+- an INDX manual step is not covered by exactly one visible row
+  (rows of kind `opt` that an option hides are exempt),
+- with Gen 2 on, a Gen 2 step is neither used by a row nor listed in `plan/gen2-unused.yaml`,
 - a ref points at a step that does not exist, an id repeats, or a field is malformed.
+
+### Adding an option
+
+Add it to `plan/options.yaml`, then mark the rows it adds with `when: [your-id]` and the rows
+it replaces with `unless: [your-id]`. If it makes a manual step unnecessary, add a `skip` row
+under `when` that cites the step and says why. `check.py` then tests the new combinations.
 
 That check is what lets a reviewer trust that a reshuffle did not drop a step. It cannot
 tell whether a new order is physically sensible: say in the pull request why a move is safe,
@@ -107,9 +121,11 @@ the chapter counts in `manuals/manuals.yaml`, then fix `refs` until `check.py` p
 
 ## Scope and assumptions
 
-- Original CORE One, never upgraded, no MMU3. The Gen 2 guide is written for the CORE One+;
-  forum builders report doing Gen 2 and INDX together on an original CORE One, but Prusa's
-  guide does not state that combination.
+- Original CORE One, never upgraded, no MMU3.
+- Gen 2 is optional. Its guide is written for the CORE One+; forum builders report doing
+  Gen 2 and INDX together on an original CORE One, but Prusa's guide does not state that
+  combination.
+- The dryer box option is this plan's own: Prusa's guide only covers spools hung on the printer.
 - 8-tool kit. The 4-tool branches of the manual are not written out.
 - Manual versions: INDX conversion 1.00 (PDF of 2026-10-01), Gen 2 upgrade (PDF of 2026-09-25).
 

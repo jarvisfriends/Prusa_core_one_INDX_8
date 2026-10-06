@@ -37,8 +37,30 @@ steps:
       Network setup can be skipped and done later.
 
   - id: p13d
+    refs: []
+    kind: added
+    unless: [gen2]
+    text: >-
+      Before the wizard, look under Settings → Hardware for the belt type and make sure it matches your belts.
+      An original CORE One has 2GT belts:
+      15 teeth in 30 mm.
+    notes:
+      - type: tip
+        by: "Art4 Tech, forum; GitHub issue 5444"
+        text: >-
+          With the firmware set for Gen 2 belts on a machine without them, every dock read about 3 mm short in Y and dock calibration could not pass.
+          Correcting the setting and restarting fixed it.
+      - type: warn
+        by: "your build"
+        when: [bucket]
+        text: >-
+          Larger bucket:
+          also set Settings → Nozzle Cleaner → Nozzle Cleaner Capacity to Extended.
+
+  - id: p13dg
     refs: ["G5.6", "G5.7"]
     kind: gen2
+    when: [gen2]
     text: >-
       Tell the firmware about the new belts before any calibration runs.
       If the wizard prompt lets you decline, decline it, set the option, then start the self-test yourself from Control → Calibrations & Tests.
@@ -61,9 +83,11 @@ steps:
         text: >-
           When this setting and the fitted belts disagreed, every dock read about 3 mm out in Y and dock calibration could not pass until the setting was corrected and the printer restarted.
       - type: warn
-        by: "if you fitted the larger bucket"
+        by: "your build"
+        when: [bucket]
         text: >-
-          Also set Settings → Nozzle Cleaner → Nozzle Cleaner Capacity to Extended.
+          Larger bucket:
+          also set Settings → Nozzle Cleaner → Nozzle Cleaner Capacity to Extended.
 
   - id: p13e
     refs: ["6.9", "6.10"]

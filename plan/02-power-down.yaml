@@ -53,6 +53,5 @@ steps:
   - id: p2e
     refs: ["2.6"]
     kind: opt
-    text: >-
-      If you have a Buddy3D camera, unplug it and lift it off its magnets.
-      Cap the lens.
+    when: [camera]
+    text: "Buddy3D camera: unplug it and lift it off its magnets. Cap the lens."

@@ -39,6 +39,16 @@ def load_phases() -> list[dict]:
     return phases
 
 
+def load_options() -> list[dict]:
+    """plan/options.yaml: the choices a builder ticks at the top of the page."""
+    return load_yaml("plan", "options.yaml")["options"]
+
+
+def visible(item: dict, on: set) -> bool:
+    """A row or note shows if every `when` option is on and no `unless` option is on."""
+    return all(o in on for o in item.get("when") or []) and not any(o in on for o in item.get("unless") or [])
+
+
 def manual_for_ref(ref: str, manuals: dict) -> tuple[str, int, int]:
     """'G3.4' -> ('gen2', 3, 4); '3.4' -> ('indx', 3, 4)."""
     m = REF_RE.match(ref)

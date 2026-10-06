@@ -99,14 +99,17 @@ steps:
       Close the lid.
     notes:
       - type: warn
-        by: "if you fitted the chamber light mount"
+        by: "your build"
+        when: [light]
         text: >-
-          The bar snaps into the printed holders instead and the two rivets are not used.
+          Chamber light mount:
+          the bar snaps into the printed holders instead and the two rivets are not used.
           Its author notes that loosening the two bottom front-plate screws can help.
 
   - id: p11j
     refs: ["5.90"]
     kind: opt
+    when: [camera]
     text: >-
       Buddy3D camera:
       mount it magnetically in the front left corner on the upper profiles, following the camera's own guide.

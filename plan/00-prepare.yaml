@@ -16,8 +16,9 @@ steps:
       Skim the introduction.
       Three points apply to you:
       the photos show a CORE One+, the same guide covers 4-tool and 8-tool kits, and nothing gets thrown away until the guide says so.
-      The Gen 2 upgrade (step 11) is part of this build and is slotted in where Prusa's companion article puts it.
-      MMU3 removal (step 12) does not apply.
+      The Gen 2 upgrade (step 11) is optional:
+      tick it under Your build if you are fitting it and its steps appear where Prusa's companion article puts them.
+      MMU3 removal (step 12) is not covered here.
 
   - id: p0b
     refs: ["1.4"]
@@ -57,13 +58,19 @@ steps:
       Look over the printed parts for cracks;
       parts marked E, F or G are factory prints and identical files exist on Printables.
       Report anything missing to Prusa support before teardown.
-      Lay out the Gen 2 parts as well:
-      eight new expansion joints, eight expansion joint screws, sixteen M3 PTFE washers, the 10 mm heatbed spacer, one `M3x14bT` screw, two T21-1.5GT pulleys, two 1.5GT belts, the Pulley-offset-tool and the Expansion-joint-aligner.
     notes:
       - type: tip
         by: "gb160, vhubbard, forum digest"
         text: >-
           Builders reported being one `M3x12cT` short, no usable spares of that screw, and Tool Dock Fan bags with one `M3x35` instead of two.
+
+  - id: p0d2
+    refs: []
+    kind: gen2
+    when: [gen2]
+    text: >-
+      Lay out the Gen 2 parts as well:
+      eight new expansion joints, eight expansion joint screws, sixteen M3 PTFE washers, the 10 mm heatbed spacer, one `M3x14bT` screw, two T21-1.5GT pulleys, two 1.5GT belts, the Pulley-offset-tool and the Expansion-joint-aligner.
 
   - id: p0e
     refs: ["1.9", "1.10"]
@@ -80,17 +87,24 @@ steps:
     text: >-
       Print the helpers you chose from the list above.
       At minimum the rivet remover and the hardware organizer.
-      If you want the chamber light mount, print its four Prusa Edition holders now.
+    notes:
+      - type: tip
+        by: "your build"
+        when: [light]
+        text: >-
+          Chamber light mount:
+          print its four Prusa Edition holders now, in PETG with supports.
 
   - id: p0g
     refs: []
     kind: opt
+    when: [bucket]
     text: >-
-      Decide on Prusa's larger waste bucket.
-      It is a set of parts you print (large wiper bin, three legs, drill guide, bucket;
-      Prusa suggests PCCF for the bin and PETG for the legs) and it needs a 32 mm hole step-drilled through the right side panel unless yours is already perforated.
-      If you want it, print the parts now and drill in Phase 4 while the panel is on the bench.
-      If you are unsure, build stock.
+      Larger waste bucket:
+      print its parts now.
+      They are the large wiper bin, three legs, the drill guide and the bucket;
+      Prusa suggests PCCF for the bin and PETG for the legs.
+      The 32 mm hole in the right side panel is drilled in Phase 4, while the panel is on the bench.
     notes:
       - type: why
         by: "plan"
@@ -114,6 +128,24 @@ steps:
         by: "plan"
         text: >-
           One trip to the computer instead of two, and the file is waiting when the build is done.
+
+  - id: p0j
+    refs: []
+    kind: added
+    when: [dryer]
+    text: >-
+      Dryer boxes:
+      before teardown, decide where each box stands and how its four filaments reach the sensor block on that side.
+      Filament enters each sensor port from below through a bare hole, so plan a smooth path up to it without tight bends, and get the PTFE tube and fittings the box outlets need.
+    notes:
+      - type: warn
+        by: "unverified"
+        text: >-
+          Prusa's guide only covers spools hanging on the printer.
+          The Creality SpacePi X4 has top and rear outlets with PTFE connectors and ships without tube.
+          The kit's eight 880 mm tubes are all used between the sensors and the tools.
+          The printed sensor top with couplers in the print list is one way to hold a tube at the sensor;
+          I could not confirm which side its couplers sit on.
 
   - id: p0i
     refs: ["1.13", "1.14"]

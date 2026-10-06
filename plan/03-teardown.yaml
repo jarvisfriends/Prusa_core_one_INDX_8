@@ -116,6 +116,7 @@ steps:
   - id: p3i2
     refs: ["G2.12"]
     kind: gen2
+    when: [gen2]
     text: >-
       While the box is open, press the latches and unplug the X motor cable (first connector on the left) and the Y motor cable (second from the left) from the xBuddy board.
       Ease a little slack toward the motors but keep both connectors inside the electronics box.
@@ -206,13 +207,27 @@ steps:
       - type: why
         by: "plan"
         text: >-
-          The INDX guide removes this panel in chapter 5 and the Gen 2 article removes it after step 4.3.
-          With it off now, the right bed spacer, offset sensor cable, right motor, gantry tool and dock fan cable are all reached from an open side.
-          It goes back at the INDX guide's own step 5.24.
+          The INDX guide removes this panel in chapter 5.
+          With it off now, the right bed spacer, offset sensor cable, gantry tool and dock fan cable are all reached from an open side, and it goes back at the guide's own step 5.24.
+      - type: tip
+        by: "chmax, vhubbard, forum"
+        text: >-
+          Two builders recommended exactly this.
+          Prusa's Gen 2 article also runs the gantry and toolhead steps with the side panels off.
+
+  - id: p3q2
+    refs: []
+    kind: added
+    unless: [gen2]
+    tools: ["Rivet tool"]
+    text: >-
+      While the rivet tool is out, also pull the upper-centre rivet from each transparent side cover.
+      The filament sensor blocks screw into those holes in Phase 8 (steps 4.54 and 4.63).
 
   - id: p3s
     refs: ["G2.6", "G2.4", "G2.5"]
     kind: gen2
+    when: [gen2]
     tools: ["Rivet tool"]
     text: >-
       The other three side pieces come off too.
@@ -235,5 +250,5 @@ steps:
     refs: ["2.33", "2.34", "2.35", "2.36"]
     kind: asis
     text: >-
-      Check you still have the back cover, xBuddy cover, print fan, print sheet, two cable straps, the door, both steel side panels and both transparent side covers.
+      Check you still have the back cover, xBuddy cover, print fan, print sheet, two cable straps, the door, and every side panel and side cover you took off.
       Six gummy bears.

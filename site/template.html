@@ -5,7 +5,7 @@
 {{style}}
 </style>
 
-<div class="wrap">
+<div class="wrap{{option_classes}}" id="wrap">
 
 <header class="top">
   <p class="eyebrow">{{eyebrow}}</p>
@@ -27,6 +27,14 @@
 
   <div class="callout">
 {{assumptions}}
+  </div>
+
+  <div>
+    <h3>{{options_title}}</h3>
+    <p class="phase-note" style="margin:2px 0 12px">{{options_note}}</p>
+    <ul class="options">
+{{options}}
+    </ul>
   </div>
 
   <div>

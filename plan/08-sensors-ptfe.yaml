@@ -5,7 +5,7 @@ title: "Filament sensors and PTFE tubes"
 power: "off"
 where: "Bench, then printer"
 note: >-
-  Build both sensor blocks in one bench sitting, hang the transparent side covers back on, then fit left and right.
+  Build both sensor blocks in one bench sitting, then fit left and right.
 steps:
 
   - id: p8a
@@ -84,6 +84,7 @@ steps:
   - id: p8w
     refs: ["G4.32"]
     kind: gen2
+    when: [gen2]
     text: >-
       Hang both transparent side covers back on with four nylon rivets each.
       Leave the upper-centre hole empty on both sides:

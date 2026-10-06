@@ -1,13 +1,14 @@
 # Phase 9. Row ids are the keys for saved ticks: never rename or reuse one.
 id: p9
 name: "Align & close"
-title: "Dock fan cable, heatbed alignment, covers and panels"
+title: "Dock fan cable, electronics covers, side panels"
 power: "off"
 where: "Printer"
 note: >-
   INDX chapter 5 resumes at step 12;
   its steps 2 to 11 are already done.
-  After the dock fan cable the Gen 2 heatbed alignment runs with both sides still open, then the motor cables go back and everything is closed up.
+  Once the dock fan cable is tied in, every cable that enters the xBuddy box is in place.
+  With Gen 2 ticked, the heatbed is aligned and the motor cables go back before anything is closed.
 steps:
 
   - id: p9z
@@ -50,6 +51,7 @@ steps:
   - id: g4d
     refs: ["G4.11"]
     kind: gen2
+    when: [gen2]
     text: >-
       Lift the box off the heatbed.
       Take the Expansion-joint-aligner.
@@ -62,6 +64,7 @@ steps:
   - id: g4e
     refs: ["G4.12", "G4.13", "G4.14"]
     kind: gen2
+    when: [gen2]
     tools: ["T10"]
     text: >-
       The eight `M3x4bT` round the heatbed should be in but only a turn or two down.
@@ -72,6 +75,7 @@ steps:
   - id: g4f
     refs: ["G4.15", "G4.16", "G4.17"]
     kind: gen2
+    when: [gen2]
     tools: ["T10"]
     text: >-
       Rear left corner with the angled fork.
@@ -82,6 +86,7 @@ steps:
   - id: g4g
     refs: ["G4.18", "G4.19"]
     kind: gen2
+    when: [gen2]
     tools: ["T10"]
     text: >-
       Middle of the right side with the straight fork.
@@ -95,6 +100,7 @@ steps:
   - id: g4h
     refs: ["G4.20"]
     kind: gen2
+    when: [gen2]
     tools: ["T10"]
     text: >-
       Now tighten the heatbed properly.
@@ -106,6 +112,7 @@ steps:
   - id: g4i
     refs: []
     kind: gen2
+    when: [gen2]
     tools: ["2.5 mm"]
     text: >-
       Check the offset sensor holder still sits on the Z-carriage exactly as in the photo of INDX step 3.16, then tighten its `M3x10` from below, the one left at a few turns in Phase 5.
@@ -118,6 +125,7 @@ steps:
   - id: g4j
     refs: ["G4.35"]
     kind: gen2
+    when: [gen2]
     text: >-
       At the back, ease the two motor cables toward the electronics, stopping at any resistance.
       Plug the left motor cable into the connector labelled X on the xBuddy board and the right motor cable into the one labelled Y, until each latch clicks.
@@ -125,6 +133,8 @@ steps:
   - id: g4k
     refs: ["G4.34"]
     kind: gen2
+    when: [gen2]
+    unless: [dryer]
     text: >-
       Hang the left steel panel and fix it with three nylon rivets in the positions highlighted in Prusa's companion article, not the eleven the Gen 2 guide shows.
       The puck holders supply the rest, as on the right.
@@ -135,6 +145,20 @@ steps:
         text: >-
           I could not see the article's picture of the three positions.
           If in doubt, mirror the three positions the INDX guide shows for the right panel in step 5.24 and keep every corner hole free for the puck holders.
+      - type: tip
+        by: "Luis, comment on Prusa's article"
+        text: >-
+          The rivets would not go in until the bottom two corners of the panel were propped up on very thin hex keys.
+
+  - id: g4kd
+    refs: ["G4.34"]
+    kind: gen2
+    when: [gen2, dryer]
+    text: >-
+      Hang the left steel panel and fix it with all eleven nylon rivets, as the Gen 2 guide shows.
+      There are no puck holders to share the load.
+      The transparent cover on this side is already on.
+    notes:
       - type: tip
         by: "Luis, comment on Prusa's article"
         text: >-
@@ -155,10 +179,15 @@ steps:
     text: >-
       Wiring check against the manual's photos.
       xBuddy board:
-      heatbed black on the left terminal and red on the right, thermistor beside them, wide head cable connector in the Nextruder slot, X and Y motor cables in the connectors labelled X and Y.
+      heatbed black on the left terminal and red on the right, thermistor beside them, wide head cable connector in the Nextruder slot.
       Extension board:
       RGB LED in the rightmost RGBW slot, offset sensor in the upper right PUB CAN slot, narrow head cable connector in the MMU slot, filament sensor cable in the first EXT slot.
     notes:
+      - type: warn
+        by: "Gen 2"
+        when: [gen2]
+        text: >-
+          Also check the X and Y motor cables are in the connectors labelled X and Y on the xBuddy board.
       - type: tip
         by: "forum digest"
         text: "Only one Z-motor connector (ZL or ZR) is used. An empty one is normal."
@@ -182,8 +211,26 @@ steps:
   - id: p9e
     refs: ["5.23", "5.24"]
     kind: asis
+    unless: [dryer]
     text: >-
       Toolhead right to the back so the wiper cannot hit it.
       Hang the right side panel, with its handle and nozzle cleaner, and fix it with three new nylon rivets in the positions the manual shows for the 8-tool version.
       The puck holders supply the rest of the fixing.
       Before the first rivet, check the offset sensor cable and the dock fan cable lie inside the panel line.
+
+  - id: p9ed
+    refs: ["5.23", "5.24"]
+    kind: asis
+    when: [dryer]
+    text: >-
+      Toolhead right to the back so the wiper cannot hit it.
+      Hang the right side panel, with its handle and nozzle cleaner, and fix it with all eleven nylon rivets, as the manual shows for the 4-tool version.
+      With no puck holders on this side the rivets carry the panel.
+      Before the first rivet, check the offset sensor cable and the dock fan cable lie inside the panel line.
+    notes:
+      - type: why
+        by: "plan"
+        text: >-
+          The 8-tool picture uses three rivets only because the puck holders bolt through the same corners.
+          Reuse the rivets you pulled;
+          the 8-tool kit supplies three new ones here.

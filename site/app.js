@@ -3,24 +3,50 @@
 (function () {
   "use strict";
   var KEY = "indx-c1-8t-plan-v1"; // storage key for ticks; row ids in plan/*.yaml are the values
+  var wrap = document.getElementById("wrap");
   var nav = document.getElementById("navlinks");
   var boxes = [].slice.call(document.querySelectorAll(".step input[type=checkbox]"));
   var state = {};
   try { state = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { state = {}; }
   function saveLocal() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
 
+  /* ---- "Your build" options: each toggles a class on .wrap; generated CSS hides rows that do not apply ---- */
+  var optBoxes = [].slice.call(document.querySelectorAll("input[data-opt]"));
+  var opts = {};
+  optBoxes.forEach(function (b) { opts[b.getAttribute("data-opt")] = b.checked; }); // defaults from plan/options.yaml
+  try {
+    var savedOpts = JSON.parse(localStorage.getItem(KEY + "-opts") || "null");
+    if (savedOpts) Object.keys(opts).forEach(function (k) { if (typeof savedOpts[k] === "boolean") opts[k] = savedOpts[k]; });
+  } catch (e) {}
+  function saveOpts() { try { localStorage.setItem(KEY + "-opts", JSON.stringify(opts)); } catch (e) {} }
+  function applyOpts() {
+    optBoxes.forEach(function (b) {
+      var k = b.getAttribute("data-opt");
+      b.checked = !!opts[k];
+      wrap.classList.toggle("on-" + k, !!opts[k]);
+    });
+  }
+  function applies(el) {
+    var w = el.getAttribute("data-when"), u = el.getAttribute("data-unless");
+    if (w && !w.split(" ").every(function (k) { return opts[k]; })) return false;
+    if (u && u.split(" ").some(function (k) { return opts[k]; })) return false;
+    return true;
+  }
+
   function paint() {
-    var done = 0, per = {};
+    var done = 0, total = 0, per = {};
     boxes.forEach(function (b) {
       var on = !!state[b.getAttribute("data-id")], li = b.closest(".step"), ph = li.getAttribute("data-phase");
       b.checked = on;
       li.classList.toggle("checked", on);
+      if (!applies(li)) return; // rows hidden by an option do not count
+      total++;
       per[ph] = per[ph] || [0, 0];
       per[ph][1]++;
       if (on) { done++; per[ph][0]++; }
     });
     document.getElementById("progress-n").textContent = done;
-    document.getElementById("progress-d").textContent = boxes.length;
+    document.getElementById("progress-d").textContent = total;
     [].forEach.call(nav.querySelectorAll("a"), function (a) {
       var c = per[a.getAttribute("data-phase")];
       a.classList.toggle("done", !!c && c[0] === c[1]);
@@ -32,12 +58,12 @@
 
   /* ---- account sync (only inside a claude.ai artifact; otherwise ticks stay in this browser) ---- */
   var docRef = null, writing = false, dirty = false, timer = null, dead = false, retried = false;
-  function body() { return { checked: Object.keys(state).filter(function (k) { return state[k]; }).sort() }; }
+  function body() { return { checked: Object.keys(state).filter(function (k) { return state[k]; }).sort(), options: opts }; }
   function flush() {
     if (!docRef || dead || writing || !dirty) return;
     writing = true; dirty = false;
     docRef.set(body()).then(function () {
-      writing = false; retried = false; say("Ticks sync to your account."); if (dirty) flush();
+      writing = false; retried = false; say("Ticks and choices sync to your account."); if (dirty) flush();
     }, function (e) {
       writing = false;
       var code = e && e.code;
@@ -56,6 +82,14 @@
       changed();
     });
   });
+
+  optBoxes.forEach(function (b) {
+    b.addEventListener("change", function () {
+      opts[b.getAttribute("data-opt")] = b.checked;
+      saveOpts(); applyOpts(); paint(); queue();
+    });
+  });
+  applyOpts();
 
   /* ---- view toggles (per browser) ---- */
   function toggle(id, cls, storeKey, invert) {
@@ -145,12 +179,17 @@
         docRef = db.doc("data/users/" + id + "/progress");
         docRef.onSnapshot(function (snap) {
           if (dead) return;
-          if (!snap.exists) { say("Ticks sync to your account."); return; }
+          if (!snap.exists) { say("Ticks and choices sync to your account."); return; }
           if (snap.metadata && snap.metadata.hasPendingWrites) return;
           if (writing || dirty) return;
           var d = snap.data() || {}, next = {};
           (Array.isArray(d.checked) ? d.checked : []).forEach(function (k) { if (typeof k === "string") next[k] = true; });
-          state = next; saveLocal(); paint(); say("Ticks sync to your account.");
+          state = next; saveLocal();
+          if (d.options && typeof d.options === "object") {
+            Object.keys(opts).forEach(function (k) { if (typeof d.options[k] === "boolean") opts[k] = d.options[k]; });
+            saveOpts(); applyOpts();
+          }
+          paint(); say("Ticks and choices sync to your account.");
         }, function () { dead = true; say("Ticks are saved in this browser only."); });
       });
     }).catch(function () {});

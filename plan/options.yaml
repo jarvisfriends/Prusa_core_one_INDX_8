@@ -1,0 +1,44 @@
+# Choices a builder makes at the top of the page. Rows and notes in plan/NN-*.yaml can
+# name these ids under `when:` (shown only if every listed option is on) and `unless:`
+# (hidden if any listed option is on). tools/check.py proves that every combination of
+# options still covers every manual step.
+title: Your build
+note: >-
+  Tick what applies and the rows below adjust.
+  Your choices are saved with your ticks.
+options:
+  - id: gen2
+    label: Gen 2 upgrade
+    default: true
+    text: >-
+      New 1.5GT belts and pulleys and new heatbed expansion joints, fitted in the same build.
+      The parts come with INDX kits sold for the CORE One+.
+      Adds the belt swap, the expansion joints and the heatbed alignment, and takes both side panels off.
+  - id: dryer
+    label: Dryer boxes instead of spool holders
+    default: false
+    text: >-
+      A 4-spool dryer box at each side of the printer, for example two
+      [Creality SpacePi X4](https://www.creality.com/products/creality-spacepi-x4) (382 × 290 × 270 mm each, PTFE tube not included).
+      Removes the eight puck holders, the tilt and the telescopic spool holders, and rivets both side panels fully.
+      You plan the filament path from each box to the sensor inlets yourself.
+  - id: camera
+    label: Buddy3D camera
+    default: false
+    text: Adds the three rows that unplug the camera, route its USB-C cable and refit it.
+  - id: bucket
+    label: Prusa larger waste bucket
+    default: false
+    text: >-
+      A print-it-yourself [bigger purge bucket](https://help.prusa3d.com/article/install-larger-bucket-on-prusa-core-one-indx_1147539).
+      It needs a 32 mm hole in the right side panel unless yours is already perforated.
+      Decide before teardown: the hole is drilled while the panel is on the bench, and on a build with puck holders
+      that panel is later trapped behind them.
+      How the bucket sits beside right-hand spool holders on an 8-tool machine is not confirmed.
+  - id: light
+    label: Printed chamber light mount
+    default: false
+    text: >-
+      [Printed holders](https://www.printables.com/model/1795637-chamber-light-mount-indx-core-one) that replace the four nozzle seal
+      holders and keep the light bar where it lights the first layers.
+      Print them before teardown.

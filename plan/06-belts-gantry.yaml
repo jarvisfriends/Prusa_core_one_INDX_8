@@ -1,15 +1,16 @@
 # Phase 6. Row ids are the keys for saved ticks: never rename or reuse one.
 id: p6
 name: "Belts & gantry"
-title: "Gen 2 belts, gantry alignment, head mounting plate"
+title: "Belts, gantry alignment, head mounting plate"
 power: "off"
 where: "Printer"
 note: >-
-  The old belts and pulleys come out and the 1.5GT set goes in, right motor first, then left, then the two front tensioners.
-  After that the INDX guide takes over with the gantry tools.
-  Belt routing is where the pictures matter most:
-  check each one before pulling a belt through.
-  The heatbed is only loosely screwed until Phase 9, so keep the box on it and do not lean on it.
+  Without Gen 2 this is the INDX guide's order, unchanged.
+  With Gen 2 ticked, the old belts and pulleys come out first and the 1.5GT set goes in:
+  right motor, then left, then the two front tensioners.
+  Belt routing is where the pictures matter most, so check each one before pulling a belt through.
+  With Gen 2 the heatbed is only loosely screwed until Phase 9:
+  keep the box on it and do not lean on it.
 steps:
 
   - id: p6a
@@ -25,14 +26,31 @@ steps:
   - id: p6b
     refs: ["4.3"]
     kind: asis
+    unless: [gen2]
+    tools: ["2.5 mm"]
+    text: >-
+      Remove the four `M3x10` from the Nextruder holder, unhook all four belt ends from its slots and take the holder away.
+      Let the belts hang.
+    notes:
+      - type: warn
+        by: "manual"
+        text: >-
+          Do not pull on a loose belt.
+          If it slips off a motor pulley, getting it back means a full strip-down.
+
+  - id: p6bg
+    refs: ["4.3"]
+    kind: asis
+    when: [gen2]
     tools: ["2.5 mm"]
     text: >-
       Remove the four `M3x10` from the Nextruder holder, push all four belt ends out through its slots and take the holder away.
       It is not used again.
 
-  - id: p6h
+  - id: p6hg
     refs: ["4.12"]
     kind: moved
+    when: [gen2]
     text: >-
       Lubricate both `M3x30` tensioning screws now.
       Put a little Prusa lubricant (Fasteners 2/2 bag) on the tip of each, spread it round the whole thread with the tip of a zip tie, and insert both screws back into the front tensioners.
@@ -51,6 +69,7 @@ steps:
   - id: g3a
     refs: ["G3.4"]
     kind: gen2
+    when: [gen2]
     text: >-
       Take both old belts out of the printer.
       The two belt tensioner idlers are still on them:
@@ -60,6 +79,7 @@ steps:
   - id: g3b
     refs: ["G3.5", "G3.6"]
     kind: gen2
+    when: [gen2]
     tools: ["2.5 mm"]
     text: >-
       Release both rear motors from underneath.
@@ -76,6 +96,7 @@ steps:
   - id: g3c
     refs: ["G3.7"]
     kind: gen2
+    when: [gen2]
     tools: ["2.0 mm", "Cutters"]
     text: >-
       Right motor.
@@ -88,6 +109,7 @@ steps:
   - id: g3d
     refs: ["G3.8", "G3.9"]
     kind: gen2
+    when: [gen2]
     tools: ["2.0 mm"]
     text: >-
       New pulley, right motor.
@@ -99,6 +121,7 @@ steps:
   - id: g3e
     refs: ["G3.10", "G3.11"]
     kind: gen2
+    when: [gen2]
     text: >-
       Lower belt, right motor.
       Take the motor mount out of the printer.
@@ -114,6 +137,7 @@ steps:
   - id: g3f
     refs: ["G3.12", "G3.13"]
     kind: gen2
+    when: [gen2]
     text: >-
       Take the belt coming from the left idler, lead it round that idler from the left side and into the mount, and pull about 15 cm out of the opening on the far side.
       Take the second new belt, lead one end round the upper idler from the left side with the teeth facing away from the idler, and pull about 15 cm out the far side as well.
@@ -126,6 +150,7 @@ steps:
   - id: g3g
     refs: ["G3.14", "G3.15"]
     kind: gen2
+    when: [gen2]
     tools: ["Cutters"]
     text: >-
       Move the assembly toward the rear right corner with the free belt ends led to the rear, loose.
@@ -143,6 +168,7 @@ steps:
   - id: g3h
     refs: ["G3.16", "G3.17"]
     kind: gen2
+    when: [gen2]
     tools: ["2.5 mm"]
     text: >-
       Fix the right motor from below with the four `M3x35`, then the mount with the `M3x6`, gently:
@@ -158,6 +184,7 @@ steps:
   - id: g3i
     refs: ["G3.18"]
     kind: skip
+    when: [gen2]
     text: >-
       Skip.
       The Bowden-guide is not refitted, so its `M3x10` and the nut on the outer side of the right motor mount are not needed.
@@ -171,6 +198,7 @@ steps:
   - id: g3j
     refs: ["G3.19"]
     kind: gen2
+    when: [gen2]
     tools: ["2.0 mm", "Cutters"]
     text: >-
       Left motor.
@@ -181,6 +209,7 @@ steps:
   - id: g3k
     refs: ["G3.20", "G3.22"]
     kind: gen2
+    when: [gen2]
     tools: ["2.0 mm"]
     text: >-
       New pulley, left motor.
@@ -197,6 +226,7 @@ steps:
   - id: g3l
     refs: ["G3.21"]
     kind: gen2
+    when: [gen2]
     text: >-
       Stop and study the belt routing overview:
       one diagram for the upper belt path, one for the lower.
@@ -205,6 +235,7 @@ steps:
   - id: g3m
     refs: ["G3.23"]
     kind: gen2
+    when: [gen2]
     text: >-
       Lead both belts from the right motor along the rear of the printer to the left motor.
       Set the left motor mount on the frame with its single-pulley side facing down.
@@ -213,6 +244,7 @@ steps:
   - id: g3n
     refs: ["G3.24", "G3.25"]
     kind: gen2
+    when: [gen2]
     text: >-
       Form a loop in the upper belt with the teeth facing inward and push it into the mount between the two upper pulleys, following the circular cutout.
       Lower the motor's pulley into the loop, seat the motor fully with its cable facing backward toward the pulleys, and gently pull both ends to draw the loop round the pulley.
@@ -226,12 +258,14 @@ steps:
   - id: g3o
     refs: ["G3.26"]
     kind: gen2
+    when: [gen2]
     text: >-
       Take the right-hand belt coming from the upper pulley, lead it round the upper right pulley from the right side and into the mount, and pull about 15 cm out the far side.
 
   - id: g3p
     refs: ["G3.27", "G3.28"]
     kind: gen2
+    when: [gen2]
     tools: ["Cutters"]
     text: >-
       Move the assembly toward the rear left corner.
@@ -242,6 +276,7 @@ steps:
   - id: g3q
     refs: ["G3.29", "G3.30"]
     kind: gen2
+    when: [gen2]
     tools: ["2.5 mm"]
     text: >-
       Fix the left motor from below with four `M3x35`, then the mount with the `M3x6`, gently.
@@ -250,6 +285,7 @@ steps:
   - id: g3r
     refs: ["G3.31", "G3.32"]
     kind: gen2
+    when: [gen2]
     tools: ["2.5 mm"]
     text: >-
       Left front.
@@ -260,6 +296,7 @@ steps:
   - id: g3s
     refs: ["G3.33", "G3.34"]
     kind: gen2
+    when: [gen2]
     text: >-
       Lead the free end from that idler round the upper idler at the left end of the XY gantry.
       Then take the lower belt coming from the left motor, lead it to the gantry and round the lower idler, and pull at least 8 cm through.
@@ -267,6 +304,7 @@ steps:
   - id: g3t
     refs: ["G3.35", "G3.36"]
     kind: gen2
+    when: [gen2]
     tools: ["2.5 mm", "Cutters"]
     text: >-
       Right front.
@@ -277,6 +315,7 @@ steps:
   - id: g3u
     refs: ["G3.37", "G3.38"]
     kind: gen2
+    when: [gen2]
     text: >-
       Lead the free end from that idler round the lower idler at the right end of the gantry and pull at least 8 cm through.
       Take the upper belt coming from the right motor round the upper gantry idler and pull 8 cm through.
@@ -349,9 +388,34 @@ steps:
       Look along both sides:
       every belt in its channel and none pinched.
 
+  - id: p6h
+    refs: ["4.12"]
+    kind: asis
+    unless: [gen2]
+    text: >-
+      Lubricate both `M3x30` tensioning screws with the Prusa lubricant from the Fasteners 2/2 bag, spread round the whole thread with the tip of a zip tie.
+      The manual limits this step to the original CORE One, which is what you have.
+    notes:
+      - type: tip
+        by: "Scotttomo, Chris Hill, forum"
+        text: >-
+          A builder who skipped the grease had the right tensioner seize:
+          stainless screw galling in a stainless nut.
+          The cure was cutting the screw head off.
+
   - id: p6i
     refs: ["4.13"]
     kind: asis
+    unless: [gen2]
+    tools: ["2.5 mm"]
+    text: >-
+      Refit both tensioning screws so each Belt-tensioner-pulley engages its tensioner, and tension until both sit about 8 mm from the edge, typically 8 to 10 turns.
+      Fine tuning happens in the wizard.
+
+  - id: p6ig
+    refs: ["4.13"]
+    kind: asis
+    when: [gen2]
     tools: ["2.5 mm"]
     text: >-
       The greased tensioning screws are already in from the Gen 2 steps.

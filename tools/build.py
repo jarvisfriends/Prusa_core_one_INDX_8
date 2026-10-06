@@ -39,6 +39,37 @@ def fmt(s: str) -> str:
     return out
 
 
+def conditions(item: dict) -> str:
+    """data-when / data-unless attributes; site/app.js and the generated CSS act on them."""
+    out = ""
+    if item.get("when"):
+        out += f' data-when="{esc(" ".join(item["when"]))}"'
+    if item.get("unless"):
+        out += f' data-unless="{esc(" ".join(item["unless"]))}"'
+    return out
+
+
+def option_css(options: list[dict]) -> str:
+    rules = []
+    for o in options:
+        i = o["id"]
+        rules.append(f'.wrap:not(.on-{i}) [data-when~="{i}"]{{display:none!important}}')
+        rules.append(f'.wrap.on-{i} [data-unless~="{i}"]{{display:none!important}}')
+    return "\n".join(rules)
+
+
+def render_options(opts: dict) -> dict:
+    items = []
+    for o in opts["options"]:
+        checked = " checked" if o["default"] else ""
+        items.append(
+            f'      <li class="option"><input type="checkbox" id="opt-{esc(o["id"])}" data-opt="{esc(o["id"])}"{checked}>'
+            f'<label for="opt-{esc(o["id"])}"><span class="opt-name">{esc(o["label"])}</span>'
+            f'<span class="opt-text">{fmt(o["text"])}</span></label></li>')
+    return {"options_title": esc(opts["title"]), "options_note": fmt(opts["note"]), "options": "\n".join(items),
+            "option_classes": "".join(f' on-{o["id"]}' for o in opts["options"] if o["default"])}
+
+
 def ref_text(refs: list[str], manuals: dict) -> str:
     groups: dict[tuple[str, int], list[int]] = {}
     for r in refs:
@@ -110,11 +141,12 @@ def render_phases(phases: list[dict], manuals: dict, data: dict, used_images: se
             meta += f'<span class="tag tag-{s["kind"]}">{KIND_LABEL[s["kind"]]}</span>'
             meta += "".join(f'<span class="tool">{esc(t)}</span>' for t in s.get("tools") or [])
             notes = "".join(
-                f'<li class="{n["type"]}"><b>{NOTE_LABEL[n["type"]]}</b>{fmt(n["text"])} <span class="by">({esc(n["by"])})</span></li>'
+                f'<li class="{n["type"]}"{conditions(n)}><b>{NOTE_LABEL[n["type"]]}</b>{fmt(n["text"])} <span class="by">({esc(n["by"])})</span></li>'
                 for n in s.get("notes") or [])
-            blocks = "".join(manual_block(r, manuals, data, used_images) for r in s["refs"])
+            # a skipped step gets no pictures: there is nothing to do
+            blocks = "" if s["kind"] == "skip" else "".join(manual_block(r, manuals, data, used_images) for r in s["refs"])
             out.append(
-                f'<li class="step" data-phase="{esc(p["id"])}"><input type="checkbox" id="cb-{esc(s["id"])}" data-id="{esc(s["id"])}" '
+                f'<li class="step" data-phase="{esc(p["id"])}"{conditions(s)}><input type="checkbox" id="cb-{esc(s["id"])}" data-id="{esc(s["id"])}" '
                 f'aria-label="Done: {esc(p["name"])}, row {esc(s["id"])}"><div class="body"><div class="meta">{meta}</div>'
                 f'<div class="text">{fmt(s["text"])}</div>'
                 + (f'<ul class="notes">{notes}</ul>' if notes else "") + blocks + "</div></li>")
@@ -170,10 +202,12 @@ def main() -> int:
     used_images: set = set()
     values = render_intro(pl.load_yaml("plan", "intro.yaml"), pl.load_yaml("plan", "prints.yaml"),
                           pl.load_yaml("plan", "hardware.yaml"), pl.load_yaml("plan", "sources.yaml"))
+    opts = pl.load_yaml("plan", "options.yaml")
+    values.update(render_options(opts))
     values["phases"], values["nav"], rows = render_phases(phases, manuals, data, used_images)
     values["row_count"] = str(rows)
     with open(pl.path("site", "style.css"), encoding="utf-8") as fh:
-        values["style"] = fh.read().rstrip()
+        values["style"] = fh.read().rstrip() + "\n\n/* generated from plan/options.yaml */\n" + option_css(opts["options"])
     with open(pl.path("site", "app.js"), encoding="utf-8") as fh:
         values["script"] = fh.read().rstrip()
     with open(pl.path("site", "template.html"), encoding="utf-8") as fh:
@@ -192,7 +226,7 @@ def main() -> int:
     with open(os.path.join(dist, "index.html"), "w", encoding="utf-8") as fh:
         fh.write(SKELETON + page + "</body></html>\n")
 
-    missing = sorted({r for p in phases for s in p["steps"] for r in s["refs"] if r not in data})
+    missing = sorted({r for p in phases for s in p["steps"] if s["kind"] != "skip" for r in s["refs"] if r not in data})
     print(f"Built dist/index.html: {len(phases)} phases, {rows} rows, {len(used_images)} picture files, {len(page) // 1024} KB of HTML")
     if missing:
         print(f"{len(missing)} referenced steps have no extracted pictures (run tools/extract_manual.py with the PDFs in manuals/).")
