@@ -1,0 +1,150 @@
+# Phase 11. Row ids are the keys for saved ticks: never rename or reuse one.
+id: p11
+name: "Dock & tools"
+title: "Dock fan, lid, tool dock and tools"
+power: "off"
+where: "Bench, then printer"
+note: >-
+  The tool dock and the lid are already built, so this phase is mostly fitting.
+steps:
+
+  - id: p11a
+    refs: ["5.59", "5.60", "5.61"]
+    kind: asis
+    tools: ["2.5 mm", "T10"]
+    text: >-
+      Dock fan, at the bench.
+      `M3nS` nut into the Dock-fan-holder, then both `M3x35` screws into it before the fan goes in.
+      Seat the Print fan blower so the highlighted holes line up and fix it with an `M3x25`.
+      Turn it sticker side up, lay the Dock fan splitter board in its ridge, fix it with an `M3x8rT`, and plug the fan's own cable into the slot nearer the fan.
+    notes:
+      - type: warn
+        by: "manual"
+        text: "Touch metal first and hold the board by its edges."
+
+  - id: p11b
+    refs: ["5.62", "5.63"]
+    kind: asis
+    tools: ["2.5 mm"]
+    text: >-
+      At the Belt-tensioner where the dock fan cable emerges, remove the two highlighted `M3x30` and leave the third.
+      Plug the dock fan cable into the free slot on the board until it latches.
+      Turn the assembly over carefully, lower both `M3x35` into the Belt-tensioner and tighten.
+      Mind the two protruding screws against the paintwork.
+
+  - id: p11c
+    refs: ["5.64"]
+    kind: asis
+    text: "Eight gummy bears."
+
+  - id: p11d
+    refs: ["5.80", "5.81"]
+    kind: asis
+    text: >-
+      Take the part called Top cover back from the main box.
+      It is the fixed rear panel of the new top, not the hinged lid you built in Phase 4.
+      Place it on the printer and fix it with two new nylon rivets.
+
+  - id: p11e
+    refs: ["5.82", "5.83"]
+    kind: asis
+    tools: ["T10"]
+    text: >-
+      Hinge bases.
+      Run a `3x12sT` into each Hinge-base and out again to cut the thread.
+      Left base (marked L) at the front left hole of the top cover back:
+      screw up from inside the printer, base held on top, tighten.
+      Right base (marked R) the same at the front right hole.
+
+  - id: p11f
+    refs: ["5.84", "5.85"]
+    kind: asis
+    tools: ["2.5 mm"]
+    text: >-
+      Slip a 15×5 spring onto each of two `M3x25` screws.
+      Set the top cover on its hinges and insert a screw with spring into each hinge from the inner side.
+      Tighten left and right, but not fully.
+      Open the lid all the way:
+      the springs must compress and hold it open.
+      If it drops, adjust those two screws.
+
+  - id: p11g
+    refs: ["5.86", "5.87"]
+    kind: asis
+    tools: ["T10"]
+    text: >-
+      Have ready the two kept `M3x4`, two kept `M3x4rT`, two nylon rivets and the eight INDX Nozzle tools.
+      Support the LED panel, remove its two `M3x4rT`, and lean it against the left side without touching the LEDs or pulling its cable.
+      Offer up the tool dock:
+      its left end goes under the top profile and its right end over it.
+    notes:
+      - type: warn
+        by: "manual"
+        text: >-
+          Never touch the rectangular sensing area on a Nozzle tool.
+          Grease or a scratch there upsets temperature readings.
+
+  - id: p11h
+    refs: ["5.88"]
+    kind: asis
+    tools: ["2.5 mm", "T10"]
+    text: >-
+      Fix the dock to the top profiles with one `M3x4` each side, to the front of the printer with two `M3x4rT` in the top holes, and with the two `M3x4rT` from the LED panel in the lower holes.
+
+  - id: p11i
+    refs: ["5.89"]
+    kind: asis
+    text: >-
+      Mount the LED panel on the inner side of the tool dock with two nylon rivets, easing a little more cable through if it is short.
+      Close the lid.
+    notes:
+      - type: warn
+        by: "if you fitted the chamber light mount"
+        text: >-
+          The bar snaps into the printed holders instead and the two rivets are not used.
+          Its author notes that loosening the two bottom front-plate screws can help.
+
+  - id: p11j
+    refs: ["5.90"]
+    kind: opt
+    text: >-
+      Buddy3D camera:
+      mount it magnetically in the front left corner on the upper profiles, following the camera's own guide.
+
+  - id: p11k
+    refs: ["5.91", "5.92"]
+    kind: asis
+    text: >-
+      Lid closed, feed the tube from position 1 through the first opening from the right at the back of the lid, then 2, 3 and 4 in order.
+      Open the lid and push each tube fully into its Nozzle tool, tugging to check the collet.
+      Set each tool on its dock position so both magnetic pins snap in and the tool sits flush, and check its parking plate seals the nozzle.
+    notes:
+      - type: tip
+        by: "chmax, Chris Hill, forum"
+        text: >-
+          Two builders each found one tool with a reversed magnet or pin that would not stay docked.
+          If a tool will not hold, do not force it;
+          contact support.
+
+  - id: p11l
+    refs: ["5.93", "5.94"]
+    kind: asis
+    text: >-
+      Close the lid and feed the tube from position 8 through the first opening from the left, then 7, 6 and 5.
+      Open the lid, connect each tube to its tool, and dock tools 8 down to 5 the same way.
+
+  - id: p11m
+    refs: ["5.95"]
+    kind: asis
+    text: >-
+      Trace every tube from sensor to tool:
+      none swapped.
+      Take the cardboard box out of the printer for the last time.
+      Leave the lid unlocked;
+      the wizard needs it open.
+
+  - id: p11n
+    refs: ["5.96", "5.97"]
+    kind: asis
+    text: >-
+      Peel off your temporary tape, then peel the backing from the offset sensor sticker (Tool Dock Fan bag) and lay it over the whole sensor.

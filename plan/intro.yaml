@@ -1,0 +1,80 @@
+# Everything above the phase list. Text supports `code` and [label](url).
+page_title: INDX 8-Tool Build Plan
+eyebrow: "Stock Prusa CORE One → INDX 8-tool + Gen 2"
+title: Build it once, power it twice
+lede: >-
+  Every step of Prusa's INDX conversion manual and the Gen 2 steps that go with it, in one order,
+  with Prusa's own pictures and text beside each row.
+  Nothing is fitted and then removed, the printer is switched on only at the very start and the very end,
+  and the same tool stays in your hand for as long as possible.
+
+power:
+  - state: "on"
+    label: Power on
+    text: "Phases 0–2: prints, firmware check, home, bed to 200 mm, unload"
+  - state: "off"
+    label: Off and unplugged
+    text: "Phases 3–12: the whole mechanical build. No step in here needs the printer running."
+  - state: "on"
+    label: Power on
+    text: "Phase 13: flash INDX firmware, set the Gen 2 belt option, wizard"
+
+changes_title: What this order changes from the manuals
+changes:
+  - >-
+    Everything that needs a working printer comes first: the helper prints, a kit inventory, the firmware check,
+    and the INDX firmware download.
+    Unloading, homing and the bed move keep the manual's order.
+  - >-
+    Three kit-only sub-assemblies (nozzle cleaner, eight puck holders, the whole tool dock) are built at the bench
+    while the helper prints run.
+  - >-
+    Gen 2 is merged in where Prusa's companion article puts it: expansion joints while the heatbed is out,
+    belts and pulleys before the gantry tools, heatbed alignment before the electronics are closed.
+  - >-
+    All four side pieces come off in one rivet session at the end of teardown, and the X and Y motor cables are
+    unplugged while the electronics box is already open.
+    Prusa's article does this in two separate visits, after steps 3.10 and 4.3.
+    The old spool holder also comes out early.
+  - >-
+    The heatbed's cable cover is swapped the moment the bed lands on the bench, and the rear bed stop is swapped
+    next to the rear bed spacer, before the cable bundle is back in the way.
+  - >-
+    All puck-holder screws that can be reached upright go in first, then the printer is tilted once for the four
+    that cannot.
+
+assumptions:
+  - >-
+    **Assumptions.** Original CORE One, never upgraded, no MMU3, 8-tool kit, and the Gen 2 parts from the kit
+    fitted in the same build.
+  - >-
+    Prusa's Gen 2 guide is written for the CORE One+.
+    Forum builders report fitting Gen 2 and INDX together on an original CORE One, but Prusa's guide does not
+    state that combination.
+    If a Gen 2 part does not fit your machine, stop and ask Prusa support.
+  - >-
+    The manuals' photos show a CORE One+ and, in the Gen 2 guide, a printer with its Nextruder still fitted.
+    The original step text under each row is Prusa's, unedited.
+    Where a row says it follows the Gen 2 branch or Prusa's companion article (a different screw, spacer or rivet count, a part
+    that is not refitted), the row is the instruction to follow.
+    Anywhere else, if a photo and a row disagree, trust the photo and Prusa's text.
+
+pictures_note: >-
+  Each row shows the pictures and original text of the manual steps it covers.
+  The coloured squares match the coloured arrows in the pictures.
+  Tap a picture to enlarge it.
+  Ticking a row folds its pictures away.
+
+legend:
+  - kind: asis
+    text: manual order kept
+  - kind: moved
+    text: same step, different moment
+  - kind: gen2
+    text: from the Gen 2 guide or Prusa's companion article
+  - kind: added
+    text: not in either manual
+  - kind: opt
+    text: only if it applies
+  - kind: skip
+    text: deliberately not done

@@ -1,0 +1,239 @@
+# Phase 3. Row ids are the keys for saved ticks: never rename or reuse one.
+id: p3
+name: "Teardown"
+title: "Teardown"
+power: "off"
+where: "Printer"
+note: >-
+  Worked station by station:
+  top and front, inside, back, left, the Nextruder, then the right side.
+  The manual's order inside each station is unchanged.
+steps:
+
+  - id: p3a
+    refs: ["2.1", "2.7"]
+    kind: asis
+    text: >-
+      Chapter 2 tools:
+      both Allen keys, T10, pliers or cutters, PH2, universal wrench.
+      Sort every removed screw into the organizer as it comes out;
+      the table above lists the ones you need again.
+
+  - id: p3b
+    refs: ["2.8", "2.9"]
+    kind: asis
+    tools: ["Rivet tool"]
+    text: >-
+      Pull the four nylon rivets from the top panel and lift the panel off.
+      It is not used again.
+    notes:
+      - type: tip
+        by: "forum digest"
+        text: >-
+          Pushing a rivet's centre pin from the inside first gives better control.
+
+  - id: p3c
+    refs: ["2.10"]
+    kind: asis
+    tools: ["2.5 mm", "T10"]
+    text: >-
+      Remove the two `M3x4` screws from the top front panel and the two `M3x4rT` from the front, then lift out the top profile.
+      Keep all four.
+
+  - id: p3d
+    refs: ["2.11"]
+    kind: asis
+    tools: ["T10"]
+    text: >-
+      Take the door off.
+      Hold the panel, remove the two `M3x5rT` from each hinge starting with the lowest, and slide the door out.
+      If a hinge shaft drops out, push it back or bag it with the hinge.
+      Keep these four screws apart from the `M3x4rT`.
+
+  - id: p3e
+    refs: ["2.32"]
+    kind: moved
+    tools: ["T10"]
+    text: >-
+      Old spool holder.
+      Lift the box off the bed, remove the four `M3x8rT` inside the right wall while holding the spool holder, take it off, and put the box back.
+      Mind the heatbed surface while the box is off.
+    notes:
+      - type: why
+        by: "plan"
+        text: >-
+          The T10 is already in your hand and the door is out of the way.
+          In the manual this is the last teardown step;
+          nothing depends on that.
+
+  - id: p3f
+    refs: ["2.12"]
+    kind: asis
+    tools: ["T10"]
+    text: >-
+      Still inside:
+      remove the two `M3x4rT` that hold the back cover.
+      Go round the back, slide the centre cover down until its four hooks clear the chassis, and remove it.
+      A screwdriver through the opening works as a lever if it sticks.
+
+  - id: p3g
+    refs: ["2.13"]
+    kind: asis
+    tools: ["T10"]
+    text: "Remove the six `M3x4rT` from the xBuddy box cover and slide it out."
+
+  - id: p3h
+    refs: ["2.14"]
+    kind: asis
+    tools: ["PH2", "Cutters"]
+    text: >-
+      Undo the two 6-32 terminal screws and free the heatbed power cables, then thread both screws back in at least three turns.
+      Press the latch and unplug the heatbed thermistor.
+      Cut the zip ties down the right side of the box but leave the lowest one, and keep the cutters clear of the cables.
+    notes:
+      - type: tip
+        by: "FoxRun3D, forum"
+        text: >-
+          One builder dropped a terminal screw into the electronics box and never found it.
+          Thread them back in before you do anything else.
+
+  - id: p3i
+    refs: ["2.15"]
+    kind: asis
+    text: >-
+      Press each latch and unplug the Nextruder main cable from the xBuddy board, then the side filament sensor and the RGB LED cable from the extension board.
+
+  - id: p3j
+    refs: ["2.16", "2.17", "2.18"]
+    kind: asis
+    tools: ["Cutters"]
+    text: >-
+      Feed the loose cables out through the openings at the top of the box without forcing them, and cut the zip ties on the harness without nicking a cable.
+      Ease the upper grommet outward, push the Nextruder main cable fully into the printer through the upper oval opening, and reseat the grommet.
+      Push the filament sensor cable in through the lower opening.
+      Cut the tie on the heatbed bundle and guide that inside too.
+
+  - id: p3i2
+    refs: ["G2.12"]
+    kind: gen2
+    text: >-
+      While the box is open, press the latches and unplug the X motor cable (first connector on the left) and the Y motor cable (second from the left) from the xBuddy board.
+      Ease a little slack toward the motors but keep both connectors inside the electronics box.
+      If a cable resists, stop;
+      if it will not move at all, cut the zip tie holding that bundle, without nicking a cable.
+    notes:
+      - type: why
+        by: "plan"
+        text: >-
+          Prusa's companion article sends you back to the electronics box for this after step 3.10.
+          The box is open now.
+
+  - id: p3k
+    refs: ["2.19"]
+    kind: asis
+    tools: ["2.5 mm"]
+    text: >-
+      Left side of the printer:
+      release the five cable straps, then loosen the M3 screw of the cable clip behind the Y motor and let the cable hang with the clip.
+      Keep two of the straps for step 4.31.
+
+  - id: p3l
+    refs: ["2.20", "2.21", "2.22", "2.23"]
+    kind: asis
+    tools: ["2.5 mm"]
+    text: >-
+      Nextruder covers and cables.
+      Remove the `M3x10` and the left side cover, unlock the Idler-swivel and open the idler fully.
+      Unplug every cable on the left of the LoveBoard except the main cable, then the extruder motor cable on top.
+      Remove the two `M3x6` and the right cover, and unplug both cables on the right.
+      Press every latch first.
+
+  - id: p3m
+    refs: ["2.24", "2.25"]
+    kind: asis
+    tools: ["Universal wrench", "2.5 mm"]
+    text: >-
+      Slide the bowden-bend over the fitting, press the black collet down with two fingers and pull the PTFE tube out.
+      Unscrew the M5-4 fitting with the 8 mm cutout of the wrench.
+      Remove the two `M3x18` from the heatsink fan and let it hang on its cable.
+
+  - id: p3n
+    refs: ["2.26"]
+    kind: asis
+    tools: ["2.5 mm"]
+    text: >-
+      Hold the Nextruder and remove the three `M3x10` that fix it to the X-axis.
+      Lift it out, unhook the heatsink fan cable and remove the fan.
+
+  - id: p3o
+    refs: ["2.27", "2.28", "2.29"]
+    kind: asis
+    tools: ["2.5 mm", "T10"]
+    text: >-
+      Back of the print head:
+      remove the `M3x25` and lift the print fan out;
+      it is reused.
+      Remove the two `M3x10` and the rear cover and free the main cable from its groove.
+      Remove the `M3x8rT` and take out the LoveBoard with its cable, then the two `M3x10` and the Loveboard-holder.
+      Remove the two `M3x10` and the Fan-shroud, then the two `M3x4rT` and the Cable-clip.
+      The Nextruder holder stays on the belts for now.
+    notes:
+      - type: why
+        by: "plan"
+        text: >-
+          The holder is what keeps the belts on the motor pulleys.
+          It comes off in Phase 6, once the work under the gantry is finished.
+
+  - id: p3p
+    refs: ["2.30", "2.31"]
+    kind: asis
+    tools: ["T10", "Cutters"]
+    text: >-
+      Right side:
+      press the collet in the handle and pull the PTFE tube out.
+      Remove the two `M3x8rT` that hold the handle and the filament sensor and take the handle off.
+      Inside, cut the zip tie near the PTFE tube to free the sensor cable from under the CoreXY frame, and take the sensor out.
+
+  - id: p3q
+    refs: ["5.2"]
+    kind: moved
+    tools: ["2.5 mm", "Rivet tool"]
+    text: >-
+      Remove the `M3x10` and the Bowden-guide from the right rear corner;
+      the guide is not used again.
+      Pull the eleven nylon rivets from the right steel panel, bottom ones first, with a hand on the panel as the last come out, and lift it onto the bench.
+    notes:
+      - type: why
+        by: "plan"
+        text: >-
+          The INDX guide removes this panel in chapter 5 and the Gen 2 article removes it after step 4.3.
+          With it off now, the right bed spacer, offset sensor cable, right motor, gantry tool and dock fan cable are all reached from an open side.
+          It goes back at the INDX guide's own step 5.24.
+
+  - id: p3s
+    refs: ["G2.6", "G2.4", "G2.5"]
+    kind: gen2
+    tools: ["Rivet tool"]
+    text: >-
+      The other three side pieces come off too.
+      Five rivets and the transparent side cover on the right.
+      Five rivets and the transparent side cover on the left.
+      Then the eleven rivets of the left steel panel, bottom ones first, with a hand on the panel as the last come out.
+      Store all four pieces flat and clean.
+    notes:
+      - type: why
+        by: "plan"
+        text: >-
+          Prusa's article removes the left pair after step 3.10 and the right pair after step 4.3.
+          One rivet session now leaves both sides open for everything that follows.
+      - type: tip
+        by: "vhubbard, chmax, forum"
+        text: >-
+          A builder who did Gen 2 and INDX together advised taking all the side panels off to begin with.
+
+  - id: p3r
+    refs: ["2.33", "2.34", "2.35", "2.36"]
+    kind: asis
+    text: >-
+      Check you still have the back cover, xBuddy cover, print fan, print sheet, two cable straps, the door, both steel side panels and both transparent side covers.
+      Six gummy bears.

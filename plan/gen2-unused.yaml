@@ -1,0 +1,19 @@
+# Gen 2 guide steps this combined build does not perform, and why.
+# tools/check.py requires every Gen 2 step to be either referenced by a plan row
+# or listed here, never both.
+- steps: ["G1.1-G1.5"]
+  reason: Preparation, unloading and powering off are done once, by INDX chapter 2.
+- steps: ["G2.1-G2.3", "G2.7-G2.11", "G2.13-G2.21"]
+  reason: Teardown of the door, top, handle, covers, electronics and Nextruder is done by INDX chapter 2 and INDX step 5.2.
+- steps: ["G3.1-G3.3"]
+  reason: Same job as INDX steps 4.1 to 4.3.
+- steps: ["G3.39-G3.64"]
+  reason: These refit the Nextruder. The INDX toolhead replaces it.
+- steps: ["G4.1-G4.3"]
+  reason: The heatbed is already out of the printer (INDX steps 3.3 to 3.5).
+- steps: ["G4.9-G4.10"]
+  reason: INDX steps 3.23 and 3.24 put the heatbed back, using the Gen 2 centre screw.
+- steps: ["G4.21-G4.31", "G4.33", "G4.36-G4.42"]
+  reason: Nozzle wiper, handle, sensor, panels, covers and door are replaced by INDX chapter 5.
+- steps: ["G5.1", "G5.3-G5.5", "G5.8"]
+  reason: Print sheet, belt tuning, firmware and self-test are done once, by INDX chapter 6.

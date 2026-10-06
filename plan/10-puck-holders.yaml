@@ -1,0 +1,157 @@
+# Phase 10. Row ids are the keys for saved ticks: never rename or reuse one.
+id: p10
+name: "Puck holders"
+title: "Puck holders, with one tilt"
+power: "off"
+where: "Printer"
+note: >-
+  Each bottom holder takes three screws, two reachable upright and one only from underneath.
+  Each top holder takes two.
+  The black Spoolholder-assembly-tool holds the nuts on the inside.
+  The manual names the nut pocket by the arrow printed beside it:
+  always the pocket nearer the top edge of the tool, except rear top left, which uses the pocket nearer the bottom edge.
+  Match how the tool sits to the manual photo for each corner.
+steps:
+
+  - id: p10a
+    refs: ["5.27", "5.28"]
+    kind: asis
+    tools: ["Rivet tool", "T10"]
+    text: >-
+      Left side.
+      If a rivet sits in either marked hole at each lower corner, pull it (with three rivets in the panel they are probably empty).
+      Remove the upper `M3x4rT` from the front and back corners of the panel.
+      Hang a Puck holder bottom in the rear corner and one in the front corner, each the right way round, each with one `M3x12rT`.
+
+  - id: p10b
+    refs: ["5.29", "5.30"]
+    kind: asis
+    tools: ["T10"]
+    text: >-
+      Front bottom left.
+      One `M3nN` in the assembly tool, pushed fully home, rubber-free face outward, in the pocket by the arrow pointing UP.
+      Hook the tool's ridge on the metal profile inside the front left corner with the nut toward the panel, hold it, and drive an `M3x12rT` into it.
+
+  - id: p10c
+    refs: ["5.31", "5.32"]
+    kind: asis
+    tools: ["T10"]
+    text: >-
+      Rear bottom left.
+      One nut in the pocket by the arrow pointing RIGHT.
+      Hook, hold, and drive an `M3x12rT`.
+
+  - id: p10d
+    refs: ["5.35", "5.36", "5.37"]
+    kind: asis
+    tools: ["Rivet tool", "T10"]
+    text: >-
+      Pull any rivet from the two marked holes at each top corner on the left.
+      Front top left:
+      two nuts in the tool as in the manual's photo, hook it on the profile and push gently upward.
+      Start an `M3x12rT` in the puck holder top before offering it up, then tighten the top screw and the lower screw.
+
+  - id: p10e
+    refs: ["5.38", "5.39"]
+    kind: asis
+    tools: ["T10"]
+    text: >-
+      Rear top left.
+      Two nuts as in the photo, using the pocket nearer the bottom edge, by the arrow pointing DOWN.
+      Hook, push up, top screw then lower screw.
+
+  - id: p10f
+    refs: ["5.40", "5.41"]
+    kind: asis
+    tools: ["T10"]
+    text: >-
+      Right side.
+      Remove the upper `M3x4rT` from the front and back corners.
+      Hang a Puck holder bottom in the front corner and one in the back corner, one `M3x12rT` each.
+
+  - id: p10g
+    refs: ["5.42", "5.43"]
+    kind: asis
+    tools: ["T10"]
+    text: >-
+      Front bottom right.
+      One nut, arrow pointing RIGHT.
+      Hook inside the front corner, hold, drive an `M3x12rT`.
+
+  - id: p10h
+    refs: ["5.44", "5.45"]
+    kind: asis
+    tools: ["T10"]
+    text: >-
+      Rear bottom right.
+      One nut, arrow pointing UP.
+      Hook at the back, hold, drive an `M3x12rT`.
+
+  - id: p10i
+    refs: ["5.55", "5.56"]
+    kind: moved
+    tools: ["T10"]
+    text: >-
+      Front top right.
+      Two nuts as in the photo, arrow pointing RIGHT.
+      Hook, push up, pre-start the screw in the holder, top screw then lower screw.
+    notes:
+      - type: why
+        by: "plan"
+        text: >-
+          The manual fits the two right-hand tops after the tilt.
+          They are reached upright exactly like the left-hand tops, so they are done here and the tilt finishes the job.
+          If a photo does not match what you see, do these two after the tilt as printed.
+
+  - id: p10j
+    refs: ["5.57", "5.58"]
+    kind: moved
+    tools: ["T10"]
+    text: >-
+      Rear top right.
+      Two nuts as in the photo, arrow pointing UP.
+      Hook, push up, top screw then lower screw.
+
+  - id: p10k
+    refs: ["5.46"]
+    kind: asis
+    text: >-
+      Tilt.
+      Take the box off the heatbed and stand it behind the printer.
+      Toolhead to the back, all PTFE tubes inside, sensor cables clear.
+      Lay the printer slowly back onto the box and make sure it cannot slide.
+      A second person to steady it is worth asking for.
+
+  - id: p10l
+    refs: ["5.47", "5.48"]
+    kind: asis
+    tools: ["T10"]
+    text: >-
+      Rear bottom left, from underneath.
+      One nut, arrow pointing RIGHT.
+      Set the tool's highlighted ridge against the bottom profile, nut toward the panel, hold from inside and drive the third `M3x12rT`.
+
+  - id: p10m
+    refs: ["5.49", "5.50"]
+    kind: asis
+    tools: ["T10"]
+    text: >-
+      Front bottom left.
+      One nut, arrow UP.
+      Hook under the front, push up gently, drive the screw.
+
+  - id: p10n
+    refs: ["5.51", "5.52"]
+    kind: asis
+    tools: ["T10"]
+    text: "Rear bottom right. One nut, arrow UP. Hook, push up, drive the screw."
+
+  - id: p10o
+    refs: ["5.53", "5.54"]
+    kind: asis
+    tools: ["T10"]
+    text: >-
+      Front bottom right.
+      One nut, arrow RIGHT.
+      Hook, push up, drive the screw.
+      Stand the printer back on its feet and put the box back on the heatbed.

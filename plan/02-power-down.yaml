@@ -1,0 +1,58 @@
+# Phase 2. Row ids are the keys for saved ticks: never rename or reuse one.
+id: p2
+name: "Power down"
+title: "Last jobs with the power on"
+power: "on"
+where: "Printer"
+note: "After the last row here the printer stays unplugged until Phase 13."
+steps:
+
+  - id: p2a
+    refs: ["2.2"]
+    kind: asis
+    text: >-
+      Check Info → Version Info → Firmware Version.
+      It must be 6.5.3 or newer before the conversion.
+      Update the stock firmware if it is older.
+
+  - id: p2c
+    refs: ["2.3"]
+    kind: asis
+    text: >-
+      Door closed.
+      Control → Auto Home, then Control → Move Axis → Move Z until the bed is at 200 mm or lower.
+      This exposes the spool holder screws and the underside of the bed.
+    notes:
+      - type: tip
+        by: "forum digest"
+        text: >-
+          An earlier version of the guide said 180 mm, which exposed only two of the four spool holder screws.
+
+  - id: p2b
+    refs: ["2.4"]
+    kind: asis
+    text: >-
+      Unload the filament and take the spool off.
+      While the spool is in your hand, cut a straight piece of filament exactly 300 mm long (PETG if you have it) for the tube measuring in Phase 8.
+      The manual cuts two;
+      one is enough if you mark it.
+    notes:
+      - type: tip
+        by: "iKriz, forum"
+        text: >-
+          Mark 270, 240 and 210 mm on the filament with a pen instead of cutting it down each time.
+          One piece then does both sides.
+
+  - id: p2d
+    refs: ["2.5"]
+    kind: asis
+    text: >-
+      Wait for everything to reach room temperature.
+      Switch off at the back, unplug, remove the steel sheet and the USB drive, and put an empty cardboard box on the heatbed.
+
+  - id: p2e
+    refs: ["2.6"]
+    kind: opt
+    text: >-
+      If you have a Buddy3D camera, unplug it and lift it off its magnets.
+      Cap the lens.

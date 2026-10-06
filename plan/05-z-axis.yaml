@@ -1,0 +1,281 @@
+# Phase 5. Row ids are the keys for saved ticks: never rename or reuse one.
+id: p5
+name: "Z-axis"
+title: "Z-axis: spacers, offset sensor, expansion joints, heatbed"
+power: "off"
+where: "Printer and bench"
+note: >-
+  Bench jobs first while the heatbed is out, then the Allen key work on the three Z corners, then the Torx work.
+  The Gen 2 expansion joints go on the bare Z-carriage just before the heatbed returns, and the bed stays only loosely screwed until Phase 9.
+steps:
+
+  - id: p5a
+    refs: ["3.1", "3.2"]
+    kind: asis
+    text: >-
+      Chapter 3 tools:
+      2.5 mm Allen key, T10, cutters.
+      If you own a Buddy3D camera, install its USB-C cable now with the camera's own guide;
+      the camera itself goes on in Phase 11.
+
+  - id: p5b
+    refs: ["3.3"]
+    kind: asis
+    tools: ["2.5 mm"]
+    text: >-
+      Lift the box off the bed.
+      At the rear left, remove the two `M3x10` and the old bed cable cover top.
+      Bin the cover so it cannot be confused with the new one;
+      keep the screws.
+
+  - id: p5c
+    refs: ["3.4"]
+    kind: asis
+    tools: ["T10"]
+    text: >-
+      Pull the cable bundle out from under the bed, stopping if it snags.
+      Slide the textile sleeve off the whole bundle and keep it.
+      Make sure the LED cable is out of the cable cover bottom.
+      Remove the eight `M3x4bT` and the central `M3x12bT`.
+
+  - id: p5d
+    refs: ["3.5"]
+    kind: asis
+    text: >-
+      Lift the heatbed out with its cables and take it to the bench.
+      A small spacer is left loose on the Z-carriage.
+      Gen 2 replaces it with a longer 10 mm spacer, so bin the old one or label it clearly;
+      it must not go back in.
+
+  - id: p5e
+    refs: ["3.20", "3.21", "3.22"]
+    kind: moved
+    tools: ["T10"]
+    text: >-
+      On the bench:
+      remove the `M3x10rT` and the old cable cover bottom from the heatbed.
+      Put an `M3nN` nut in the bottom hole of the `INDX-C1-bed-cable-cover-bottom`, route the thermistor cable outside the cover, slide the cover under the power cables and beneath the bed while holding the nut with a finger, and fix it with the same `M3x10rT`.
+    notes:
+      - type: why
+        by: "plan"
+        text: >-
+          The manual does this after the offset sensor.
+          The bed is on the bench now, so do it now.
+
+  - id: p5f
+    refs: ["3.6", "3.12", "3.32", "3.33"]
+    kind: moved
+    text: >-
+      Still at the bench, load the nuts.
+      Two `M3nN` into the `INDX-C1-bed-spacer-rear`, nylon ring up, pushed fully home.
+      Three `M3nS` into the `INDX-C1-bed-stop-rear` (the part marked X):
+      two from one side, one from the other, each checked through its screw hole.
+
+  - id: p5h
+    refs: ["3.7", "3.8", "3.9", "3.10"]
+    kind: asis
+    tools: ["2.5 mm"]
+    text: >-
+      Front bed spacers, left then right.
+      Remove the two `M3x10` that hold the Z-carriage to the Bed-mount;
+      leave the trapezoidal nut screws alone.
+      Lift the carriage about 8 mm, slide an `INDX-C1-bed-spacer-front` into the gap around the bed mount, and fix with two `M3x18`, inner screw first.
+      The two `M3nN` nuts already sitting in the Bed-mount from below must not drop out.
+
+  - id: p5i
+    refs: ["3.11", "3.13"]
+    kind: asis
+    tools: ["2.5 mm"]
+    text: >-
+      Rear spacer.
+      Loosen the two `M3x18` in the rear trapezoidal nut while holding the old `CORE-One-bed-spacer-rear`, and pull the spacer out, leaving both screws in the nut.
+      Throw the old spacer away at once.
+      Fit the INDX spacer around the rear threaded rod in the orientation shown and tighten the same two screws.
+    notes:
+      - type: tip
+        by: "Skirfir, forum"
+        text: >-
+          One builder refitted the old spacer by mistake and chased probing failures until it was swapped.
+
+  - id: p5j
+    refs: ["3.31", "3.34", "3.35"]
+    kind: moved
+    tools: ["T10"]
+    text: >-
+      Rear bed stop.
+      Remove the one `M3x8rT` on the back of the printer and the three inside, and take the old Bed-stop-rear off.
+      Seat the new one on the rear threaded rod against the edge of the rear panel and fix it with three `M3x8rT`;
+      the middle one bites into plastic.
+      At the back, lift the rear of the CoreXY a few millimetres until the oval hole under the fans lines up, and fit the fourth `M3x8rT`.
+    notes:
+      - type: why
+        by: "plan"
+        text: >-
+          Same rod as the spacer you just fitted, and the heatbed cable bundle is not yet routed behind it.
+          The manual does this after the bed is back in.
+
+  - id: p5g
+    refs: ["3.14", "3.15"]
+    kind: asis
+    tools: ["T10"]
+    text: >-
+      Offset sensor, out of its bag now.
+      Set it on the `INDX-C1-offset-sensor-holder` with the PRUSA logo up and the holes aligned, and fix it with one `M3x8rT` from the Fasteners 2/2 bag.
+      Gentle on the screw:
+      it bears on the board.
+      Lead the unlabelled end of the offset sensor cable between the Z-carriage and the right side of the printer.
+    notes:
+      - type: warn
+        by: "manual"
+        text: "Touch bare metal before handling the sensor."
+
+  - id: p5k
+    refs: ["3.16", "3.17"]
+    kind: asis
+    tools: ["2.5 mm", "Cutters"]
+    text: >-
+      Plug the cable into the sensor board.
+      Seat the pocket on the underside of the holder onto the Z-carriage so the shapes mate and the screw holes line up, exactly as in the manual's photo, and start one kept `M3x10` from below, a few turns only.
+      With Gen 2 this screw is tightened in Phase 9, once the expansion joints are aligned.
+      Loop a zip tie round the screw in the LED panel assembly, pass the cable through, tighten and trim.
+    notes:
+      - type: warn
+        by: "manual"
+        text: >-
+          The Gen 2 branch of step 3.17:
+          insert the screw and tighten it with only a few turns.
+      - type: tip
+        by: "kicker22004, forum"
+        text: >-
+          The sensor face must stay clean and flat.
+          Lay a strip of paper tape over it until its sticker goes on in Phase 11.
+
+  - id: p5l
+    refs: ["3.18", "3.19"]
+    kind: asis
+    tools: ["Cutters"]
+    text: >-
+      On the left of the Z-carriage, cut the three zip ties holding the RGB LED cable.
+      Thread three new ties through the carriage, heads underneath, loose.
+      Run the offset sensor cable through them first, then the RGB cable.
+      Tuck the offset cable between the carriage and the LED panel, tighten and trim the ties with a little slack before the first one, and bring both cables up through the rectangular cutout.
+
+  - id: g4a
+    refs: ["G4.4"]
+    kind: gen2
+    tools: ["2.0 mm"]
+    text: >-
+      Old expansion joints off the bare Z-carriage.
+      At each of the eight:
+      slightly loosen its `M3x4r` screw with the 2.0 mm Allen key, slide the joint off the screw, then remove the screw.
+      The Gen 2 guide keeps one old joint for its nozzle wiper;
+      an INDX build does not use that wiper, so all eight are spare.
+    notes:
+      - type: why
+        by: "Prusa's Gen 2 companion article"
+        text: >-
+          Gen 2 chapter 4 steps 1 to 3 take the heatbed off.
+          Yours is already on the bench, so the guide is joined at step 4.
+      - type: tip
+        by: "plan"
+        text: >-
+          The offset sensor holder sits beside the front right joint and its screw is only a few turns in.
+          Swing it aside if it is in the way, here and in the next row, and seat it again afterwards.
+
+  - id: g4b
+    refs: ["G4.5", "G4.6", "G4.7"]
+    kind: gen2
+    text: >-
+      New expansion joints.
+      At each of the eight threaded holes round the Z-carriage:
+      stack two M3 PTFE washers on the hole, pass an expansion joint screw through them and tighten it fully without forcing it.
+      A small gap under the screw head is normal.
+      Then slide a new expansion joint onto the screw between the two washers, with its groove on the underside and the groove facing away from the Z-carriage.
+      Final positions are set in Phase 9.
+
+  - id: g4c
+    refs: ["G4.8"]
+    kind: gen2
+    text: >-
+      Go round all eight once more:
+      every groove faces outward.
+      Set the new 10 mm heatbed spacer on the threaded hole in the centre of the Z-carriage.
+    notes:
+      - type: warn
+        by: "Gen 2 guide"
+        text: >-
+          The new spacer looks like the old one but is longer.
+          Do not mix them up.
+
+  - id: p5m
+    refs: ["3.23", "3.24", "3.25"]
+    kind: asis
+    tools: ["T10"]
+    text: >-
+      Heatbed back in, Gen 2 version.
+      The 10 mm spacer is already on the centre hole.
+      Lower the bed onto the expansion joints, keeping the spacer in place, and start the new `M3x14bT` in the centre, lightly;
+      the old `M3x12bT` is not used.
+      Start the eight `M3x4bT` and give each two turns only.
+      Do not run the tightening sequence yet.
+    notes:
+      - type: warn
+        by: "plan"
+        text: >-
+          The INDX text under this row and under the bed cable cover row lists the old 6x3.1x8 heatbed spacer and the full tightening sequence.
+          With Gen 2 neither applies here:
+          10 mm spacer, two turns, no sequence.
+      - type: warn
+        by: "manual"
+        text: >-
+          The Gen 2 branch of step 3.25:
+          two turns only, the screws are fully tightened later.
+          The Gen 2 guide calls the same screws `M3x4cT` and `M3x14cT`.
+
+  - id: p5n
+    refs: ["3.26", "3.27"]
+    kind: asis
+    tools: ["2.5 mm"]
+    text: >-
+      Wrap the textile sleeve round the heatbed, RGB and offset sensor cables.
+      Lay the RGB and offset cables into the side channel of the cable cover bottom and push the sleeve at least 1 cm into the channel.
+      Press the remaining `M3nN` nuts into the cover from underneath, nylon ring down.
+      Check no wire can be pinched, fit the `INDX-C1-bed-cable-cover-top`, and fix it with the two kept `M3x10` while holding the nuts.
+
+  - id: p5o
+    refs: ["3.28", "3.29", "3.30"]
+    kind: asis
+    tools: ["Cutters"]
+    text: >-
+      Route the bundle under the heatbed and behind the rear threaded rod.
+      Pass the cables through the rear panel one at a time:
+      offset sensor, RGB LED, thermistor, then the black and red power cables.
+      Push the sleeve through the grommet hole so no more than 1 cm shows at the back.
+      Loop a zip tie through the two holes under the cables and round the sleeve on the inside, tighten and trim.
+    notes:
+      - type: tip
+        by: "kicker22004, forum"
+        text: >-
+          Behind the rod and under the bed, not above it.
+          Routed above, the wires bunched, the back of the bed sat low and probing failed at the rear right.
+
+  - id: p5p
+    refs: ["3.36", "3.37"]
+    kind: asis
+    tools: ["PH2"]
+    text: >-
+      At the back.
+      RGB LED and offset sensor cables through the upper right opening of the xBuddy box:
+      RGB into the rightmost RGBW LED slot on the extension board, offset sensor into the upper right PUB CAN slot.
+      Heatbed power and thermistor through the left opening:
+      black to the left terminal, red to the right, both 6-32 screws tight, thermistor into the slot beside the terminals.
+    notes:
+      - type: tip
+        by: "plan"
+        text: >-
+          A magnetised PH2 or a rag stuffed below the terminals stops a dropped screw disappearing into the box.
+
+  - id: p5q
+    refs: ["3.38", "3.39"]
+    kind: asis
+    text: "Six gummy bears. The Z-axis is done."

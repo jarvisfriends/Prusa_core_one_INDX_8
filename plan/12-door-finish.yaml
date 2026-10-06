@@ -1,0 +1,58 @@
+# Phase 12. Row ids are the keys for saved ticks: never rename or reuse one.
+id: p12
+name: "Door & finish"
+title: "Door, stickers, spool holders"
+power: "off"
+where: "Printer"
+steps:
+
+  - id: p12a
+    refs: ["5.98", "5.99"]
+    kind: asis
+    tools: ["T10"]
+    text: >-
+      Peel the backing from the new top door seal and press it onto the front profile.
+      Reassemble a hinge now if its shaft came out.
+      Slide the door fully into the hinges, handle outward, and fix it with two `M3x5rT` per hinge, gently.
+
+  - id: p12b
+    refs: ["5.100", "5.101", "5.102"]
+    kind: asis
+    text: >-
+      Upgrade sticker on the door beside ONE, pressed down before the clear layer is peeled;
+      with Gen 2 fitted the plus sticker to use is the orange one.
+      INDX serial number label on the back, above the existing serial label.
+
+  - id: p12b2
+    refs: ["G5.2"]
+    kind: gen2
+    text: >-
+      The Gen 2 serial number sticker also goes on the back, above the original serial number sticker.
+
+  - id: p12c
+    refs: ["5.103", "5.104"]
+    kind: asis
+    text: "Eight gummy bears. The mechanical build is finished."
+
+  - id: p12d
+    refs: ["6.1", "6.2", "6.3"]
+    kind: asis
+    text: >-
+      An O-ring onto each of the eight telescopic spool holders.
+      Push each into a puck and lock it clockwise.
+      To extend one, turn it gently anticlockwise until it clicks, pull, and lock it clockwise again.
+      Forcing it can pop it out of the puck.
+
+  - id: p12e
+    refs: ["6.4"]
+    kind: asis
+    text: >-
+      Clean heatbed, then the print sheet:
+      rear cutout onto the two pins, lowered by the front corners.
+      Degrease the sheet with isopropyl alcohol.
+    notes:
+      - type: tip
+        by: "gadget01, hyiger, forum"
+        text: >-
+          Oversized third-party plates struck the dock-mounted parts and knocked tools off.
+          Use a Prusa-sized sheet.

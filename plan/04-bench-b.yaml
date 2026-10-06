@@ -1,0 +1,65 @@
+# Phase 4. Row ids are the keys for saved ticks: never rename or reuse one.
+id: p4
+name: "Bench B"
+title: "Bench session B, with the panel on the bench"
+power: "off"
+where: "Bench"
+note: >-
+  Jobs on parts that just came off, done now because the T10 is still in your hand.
+  Any of them can wait until just before the phase that uses the part.
+steps:
+
+  - id: p4a
+    refs: []
+    kind: opt
+    tools: ["Step drill"]
+    text: >-
+      Larger bucket only:
+      tape around the drilling area on the right side panel, set the printed drill guide on the panel's pre-installed nuts, and step-drill the 32 mm hole.
+      Collect the swarf with a magnet wrapped in plastic.
+      Do this away from the printer.
+    notes:
+      - type: tip
+        by: "FoxRun3D, forum"
+        text: >-
+          The drilling takes ten minutes and the clean-up takes longer;
+          metal shards go everywhere.
+          That is the reason to do it with the panel off.
+
+  - id: p4b
+    refs: ["5.3", "5.4"]
+    kind: moved
+    tools: ["T10", "Universal wrench"]
+    text: >-
+      New side handle.
+      Put two of the kept `M3x8rT` through the Side-handle-right, set it against the holes in the right side panel, and tighten into two `M3nN` nuts held with the universal wrench.
+
+  - id: p4c
+    refs: ["5.11"]
+    kind: moved
+    text: >-
+      Insert the nozzle cleaner from Phase 1 into the hole in the right side panel and turn the lock to hold it.
+      Set the panel somewhere safe.
+
+  - id: p4d
+    refs: ["5.74", "5.75", "5.76", "5.77"]
+    kind: moved
+    tools: ["T10"]
+    text: >-
+      Top cover.
+      Turn it upside down and fix each hinge cover from below with two `M3x12cT`, not too tight.
+      Lay the grille on with its longer side to the left, exactly as in the photo, insert the two Grill-flexi parts and fix them with two `M3x8rT`.
+
+  - id: p4e
+    refs: ["5.78", "5.79"]
+    kind: moved
+    tools: ["2.5 mm"]
+    text: >-
+      Cover locks, left and right.
+      Push the cover-latch up through the top cover in the orientation the photo shows, press the cover-knob onto it so the pegs meet the holes, and fix with a kept `M3x10`.
+      Leave it loose enough to turn.
+    notes:
+      - type: why
+        by: "plan"
+        text: >-
+          The whole lid is a bench job with no link to the printer until step 5.84.

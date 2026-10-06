@@ -1,0 +1,35 @@
+# The Prusa manuals this plan is built on. The PDFs themselves are not in the repo:
+# download them from Prusa (see manuals/README.md) and drop them in this folder.
+# "chapters" maps chapter number to its step count; tools/check.py uses it to prove
+# that every step is accounted for, without needing the PDFs.
+indx:
+  title: Prusa INDX Conversion kit for the Prusa CORE One/+ (1.00)
+  label: INDX
+  url: https://help.prusa3d.com/manual/prusa-indx-conversion-kit-for-the-prusa-core-one_2432
+  version: PDF generated 2026-10-01
+  prefix: ""            # plan refs look like "3.17"
+  image_prefix: i       # build/img/i3-17.jpg
+  files: "*indx-conversion-kit*.pdf"   # one PDF, or several parts of it
+  chapters: {1: 14, 2: 36, 3: 39, 4: 71, 5: 104, 6: 26}
+  chapter_urls:
+    1: https://help.prusa3d.com/guide/1-introduction_1096223
+    2: https://help.prusa3d.com/guide/2-printer-preparation-disassembly_1096231
+    3: https://help.prusa3d.com/guide/3-z-axis-upgrade_1096239
+    4: https://help.prusa3d.com/guide/4-indx-toolhead-side-filament-sensors_1096247
+    5: https://help.prusa3d.com/guide/5-spoolholders-tool-dock-assembly_1096255
+    6: https://help.prusa3d.com/guide/6-preflight-check_1096263
+gen2:
+  title: Prusa CORE One+ to (Gen 2) upgrade
+  label: Gen 2
+  url: https://help.prusa3d.com/manual/prusa-core-one-to-gen-2-upgrade_2435/core-one-plus
+  version: PDF generated 2026-09-25
+  prefix: "G"           # plan refs look like "G3.4"
+  image_prefix: g
+  files: "*gen-2-upgrade*.pdf"
+  chapters: {1: 5, 2: 21, 3: 64, 4: 42, 5: 8}
+  chapter_urls:
+    1: https://help.prusa3d.com/guide/1-introduction_1110653
+    2: https://help.prusa3d.com/guide/2-printer-disassembly_1110664
+    3: https://help.prusa3d.com/guide/3-belts-upgrade_1110672
+    4: https://help.prusa3d.com/guide/4-heatbed-upgrade_1110680
+    5: https://help.prusa3d.com/guide/5-preflight-check_1110689

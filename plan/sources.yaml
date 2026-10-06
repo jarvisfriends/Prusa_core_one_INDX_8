@@ -1,0 +1,27 @@
+# Footer: where the content comes from.
+title: Where this comes from
+paragraphs:
+  - >-
+    Step pictures and the colour-keyed step text are Prusa Research's, taken from the PDF manuals
+    (INDX conversion: all 290 steps; Gen 2 upgrade: the steps a combined build uses).
+    Every INDX step is referenced by exactly one row.
+    The row text, the order and the notes are this plan's own.
+  - >-
+    Where the Gen 2 steps slot into the INDX guide follows Prusa's companion article.
+    That article's own pictures are not in either PDF, so rows that come from it link to it instead.
+  - >-
+    Community tips are from Prusa forum threads.
+    The per-step comment threads on help.prusa3d.com could not be read directly, so manual comments reach this page
+    only through the forum digest that compiled them.
+    Most forum posts describe the earlier Bondtech Founders Edition kit, whose guide is close to this one but not
+    identical, so treat those tips as hints and the manual as the authority.
+links:
+  - "[Prusa INDX Conversion kit for the Prusa CORE One/+ (manual)](https://help.prusa3d.com/manual/prusa-indx-conversion-kit-for-the-prusa-core-one_2432)"
+  - "[Prusa CORE One+ to (Gen 2) upgrade (manual)](https://help.prusa3d.com/manual/prusa-core-one-to-gen-2-upgrade_2435/core-one-plus)"
+  - "[Prusa: assembling the INDX with the Gen 2 upgrade](https://help.prusa3d.com/article/assemblling-the-prusa-indx-core-one-with-the-gen-2-upgrade_1147602) (the companion article)"
+  - "[Prusa: install larger bucket](https://help.prusa3d.com/article/install-larger-bucket-on-prusa-core-one-indx_1147539) · [adjusting belt tension](https://help.prusa3d.com/article/adjusting-belt-tension-core-one-core-one-indx-core-one-l_845048) · [tool offset failed #36130](https://help.prusa3d.com/article/tool-offset-failed-36130-core-one-indx_1089016)"
+  - "[Forum: assembly pain points and prep notes](https://forum.prusa3d.com/forum/prusa-indx-assembly-and-first-prints-troubleshooting/bondtech-indx-conversion-kit-assembly-pain-points-prep-notes/) (10 pages; first post digests the guide's comments)"
+  - "[Forum: Core One to Core One+ Gen 2 INDX upgrade path](https://forum.prusa3d.com/forum/prusa-indx-assembly-and-first-prints-troubleshooting/core-one-to-core-onegen2-indx-upgrade-path/)"
+  - "Forum: [bed leveling issues](https://forum.prusa3d.com/forum/prusa-indx-assembly-and-first-prints-troubleshooting/bed-leveling-issues-3/) · [docking calibration fails](https://forum.prusa3d.com/forum/prusa-indx-assembly-and-first-prints-troubleshooting/toolhead-docking-calibration-fails/) · [tool offset calibration failing](https://forum.prusa3d.com/forum/prusa-indx-assembly-and-first-prints-troubleshooting/tool-offset-calibration-failing/) · [nozzle cleaning calibration](https://forum.prusa3d.com/forum/prusa-indx-assembly-and-first-prints-troubleshooting/nozzle-cleaning-calibration-issues/) · [PTFE tube lengths](https://forum.prusa3d.com/forum/prusa-indx-assembly-and-first-prints-troubleshooting/ptfe-tubes-between-filament-sensors-and-holders-why-the-precise-measurements/) · [tools not staying docked](https://forum.prusa3d.com/forum/prusa-indx-assembly-and-first-prints-troubleshooting/sometimes-tools-dont-stay-in-dock/) · [extended bin](https://forum.prusa3d.com/forum/prusa-indx-general-discussion-announcements-and-releases/extended-poop-bin/)"
+  - "[Prusa-Firmware-Buddy issue 5444](https://github.com/prusa3d/Prusa-Firmware-Buddy/issues/5444) (belt type setting and dock calibration)"
+  - "[Prusa's INDX printed parts on Printables](https://www.printables.com/model/1758233-core-one-indx-printed-parts)"

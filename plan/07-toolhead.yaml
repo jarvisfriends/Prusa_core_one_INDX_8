@@ -1,0 +1,136 @@
+# Phase 7. Row ids are the keys for saved ticks: never rename or reuse one.
+id: p7
+name: "Toolhead"
+title: "Toolhead and head cable"
+power: "off"
+where: "Printer"
+note: "Manual order throughout."
+steps:
+
+  - id: p7a
+    refs: ["4.14", "4.15"]
+    kind: asis
+    tools: ["T10", "2.5 mm"]
+    text: >-
+      At the bench:
+      remove the two `M3x6T` and the INDX Toolhead cover.
+      Fit the head cable cover front with one `M3x18`.
+      Refit the cover without trapping a cable.
+      Check the four mounting holes are empty.
+    notes:
+      - type: warn
+        by: "manual"
+        text: "The toolhead is electronics. Out of its bag only now."
+
+  - id: p7b
+    refs: ["4.16", "4.17"]
+    kind: asis
+    tools: ["2.5 mm"]
+    text: >-
+      Push two `M3x14` through the upper holes of the Head-mounting-plate from the rear, hang the toolhead on them from the front and tighten firmly.
+      Add two `M3x14` in the lower holes.
+      Keep the toolhead clear of the metal LED holder at the front.
+
+  - id: p7c
+    refs: ["4.18", "4.19", "4.20"]
+    kind: asis
+    tools: ["2.5 mm"]
+    text: >-
+      Offer the `INDX-C1-Fan-shroud` up from below so its ridge slides onto the bottom of the mounting plate, and fix it with one `M3x14` from each side.
+      Push an `M3nS` nut into the protrusion on the left of the toolhead and check it through the screw hole.
+
+  - id: p7d
+    refs: ["4.21", "4.22", "4.23"]
+    kind: asis
+    tools: ["2.5 mm"]
+    text: >-
+      From the rear, seat the kept print fan in the shroud opening and fix it with the new `M3x25`, lightly;
+      the housing cracks.
+      Hook the cable under the shroud's cable hook and plug it into the toolhead without leaving a loop sticking out sideways.
+
+  - id: p7e
+    refs: ["4.24", "4.25", "4.26"]
+    kind: asis
+    text: >-
+      Gather the Head-cable-clip, Swingarm-clip, head cable cover back, a kept `M3x10`, an `M3x8rT`, the black `3x8sT`, the INDX head cable, the nylon string and two kept straps.
+      At the back, pass the toolhead end of the head cable through the lower oval opening on the left and feed most of the braid inside, keeping the grommet from following it.
+      Inside, run the cable up the corner behind the gantry.
+
+  - id: p7f
+    refs: ["4.27"]
+    kind: asis
+    text: >-
+      Slide the nylon string into the cable sleeve from the connector end, bent tip pointing down, along the whole length, leaving the far end sticking out and pointing down.
+      Twist the sleeve gently to close it round cable and string.
+
+  - id: p7g
+    refs: ["4.28"]
+    kind: asis
+    tools: ["T10"]
+    text: >-
+      Plug the head cable into the toolhead until the latch clicks.
+      Push the nylon fully into its slot in the cover front, lay the wires in the channel with 1.5 cm of sleeve inside it, and fit the cover back so its tab enters the slot.
+      Fix with the black `3x8sT`, making sure no wire is caught under the cover.
+    notes:
+      - type: tip
+        by: "forum digest"
+        text: >-
+          If the nylon keeps springing out of its slot, builders fed only the first 1.5 cm, fixed the cover, then fed the rest of the string along the sleeve.
+
+  - id: p7h
+    refs: ["4.29", "4.30"]
+    kind: asis
+    tools: ["T10"]
+    text: >-
+      Open the Swingarm-clip carefully and snap it round the cable and nylon, protruding side and screw cutout toward the front, 1.4 cm from the bend in the nylon.
+      Seat the clip on the rightmost narrowing of the swing arm from above, put the nylon end into the hole in the arm without pinching the sleeve, and fix with the `M3x8rT`.
+
+  - id: p7i
+    refs: ["4.31"]
+    kind: asis
+    text: >-
+      Strap the cable to the middle narrowing of the swing arm and wrap the tail round it, then strap the leftmost narrowing.
+
+  - id: p7j
+    refs: ["4.32"]
+    kind: asis
+    tools: ["2.5 mm"]
+    text: >-
+      Twist the sleeve snug.
+      Snap the Head-cable-clip round the cable, using the X mark and screw cutout for orientation, pre-thread a kept `M3x10` into it, and fix it to the protrusion on the Y motor mount.
+
+  - id: p7k
+    refs: []
+    kind: added
+    text: >-
+      Push the toolhead by hand into all four corners and along each edge.
+      The cable must arc clear of the rear motors and never drag on one.
+    notes:
+      - type: tip
+        by: "kicker22004, forum"
+        text: >-
+          A harness that touched the left stepper during homing left the machine misaligned.
+          The fix was bending the nylon so the cable arcs above the motor.
+
+  - id: p7l
+    refs: ["4.33", "4.34", "4.35"]
+    kind: asis
+    text: >-
+      Thread three zip ties through the perforations in the xBuddy box, under all the cables.
+      Bring the head cable in through the left opening:
+      narrow connector into the MMU slot on the extension board, wide connector into the Nextruder slot on the xBuddy board.
+
+  - id: p7m
+    refs: ["4.36"]
+    kind: asis
+    tools: ["Cutters"]
+    text: >-
+      Dress the cables along the edges as in the manual's photo, then tighten and trim the zip ties on the right, not hard.
+      One branch of the head cable stays unplugged:
+      it is the dock fan cable, routed in Phase 9.
+      Hang it over the other cables so it is not crushed when the printer is turned.
+
+  - id: p7q
+    refs: ["4.37"]
+    kind: asis
+    text: "Five gummy bears."

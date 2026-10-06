@@ -1,0 +1,189 @@
+# Phase 9. Row ids are the keys for saved ticks: never rename or reuse one.
+id: p9
+name: "Align & close"
+title: "Dock fan cable, heatbed alignment, covers and panels"
+power: "off"
+where: "Printer"
+note: >-
+  INDX chapter 5 resumes at step 12;
+  its steps 2 to 11 are already done.
+  After the dock fan cable the Gen 2 heatbed alignment runs with both sides still open, then the motor cables go back and everything is closed up.
+steps:
+
+  - id: p9z
+    refs: ["5.1"]
+    kind: asis
+    text: "Chapter 5 tools: 2.5 mm Allen key, T10, cutters, and the rivet tool."
+
+  - id: p7n
+    refs: ["5.12", "5.13"]
+    kind: asis
+    text: >-
+      Dock fan cable, the loose branch of the head cable.
+      Take three zip ties.
+      Push the dock fan connector back into the printer through the lower oval opening on the left of the rear panel, and draw the cable through from inside.
+    notes:
+      - type: tip
+        by: "chmax, forum"
+        text: >-
+          This is the job the open right side pays for:
+          with the panel on, builders described the zip ties here as acrobatics.
+
+  - id: p7o
+    refs: ["5.14", "5.15"]
+    kind: asis
+    text: >-
+      Move the toolhead forward so it sits between the front and middle pairs of holes on the right.
+      Insert a zip tie at each of the three pairs of holes, rear first, as in the photo:
+      not round a belt, not round the smooth rod.
+      Close the three ties loosely and run the dock fan cable through all of them, behind the rod holder and above the smooth rod.
+      Bring its end inside the printer without wrapping it round the front right profile.
+
+  - id: p7p
+    refs: ["5.16", "5.17"]
+    kind: asis
+    tools: ["Cutters"]
+    text: >-
+      Lead the cable through the gap between the CoreXY and the frame until 8 cm protrudes, take up the slack between ties, and tighten them.
+      Push the toolhead right to the back, watching that the cable never fouls the motion, and trim the ties.
+
+  - id: g4d
+    refs: ["G4.11"]
+    kind: gen2
+    text: >-
+      Lift the box off the heatbed.
+      Take the Expansion-joint-aligner.
+      Yours is black;
+      the guide shows an orange one.
+      Study the three reference pictures before starting:
+      the aligner's orientation on a single joint, and the fork being slid onto a joint.
+      On the printer the joints sit under the heatbed.
+
+  - id: g4e
+    refs: ["G4.12", "G4.13", "G4.14"]
+    kind: gen2
+    tools: ["T10"]
+    text: >-
+      The eight `M3x4bT` round the heatbed should be in but only a turn or two down.
+      Start with the joint in the middle of the front edge, using the symbols on the heatbed as a guide.
+      Slide the aligner's straight fork onto the joint, push the aligner firmly against the edge of the heatbed, and tighten that screw lightly.
+      Then the front left corner, then the middle of the left side, straight fork each time.
+
+  - id: g4f
+    refs: ["G4.15", "G4.16", "G4.17"]
+    kind: gen2
+    tools: ["T10"]
+    text: >-
+      Rear left corner with the angled fork.
+      Middle of the rear edge with the straight fork.
+      Rear right corner with the angled fork.
+      Each time push the aligner firmly against the bed edge and tighten the screw lightly.
+
+  - id: g4g
+    refs: ["G4.18", "G4.19"]
+    kind: gen2
+    tools: ["T10"]
+    text: >-
+      Middle of the right side with the straight fork.
+      Then the front right corner with the straight fork:
+      move the offset sensor out of the way to reach this joint, and put it back afterwards.
+    notes:
+      - type: why
+        by: "Gen 2 guide"
+        text: "This is why the offset sensor's screw was left loose in Phase 5."
+
+  - id: g4h
+    refs: ["G4.20"]
+    kind: gen2
+    tools: ["T10"]
+    text: >-
+      Now tighten the heatbed properly.
+      Centre screw, then the four edge screws, then the four corner screws, gently but firmly, for at least two full rounds.
+      Check that no expansion joint has rotated:
+      every groove still faces outward.
+      Put the box back on the bed.
+
+  - id: g4i
+    refs: []
+    kind: gen2
+    tools: ["2.5 mm"]
+    text: >-
+      Check the offset sensor holder still sits on the Z-carriage exactly as in the photo of INDX step 3.16, then tighten its `M3x10` from below, the one left at a few turns in Phase 5.
+      It cuts its own thread in the plastic, so stop when it is snug.
+    notes:
+      - type: why
+        by: "Prusa's Gen 2 companion article"
+        text: "The article returns to INDX step 3.17 here, once the heatbed is fixed."
+
+  - id: g4j
+    refs: ["G4.35"]
+    kind: gen2
+    text: >-
+      At the back, ease the two motor cables toward the electronics, stopping at any resistance.
+      Plug the left motor cable into the connector labelled X on the xBuddy board and the right motor cable into the one labelled Y, until each latch clicks.
+
+  - id: g4k
+    refs: ["G4.34"]
+    kind: gen2
+    text: >-
+      Hang the left steel panel and fix it with three nylon rivets in the positions highlighted in Prusa's companion article, not the eleven the Gen 2 guide shows.
+      The puck holders supply the rest, as on the right.
+      The transparent cover on this side is already on.
+    notes:
+      - type: warn
+        by: "unverified"
+        text: >-
+          I could not see the article's picture of the three positions.
+          If in doubt, mirror the three positions the INDX guide shows for the right panel in step 5.24 and keep every corner hole free for the puck holders.
+      - type: tip
+        by: "Luis, comment on Prusa's article"
+        text: >-
+          The rivets would not go in until the bottom two corners of the panel were propped up on very thin hex keys.
+
+  - id: p9a
+    refs: ["5.18", "5.19"]
+    kind: asis
+    tools: ["Cutters"]
+    text: >-
+      Push every loose PTFE tube end inside the printer.
+      Bundle the cables behind the printer with two zip ties, not tight.
+      Keep the kept `M3x4rT` apart from the door's `M3x5rT`.
+
+  - id: p9b
+    refs: ["5.20"]
+    kind: asis
+    text: >-
+      Wiring check against the manual's photos.
+      xBuddy board:
+      heatbed black on the left terminal and red on the right, thermistor beside them, wide head cable connector in the Nextruder slot, X and Y motor cables in the connectors labelled X and Y.
+      Extension board:
+      RGB LED in the rightmost RGBW slot, offset sensor in the upper right PUB CAN slot, narrow head cable connector in the MMU slot, filament sensor cable in the first EXT slot.
+    notes:
+      - type: tip
+        by: "forum digest"
+        text: "Only one Z-motor connector (ZL or ZR) is used. An empty one is normal."
+
+  - id: p9c
+    refs: ["5.21"]
+    kind: asis
+    tools: ["T10"]
+    text: >-
+      Slide the xBuddy cover in bent edge first, parallel to the board, trapping nothing, and fix it with six kept `M3x4rT`.
+
+  - id: p9d
+    refs: ["5.22"]
+    kind: asis
+    tools: ["T10"]
+    text: >-
+      Hold the rear cover so the cables run through its tray, press it into the recess and lift until its four tabs engage.
+      Seat the filament sensor cable in its cutout, and the camera USB-C cable in the lower cutout if you have one.
+      From inside the printer, fix it with two kept `M3x4rT`.
+
+  - id: p9e
+    refs: ["5.23", "5.24"]
+    kind: asis
+    text: >-
+      Toolhead right to the back so the wiper cannot hit it.
+      Hang the right side panel, with its handle and nozzle cleaner, and fix it with three new nylon rivets in the positions the manual shows for the 8-tool version.
+      The puck holders supply the rest of the fixing.
+      Before the first rivet, check the offset sensor cable and the dock fan cable lie inside the panel line.

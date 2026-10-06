@@ -1,0 +1,97 @@
+# Phase 1. Row ids are the keys for saved ticks: never rename or reuse one.
+id: p1
+name: "Bench A"
+title: "Bench session A, while the prints run"
+power: "on"
+where: "Bench"
+note: >-
+  Three sub-assemblies that use only new kit parts and no electronics.
+  The manual builds them in the middle of chapter 5;
+  nothing stops you building them now.
+  Mostly one tool:
+  the T10.
+steps:
+
+  - id: p1a
+    refs: ["5.5", "5.6", "5.7", "5.8", "5.9", "5.10"]
+    kind: moved
+    tools: ["T10", "Universal wrench"]
+    text: >-
+      Nozzle cleaner.
+      Push the `M3x20rT` through the Wiper-lock and into the Wiper-base, fit the `M3nN` nut on the far side with the wrench, then back it off a quarter to half a turn so the lock still swings;
+      set it to the markings.
+      Put the `M3x8rT` through the channel into the Wiper-adjuster, loose enough to turn, flat side down.
+      Priming block in the front slot, silicone wiper in the rear slot with its slope pointing into the base, then two `M3x12rT` through the access holes.
+    notes:
+      - type: tip
+        by: "manual"
+        text: >-
+          A wipe of isopropyl alcohol on the silicone blocks makes them slide in.
+      - type: warn
+        by: "if you chose the larger bucket"
+        text: >-
+          Follow Prusa's larger-bucket article for the bin parts instead of the stock Wiper-base.
+
+  - id: p1b
+    refs: ["5.25", "5.26", "5.33", "5.34"]
+    kind: moved
+    tools: ["T10"]
+    text: >-
+      All eight puck holders.
+      Press a Puck holder bottom onto a Puck-universal so the two lugs enter the openings and fix it with four `3x12sT` screws.
+      Build four bottoms and four tops, each pair as mirror images.
+      That is 32 screws from the Telescopic Spoolholder Set bags.
+    notes:
+      - type: why
+        by: "plan"
+        text: >-
+          The manual splits this into two sittings between printer steps.
+          Done here, Phase 10 is only mounting.
+
+  - id: p1c
+    refs: ["5.65", "5.66", "5.67"]
+    kind: moved
+    tools: ["T10"]
+    text: >-
+      Tool holders onto the INDX C1 front profile.
+      For each of the eight:
+      run an `M3x12cT` fully into both holes and take it out again to cut the thread.
+      Countersinks up, thimble into the oval hole, large spring into the thimble, two small springs into the side holes.
+      Fix to the underside of the profile with two `M3x12cT`, working 1 to 4 and then 8 to 5.
+      No spring pinched, and each holder must keep a barely perceptible wiggle.
+    notes:
+      - type: tip
+        by: "hyiger, domble, forum"
+        text: >-
+          These threads are the easiest thing in the kit to strip.
+          Hand tools only, go slowly, and stop at the first firm resistance.
+          One builder reamed each hole with the Torx driver before pre-threading.
+
+  - id: p1d
+    refs: ["5.68", "5.69", "5.70", "5.71"]
+    kind: moved
+    tools: ["T10"]
+    text: >-
+      Nozzle seals.
+      Slide a silicone seal onto each of the eight parking plates;
+      the plate edges are sharp.
+      Fix two plates to each Nozzle-seal-holder with one `M3x8rT` each, bent part of the seal facing up and the seal not overhanging the holder.
+      Turn the holders over and fix them to the profile from the other side with two `M3x8rT` each, starting at positions 1 and 2.
+      Check no plate got bent.
+    notes:
+      - type: warn
+        by: "if you printed the chamber light mount"
+        text: >-
+          Fit its holders here in place of the stock ones and keep the stock set.
+          The light bar step in Phase 11 changes with it.
+
+  - id: p1e
+    refs: ["5.72", "5.73"]
+    kind: moved
+    tools: ["T10"]
+    text: >-
+      Ventilation lever.
+      Vent-lever onto the Vent-lever-holder with one `M3x8rT` and the M3 washer under its head.
+      Hold the holder against the inside of the front profile with TOP toward the bent edge and fix it from the front with two `M3x8rT`.
+      Store the finished profile with the tool holders facing up and nothing resting on the parking plates or holders;
+      a bent plate will not seal.

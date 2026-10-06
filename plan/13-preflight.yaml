@@ -1,0 +1,193 @@
+# Phase 13. Row ids are the keys for saved ticks: never rename or reuse one.
+id: p13
+name: "Preflight"
+title: "Preflight: power on and calibrate"
+power: "on"
+where: "Printer"
+note: >-
+  First power since Phase 2.
+  The wizard takes a while and wants the door shut except when it asks.
+steps:
+
+  - id: p13a
+    refs: []
+    kind: added
+    text: >-
+      Before plugging in:
+      nothing loose on the bed or in the chamber, the toolhead slides to all four corners by hand, every tool is docked flush, and the box and tape are out.
+
+  - id: p13b
+    refs: ["6.6"]
+    kind: asis
+    text: >-
+      Insert the USB stick from Phase 0, connect power, switch on.
+      When New firmware available appears, choose FLASH.
+    notes:
+      - type: tip
+        by: "hyiger, Failopen, forum"
+        text: >-
+          Use the newest release.
+          Firmware 6.9.0 made tool offset calibration fail on a slightly dirty nozzle and 6.9.1 was reported to fix it.
+
+  - id: p13c
+    refs: ["6.7", "6.8"]
+    kind: asis
+    text: >-
+      Choose the language, then printer model COREONEINDX, then Done.
+      Network setup can be skipped and done later.
+
+  - id: p13d
+    refs: ["G5.6", "G5.7"]
+    kind: gen2
+    text: >-
+      Tell the firmware about the new belts before any calibration runs.
+      If the wizard prompt lets you decline, decline it, set the option, then start the self-test yourself from Control → Calibrations & Tests.
+      The Gen 2 guide's path on stock firmware is Settings → Hardware → Edition → CORE One+ Gen2;
+      in the INDX firmware pick the matching Gen 2 edition or 1.5GT belt option under Settings → Hardware and confirm.
+      The new belts are 1.5GT:
+      20 teeth in 30 mm.
+    notes:
+      - type: why
+        by: "Gen 2 guide"
+        text: >-
+          Gen 2 uses belts and pulleys with a different tooth pitch, so the firmware has to be told.
+      - type: warn
+        by: "unverified"
+        text: >-
+          Neither manual says what this option is called in the INDX firmware or whether the first-run wizard can be declined.
+          If the wizard starts before you can reach Settings, let it run, set the option as soon as the menu is available, and rerun the axis, belt and dock calibrations.
+      - type: tip
+        by: "Art4 Tech, forum; GitHub issue 5444"
+        text: >-
+          When this setting and the fitted belts disagreed, every dock read about 3 mm out in Y and dock calibration could not pass until the setting was corrected and the printer restarted.
+      - type: warn
+        by: "if you fitted the larger bucket"
+        text: >-
+          Also set Settings → Nozzle Cleaner → Nozzle Cleaner Capacity to Extended.
+
+  - id: p13e
+    refs: ["6.9", "6.10"]
+    kind: asis
+    text: >-
+      With the belt option set, start the self-test and keep the door closed until asked;
+      parts get hot and move.
+      Skip the door sensor calibration.
+      The X and Y tests and Z alignment then run by themselves.
+
+  - id: p13f
+    refs: ["6.11"]
+    kind: asis
+    tools: ["2.5 mm"]
+    text: >-
+      Belt tuning.
+      Lid open, push the toolhead fully back and check both ends of the gantry touch their stops with no gap.
+      Read Prusa's belt tension article first.
+      The left screw sets the upper belt and the right screw the lower belt;
+      follow the screen until both are in range.
+    notes:
+      - type: tip
+        by: "Prusa article"
+        text: >-
+          If one gantry end stands off its stop, slacken both tensioners, square it, and tighten alternately in half turns.
+      - type: tip
+        by: "Logfella, hyiger, forum"
+        text: >-
+          Dock calibration is far more sensitive to belt tension and gantry squareness than the stock printer was.
+          Loose belts showed up later as every tool being off by the same amount in Y.
+
+  - id: p13g
+    refs: ["6.12", "6.13", "6.14"]
+    kind: asis
+    tools: ["T10"]
+    text: >-
+      Dock calibration.
+      Enter 8 docks and confirm every position is enabled.
+      Snug the silver screws on all docks with the T10, lightly.
+      Wait until the printer says it is safe to touch, then with the lid open slide the toolhead by hand onto dock 1 until it clicks, watching from above that it seats squarely on the hotend.
+      Continue, and repeat for each dock.
+      When all are done, loosen every silver screw one full turn.
+    notes:
+      - type: tip
+        by: "chmax, forum"
+        text: >-
+          Hold the head fully over the tool and flush before the first button press.
+
+  - id: p13h
+    refs: ["6.15", "6.16"]
+    kind: asis
+    text: >-
+      Loadcell test:
+      door open, wait for Tap nozzle NOW, then tap the nozzle from below;
+      nothing is hot.
+      Close the door.
+      The Z test and a noisy fan test follow.
+
+  - id: p13i
+    refs: ["6.17"]
+    kind: asis
+    text: "Tool offsets calibration runs tool by tool."
+    notes:
+      - type: tip
+        by: "gb160, Scotttomo, forum"
+        text: >-
+          If it fails on the first tool every time and the log says Failed to get first sensor sample, three builders traced it to a faulty offset sensor board, not their assembly.
+          Squaring the gantry and checking the cable did not help;
+          a replacement from support did.
+      - type: tip
+        by: "Prusa article #36130"
+        text: >-
+          For an out-of-bounds result, heat the nozzle and clean it with a brass brush, kept away from the hotend cables, then rerun the tool offsets calibration from Control → Calibrations and Tests.
+
+  - id: p13j
+    refs: ["6.18", "6.19", "6.20"]
+    kind: asis
+    tools: ["Universal wrench"]
+    text: >-
+      Nozzle cleaner.
+      Through the opening under dock position 8, move the head by hand until the nozzle sits in the V of the silicone priming block.
+      When the motors lock, take your hands out and turn the Wiper-adjuster with the universal wrench until the nozzle fills the V, touching both sides and the bottom.
+      Then set Y:
+      nozzle in the V-shaped cutout marked Y on the left of the bin, touching no wall.
+    notes:
+      - type: tip
+        by: "Chris Hill, forum"
+        text: >-
+          The view is poor.
+          He centres in X, gets close in Z, and uses the notch in the opposite corner of the tray as the Y reference.
+          He also sets Z a touch past contact so the silicone deforms very slightly.
+      - type: tip
+        by: "forum"
+        text: >-
+          Firmware 6.9.0 and later calibrate the wiper's X and Y automatically, leaving only Z by hand.
+
+  - id: p13k
+    refs: ["6.21"]
+    kind: asis
+    text: >-
+      Filament sensor calibration, one position at a time, with a short piece of filament pushed only through the sensor.
+      No filament may be in the toolhead when it starts.
+      Phase stepping and input shaper then run by themselves.
+    notes:
+      - type: tip
+        by: "Tommy_Prusa3D, forum"
+        text: >-
+          There is no sensor in the toolhead.
+          Loading means feeding about a metre of tube by hand, and auto-load works only for the tool currently picked up.
+
+  - id: p13l
+    refs: ["6.22", "6.23"]
+    kind: asis
+    text: "Wizard complete. Finish the gummy bears."
+    notes:
+      - type: tip
+        by: "Sergii, forum"
+        text: >-
+          A heater test that reports the nozzle temperature out of range passed for one builder when rerun with filament loaded;
+          a moderator's advice was to update the firmware first.
+
+  - id: p13m
+    refs: ["6.24", "6.25", "6.26"]
+    kind: asis
+    text: >-
+      Getting-started material is at prusa.io/coreoneindx.
+      Prusa asks for a few minutes of feedback on the manual, and your first test prints are on Printables.

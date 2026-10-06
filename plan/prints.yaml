@@ -1,0 +1,104 @@
+# Helper prints to make before the printer comes apart. verdict_class: yes | maybe | no | later
+title: Print before you take the printer apart
+note: >-
+  Verdicts on eight community models, plus the rivet tool the manual itself recommends.
+  They are based on each model's description and download counts, not on its comment thread,
+  so treat fit claims as the authors' own.
+items:
+  - verdict: Print first
+    verdict_class: "yes"
+    models:
+      - name: CORE One snap rivet remover
+        url: https://www.printables.com/model/1208623-core-one-snap-rivet-remover
+        by: Magmabow
+    text: >-
+      Named in INDX manual steps 1.4, 2.8 and 5.1.
+      With Gen 2, 36 nylon rivets come out during this build and pliers scar the panels.
+      PETG or ABS, fine layers, 4–5 walls per the author.
+      The two small magnets are optional.
+  - verdict: Print first
+    verdict_class: "yes"
+    models:
+      - name: INDX upgrade hardware organizer
+        url: https://www.printables.com/model/1794124-indx-upgrade-hardware-organizer
+        by: r0bdawg11
+    text: >-
+      A tray with a slot per fastener type, split into screws reused from the CORE One and new kit screws.
+      The build reuses about 60 removed fasteners and the manual warns against mixing `M3x4rT` with `M3x5rT`,
+      so this pays for itself in Phase 3.
+      Plain PLA is fine.
+      15 reviews, 241 downloads.
+  - verdict: Print first if you want it
+    verdict_class: maybe
+    models:
+      - name: Chamber light mount
+        url: https://www.printables.com/model/1795637-chamber-light-mount-indx-core-one
+        by: frause
+    text: >-
+      Replaces the four nozzle seal holders and keeps the light bar where it used to be.
+      With the stock build the bar moves onto the tool dock and builders report the first layers sit in shadow.
+      It goes in at steps 5.68–5.71 and 5.89, so printing it now avoids pulling the nozzle seals later.
+      Use the Prusa Edition files, PETG with supports.
+      Keep the stock holders as a fallback, because these parts also position the seals that stop idle nozzles oozing.
+      31 makes.
+  - verdict: Spare only
+    verdict_class: maybe
+    models:
+      - name: Tool dock with M3 nut cutout
+        url: https://www.printables.com/model/1782306-prusa-indx-tool-dock-with-magnet-install-tool-with
+        by: Dominik Chuchlík, after Chris Hill
+    text: >-
+      A replacement tool holder that takes `M3x12` screws and hex nuts instead of self-tapping into plastic.
+      Each one needs two 3×8 mm rod magnets, which you would have to buy or press out of a kit holder.
+      Do not swap out working factory holders on a first build.
+      One or two printed spares are reasonable insurance if you have the magnets:
+      a forum builder stripped a kit holder and had to run four tools until a replacement arrived.
+  - verdict: Skip
+    verdict_class: "no"
+    models:
+      - name: INDX belt helper tool, CORE One mod
+        url: https://www.printables.com/model/1786464-indx-belt-helper-tool-core-one-indx-mod
+        by: Rene Prettenthaler
+    text: >-
+      Clamps the four belt ends at matched tension for step 4.10.
+      The original it remixes needs heat-set inserts.
+      Three forum builders who finished the conversion said it was unnecessary, and the belt tensioners take up any
+      difference in overlap.
+      One recorded make.
+  - verdict: Not for the first build
+    verdict_class: "no"
+    models:
+      - name: Filament sensor top with PTFE couplers
+        url: https://www.printables.com/model/1773658-coreone-indx-filament-sensor-with-ptfe-couplers-m5
+        by: Filamentalist
+    text: >-
+      Replaces both `INDX-C1-FS-top` parts so the tubes are held by threaded pneumatic couplers instead of the kit collets.
+      It needs fittings the kit does not include, and the page does not confirm the count or the screw length
+      (one forum builder needed `M3x18` for a similar bracket).
+      If you already own the fittings it would go in at steps 4.41–4.52.
+      Otherwise build stock; swapping later means two screws per sensor and re-seating eight tubes.
+  - verdict: Later, on the INDX
+    verdict_class: later
+    models:
+      - name: Rear filament sensor mount
+        url: https://www.printables.com/model/1787620-indx-rear-filament-sensor-mount-core-one
+        by: Yurtle Ahern
+    text: >-
+      Moves the sensor blocks from the side covers to the rear panel using four existing rivet holes.
+      It replaces steps 4.54–4.55 and 4.63–4.64, and the tube lengths from the manual's cheatsheet no longer apply.
+      Nothing deep has to come apart to fit it afterwards, so build stock, live with it, then decide.
+  - verdict: Only with the larger bucket
+    verdict_class: later
+    models:
+      - name: Extended wiper bin holder with latch
+        url: https://www.printables.com/model/1832580-indx-extended-wiper-bin-holder-with-latch
+        by: Len G
+      - name: Extended wiper bin shield
+        url: https://www.printables.com/model/1823393-indx-extended-wiper-bin-shield
+        by: dwbmb
+    text: >-
+      Both are accessories for Prusa's print-it-yourself
+      [larger waste bucket](https://help.prusa3d.com/article/install-larger-bucket-on-prusa-core-one-indx_1147539).
+      They can be printed on the finished INDX.
+      The bucket itself is the thing to decide now, because it needs a 32 mm hole in the right side panel.
+      See the decision row in Phase 0.

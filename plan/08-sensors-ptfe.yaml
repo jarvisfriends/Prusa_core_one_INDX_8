@@ -1,0 +1,175 @@
+# Phase 8. Row ids are the keys for saved ticks: never rename or reuse one.
+id: p8
+name: "Sensors & PTFE"
+title: "Filament sensors and PTFE tubes"
+power: "off"
+where: "Bench, then printer"
+note: >-
+  Build both sensor blocks in one bench sitting, hang the transparent side covers back on, then fit left and right.
+steps:
+
+  - id: p8a
+    refs: ["4.38", "4.39", "4.40"]
+    kind: asis
+    tools: ["2.5 mm"]
+    text: >-
+      Remove the two `M3x4` that hold the top rear profile.
+      Fix the `INDX-PTFE-holder-left` (marked L) at the left hole and the `INDX-PTFE-holder-right` (marked R) at the right hole, each with one kept `M3x10`, fully tight.
+      Compare both with the photo.
+
+  - id: p8b
+    refs: ["4.41", "4.42", "4.43"]
+    kind: asis
+    text: >-
+      Both `INDX-C1-FS-top` parts;
+      note their position numbers differ (4 to 1 and 8 to 5).
+      Press a 2×5 sleeve into each marked position in the square openings with a blunt tool until it clicks, and check each from the side.
+      Turn the part square-openings-down and drop the eight collets into the top openings.
+    notes:
+      - type: tip
+        by: "Filamentalist, Printables"
+        text: "A builder who forgot the sleeves had filament catching in the sensor."
+
+  - id: p8c
+    refs: ["4.44"]
+    kind: asis
+    tools: ["T10"]
+    text: >-
+      Put a 5×2 magnet (the parts list calls it Magnet 3.2 × 5) into each of the four pockets with the cut-out facing up and hold it down with an `M3x12cT`.
+      The magnet tries to follow the key, so keep a finger on it.
+
+  - id: p8d
+    refs: ["4.45", "4.47", "4.48"]
+    kind: asis
+    text: >-
+      One 7 mm steel ball into each round hole.
+      Then a 7×8 magnet on top of each ball:
+      first touch it to the 5×2 magnet to find the attracting face, and insert it attracting face first.
+      A magnet that stands proud is upside down.
+      Keep the two blocks well apart while you work.
+
+  - id: p8e
+    refs: ["4.46", "4.49", "4.50"]
+    kind: asis
+    tools: ["T10"]
+    text: >-
+      Left block, positions 4 to 1.
+      Seat the LEFT sensor board (two connectors) fully in its ridge, connectors the right way round, and fix it with two `M3x12cT`.
+      Place an `INDX-C1-FS-holder` over it with the connectors through the rectangular opening and fix with two more `M3x12cT`, firmly.
+    notes:
+      - type: warn
+        by: "manual"
+        text: "Boards out of the ESD bag only now, held by the edges."
+
+  - id: p8f
+    refs: ["4.51", "4.52"]
+    kind: asis
+    tools: ["T10"]
+    text: >-
+      Right block, positions 8 to 5.
+      RIGHT sensor board (one connector) into the ridge with two `M3x12cT`, then the second FS-holder with two `M3x12cT`.
+
+  - id: p8g
+    refs: []
+    kind: added
+    text: >-
+      Before either block goes on the printer, push your filament offcut through each of the eight ports.
+      It should pass smoothly, and you should feel the ball lift and drop back each time.
+    notes:
+      - type: tip
+        by: "forum digest"
+        text: >-
+          Founders Edition builders advised testing each sensor on the bench, since a ball that does not fall back only shows up in the wizard, after everything is tubed.
+
+  - id: p8w
+    refs: ["G4.32"]
+    kind: gen2
+    text: >-
+      Hang both transparent side covers back on with four nylon rivets each.
+      Leave the upper-centre hole empty on both sides:
+      the filament sensor blocks screw into it.
+    notes:
+      - type: why
+        by: "Prusa's Gen 2 companion article"
+        text: >-
+          The article refits both covers at this point, four rivets and no rivet in the top-middle hole on an 8-tool build.
+          The Gen 2 guide's own picture shows five because it has no sensor there.
+
+  - id: p8h
+    refs: ["4.53", "4.54", "4.55"]
+    kind: asis
+    tools: ["T10"]
+    text: >-
+      Left side.
+      Put a `3x12sT` from the inside through the empty upper-centre rivet hole of the left window.
+      Plug both filament sensor cables into the left block and lead them out through its cable channels.
+      Hang the block on the screw with the collets up, its top tab in the gap above the window, and tighten.
+
+  - id: p8i
+    refs: ["4.56"]
+    kind: asis
+    text: >-
+      Lay both sensor cables in the lower channels of the PTFE-holder-left, neither sagging nor tight.
+      Push four 880 mm PTFE tubes into the left block's collets and tug each to prove it has locked.
+
+  - id: p8j
+    refs: ["4.57", "4.58", "4.59"]
+    kind: asis
+    tools: ["2.5 mm"]
+    text: >-
+      Put two kept `M3x10` through an `INDX-PTFE-holder-cover`.
+      Lay the four tubes in the channels of the PTFE-holder with the cables below them, and fit the cover longer side down, loose enough that the tubes still slide.
+      The lengths between sensor and holder come from the scale on the Prusa cheatsheet (back of the welcome letter) or a tape measure.
+
+  - id: p8k
+    refs: ["4.60", "4.61"]
+    kind: asis
+    tools: ["2.5 mm"]
+    text: >-
+      Set the tube lengths with your 300 mm filament gauge held from sensor to holder:
+      position 1 at the full 300 mm, position 2 at 270 mm, then tighten the upper screw.
+      Position 3 at 240 mm, position 4 at 210 mm, then tighten the lower screw.
+    notes:
+      - type: tip
+        by: "FoxRun3D, hyiger, forum"
+        text: >-
+          The stepped lengths are for neat routing under the lid, not function.
+          Be tidy, not obsessive.
+
+  - id: p8l
+    refs: ["4.62", "4.63", "4.64"]
+    kind: asis
+    tools: ["T10"]
+    text: >-
+      Right side.
+      `3x12sT` from the inside through the upper-centre hole of the right window.
+      Take either of the two cables coming from the left block and plug it into the right block, led through a cable channel.
+      Hang the block on the screw, collets up, tab in the gap, and tighten.
+
+  - id: p8m
+    refs: ["4.65", "4.66"]
+    kind: asis
+    tools: ["2.5 mm"]
+    text: >-
+      Sensor cable into the lower channel of the PTFE-holder-right, with the excess left hanging at the back.
+      Four more 880 mm tubes into the collets, each tugged.
+      Second holder cover with two kept `M3x10`, longer side down, loose.
+
+  - id: p8n
+    refs: ["4.67", "4.68"]
+    kind: asis
+    tools: ["2.5 mm"]
+    text: >-
+      Position 8 at 300 mm, position 7 at 270 mm, tighten the upper screw.
+      Position 6 at 240 mm, position 5 at 210 mm, tighten the lower screw.
+
+  - id: p8o
+    refs: ["4.69"]
+    kind: asis
+    text: >-
+      Run the remaining cable from the left block through the left opening of the xBuddy box and plug it into the first slot labelled EXT on the extension board.
+
+  - id: p8p
+    refs: ["4.70", "4.71"]
+    kind: asis
+    text: "Six gummy bears. Toolhead and sensors are done."
