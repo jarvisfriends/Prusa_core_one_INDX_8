@@ -1,0 +1,7 @@
+# Prusa's PDFs and everything extracted from them stay out of the repo.
+manuals/*.pdf
+build/
+dist/
+__pycache__/
+*.pyc
+.DS_Store
