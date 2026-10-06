@@ -1,6 +1,5 @@
-# Prusa's PDFs and everything extracted from them stay out of the repo.
+# Prusa's PDFs stay out of the repo; the pictures and text extracted from them are in manuals/.
 manuals/*.pdf
-build/
 dist/
 __pycache__/
 *.pyc

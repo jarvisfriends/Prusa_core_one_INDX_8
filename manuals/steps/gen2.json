@@ -1,0 +1,3721 @@
+{
+ "G1.1": {
+  "title": "Preparing the upgrade kit",
+  "n": 1,
+  "img": "g1-1.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "This manual guides you through upgrading your **Prusa CORE One+ to CORE One+ (Gen 2)**.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Please prepare the upgrade kit received from Prusa Research.",
+    "c": "#000000"
+   },
+   {
+    "k": "info",
+    "t": "All the required plastic parts are included in the kit."
+   },
+   {
+    "k": "info",
+    "t": "The printable parts are also available on Printables."
+   }
+  ]
+ },
+ "G1.2": {
+  "title": "Tools Required",
+  "n": 2,
+  "img": "g1-2.jpg",
+  "items": [
+   {
+    "k": "info",
+    "t": "The tools needed for this upgrade are **not included in the kit**. Please use the tools that came with your original CORE One+ printer."
+   },
+   {
+    "k": "b",
+    "t": "**For the following chapters, please prepare these tools:**",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "2.0mm Allen key",
+    "c": "#c1280b"
+   },
+   {
+    "k": "b",
+    "t": "2.5mm Allen key",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "T10 Torx key / Screwdriver",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Needle-nose pliers",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Unikey with the M3 nut-sized opening.",
+    "c": "#ff931e"
+   }
+  ]
+ },
+ "G1.3": {
+  "title": "Unloading the filament",
+  "n": 2,
+  "img": "g1-3.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Unload the filament. Visit the menu **Filament** and select **Unload filament**.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Unload the filament from the printer.",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "Remove the filament spool from the printer.",
+    "c": "#000000"
+   }
+  ]
+ },
+ "G1.4": {
+  "title": "Moving the Z-axis",
+  "n": 3,
+  "img": "g1-4.jpg",
+  "items": [
+   {
+    "k": "info",
+    "t": "Before you begin, move the heatbed to an accessible position."
+   },
+   {
+    "k": "warn",
+    "t": "During this step, **keep the printer door closed** and do not reach inside."
+   },
+   {
+    "k": "b",
+    "t": "In the printer menu, go to Control -> Auto Home.",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "After Auto Home, move the heatbed down via Control -> Move Axis -> Move Z until the highlighted screws and the underside of the heatbed are accessible (minimum **200 mm**).",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "info",
+    "t": "This ensures both areas will be comfortably accessible during the procedure, as they will need to be handled later in the manual."
+   }
+  ]
+ },
+ "G1.5": {
+  "title": "Unplugging the printer",
+  "n": 3,
+  "img": "g1-5.jpg",
+  "items": [
+   {
+    "k": "warn",
+    "t": "Before you begin, make sure the **printer has cooled down** to ambient temperature."
+   },
+   {
+    "k": "b",
+    "t": "Turn the printer off using the switch on the back.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Disconnect the printer from power.",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "Remove the steel sheet (optional).",
+    "c": "#ff931e"
+   }
+  ]
+ },
+ "G2.1": {
+  "title": "Tools",
+  "n": 2,
+  "img": "g2-1.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "**Tools necessary for this chapter:**",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "2.5mm Allen key",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "T10 key/screwdriver",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Needle-nose pliers",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Universal wrench",
+    "c": "#ff931e"
+   }
+  ]
+ },
+ "G2.2": {
+  "title": "Removing the door panel",
+  "n": 3,
+  "img": "g2-2.jpg",
+  "items": [
+   {
+    "k": "info",
+    "t": "We recommend **protecting the heatbed** during handling. An empty Prusament box is an ideal protective layer."
+   },
+   {
+    "k": "b",
+    "t": "For easier and safer handling during the upgrade, remove the door. **Proceed carefully** to avoid injury or damage to the door panel.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Loosen and remove two M3x5rT screws securing the door panel in both hinges.",
+    "c": "#ff931e"
+   },
+   {
+    "k": "warn",
+    "t": "It is essential to **hold the door panel securely** while loosening the screws to prevent it from falling."
+   },
+   {
+    "k": "info",
+    "t": "Start removing the screws from the lowest."
+   },
+   {
+    "k": "b",
+    "t": "Carefully slide the door panel out of the hinges. Leave the hinges open for the remainder of the upgrade.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Place the door panel and the four screws in a **clean and safe** area to avoid any damage.",
+    "c": "#000000"
+   },
+   {
+    "k": "warn",
+    "t": "Ensure that the shaft that is inside the hinge does not fall out. If the shaft falls out, insert it back in, or set it aside along with the hinge part. We will mount these back on at the end of the assembly."
+   }
+  ]
+ },
+ "G2.3": {
+  "title": "Removing the top panel",
+  "n": 3,
+  "img": "g2-3.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "From the inside, gently push out all the nylon rivets securing the top cover with your finger.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Using needle-nose pliers, carefully grasp the rivet head with the tip of the pliers and pull it out.",
+    "c": "#ff931e"
+   },
+   {
+    "k": "info",
+    "t": "You can also use the previously mentioned **Core-one-snap-rivet-remover.**"
+   },
+   {
+    "k": "warn",
+    "t": "Be careful not to damage the top panel."
+   },
+   {
+    "k": "b",
+    "t": "If the lower part of a rivet remains in the panel, grasp it with pliers and remove it as well.",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "Remove the top panel from the printer.",
+    "c": "#dc54b7"
+   }
+  ]
+ },
+ "G2.4": {
+  "title": "Removing the left side cover",
+  "n": 2,
+  "img": "g2-4.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Using the same procedure, remove all five nylon rivets securing the left side cover.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Remove the side cover from the printer.",
+    "c": "#c1280b"
+   },
+   {
+    "k": "b",
+    "t": "Set it aside in a safe, clean place.",
+    "c": "#000000"
+   }
+  ]
+ },
+ "G2.5": {
+  "title": "Removing the left metal panel",
+  "n": 2,
+  "img": "g2-5.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Remove the eleven nylon rivets securing the left steel panel.",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "info",
+    "t": "Start with the bottom rivets. **Support the panel by hand** when removing the last rivets to prevent it from falling."
+   },
+   {
+    "k": "b",
+    "t": "Remove the metal panel from the printer.",
+    "c": "#dc54b7"
+   }
+  ]
+ },
+ "G2.6": {
+  "title": "Removing the right side cover",
+  "n": 2,
+  "img": "g2-6.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Using the same procedure, remove all five nylon rivets securing the right side cover.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Remove the side cover from the printer.",
+    "c": "#c1280b"
+   },
+   {
+    "k": "b",
+    "t": "Set it aside in a safe, clean place.",
+    "c": "#000000"
+   }
+  ]
+ },
+ "G2.7": {
+  "title": "Removing the right handle",
+  "n": 3,
+  "img": "g2-7.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Move to the opposite side of the printer and focus on the underside of the orange handle.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Press the black collet on the PTFE tube into the handle to unlock the tube.",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "While holding the collet pressed in, pull out the PTFE tube.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Using the T10 screwdriver release two M3x8rT screws securing the handle and the filament sensor.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Remove the handle from the printer.",
+    "c": "#f3e00e"
+   }
+  ]
+ },
+ "G2.8": {
+  "title": "Removing the right side panel",
+  "n": 2,
+  "img": "g2-8.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Remove the eleven nylon rivets securing the right steel panel.",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "info",
+    "t": "Start with the bottom rivets. **Support the panel by hand** when removing the last rivets to prevent it from falling."
+   },
+   {
+    "k": "b",
+    "t": "Remove the metal panel from the printer.",
+    "c": "#dc54b7"
+   }
+  ]
+ },
+ "G2.9": {
+  "title": "Detaching the Bowden-guide",
+  "n": 1,
+  "img": "g2-9.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Remove the M3x10 screw and remove the Bowden guide from the motor mount.",
+    "c": "#2343e8"
+   },
+   {
+    "k": "info",
+    "t": "Pro tip: Once the Bowden guide is removed, thread the M3x10 screw back into the motor mount by a few turns. This will keep the nut in place and make reassembly easier."
+   },
+   {
+    "k": "b",
+    "t": "Leave the Bowden guide hanging on the PTFE tube.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "info",
+    "t": "The Bowden guide does not need to be removed completely. Loosen it to improve access for later steps."
+   }
+  ]
+ },
+ "G2.10": {
+  "title": "Uncovering the cables",
+  "n": 2,
+  "img": "g2-10.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "On the inside of the printer, remove the two M3x4rT screws holding the back cover.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "On the back of the printer, slide the center cover down to unlock it, then remove it.",
+    "c": "#dc54b7"
+   }
+  ]
+ },
+ "G2.11": {
+  "title": "Uncovering the xBuddy electronics",
+  "n": 2,
+  "img": "g2-11.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Unscrew all six M3x4rT screws securing the electronics sheet (xBuddy box cover).",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Slide the xBuddy box cover out of the electronics box and remove it from the printer.",
+    "c": "#2343e8"
+   }
+  ]
+ },
+ "G2.12": {
+  "title": "Disconnecting the motor cables",
+  "n": 3,
+  "img": "g2-12.jpg",
+  "items": [
+   {
+    "k": "warn",
+    "t": "The connectors have a safety latch that must be pressed when disconnecting."
+   },
+   {
+    "k": "b",
+    "t": "Disconnect the X motor cable from the first connector on the left.",
+    "c": "#ff931e"
+   },
+   {
+    "k": "b",
+    "t": "Disconnect the Y motor cable from the second connector on the left.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Gently pull the Y motor cable slightly to create some slack while keeping the connector inside the electronics compartment.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Gently pull the X motor cable slightly to create some slack while keeping the connector inside the electronics compartment.",
+    "c": "#c1280b"
+   },
+   {
+    "k": "warn",
+    "t": "If you feel resistance, **stop pulling**. If the cable cannot be moved at all, cut the zip ties securing the cable bundles. **Be careful not to damage any cables**."
+   }
+  ]
+ },
+ "G2.13": {
+  "title": "Unplugging the PTFE tube",
+  "n": 3,
+  "img": "g2-13.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Move to the inside of the printer.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Slide the bowden-bend over the fitting in the Nextruder.",
+    "c": "#c1280b"
+   },
+   {
+    "k": "b",
+    "t": "Press the black collet in the fitting down, preferably using two fingers.",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "Pull the PTFE tube out of the fitting.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Using the 8mm cutout on the Universal wrench, remove the M5-4 fitting.",
+    "c": "#15a1d6"
+   }
+  ]
+ },
+ "G2.14": {
+  "title": "Disconnecting the Nextruder cables - left side",
+  "n": 3,
+  "img": "g2-14.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Using the 2.5mm Allen key, remove the M3x10 screw holding the side cover.",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "Remove the cover.",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "info",
+    "t": "Pro tip: Keep the screws and nuts with the removed parts whenever possible. This will make reassembly easier."
+   },
+   {
+    "k": "warn",
+    "t": "The connectors have a safety latch that **must be pressed when disconnecting**."
+   },
+   {
+    "k": "b",
+    "t": "Disconnect all cables on the left side of the Nextruder.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Do not disconnect the Nextruder main cable connector.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Disconnect the extruder motor cable on the top side of the Nextruder.",
+    "c": "#ff931e"
+   }
+  ]
+ },
+ "G2.15": {
+  "title": "Disconnecting the Nextruder cables - right side",
+  "n": 2,
+  "img": "g2-15.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Using the Allen key, remove two M3x6 screws securing the right cover on the Nextruder.",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "Remove the cover.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "warn",
+    "t": "The connectors have a safety latch that **must be pressed when disconnecting**."
+   },
+   {
+    "k": "b",
+    "t": "Disconnect both cables from the right side of the LoveBoard.",
+    "c": "#16dc81"
+   }
+  ]
+ },
+ "G2.16": {
+  "title": "Removing the Cable-clip",
+  "n": 3,
+  "img": "g2-16.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Remove the lower thumb screw.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "info",
+    "t": "Leave the upper thumb screw in place. It provides access to the screw on the Cable-clip."
+   },
+   {
+    "k": "b",
+    "t": "Remove the two M3x4rT screws securing the Cable-clip, then remove the cable clip from the printer.",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "Unhook all cables from the cable clip.",
+    "c": "#dc54b7"
+   }
+  ]
+ },
+ "G2.17": {
+  "title": "Detaching the heatsink fan",
+  "n": 1,
+  "img": "g2-17.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Using the Allen key, remove two M3x18 screws securing the heatsink fan.",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "Remove the heatsink fan from the printer.",
+    "c": "#2343e8"
+   }
+  ]
+ },
+ "G2.18": {
+  "title": "Removing the Nextruder assembly",
+  "n": 3,
+  "img": "g2-18.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Remove three M3x10 screws securing the Nextruder assembly to the X-axis.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "warn",
+    "t": "**CAUTION:** While loosening the last screw, **hold the Nextruder to prevent it from falling** and damaging the printer."
+   },
+   {
+    "k": "b",
+    "t": "Remove the Nextruder assembly from the printer.",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "Set the Nextruder assembly aside in a safe place.",
+    "c": "#dc54b7"
+   }
+  ]
+ },
+ "G2.19": {
+  "title": "Removing the fan shroud",
+  "n": 2,
+  "img": "g2-19.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Release and remove two M3x10 screws securing the Fan-shroud to the Nextruder holder.",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "Remove the fan shroud assembly with the print fan from the printer.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Set the print fan assembly aside in a safe place.",
+    "c": "#16dc81"
+   }
+  ]
+ },
+ "G2.20": {
+  "title": "Removing the LoveBoard assembly",
+  "n": 2,
+  "img": "g2-20.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "From the back of the LoveBoard assembly, loosen the two M3x10 screws through the access holes to release the assembly.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "info",
+    "t": "The screws remain inside the assembly."
+   },
+   {
+    "k": "b",
+    "t": "Place the LoveBoard assembly on the cardboard box placed on the heatbed.",
+    "c": "#dc54b7"
+   }
+  ]
+ },
+ "G2.21": {
+  "title": "Chapter completed",
+  "n": 2,
+  "img": "g2-21.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "**Congratulations!** You have completed the partial disassembly of the printer and prepared it for the upgrade.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Proceed to the **next chapter**.",
+    "c": "#000000"
+   }
+  ]
+ },
+ "G3.1": {
+  "title": "Tools",
+  "n": 2,
+  "img": "g3-1.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "**Tools necessary for this chapter:**",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "2.0mm Allen key",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "2.5mm Allen key",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "T10 key/screwdriver",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Needle-nose pliers",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Universal wrench",
+    "c": "#ff931e"
+   }
+  ]
+ },
+ "G3.2": {
+  "title": "Loosening the belts",
+  "n": 2,
+  "img": "g3-2.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Using a 2.5 mm Allen key, remove the left belt tensioner.",
+    "c": "#ff931e"
+   },
+   {
+    "k": "b",
+    "t": "Be careful, the tensioner may fall out when loosened.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Using the same method, loosen the belt tensioner on the right side.",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "Ensure the M3nS nuts in the Belt-tensioner-pulleys do not fall out!",
+    "c": "#c1280b"
+   }
+  ]
+ },
+ "G3.3": {
+  "title": "Unlocking the belts",
+  "n": 3,
+  "img": "g3-3.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Remove the four M3x10 screws securing the Nextruder holder.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "From the back of the holder, push all belt ends through the holder.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Slide the Nextruder holder off the belts.",
+    "c": "#f3e00e"
+   }
+  ]
+ },
+ "G3.4": {
+  "title": "Removing the belts",
+  "n": 1,
+  "img": "g3-4.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Remove both belts from the assembly.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "info",
+    "t": "Caution: The belt tensioner idlers are **still attached to the belts**."
+   }
+  ]
+ },
+ "G3.5": {
+  "title": "Releasing the left motor",
+  "n": 2,
+  "img": "g3-5.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Move to the underside of the left rear motor.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Remove the four M3x35 screws securing the motor to the motor holder.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Remove the M3x6 screw securing the motor holder.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "warn",
+    "t": "Avoid removing the screws securing the rod holder."
+   }
+  ]
+ },
+ "G3.6": {
+  "title": "Releasing the right motor",
+  "n": 2,
+  "img": "g3-6.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Loosen the screw securing the main cable clip and leave it attached to the cable bundle.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "warn",
+    "t": "Do not move or reposition the Main-cable-clip on the cable bundle during the upgrade."
+   },
+   {
+    "k": "b",
+    "t": "Move to the underside of the right rear motor.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Remove the four M3x35 screws securing the motor to the motor holder.",
+    "c": "#ff931e"
+   },
+   {
+    "k": "b",
+    "t": "Remove the M3x6 screw securing the motor holder.",
+    "c": "#2343e8"
+   },
+   {
+    "k": "warn",
+    "t": "Avoid removing the screws securing the rod holder."
+   }
+  ]
+ },
+ "G3.7": {
+  "title": "Disassembling the right motor",
+  "n": 3,
+  "img": "g3-7.jpg",
+  "items": [
+   {
+    "k": "info",
+    "t": "We recommend **protecting the heatbed during handling**. An empty Prusament box is an ideal protective layer."
+   },
+   {
+    "k": "b",
+    "t": "Focus on the rear-right motor.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Remove the motor from the motor holder.",
+    "c": "#ff931e"
+   },
+   {
+    "k": "b",
+    "t": "Place the motor on the edge of the printer frame.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Using a 2.0 mm Allen key, loosen the two set screws securing the pulley.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Remove the pulley.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Carefully cut the zip tie securing the motor cable to the motor mount.",
+    "c": "#2343e8"
+   },
+   {
+    "k": "info",
+    "t": "This pulley will no longer be used. Set it aside or discard it to **avoid confusing it with the new one**."
+   }
+  ]
+ },
+ "G3.8": {
+  "title": "New pulley: parts preparation (right motor)",
+  "n": 3,
+  "img": "g3-8.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "**For the following steps, please prepare:**",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "T21-1.5GT pulley (1x)",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "1.5GT belt (2x)",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Pulley-offset-tool (1x)",
+    "c": "#2343e8"
+   }
+  ]
+ },
+ "G3.9": {
+  "title": "Installing the new pulley (right motor)",
+  "n": 3,
+  "img": "g3-9.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Rotate the motor shaft so that the flat faces you. **Do not rotate the shaft any further.**",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "Slide the new T21-1.5GT pulley onto the end of the shaft, with the set screw side **facing the motor**.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Insert the Pulley-offset-tool, with the **side marked \"Y\"**, between the motor and the pulley to set the correct distance.",
+    "c": "#ff931e"
+   },
+   {
+    "k": "b",
+    "t": "Press the pulley against the Pulley-offset-tool and tighten the set screw **against the flat on the motor shaft**.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Rotate the pulley and tighten the second set screw.",
+    "c": "#15a1d6"
+   }
+  ]
+ },
+ "G3.10": {
+  "title": "Inserting the lower belt (right motor)",
+  "n": 2,
+  "img": "g3-10.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Remove the motor mount from the printer.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Take one of the belts and form a loop with the **teeth facing inward**.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Push the belt loop into the motor mount **between the two lower idlers**.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Viewed from the top, the belt loop should follow the circular cutout in the motor mount as closely as possible.",
+    "c": "#ff931e"
+   }
+  ]
+ },
+ "G3.11": {
+  "title": "Securing the lower belt (right motor)",
+  "n": 2,
+  "img": "g3-11.jpg",
+  "items": [
+   {
+    "k": "info",
+    "t": "Throughout the process, make sure the **belt does not slip out of the assembly**."
+   },
+   {
+    "k": "b",
+    "t": "Place the motor mount onto the printer frame. The side with the two idlers must be facing down and towards you.",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "Insert the motor with the pulley into the belt loop inside the motor mount.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Fully seat the motor against the motor mount.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Orient it so that the **motor cable faces outward** (towards you).",
+    "c": "#ff931e"
+   },
+   {
+    "k": "b",
+    "t": "Gently pull both ends of the belts to secure the belt loop around the pulley.",
+    "c": "#16dc81"
+   }
+  ]
+ },
+ "G3.12": {
+  "title": "Guiding the lower belt (right motor)",
+  "n": 3,
+  "img": "g3-12.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Grasp the belt coming from the left idler.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Route the belt around the idler from the left side and insert it into the motor mount.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "On the opposite side, watch for the belt to come out through the opening and pull it through until approximately 15 cm (6 in) is sticking out.",
+    "c": "#2343e8"
+   }
+  ]
+ },
+ "G3.13": {
+  "title": "Guiding the upper belt (right motor)",
+  "n": 2,
+  "img": "g3-13.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Take the second new belt.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Route one end of the belt around the **upper idler** from the left side. Make sure the **teeth face away** from the idler.",
+    "c": "#ff931e"
+   },
+   {
+    "k": "b",
+    "t": "From the opposite side, watch for the belt to come out through the opening.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Pull it through until approximately the same length of belt is sticking out -around 15 cm (6 in).",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Pro tip: To prevent the belts from being accidentally pulled out, loosely secure their ends together with a zip tie.",
+    "c": "#dc54b7"
+   }
+  ]
+ },
+ "G3.14": {
+  "title": "Securing the motor cable (right motor)",
+  "n": 3,
+  "img": "g3-14.jpg",
+  "items": [
+   {
+    "k": "info",
+    "t": "Throughout the process, **make sure the belts do not slip out of the assembly**."
+   },
+   {
+    "k": "b",
+    "t": "Move the assembly closer to the rear corner of the printer.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Route the free ends of the belts toward the rear of the printer. Leave them loose for now.",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "Make sure the M3nN nut **is still inserted** in the motor mount and has not fallen out.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "**If the M3nN nut has fallen out**, reinsert it fully into the part.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Route the motor cable through the cable channel, as shown in the picture.",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "Push the zip tie through the hole in the printed part.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Carefully secure the cable with the zip tie.",
+    "c": "#15a1d6"
+   }
+  ]
+ },
+ "G3.15": {
+  "title": "Fixing the right motor",
+  "n": 2,
+  "img": "g3-15.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Rotate the motor assembly with the motor mount into the correct position. The **belt pulleys must face the rear side** of the printer.",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "The motor mount has a tab on the bottom side that must fit into the rectangular cutout in the frame.",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "From the inner side of the printer, check that the lower belt is seated on the pulley throught the hexa hole in the motor-mount.",
+    "c": "#16dc81"
+   }
+  ]
+ },
+ "G3.16": {
+  "title": "Right motor screws: parts preparation",
+  "n": 2,
+  "img": "g3-16.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "**For the followings steps, please prepare:**",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "M3x35 screw (4x) you removed earlier",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "M3x6 screw (1x) you removed earlier",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "M3nS nut (1x) you removed earliermay have remained inserted from the outer side of the motor mount.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "M3x10 screw (1x) you removed earlier",
+    "c": "#c1280b"
+   }
+  ]
+ },
+ "G3.17": {
+  "title": "Tightening the right motor",
+  "n": 2,
+  "img": "g3-17.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Secure the entire motor assembly from the bottom side of the frame using four M3x35 screws.",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "Finally, secure the motor mount with an M3x6 screw.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "warn",
+    "t": "**Do not overtighten the M3x6 screw.** The screw is secured directly into a plastic part and excessive tightening can damage the thread."
+   },
+   {
+    "k": "b",
+    "t": "From the top side, behind the motor, attach the Main-cable-clip back to the motor mount using the pre-inserted M3x10 screw.",
+    "c": "#16dc81"
+   }
+  ]
+ },
+ "G3.18": {
+  "title": "Securing the Bowden-guide",
+  "n": 2,
+  "img": "g3-18.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "From the outer side of the motor mount, insert the M3nN nut if it is not already inserted.",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "Attach the Bowden-guide to the motor-mount using the M3x10 screw.",
+    "c": "#dc54b7"
+   }
+  ]
+ },
+ "G3.19": {
+  "title": "Disassembling the left motor",
+  "n": 3,
+  "img": "g3-19.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Focus on the rear-left motor.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Rotate the motor assembly with the cable facing outward.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Carefully cut the zip tie. Be careful not to cut the cable.",
+    "c": "#ff931e"
+   },
+   {
+    "k": "b",
+    "t": "Remove the motor from the motor-mount and remove the motor-mount from the printer.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Place the motor on the printer frame.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Using a 2.0 mm Allen key, loosen the two set screws securing the pulley.",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "Remove the pulley.",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "info",
+    "t": "This pulley will no longer be used. Set it aside or discard it to **avoid confusing it with the new one**."
+   }
+  ]
+ },
+ "G3.20": {
+  "title": "New pulley: parts preparation (left motor)",
+  "n": 2,
+  "img": "g3-20.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "**For the following steps, please prepare:**",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "T21-1.5GT pulley (1x)",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Pulley-offset-tool (1x) you used it before",
+    "c": "#2343e8"
+   }
+  ]
+ },
+ "G3.21": {
+  "title": "Belt routing overview",
+  "n": 1,
+  "img": "g3-21.jpg",
+  "items": [
+   {
+    "k": "info",
+    "t": "Before routing the belts, familiarize yourself with their path through the CoreXY mechanism."
+   },
+   {
+    "k": "b",
+    "t": "The following diagrams show the routing of the upper and lower belts and their orientation within the assembly.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Upper belt path",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Lower belt path",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "**Do not perform any actions in this step.**",
+    "c": "#000000"
+   }
+  ]
+ },
+ "G3.22": {
+  "title": "Installing the new pulley (left motor)",
+  "n": 3,
+  "img": "g3-22.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Rotate the motor shaft so that the flat faces you. **Do not rotate the shaft any further.**",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "Slide the new T21-1.5GT pulley onto the shaft, with the set screw side facing **away from the motor**.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Insert the Pulley-offset-tool, with the side marked \"X\", between the motor and the pulley to set the correct distance.",
+    "c": "#ff931e"
+   },
+   {
+    "k": "b",
+    "t": "Press the pulley against the Pulley-offset-tool and tighten the set screw **against the flat on the motor shaft**.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Rotate the pulley and tighten the second set screw.",
+    "c": "#15a1d6"
+   }
+  ]
+ },
+ "G3.23": {
+  "title": "Guiding the lower belt (left motor)",
+  "n": 2,
+  "img": "g3-23.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Route both belts from the right motor towards the rear side of the printer and guide them to the left motor.",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "Place the motor-mount onto the printer frame with the side containing one pulley facing downward.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Route the **lower belt** around the lower idler from the right side.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "warn",
+    "t": "**Make sure you are holding the lower belt** coming from the right motor. **The belt must not be twisted along its path.**"
+   },
+   {
+    "k": "b",
+    "t": "From the opposite side, pull the belt out approximately 15 cm (6 in).",
+    "c": "#16dc81"
+   }
+  ]
+ },
+ "G3.24": {
+  "title": "Inserting the upper belt (left motor)",
+  "n": 2,
+  "img": "g3-24.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Take the **upper belt** and form a loop with the **teeth facing inward**.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Push the belt loop into the motor mount **between the two upper pulleys**.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Viewed from the top, the belt loop should follow the circular cutout in the motor mount as closely as possible.",
+    "c": "#ff931e"
+   }
+  ]
+ },
+ "G3.25": {
+  "title": "Securing the upper belt (left motor)",
+  "n": 2,
+  "img": "g3-25.jpg",
+  "items": [
+   {
+    "k": "info",
+    "t": "Throughout the process, make sure the **belt does not slip out of the assembly**."
+   },
+   {
+    "k": "b",
+    "t": "Insert the motor with the pulley into the belt loop inside the motor mount.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Fully seat the motor against the motor mount.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Orient it so that the motor cable faces backward (towards the pulleys).",
+    "c": "#ff931e"
+   },
+   {
+    "k": "b",
+    "t": "Gently pull both ends of the belts to secure the belt loop around the pulley.",
+    "c": "#16dc81"
+   }
+  ]
+ },
+ "G3.26": {
+  "title": "Guiding the upper belt (left motor)",
+  "n": 2,
+  "img": "g3-26.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Grasp the right belt coming from the upper pulley.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Route the belt around the upper right pulley **from the right side** and insert it into the motor mount.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "On the opposite side, watch for the belt to come out through the opening and pull it through until approximately 15 cm (6 in) is sticking out.",
+    "c": "#16dc81"
+   }
+  ]
+ },
+ "G3.27": {
+  "title": "Securing the motor cable (left motor)",
+  "n": 2,
+  "img": "g3-27.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Move the assembly closer to the rear corner of the printer.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Route the motor cable through the cable channel, as shown in the picture.",
+    "c": "#ff931e"
+   },
+   {
+    "k": "b",
+    "t": "Push the zip tie through the hole in the printed part. And carefully secure the cable with the zip tie.",
+    "c": "#16dc81"
+   }
+  ]
+ },
+ "G3.28": {
+  "title": "Fixing the left motor",
+  "n": 2,
+  "img": "g3-28.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Rotate the motor assembly with the motor mount into the correct position. The **belt idlers must face the rear side** of the printer.",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "The motor mount has a tab on the bottom side that must fit into the rectangular cutout in the frame.",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "From the inner side of the printer, check that the upper belt is seated on the idler throught the hexa hole in the motor-mount.",
+    "c": "#16dc81"
+   }
+  ]
+ },
+ "G3.29": {
+  "title": "Belt tensioner pulleys: parts preparation",
+  "n": 2,
+  "img": "g3-29.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "**For the following steps, please prepare:**",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "M3x35 screw (4x) you removed earlier",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "M3x6 screw (1x) you removed earlier",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Belt tensioner assembly (2x) you removed earlier",
+    "c": "#16dc81"
+   }
+  ]
+ },
+ "G3.30": {
+  "title": "Tightening the left motor",
+  "n": 1,
+  "img": "g3-30.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Secure the entire motor assembly from the bottom side of the frame using four M3x35 screws.",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "Finally, secure the motor mount with an M3x6 screw.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "warn",
+    "t": "**Do not overtighten the M3x6 screw.** The screw is secured directly into a plastic part and excessive tightening can damage the thread."
+   }
+  ]
+ },
+ "G3.31": {
+  "title": "Guiding the upper belt (left side)",
+  "n": 2,
+  "img": "g3-31.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Take the **upper** belt coming from the left motor.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "**Route the belt around the idler so that:**",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "The \"L\" (left) mark on the idler faces upward",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "The toothed side of the belt does not contact the idler",
+    "c": "#c1280b"
+   },
+   {
+    "k": "warn",
+    "t": "The belt must not be twisted along its path."
+   }
+  ]
+ },
+ "G3.32": {
+  "title": "Attaching the left belt tensioner",
+  "n": 2,
+  "img": "g3-32.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Insert the idler with the belt wrapped around it into the \"rails\" of the left tensioner.",
+    "c": "#ff931e"
+   },
+   {
+    "k": "b",
+    "t": "From the opposite side, tighten the pre-inserted screw until the idler assembly starts to move.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Stop tightening when the sliding part is flush with the stationary part.",
+    "c": "#dc54b7"
+   }
+  ]
+ },
+ "G3.33": {
+  "title": "Guiding the upper belt (gantry - left)",
+  "n": 1,
+  "img": "g3-33.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Route the free end of the belt coming from the idler around the upper idler on the XY gantry.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "info",
+    "t": "The XY gantry idlers may differ visually between printer versions. The procedure is identical for both 3D-printed and injection-molded parts."
+   }
+  ]
+ },
+ "G3.34": {
+  "title": "Guiding the lower belt (gantry - left)",
+  "n": 3,
+  "img": "g3-34.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Take the lower belt coming from the left motor.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Route it towards the XY gantry and around the lower idler.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "From the opposite side, pull the belt through until at least 8 cm (3 in) is sticking out.",
+    "c": "#000000"
+   }
+  ]
+ },
+ "G3.35": {
+  "title": "Guiding the lower belt",
+  "n": 3,
+  "img": "g3-35.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Move to the right motor.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Remove the zip tie securing the two free belt ends on the right side of the printer, if you used one.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Take the **lower** belt coming from the right motor.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "**Route the belt around the idler so that:**",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "The \"R\" (right) mark on the idler faces upward",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "The toothed side of the belt does not contact the idler",
+    "c": "#ff931e"
+   },
+   {
+    "k": "warn",
+    "t": "The belt must not be twisted along its path."
+   }
+  ]
+ },
+ "G3.36": {
+  "title": "Attaching the right belt tensioner",
+  "n": 2,
+  "img": "g3-36.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Insert the idler with the belt wrapped around it into the \"rails\" of the right tensioner.",
+    "c": "#ff931e"
+   },
+   {
+    "k": "b",
+    "t": "From the opposite side, tighten the pre-inserted screw until the idler assembly starts to move.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Stop tightening when the sliding part is flush with the stationary part.",
+    "c": "#dc54b7"
+   }
+  ]
+ },
+ "G3.37": {
+  "title": "Guiding the lower belt (gantry - right)",
+  "n": 1,
+  "img": "g3-37.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Route the free end of the belt coming from the idler around the lower idler on the XY gantry.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "From the opposite side, pull the belt through until at least 8 cm (3 in) is sticking out.",
+    "c": "#000000"
+   },
+   {
+    "k": "info",
+    "t": "The XY gantry idlers may differ visually between printer versions. The procedure is identical for both 3D-printed and injection-molded parts."
+   }
+  ]
+ },
+ "G3.38": {
+  "title": "Guiding the upper belt (gantry - right)",
+  "n": 3,
+  "img": "g3-38.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Take the upper belt coming from the right motor.",
+    "c": "#ff931e"
+   },
+   {
+    "k": "b",
+    "t": "Route the belt around the upper idler on the XY gantry.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "From the opposite side, pull the belt through until at least 8 cm (3 in) is sticking out.",
+    "c": "#000000"
+   },
+   {
+    "k": "info",
+    "t": "If you are assembling the Prusa INDX along with the GEN 2 upgrade, **return to the Prusa INDX GEN 2 article now**."
+   }
+  ]
+ },
+ "G3.39": {
+  "title": "Nextruder holder: parts preparation",
+  "n": 1,
+  "img": "g3-39.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "**For the follwing steps, pelase prepare:**",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Nextruder holder assembly (1x) you removed earlier",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "M3x10 screw (4x) you removed earlier",
+    "c": "#16dc81"
+   }
+  ]
+ },
+ "G3.40": {
+  "title": "Securing the belts I.",
+  "n": 3,
+  "img": "g3-40.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Gently pull all belt ends towards the center of the printer.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Keep the Nextruder holder in the same orientation as shown in the picture.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Route the **lower left** belt through the center opening of the Nextruder holder from the rear side to the front.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Pull the belt out so that approximately 15 mm protrudes.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "From the front side of the Nextruder holder, route the belt back through the left opening towards the rear.",
+    "c": "#ff931e"
+   }
+  ]
+ },
+ "G3.41": {
+  "title": "Securing the belts II.",
+  "n": 2,
+  "img": "g3-41.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "From the rear side, place the belt end against the Nextruder holder.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Adjust the belt length so that the belt end is f**lush with the edge** of the Nextruder holder.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Repeat the same procedure for the **upper left** belt.",
+    "c": "#dc54b7"
+   }
+  ]
+ },
+ "G3.42": {
+  "title": "Securing the belts III.",
+  "n": 3,
+  "img": "g3-42.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "From the rear side, route the **lower belt coming from the right** side through the center opening of the Nextruder holder.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Pull out approximately 15 mm of the belt.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Route the upper right belt through the rear side of the Nextruder holder.",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "Bend both right-side belts and route them back through the right opening of the Nextruder holder.",
+    "c": "#16dc81"
+   }
+  ]
+ },
+ "G3.43": {
+  "title": "Attaching the Nextruder holder",
+  "n": 3,
+  "img": "g3-43.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Align the right-side belts with the edge of the Nextruder holder and adjust their length if needed.",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "Align the Nextruder holder with the X-carriage. The Nextruder holder is attached from the belt side.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Attach the Nextruder holder to the X-carriage and lightly secure it using one upper and one lower M3x10 screw.",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "Check that all belts run straight and are not twisted.",
+    "c": "#c1280b"
+   },
+   {
+    "k": "b",
+    "t": "Insert the remaining two M3x10 screws and tighten all four screws firmly.",
+    "c": "#15a1d6"
+   }
+  ]
+ },
+ "G3.44": {
+  "title": "Installing the LoveBoard assembly",
+  "n": 1,
+  "img": "g3-44.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Look at the rear side of the Nextruder holder.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Attach the LoveBoard assembly to the rear side of the Nextruder holder while it is resting on the box.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "The LoveBoard assembly has two pre-inserted screws. Align them with the holes in the Nextruder holder and tighten them using a 2.5 mm Allen key.",
+    "c": "#000000"
+   }
+  ]
+ },
+ "G3.45": {
+  "title": "Fan shroud assembly: parts preparation",
+  "n": 3,
+  "img": "g3-45.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "**For the following steps, please prepare:**",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Fan shroud assembly (1x) you removed earlier",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "M3x10 screw (2x) you removed earlier",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Cable-clip (1x) you removed earlier",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "M3x4rT screw (2x) you removed earlier",
+    "c": "#ff931e"
+   }
+  ]
+ },
+ "G3.46": {
+  "title": "Attaching the fan shroud assembly",
+  "n": 2,
+  "img": "g3-46.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "From the rear side of the Nextruder holder, place the fan shroud assembly and align it with the holes.",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "Secure the assembly using two M3x10 screws.",
+    "c": "#dc54b7"
+   }
+  ]
+ },
+ "G3.47": {
+  "title": "Installing the Cable-clip",
+  "n": 2,
+  "img": "g3-47.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "From the front side of the Nextruder holder, place the Cable-clip in the orientation shown in the picture and align it with the holes.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Secure the Cable-clip using two M3x4rT screws and tighten them using a T10 key.",
+    "c": "#dc54b7"
+   }
+  ]
+ },
+ "G3.48": {
+  "title": "Nextruder assembly: parts preparation",
+  "n": 2,
+  "img": "g3-48.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "**For the following steps, please prepare:**",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Nextruder assembly (1x) you removed earlier",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "M3x10 screw (3x) you removed earlier",
+    "c": "#15a1d6"
+   }
+  ]
+ },
+ "G3.49": {
+  "title": "Attaching the Nextruder assembly",
+  "n": 2,
+  "img": "g3-49.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Take the Nextruder assembly and position it against the Nextruder holder.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Hook the NTC thermistor cable coming from the rear side of the heatsink into the right side of the Cable-clip.",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "Place the Nextruder onto the Nextruder holder spacers, align it, and secure it using three M3x10 screws.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "warn",
+    "t": "**Do not overtighten the screws**. The spacers are made of plastic and can be damaged by excessive tightening."
+   }
+  ]
+ },
+ "G3.50": {
+  "title": "Heatsink fan: parts preparation",
+  "n": 2,
+  "img": "g3-50.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "**For the following steps, pelase prepare:**",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Heatsink fan (1x) you removed earlier",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "M3x20 screw (2x) you removed earlier",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Thumbs screw (1x) you removed earlier",
+    "c": "#ff931e"
+   }
+  ]
+ },
+ "G3.51": {
+  "title": "Mounting the heatsink fan",
+  "n": 2,
+  "img": "g3-51.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Screw the thumb screw back into the side of the Nextruder heatsink and tighten it firmly by hand.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Attach the Nextruder heatsink fan using two M3x20 screws.",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "The fan must face outward with the side **without the sticker facing out**.",
+    "c": "#c1280b"
+   },
+   {
+    "k": "b",
+    "t": "The heatsink cable must exit from the **lower-left corner**.",
+    "c": "#ff931e"
+   }
+  ]
+ },
+ "G3.52": {
+  "title": "Connecting the heatsink fan",
+  "n": 3,
+  "img": "g3-52.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Route the heatsink fan cable above the lower thumb screw through the Cable-clip.",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "Connect it to the lowest connector on the LoveBoard.",
+    "c": "#2343e8"
+   }
+  ]
+ },
+ "G3.53": {
+  "title": "Connecting the heatsink thermistor",
+  "n": 2,
+  "img": "g3-53.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Connect the heatsink thermistor to the upper right connector.",
+    "c": "#c1280b"
+   },
+   {
+    "k": "info",
+    "t": "For better access, you can release the tensioning mechanism of the idler."
+   }
+  ]
+ },
+ "G3.54": {
+  "title": "Connecting the print fan",
+  "n": 3,
+  "img": "g3-54.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Guide the print fan cable through the cable channel.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "The cable should **not be stretched too tightly**.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Plug the print fan cable to the middle conenctor in the left row on the LoveBoard.",
+    "c": "#dc54b7"
+   }
+  ]
+ },
+ "G3.55": {
+  "title": "Connecting the hotend cables and motor",
+  "n": 3,
+  "img": "g3-55.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Connect the nozzle thermistor cable to the top connector in the left row.",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "Connect the hotend heater cable to the black connector at the top.",
+    "c": "#ff931e"
+   },
+   {
+    "k": "b",
+    "t": "Connect the extruder motor cable (E) to the topmost connector.",
+    "c": "#c1280b"
+   }
+  ]
+ },
+ "G3.56": {
+  "title": "Guiding the hotend cables",
+  "n": 1,
+  "img": "g3-56.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Hook both hotend cables into the Cable-clip.",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "Hook the thermistor cable first, followed by the heater cable.",
+    "c": "#000000"
+   }
+  ]
+ },
+ "G3.57": {
+  "title": "Wiring check",
+  "n": 1,
+  "img": "g3-57.jpg",
+  "items": [
+   {
+    "k": "info",
+    "t": "Before closing the Nextruder electronics, perform a final inspection according to the wiring diagram."
+   }
+  ]
+ },
+ "G3.58": {
+  "title": "Print-head-cover-left: parts preparation",
+  "n": 1,
+  "img": "g3-58.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "**For the following steps, please prepare:**",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Printhead-cover-left (1x) you removed earlier",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "M3x10 screw (1x) you removed earlier",
+    "c": "#c1280b"
+   }
+  ]
+ },
+ "G3.59": {
+  "title": "Covering the electronics - left side",
+  "n": 2,
+  "img": "g3-59.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Place the Printhead-cover-left onto the left side of the Nextruder.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Insert the tab into the opening first.",
+    "c": "#ff931e"
+   },
+   {
+    "k": "b",
+    "t": "Then secure the top of the cover using an M3x10 screw.",
+    "c": "#16dc81"
+   }
+  ]
+ },
+ "G3.60": {
+  "title": "Print-head-cover-right: parts preparation",
+  "n": 2,
+  "img": "g3-60.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "**For the following steps, please prepare:**",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Printhead-cover-right-lever (1x) you removed earlier",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "M3x6 screw (2x) you removed earlier",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Fitting M4-5 (1x) you removed earlier",
+    "c": "#16dc81"
+   }
+  ]
+ },
+ "G3.61": {
+  "title": "Connecting the loadcell and FS",
+  "n": 3,
+  "img": "g3-61.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Plug the Loadcell cable to the upper connector on the right side of the Nextruder.",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "Plug the filaments sensor cable to the lower connector,",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "info",
+    "t": "The connectors are keyed and cannot be mixed up."
+   },
+   {
+    "k": "b",
+    "t": "Place the Printhead-cover-right-lever on the right side of the Nextruder.",
+    "c": "#ff931e"
+   },
+   {
+    "k": "warn",
+    "t": "Do not pinch the cables!"
+   },
+   {
+    "k": "b",
+    "t": "Secure the cover with two M3x6 screw.",
+    "c": "#16dc81"
+   }
+  ]
+ },
+ "G3.62": {
+  "title": "Installing the fitting",
+  "n": 2,
+  "img": "g3-62.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Insert the fitting M4-5 to the heatsink.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Using the universal wrench, thighten the fitting firmly.",
+    "c": "#16dc81"
+   }
+  ]
+ },
+ "G3.63": {
+  "title": "Connecting the PTFE tube",
+  "n": 3,
+  "img": "g3-63.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Push the free end of the removed PTFE tube into the fitting. Push it all the way down.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Slide the Bowden-bend down to cover the fitting.",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "After connecting the cables, verify the routing against the reference image. Make sure the PTFE tube is **not twisted** and it's routed correctly.",
+    "c": "#dc54b7"
+   }
+  ]
+ },
+ "G3.64": {
+  "title": "Almost there...",
+  "n": 2,
+  "img": "g3-64.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "**Congratulations!** You have successfully replaced the belts.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Continue to the **next chapter.**",
+    "c": "#000000"
+   }
+  ]
+ },
+ "G4.1": {
+  "title": "Tools",
+  "n": 1,
+  "img": "g4-1.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "**Tools necessary for this chapter:**",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "2.5mm Allen key",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "T10 key/screwdriver",
+    "c": "#15a1d6"
+   }
+  ]
+ },
+ "G4.2": {
+  "title": "Loosening the heatbed",
+  "n": 2,
+  "img": "g4-2.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Using a T10 screwdriver, loosen and remove all nine countersunk screws securing the heatbed.",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "info",
+    "t": "Keep these screws at hand; we will use them to secure the headbed later."
+   },
+   {
+    "k": "b",
+    "t": "Move the Nextruder all the way to the front.",
+    "c": "#2343e8"
+   }
+  ]
+ },
+ "G4.3": {
+  "title": "Opening the heatbed",
+  "n": 2,
+  "img": "g4-3.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Lift the heatbed away from the Z-carriage.",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "Remove the heatbed spacer under the heatbed and discard it to avoid mixing it up with the new one.",
+    "c": "#c1280b"
+   },
+   {
+    "k": "b",
+    "t": "Lean the heatbed against the back of the printer.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Move the Nextruder towards the heatbed and use the print fan to keep it from tilting down.",
+    "c": "#ff931e"
+   }
+  ]
+ },
+ "G4.4": {
+  "title": "Removing old expansion joints",
+  "n": 3,
+  "img": "g4-4.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Using a 2.0 mm Allen key, slightly loosen the M3x4r screw securing the expansion joint on the Z-carriage.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Slide the expansion joint off the screw.",
+    "c": "#2343e8"
+   },
+   {
+    "k": "info",
+    "t": "Keep the expansion joints. One of them will be reused for the nozzle wiper assembly."
+   },
+   {
+    "k": "b",
+    "t": "Remove the M3x4r screw.",
+    "c": "#ff931e"
+   },
+   {
+    "k": "b",
+    "t": "Proceed the same for the rest of the expansion joints.",
+    "c": "#15a1d6"
+   }
+  ]
+ },
+ "G4.5": {
+  "title": "New expansion joints: parts preparation",
+  "n": 3,
+  "img": "g4-5.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "**For the following steps, please prepare:**",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "New expansion joint (8x)",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "Expansion joint screw (8x)",
+    "c": "#c1280b"
+   },
+   {
+    "k": "b",
+    "t": "PTFE washer M3 (16x)",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Heatbed spacer 10 mm (1x)",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "info",
+    "t": "Do not confuse the new heatbed spacer with the old one. They look similar, but the **new spacer is longer**."
+   }
+  ]
+ },
+ "G4.6": {
+  "title": "Installing the expansion joint screws",
+  "n": 3,
+  "img": "g4-6.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Place the **two** PTFE washers on top of each other in the front threaded hole of the Z-carriage.",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "Insert the expansion joint screw through the washers into the threaded hole.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Tighten the screw fully, but do not overtighten.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "info",
+    "t": "A small gap between the washers and the screw head is normal due to the screw's non-threaded section."
+   },
+   {
+    "k": "b",
+    "t": "Proceed the same for the rest of the threaded holes.",
+    "c": "#ff931e"
+   }
+  ]
+ },
+ "G4.7": {
+  "title": "Installing the new expansion joints",
+  "n": 3,
+  "img": "g4-7.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Slide the new expansion joint with the groove on the underside onto the screw **between** the PTFE washers.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Orient the expansion joint with the **groove facing away from the Z-carriage**.",
+    "c": "#ff931e"
+   },
+   {
+    "k": "b",
+    "t": "Repeat this process for all remaining expansion joints.",
+    "c": "#2343e8"
+   },
+   {
+    "k": "info",
+    "t": "The final position will be adjusted in the following steps."
+   }
+  ]
+ },
+ "G4.8": {
+  "title": "Inserting the heatbed spacer",
+  "n": 2,
+  "img": "g4-8.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Double-check that all expansion joints are oriented correctly and that the grooves are facing outward.",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "Place the **new** 10 mm heatbed spacer on the threaded hole in the center of the Z-carriage.",
+    "c": "#ff931e"
+   },
+   {
+    "k": "info",
+    "t": "If you are assembling the Prusa INDX along with the GEN 2 upgrade, return to the article: **Assembling the Prusa INDX Core One with the Gen 2 upgrade**."
+   }
+  ]
+ },
+ "G4.9": {
+  "title": "Heatbed screws: parts preparation",
+  "n": 1,
+  "img": "g4-9.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "**For the following steps, please prepare:**",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "M3x14cT countersunk screw (1x)",
+    "c": "#2343e8"
+   },
+   {
+    "k": "info",
+    "t": "Some iterations of the upgrade might call this screw M3x14bT."
+   },
+   {
+    "k": "b",
+    "t": "M3x4cT countersunk screw (8x) removed earlier",
+    "c": "#16dc81"
+   }
+  ]
+ },
+ "G4.10": {
+  "title": "Securing the heatbed",
+  "n": 1,
+  "img": "g4-10.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Place the heatbed on the expansion joints and align the mounting holes.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Insert the M3x14cT countersunk screw through the heatbed spacer into the center hole and tighten it lightly.",
+    "c": "#dc54b7"
+   }
+  ]
+ },
+ "G4.11": {
+  "title": "Expansion joint aligner",
+  "n": 3,
+  "img": "g4-11.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Prepare the **Expansion-joint-aligner** for the following steps.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "info",
+    "t": "Your package includes the **black version**. The orange version is shown in this guide for better visibility."
+   },
+   {
+    "k": "b",
+    "t": "In the following steps, you will precisely align each expansion joint.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "For reference, see the second image showing the simplified aligner orientation for a single expansion joint.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "The third image shows the alignment tool being slid onto the expansion joint for reference.",
+    "c": "#000000"
+   },
+   {
+    "k": "info",
+    "t": "The expansion joint is shown outside the printer for clarity. During alignment, it is installed under the heatbed."
+   }
+  ]
+ },
+ "G4.12": {
+  "title": "Aligning the front side expansion joint",
+  "n": 3,
+  "img": "g4-12.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Insert the M3x4cT screws into **all eight holes** around the heatbed. Tighten each screw by **one turn only**.",
+    "c": "#ff931e"
+   },
+   {
+    "k": "b",
+    "t": "Start by aligning the **middle expansion joint on the front side**.",
+    "c": "#000000"
+   },
+   {
+    "k": "info",
+    "t": "Use the symbols on the heatbed as a reference."
+   },
+   {
+    "k": "b",
+    "t": "Slide the straight fork onto the expansion joint and push the Expansion-joint-aligner against the heatbed. This will align the expansion joint.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Push the aligner firmly against the edge of the heatbed.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Tighten the screw, but just lightly.",
+    "c": "#2343e8"
+   }
+  ]
+ },
+ "G4.13": {
+  "title": "Aligning the front left expansion joint",
+  "n": 2,
+  "img": "g4-13.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Move to the **left corner**.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Slide the straight fork onto the expansion joint and push the Expansion-joint-aligner against the heatbed. This will align the expansion joint.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Push the aligner firmly against the edge of the heatbed.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Tighten the screw, but just lightly.",
+    "c": "#2343e8"
+   }
+  ]
+ },
+ "G4.14": {
+  "title": "Aligning the left side expansion joint",
+  "n": 2,
+  "img": "g4-14.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Move to the **left side** of the heatbed.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Slide the straight fork onto the expansion joint and push the Expansion-joint-aligner against the heatbed. This will align the expansion joint.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Push the aligner firmly against the edge of the heatbed.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Tighten the screw, but just lightly.",
+    "c": "#2343e8"
+   }
+  ]
+ },
+ "G4.15": {
+  "title": "Aligning the rear left expansion joint",
+  "n": 2,
+  "img": "g4-15.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Move to the **rear left corner**.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Slide the **angled** fork onto the expansion joint and push the Expansion-joint-aligner against the heatbed. This will align the expansion joint.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Push the aligner firmly against the edge of the heatbed.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Tighten the screw, but just lightly.",
+    "c": "#2343e8"
+   }
+  ]
+ },
+ "G4.16": {
+  "title": "Aligning the middle rear expansion joint",
+  "n": 2,
+  "img": "g4-16.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Continue with the **middle rear** expansion joint.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Slide the straight fork onto the expansion joint and push the Expansion-joint-aligner against the heatbed. This will align the expansion joint.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Push the aligner firmly against the edge of the heatbed.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Tighten the screw, but just lightly.",
+    "c": "#2343e8"
+   }
+  ]
+ },
+ "G4.17": {
+  "title": "Aligning the rear right expansion joint",
+  "n": 2,
+  "img": "g4-17.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Continue with the **rear right corner**.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Slide the **angled** fork onto the expansion joint and push the Expansion-joint-aligner against the heatbed. This will align the expansion joint.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Push the aligner firmly against the edge of the heatbed.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Tighten the screw, but just lightly.",
+    "c": "#2343e8"
+   }
+  ]
+ },
+ "G4.18": {
+  "title": "Aligning the right side expansion joint",
+  "n": 2,
+  "img": "g4-18.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Move to the **right side** of the heatbed.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Slide the straight fork onto the expansion joint and push the Expansion-joint-aligner against the heatbed. This will align the expansion joint.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Push the aligner firmly against the edge of the heatbed.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Tighten the screw, but just lightly.",
+    "c": "#2343e8"
+   }
+  ]
+ },
+ "G4.19": {
+  "title": "Aligning the front right expansion joint",
+  "n": 2,
+  "img": "g4-19.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Continue with the **front right corner**.",
+    "c": "#000000"
+   },
+   {
+    "k": "info",
+    "t": "**If you are converting your printer to the Prusa INDX version**, move the offset sensor out of the way to align this expansion joint, then place it back."
+   },
+   {
+    "k": "b",
+    "t": "Slide the straight fork onto the expansion joint and push the Expansion-joint-aligner against the heatbed. This will align the expansion joint.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Push the aligner firmly against the edge of the heatbed.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Tighten the screw, but just lightly.",
+    "c": "#2343e8"
+   }
+  ]
+ },
+ "G4.20": {
+  "title": "Fixing the heatbed",
+  "n": 2,
+  "img": "g4-20.jpg",
+  "items": [
+   {
+    "k": "warn",
+    "t": "**IMPORTANT**: The heatbed must be tightened in a specific order. Repeat the sequence multiple times, ensuring the final tightening after at least two rounds."
+   },
+   {
+    "k": "b",
+    "t": "After all screws are in place, tighten them in the following sequence:",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Center screw",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "First fours screw (edges)",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Last four screws (corners)",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "Tighten the screws gently, but firmly.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Double-check that the expansion joint has not rotated and that the groove is facing outwards from the printer.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "info",
+    "t": "If you are assembling the Prusa INDX along with the GEN 2 upgrade, **return to the Prusa INDX GEN 2 article now**."
+   }
+  ]
+ },
+ "G4.21": {
+  "title": "Nozzle wiper assembly: parts preparation",
+  "n": 2,
+  "img": "g4-21.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "**For the following steps, please prepare:**",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Nozzle-wiper-holder (1x)",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "Nozzle wiper (1x)",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "M3n nut (1x)",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "M3x6r screw (1x)",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "M3x10 screw (1x)",
+    "c": "#ff931e"
+   },
+   {
+    "k": "b",
+    "t": "Expansion joint (1x) you removed earlier",
+    "c": "#f3e00e"
+   }
+  ]
+ },
+ "G4.22": {
+  "title": "Assembling the nozzle wiper",
+  "n": 3,
+  "img": "g4-22.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Insert the M3x6r screw into the expansion joint with the screw head first.",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "Insert a 2.0 mm Allen key through the threaded hole to reach the screw.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Attach the expansion joint to the Nozzle-wiper-holder and tighten the screw. Do not overtighten it.",
+    "c": "#ff931e"
+   },
+   {
+    "k": "warn",
+    "t": "**Do not overtighten the screw.** Tighten it gradually, backing the screw off slightly if you feel increased resistance. This helps prevent the expansion joint from splitting."
+   }
+  ]
+ },
+ "G4.23": {
+  "title": "Mounting the nozzle wiper",
+  "n": 3,
+  "img": "g4-23.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Insert the M3nN nut into the hexagonal opening.",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "Place the Nozzle-wiper-holder onto the right side of the Z-carriage.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Slide the Nozzle-wiper-holder along the Z-carriage onto the heatbed assembly.",
+    "c": "#ff931e"
+   },
+   {
+    "k": "b",
+    "t": "Notice the small tab on the holder. It must hook behind the sheet metal edge underneath the heatbed.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Push the assembly firmly against the heatbed and secure it from the underside of the Z-carriage using the M3x10 screw.",
+    "c": "#16dc81"
+   }
+  ]
+ },
+ "G4.24": {
+  "title": "Sticking the wiper pad",
+  "n": 3,
+  "img": "g4-24.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Peel off the protective layer from the nozzle wiper pad.",
+    "c": "#000000"
+   },
+   {
+    "k": "info",
+    "t": "**The pad is adhesive** underneath the protective layer. Avoid touching the adhesive surface."
+   },
+   {
+    "k": "b",
+    "t": "Insert the nozzle wiper pad into the matching recess in the nozzle wiper assembly.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "info",
+    "t": "Note that the pad has **rounded corners** on one side. Match them to the shape of the recess."
+   },
+   {
+    "k": "b",
+    "t": "Run your finger over the entire surface of the nozzle wiper pad several times to ensure it is evenly adhered and fully seated.",
+    "c": "#ff931e"
+   }
+  ]
+ },
+ "G4.25": {
+  "title": "Right metal sheet: parts preparation",
+  "n": 2,
+  "img": "g4-25.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "**For the following steps, please prepare:**",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Right side sheet metal (1x) you removed earlier",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Side-handle (1x) you removed earlier",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "M3x8rT screw (2x) you removed earlier",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "PTFE tube 4 x 2.5 x 45 mm (1x) you removed earlier",
+    "c": "#ff931e"
+   },
+   {
+    "k": "b",
+    "t": "Nylon rivet (11x) you removed earlier",
+    "c": "#dc54b7"
+   }
+  ]
+ },
+ "G4.26": {
+  "title": "Preparing the right metal sheet",
+  "n": 1,
+  "img": "g4-26.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Carefully lean the right side sheet against the printer.",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "The U-shaped cutouts must face upward.",
+    "c": "#ff931e"
+   },
+   {
+    "k": "b",
+    "t": "The oval opening must be on the right side of the sheet.",
+    "c": "#16dc81"
+   }
+  ]
+ },
+ "G4.27": {
+  "title": "Attaching the handle and FS",
+  "n": 3,
+  "img": "g4-27.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Insert an M3x8rT screw through the left hole in the side handle.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Place the side handle against the opening in the side panel and align it.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Push the screw through the panel.",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "From the opposite side, align the side filament sensor with the screw.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Place the filament sensor onto the screw and tighten it.",
+    "c": "#2343e8"
+   }
+  ]
+ },
+ "G4.28": {
+  "title": "Securing the side filament sensor",
+  "n": 2,
+  "img": "g4-28.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Align the side filament sensor with the second mounting hole.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Secure it using an M3x8rT screw inserted through the side handle.",
+    "c": "#15a1d6"
+   }
+  ]
+ },
+ "G4.29": {
+  "title": "Mounting the right metal sheet",
+  "n": 3,
+  "img": "g4-29.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Gently press the metal sheet against the printer frame while sliding it upward.",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "Seat it in place and secure it with a nylon rivet in the upper-left corner.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Align the holes.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Insert the nylon rivet into the hole and press it in lightly.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Then press it in firmly until fully seated.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Using the same method, continue with the remaining ten holes. Start from the top.",
+    "c": "#f3e00e"
+   }
+  ]
+ },
+ "G4.30": {
+  "title": "Inserting the PTFE tube",
+  "n": 2,
+  "img": "g4-30.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Locate the black collet inside the side handle.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Fully insert the PTFE tube into the side handle.",
+    "c": "#2343e8"
+   }
+  ]
+ },
+ "G4.31": {
+  "title": "Right side panel: parts preparation",
+  "n": 1,
+  "img": "g4-31.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "**For the following steps, please prepare:**",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Side panel (1x) you removed earlier",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "Nylon rivet (5x) you removed earlier",
+    "c": "#16dc81"
+   }
+  ]
+ },
+ "G4.32": {
+  "title": "Installing the right side panel",
+  "n": 1,
+  "img": "g4-32.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Place the side panel on the right side of the printer above the metal sheet.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Secure it using five nylon rivets.",
+    "c": "#16dc81"
+   }
+  ]
+ },
+ "G4.33": {
+  "title": "Left side: parts preparation",
+  "n": 3,
+  "img": "g4-33.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "**For the following steps, please prepare:**",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Left side metal sheet (1x) you removed earlier",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "Side panel (1x) you removed earlier",
+    "c": "#ff931e"
+   },
+   {
+    "k": "b",
+    "t": "Nylon rivet (16x) you removed earlier",
+    "c": "#16dc81"
+   }
+  ]
+ },
+ "G4.34": {
+  "title": "Installing the left side panels",
+  "n": 2,
+  "img": "g4-34.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Insert the left side metal sheet into the printer frame from the left side.",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "Secure it using eleven nylon rivets.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Place the side panel over the side metal sheet.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Secure it using five nylon rivets.",
+    "c": "#2343e8"
+   }
+  ]
+ },
+ "G4.35": {
+  "title": "Connecting the motor cables",
+  "n": 3,
+  "img": "g4-35.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Move to the back of the printer.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Gently pull the right rear motor cable back towards the electronics. **Stop pulling if you feel resistance**.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Gently pull the left rear motor cable back towards the electronics. **Stop pulling if you feel resistance**.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Connect the **left** motor cable (X motor) to the left connector. It is labeled X on the board.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Connect the **right** motor cable (Y motor) to the right connector. It is labeled Y on the board.",
+    "c": "#c1280b"
+   }
+  ]
+ },
+ "G4.36": {
+  "title": "xBuddy cover: parts preparation",
+  "n": 2,
+  "img": "g4-36.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "**For the following steps, please prepare:**",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Sheet metal back cover (1x) found in the Metal parts 2/3 package",
+    "c": "#ff931e"
+   },
+   {
+    "k": "b",
+    "t": "xBuddy cover (1x) found in the Metal parts 3/3 package",
+    "c": "#c1280b"
+   },
+   {
+    "k": "b",
+    "t": "M3x4rT screw (8x)",
+    "c": "#15a1d6"
+   }
+  ]
+ },
+ "G4.37": {
+  "title": "Covering the xBuddy board",
+  "n": 2,
+  "img": "g4-37.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Carefully cover the xBuddy box by first sliding the bent part of the cover into the box.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Avoid pinching the cables, and make sure the cover is inserted perpendicular to the xBuddyboard.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Secure the xBuddy box cover using the six M3x4rT screws.",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "Wrap two zipties around the cable bundle on the top to keep the cables tidy and secured.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "info",
+    "t": "Carefully cut the excess; avoid cutting the cables."
+   }
+  ]
+ },
+ "G4.38": {
+  "title": "Covering the cables",
+  "n": 3,
+  "img": "g4-38.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Align the rear sheet metal cover so that the cables can run through the platform.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Push the rear cable cover toward the printer, then move it upward.",
+    "c": "#c1280b"
+   },
+   {
+    "k": "b",
+    "t": "Ensure that the cable cover slides into the four openings in the printer rear cover.",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "From the inside of the printer, secure the rear cover in place using two M3x4rT screws from inside the printer.",
+    "c": "#16dc81"
+   }
+  ]
+ },
+ "G4.39": {
+  "title": "Door panel: parts preparation",
+  "n": 2,
+  "img": "g4-39.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "**For the following steps, please prepare:**",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Door panel (1x) you removed earlier",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "M3x5rT screw (4x) you removed earlier",
+    "c": "#15a1d6"
+   }
+  ]
+ },
+ "G4.40": {
+  "title": "Installing the door panel",
+  "n": 2,
+  "img": "g4-40.jpg",
+  "items": [
+   {
+    "k": "warn",
+    "t": "**Make sure the door panel is oriented correctly**, with the PRUSA CORE One+ logo readable from the outside of the printer when the door is closed."
+   },
+   {
+    "k": "b",
+    "t": "Slide the cutouts in the door panel back onto the hinges.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Secure the door panel by installing two M3x5rT screws into each hinge.",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "**Do not overtighten the screws**, as this may damage the door panel.",
+    "c": "#000000"
+   }
+  ]
+ },
+ "G4.41": {
+  "title": "Installing the top cover",
+  "n": 2,
+  "img": "g4-41.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Align the cover with the metal frame in the far-right corner.",
+    "c": "#15a1d6"
+   },
+   {
+    "k": "b",
+    "t": "Align the cover with the recess in the front part as well",
+    "c": "#ff931e"
+   },
+   {
+    "k": "b",
+    "t": "Secure the cover in place using two nylon rivets in the marked openings.",
+    "c": "#dc54b7"
+   }
+  ]
+ },
+ "G4.42": {
+  "title": "Done",
+  "n": 2,
+  "img": "g4-42.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "**Congratulations!** You have just completed the heatbed upgrade.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "Now, proceed to the **final chapter**.",
+    "c": "#000000"
+   }
+  ]
+ },
+ "G5.1": {
+  "title": "Print Sheet",
+  "n": 2,
+  "img": "g5-1.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Reinstall the print sheet.",
+    "c": "#000000"
+   },
+   {
+    "k": "warn",
+    "t": "**Make sure there is nothing on the heatbed**. The heatbed must be clean. Any dirt can damage the surface of both the heatbed and the print sheet."
+   },
+   {
+    "k": "b",
+    "t": "**Attach the sheet by first aligning the rear cutout with the locking pins on the back of the heated bed.** Hold the sheet by the front two corners and slowly lay it down onto the heated bed - **watch your fingers!**",
+    "c": "#ff931e"
+   },
+   {
+    "k": "b",
+    "t": "Keep the print sheet clean for optimum performance.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "#1 cause of prints detaching from the print surface is a greasy print sheet. Use IPA (Isopropyl alcohol) to degrease it if you have touched its surface before.",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "**Version of the Prusa CORE One+ (Gen 2) upgrade manual:**",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "08/2026 - Initial version 1.00",
+    "c": "#000000"
+   },
+   {
+    "k": "p",
+    "t": "**Notes: Notes: Notes: Notes:**"
+   }
+  ]
+ },
+ "G5.2": {
+  "title": "Attaching the stickers",
+  "n": 3,
+  "img": "g5-2.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "**For this step, prepare:**",
+    "c": "#000000"
+   },
+   {
+    "k": "b",
+    "t": "CORE One+ sticker",
+    "c": "#ff931e"
+   },
+   {
+    "k": "b",
+    "t": "GEN 2 SN sticker",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "Peel the CORE ONE+ sticker off the base and place it on the CORE ONE+ logo on the door.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Make sure to align the sticker with the outline of the \"ONE\". Apply pressure and then remove.",
+    "c": "#2343e8"
+   },
+   {
+    "k": "b",
+    "t": "Place the GEN 2 SN sticker above the original SN sticker on the back of the printer.",
+    "c": "#dc54b7"
+   }
+  ]
+ },
+ "G5.3": {
+  "title": "Belt tensioning",
+  "n": 1,
+  "img": "g5-3.jpg",
+  "items": [
+   {
+    "k": "info",
+    "t": "This chapter will guide you through calibrating and preparing the printer for its first run. Starting with tensioning the belts:"
+   },
+   {
+    "k": "b",
+    "t": "The left screw adjusts the upper belt.",
+    "c": "#ff931e"
+   },
+   {
+    "k": "b",
+    "t": "The right screw adjusts the lower belt.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "warn",
+    "t": "**WARNING: Incorrect procedure may result in damage to plastic parts or seizing of screws. Before adjusting the belt tension, read the dedicated article:**"
+   },
+   {
+    "k": "b",
+    "t": "**Adjusting belt tension (CORE One)**",
+    "c": "#000000"
+   },
+   {
+    "k": "info",
+    "t": "Do not forget to come back here after adjusting the belts."
+   }
+  ]
+ },
+ "G5.4": {
+  "title": "Firmware Download",
+  "n": 2,
+  "img": "g5-4.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "We will have to upgrade the firmware.",
+    "c": "#000000"
+   },
+   {
+    "k": "info",
+    "t": "The CORE One+ requires firmware version 6.8.1 or newer."
+   },
+   {
+    "k": "b",
+    "t": "Visit the CORE One+ support page on help.prusa3d.com.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Download the latest firmware file (.bbf). Save the file onto a USB drive.",
+    "c": "#2343e8"
+   }
+  ]
+ },
+ "G5.5": {
+  "title": "Firmware Flash",
+  "n": 3,
+  "img": "g5-5.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "Insert the USB drive with the firmware file into the printer.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "Connect the power cable.",
+    "c": "#f3e00e"
+   },
+   {
+    "k": "b",
+    "t": "Turn the printer on using the switch on the back.",
+    "c": "#16dc81"
+   },
+   {
+    "k": "b",
+    "t": "Once the \"New firmware available\" screen appears, select the **FLASH** option.",
+    "c": "#2343e8"
+   }
+  ]
+ },
+ "G5.6": {
+  "title": "Changing the printer edition",
+  "n": 2,
+  "img": "g5-6.jpg",
+  "items": [
+   {
+    "k": "info",
+    "t": "After completing the CORE One+ (Gen 2) upgrade, **change the printer edition to CORE One+ (Gen 2)**."
+   },
+   {
+    "k": "info",
+    "t": "This is required because the Gen 2 uses belts and pulleys with a different tooth pitch."
+   },
+   {
+    "k": "b",
+    "t": "Go to Settings → Hardware → Edition¡ Hardware → Edition¡ Edition and select **CORE One+ Gen2**.",
+    "c": "#dc54b7"
+   },
+   {
+    "k": "b",
+    "t": "The printer will ask you to confirm the edition change. Select Yes.",
+    "c": "#15a1d6"
+   }
+  ]
+ },
+ "G5.7": {
+  "title": "Selftest",
+  "n": 1,
+  "img": "g5-7.jpg",
+  "items": [
+   {
+    "k": "b",
+    "t": "After finishing the upgrade, we recommend visiting the menu Control -> Calibrations & Tests and run the Selftest from the start.",
+    "c": "#16dc81"
+   }
+  ]
+ },
+ "G5.8": {
+  "title": "Finish",
+  "n": 2,
+  "img": "g5-8.jpg",
+  "items": [
+   {
+    "k": "info",
+    "t": "Congratulations! Your upgraded CORE One+ (Gen 2) is ready to roll!"
+   },
+   {
+    "k": "b",
+    "t": "**Happy printing!**",
+    "c": "#000000"
+   }
+  ]
+ }
+}
