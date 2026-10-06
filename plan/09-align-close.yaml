@@ -1,52 +1,21 @@
 # Phase 9. Row ids are the keys for saved ticks: never rename or reuse one.
 id: p9
 name: "Align & close"
-title: "Dock fan cable, electronics covers, side panels"
+title: "Heatbed alignment, electronics covers, side panels"
 power: "off"
 where: "Printer"
 note: >-
-  INDX chapter 5 resumes at step 12;
-  its steps 2 to 11 are already done.
-  Once the dock fan cable is tied in, every cable that enters the xBuddy box is in place.
-  With Gen 2 ticked, the heatbed is aligned and the motor cables go back before anything is closed.
+  INDX chapter 5 resumes at step 18;
+  everything before it is already done.
+  Every cable that enters the xBuddy box is in place.
+  With Gen 2 ticked, the heatbed is aligned first, while both sides are still open.
+  The electronics covers go on before either steel side panel, because the rear cover is screwed from inside the printer.
 steps:
 
   - id: p9z
     refs: ["5.1"]
     kind: asis
     text: "Chapter 5 tools: 2.5 mm Allen key, T10, cutters, and the rivet tool."
-
-  - id: p7n
-    refs: ["5.12", "5.13"]
-    kind: asis
-    text: >-
-      Dock fan cable, the loose branch of the head cable.
-      Take three zip ties.
-      Push the dock fan connector back into the printer through the lower oval opening on the left of the rear panel, and draw the cable through from inside.
-    notes:
-      - type: tip
-        by: "chmax, forum"
-        text: >-
-          This is the job the open right side pays for:
-          with the panel on, builders described the zip ties here as acrobatics.
-
-  - id: p7o
-    refs: ["5.14", "5.15"]
-    kind: asis
-    text: >-
-      Move the toolhead forward so it sits between the front and middle pairs of holes on the right.
-      Insert a zip tie at each of the three pairs of holes, rear first, as in the photo:
-      not round a belt, not round the smooth rod.
-      Close the three ties loosely and run the dock fan cable through all of them, behind the rod holder and above the smooth rod.
-      Bring its end inside the printer without wrapping it round the front right profile.
-
-  - id: p7p
-    refs: ["5.16", "5.17"]
-    kind: asis
-    tools: ["Cutters"]
-    text: >-
-      Lead the cable through the gap between the CoreXY and the frame until 8 cm protrudes, take up the slack between ties, and tighten them.
-      Push the toolhead right to the back, watching that the cable never fouls the motion, and trim the ties.
 
   - id: g4d
     refs: ["G4.11"]
@@ -71,6 +40,18 @@ steps:
       Start with the joint in the middle of the front edge, using the symbols on the heatbed as a guide.
       Slide the aligner's straight fork onto the joint, push the aligner firmly against the edge of the heatbed, and tighten that screw lightly.
       Then the front left corner, then the middle of the left side, straight fork each time.
+    notes:
+      - type: warn
+        by: "c10l, Jenda, greymouser, Trainman, Drew65, comments on Gen 2 4.7, 4.8 and 4.20"
+        text: >-
+          With the grooves facing out as the guide says, pushing the aligner on can slide a joint inward off its screw, and the bed must come off to refit it.
+          Two builders turned the grooves inward instead.
+          Prusa has not said whether that is safe.
+      - type: tip
+        by: "kuzu, Stephen, comments on Gen 2 4.14 and 4.20"
+        text: >-
+          To avoid pushing a joint inward, hook the short leg of an Allen key behind it while the fork goes on.
+          One builder kept each screw snug until the aligner was seated and only then loosened it.
 
   - id: g4f
     refs: ["G4.15", "G4.16", "G4.17"]
@@ -92,10 +73,18 @@ steps:
       Middle of the right side with the straight fork.
       Then the front right corner with the straight fork:
       move the offset sensor out of the way to reach this joint, and put it back afterwards.
+      Its screw is underneath the Z-carriage and only a few turns in;
+      mind the sticker on the sensor.
     notes:
       - type: why
         by: "Gen 2 guide"
         text: "This is why the offset sensor's screw was left loose in Phase 5."
+      - type: tip
+        by: "Jeff, Mikko Nissi, jche, comments on Gen 2 4.19"
+        text: >-
+          The sensor holder's screw is underneath the Z-carriage.
+          Builders who left the sensor in place flipped the aligner over and used its angled fork from the front, or held the joint with an Allen key from below.
+          jche would still move the sensor for a true alignment.
 
   - id: g4h
     refs: ["G4.20"]
@@ -105,9 +94,24 @@ steps:
     text: >-
       Now tighten the heatbed properly.
       Centre screw, then the four edge screws, then the four corner screws, gently but firmly, for at least two full rounds.
+      After the first light pass each round is only a sixteenth to an eighth of a turn.
+      Put the aligner back on each joint while its screw gets its final tightening, or the joint turns with the screw.
       Check that no expansion joint has rotated:
       every groove still faces outward.
       Put the box back on the bed.
+    notes:
+      - type: tip
+        by: "several builders, comments on Gen 2 4.20"
+        text: >-
+          Four builders found the joints turned again during final tightening unless the aligner was back on each joint while its screw was tightened.
+          One straightened turned joints afterwards with the universal wrench, where it could reach.
+      - type: warn
+        by: "Chaoticprinter, moto52000, Luis, comments on Gen 2 4.20"
+        text: >-
+          The joint threads strip:
+          builders lost up to three of the eight here.
+          After the light first pass, each round is only a sixteenth to an eighth of a turn.
+          Support replaces stripped joints.
 
   - id: g4i
     refs: []
@@ -122,48 +126,6 @@ steps:
         by: "Prusa's Gen 2 companion article"
         text: "The article returns to INDX step 3.17 here, once the heatbed is fixed."
 
-  - id: g4j
-    refs: ["G4.35"]
-    kind: gen2
-    when: [gen2]
-    text: >-
-      At the back, ease the two motor cables toward the electronics, stopping at any resistance.
-      Plug the left motor cable into the connector labelled X on the xBuddy board and the right motor cable into the one labelled Y, until each latch clicks.
-
-  - id: g4k
-    refs: ["G4.34"]
-    kind: gen2
-    when: [gen2]
-    unless: [dryer]
-    text: >-
-      Hang the left steel panel and fix it with three nylon rivets in the positions highlighted in Prusa's companion article, not the eleven the Gen 2 guide shows.
-      The puck holders supply the rest, as on the right.
-      The transparent cover on this side is already on.
-    notes:
-      - type: warn
-        by: "unverified"
-        text: >-
-          I could not see the article's picture of the three positions.
-          If in doubt, mirror the three positions the INDX guide shows for the right panel in step 5.24 and keep every corner hole free for the puck holders.
-      - type: tip
-        by: "Luis, comment on Prusa's article"
-        text: >-
-          The rivets would not go in until the bottom two corners of the panel were propped up on very thin hex keys.
-
-  - id: g4kd
-    refs: ["G4.34"]
-    kind: gen2
-    when: [gen2, dryer]
-    text: >-
-      Hang the left steel panel and fix it with all eleven nylon rivets, as the Gen 2 guide shows.
-      There are no puck holders to share the load.
-      The transparent cover on this side is already on.
-    notes:
-      - type: tip
-        by: "Luis, comment on Prusa's article"
-        text: >-
-          The rivets would not go in until the bottom two corners of the panel were propped up on very thin hex keys.
-
   - id: p9a
     refs: ["5.18", "5.19"]
     kind: asis
@@ -172,6 +134,12 @@ steps:
       Push every loose PTFE tube end inside the printer.
       Bundle the cables behind the printer with two zip ties, not tight.
       Keep the kept `M3x4rT` apart from the door's `M3x5rT`.
+    notes:
+      - type: tip
+        by: "several builders, comments on INDX 5.19"
+        text: >-
+          Four builders recommend the three leftover hook-and-loop cable straps here instead of zip ties.
+          This bundle gets opened again for upgrades and fault-finding, and straps undo without cutters.
 
   - id: p9b
     refs: ["5.20"]
@@ -198,6 +166,12 @@ steps:
     tools: ["T10"]
     text: >-
       Slide the xBuddy cover in bent edge first, parallel to the board, trapping nothing, and fix it with six kept `M3x4rT`.
+    notes:
+      - type: warn
+        by: "Allen d, comment on Gen 2 4.37"
+        text: >-
+          Keep the cover square as it goes in.
+          A capacitor on the board stands in the path of the cover's lower edge, and one builder broke it off while lining the cover up.
 
   - id: p9d
     refs: ["5.22"]
@@ -207,6 +181,73 @@ steps:
       Hold the rear cover so the cables run through its tray, press it into the recess and lift until its four tabs engage.
       Seat the filament sensor cable in its cutout, and the camera USB-C cable in the lower cutout if you have one.
       From inside the printer, fix it with two kept `M3x4rT`.
+    notes:
+      - type: tip
+        by: "kuzu, hamgolfer, comments on INDX 5.22"
+        text: >-
+          If an `M3x4rT` will not catch the rear cover, pull the cover in with one door `M3x5rT` in the first hole, fit an `M3x4rT` in the other, then swap the long screw out and put it back with the door screws.
+      - type: tip
+        by: "Yoni Freedhoff, comment on INDX 5.22"
+        text: >-
+          With the advanced filtration add-on fitted, its fan cable shares the filament sensor cable's cutout in this cover.
+
+  - id: g4k
+    refs: ["G4.34"]
+    kind: gen2
+    when: [gen2]
+    unless: [dryer]
+    text: >-
+      Hang the left steel panel and fix it with three nylon rivets in the positions highlighted in Prusa's companion article, not the eleven the Gen 2 guide shows.
+      The puck holders supply the rest, as on the right.
+      The transparent cover on this side is already on.
+      Before the first rivet, check no cable lies outside the panel line.
+    notes:
+      - type: why
+        by: "Clumsy-Creator, vbu, 3Dmountains, comments on Gen 2 4.33 and 4.38"
+        text: >-
+          The Gen 2 guide hangs this panel before the electronics covers.
+          Three builders say to fit the covers first:
+          the rear cover's two screws are driven from inside the printer, and the open left side is the easy way to reach them.
+      - type: warn
+        by: "unverified"
+        text: >-
+          I could not see the article's picture of the three positions.
+          If in doubt, mirror the three positions the INDX guide shows for the right panel in step 5.24 and keep every corner hole free for the puck holders.
+      - type: tip
+        by: "Luis, comment on Prusa's article"
+        text: >-
+          The rivets would not go in until the bottom two corners of the panel were propped up on very thin hex keys.
+      - type: warn
+        by: "several builders, comments on INDX 5.89"
+        text: >-
+          Before this panel closes the left side, check that the top LED panel's cable can still be drawn toward the front.
+          Five builders found it too short at step 5.89 and wished they had freed it while this side was open.
+
+  - id: g4kd
+    refs: ["G4.34"]
+    kind: gen2
+    when: [gen2, dryer]
+    text: >-
+      Hang the left steel panel and fix it with all eleven nylon rivets, as the Gen 2 guide shows.
+      There are no puck holders to share the load.
+      The transparent cover on this side is already on.
+      Before the first rivet, check no cable lies outside the panel line.
+    notes:
+      - type: why
+        by: "Clumsy-Creator, vbu, 3Dmountains, comments on Gen 2 4.33 and 4.38"
+        text: >-
+          The Gen 2 guide hangs this panel before the electronics covers.
+          Three builders say to fit the covers first:
+          the rear cover's two screws are driven from inside the printer, and the open left side is the easy way to reach them.
+      - type: tip
+        by: "Luis, comment on Prusa's article"
+        text: >-
+          The rivets would not go in until the bottom two corners of the panel were propped up on very thin hex keys.
+      - type: warn
+        by: "several builders, comments on INDX 5.89"
+        text: >-
+          Before this panel closes the left side, check that the top LED panel's cable can still be drawn toward the front.
+          Five builders found it too short at step 5.89 and wished they had freed it while this side was open.
 
   - id: p9e
     refs: ["5.23", "5.24"]
@@ -216,7 +257,7 @@ steps:
       Toolhead right to the back so the wiper cannot hit it.
       Hang the right side panel, with its handle and nozzle cleaner, and fix it with three new nylon rivets in the positions the manual shows for the 8-tool version.
       The puck holders supply the rest of the fixing.
-      Before the first rivet, check the offset sensor cable and the dock fan cable lie inside the panel line.
+      Before the first rivet, check the offset sensor cable and the dock fan cable lie inside the panel line, check once more that 8 cm of dock fan cable is free at the front right, then pull its three zip ties tight and trim them.
 
   - id: p9ed
     refs: ["5.23", "5.24"]
@@ -226,7 +267,7 @@ steps:
       Toolhead right to the back so the wiper cannot hit it.
       Hang the right side panel, with its handle and nozzle cleaner, and fix it with all eleven nylon rivets, as the manual shows for the 4-tool version.
       With no puck holders on this side the rivets carry the panel.
-      Before the first rivet, check the offset sensor cable and the dock fan cable lie inside the panel line.
+      Before the first rivet, check the offset sensor cable and the dock fan cable lie inside the panel line, check once more that 8 cm of dock fan cable is free at the front right, then pull its three zip ties tight and trim them.
     notes:
       - type: why
         by: "plan"

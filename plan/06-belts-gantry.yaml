@@ -7,7 +7,8 @@ where: "Printer"
 note: >-
   Without Gen 2 this is the INDX guide's order, unchanged.
   With Gen 2 ticked, the old belts and pulleys come out first and the 1.5GT set goes in:
-  right motor, then left, then the two front tensioners.
+  right motor, then left, then the two front idlers.
+  The tensioning screws stay out until the belt ends are fixed in the head plate, on every build.
   Belt routing is where the pictures matter most, so check each one before pulling a belt through.
   With Gen 2 the heatbed is only loosely screwed until Phase 9:
   keep the box on it and do not lean on it.
@@ -47,25 +48,6 @@ steps:
       Remove the four `M3x10` from the Nextruder holder, push all four belt ends out through its slots and take the holder away.
       It is not used again.
 
-  - id: p6hg
-    refs: ["4.12"]
-    kind: moved
-    when: [gen2]
-    text: >-
-      Lubricate both `M3x30` tensioning screws now.
-      Put a little Prusa lubricant (Fasteners 2/2 bag) on the tip of each, spread it round the whole thread with the tip of a zip tie, and insert both screws back into the front tensioners.
-    notes:
-      - type: why
-        by: "Prusa's Gen 2 companion article"
-        text: >-
-          The article moves the INDX guide's step 4.12 here, because the Gen 2 belt steps expect the screw to be sitting in the tensioner already.
-      - type: tip
-        by: "Scotttomo, Chris Hill, forum"
-        text: >-
-          A builder who skipped the grease had the right tensioner seize:
-          stainless screw galling in a stainless nut.
-          The cure was cutting the screw head off.
-
   - id: g3a
     refs: ["G3.4"]
     kind: gen2
@@ -104,7 +86,21 @@ steps:
       Lift the motor out of its mount and rest it on the edge of the frame.
       Loosen the two set screws with the 2.0 mm Allen key and pull the old pulley off;
       put it with the scrap.
+      Feel the shaft where the set screws sat and file any raised burr flat, lightly, before the new pulley goes on.
       Carefully cut the zip tie holding the motor cable to the mount.
+    notes:
+      - type: tip
+        by: "Ben Dover, comment on Gen 2 3.7"
+        text: >-
+          A square nut can drop out of the motor mount as the motor is lifted.
+          Find it and push it back into its slot;
+          it is checked again before the motor is bolted down.
+      - type: tip
+        by: "Clete2, coffeeFueledDiy, comments on Gen 2 3.7 and 3.19"
+        text: >-
+          Two builders left this zip tie uncut, one of them on an INDX build, and still got the belts in.
+          It is fiddlier but saves re-tying the cable.
+          The same goes for the left motor.
 
   - id: g3d
     refs: ["G3.8", "G3.9"]
@@ -114,9 +110,36 @@ steps:
     text: >-
       New pulley, right motor.
       Turn the shaft so its flat faces you and leave it there.
-      Slide a T21-1.5GT pulley onto the end of the shaft with the set-screw side facing the motor.
+      Back both set screws well out of a T21-1.5GT pulley and slide it onto the end of the shaft with the set-screw side facing the motor.
+      It should go on by hand;
+      if it stops part-way, take it off and look for a burr.
       Put the Pulley-offset-tool between motor and pulley, side marked Y, press the pulley against it, and tighten one set screw onto the flat.
+      The shaft need not reach the end of the pulley:
+      the tool sets the position.
       Rotate the pulley and tighten the second set screw.
+    notes:
+      - type: warn
+        by: "many builders, comments on Gen 2 3.9 and 3.22"
+        text: >-
+          Many builders found the new pulley far too tight on the shaft.
+          Before pushing, take both set screws right out and file flat the burrs the old set screws raised on the shaft.
+          A pulley forced halfway cost one builder a motor.
+      - type: tip
+        by: "several builders, comments on Gen 2 3.9"
+        text: >-
+          On many printers, original CORE Ones included, the shaft is about 3 mm shorter than pictured and ends inside the pulley.
+          Builders set the gap with the `Pulley-offset-tool` and carried on;
+          Prusa has not commented.
+      - type: tip
+        by: "Prusa staff and Philcotigo, replies on Gen 2 3.9"
+        text: >-
+          Either of the two set screws can be the one tightened onto the flat.
+          The pulley bore itself is round, with no flat inside.
+      - type: warn
+        by: "Szymchuck, comment on Gen 2 3.20"
+        text: >-
+          The X end of the `Pulley-offset-tool` is thin and snaps if the tool is dropped.
+          You still need that end for the left motor.
 
   - id: g3e
     refs: ["G3.10", "G3.11"]
@@ -133,6 +156,10 @@ steps:
         by: "Gen 2 guide"
         text: >-
           From here until the motor is bolted down, keep checking the belt has not slipped out of the assembly.
+      - type: tip
+        by: "Philcotigo, comment on Gen 2 3.10"
+        text: >-
+          If you have touched the linear rail, the rods or the lead screws, wipe the grease off your hands before handling the new belts.
 
   - id: g3f
     refs: ["G3.12", "G3.13"]
@@ -154,7 +181,9 @@ steps:
     tools: ["Cutters"]
     text: >-
       Move the assembly toward the rear right corner with the free belt ends led to the rear, loose.
-      Check the `M3nN` nut is still in the protrusion of the motor mount where the old cable clip was screwed on, and push it fully back in if it has dropped out.
+      Check the nut is still in the protrusion of the motor mount where the old cable clip was screwed on, and push it fully back in if it has dropped out.
+      The guide's text calls it an `M3nN`;
+      its picture shows a square nut.
       Lay the motor cable in its channel as pictured and tie it with a zip tie through the hole in the printed part.
       Turn the assembly so the belt pulleys face the rear of the printer and the tab under the mount sits in the rectangular cutout of the frame.
       From inside the printer, look through the hexagonal hole and confirm the lower belt is on the pulley.
@@ -164,6 +193,23 @@ steps:
         text: >-
           That nut has had no screw in it since the cable clip came off in Phase 3, and the mount has just been lifted out and turned over.
           INDX step 4.32 screws the Head-cable-clip into it, so look again before the motor is bolted down in the next row.
+      - type: tip
+        by: "TheKidFromCrumlin, comment on INDX 4.32"
+        text: >-
+          When you tie the motor cable, keep it and the tie's head clear of the protrusion that later takes the `Head-cable-clip`.
+          One builder's tied-down motor cable blocked the way to that screw hole in step 4.32.
+      - type: warn
+        by: "Ben Dover, coffeeFueledDiy, comments on Gen 2 3.14; the step's own picture"
+        text: >-
+          One INDX builder pulled a nut out here as a Bowden-guide leftover.
+          That nut is the one on the mount's outer face.
+          The one in the small protrusion beside the cable channel stays:
+          the Head-cable-clip screws into it in Phase 7.
+      - type: tip
+        by: "darksharpie, WarezMonkey, comments on Gen 2 3.15"
+        text: >-
+          Early CORE One motor mounts have no hexagonal window.
+          If yours has none, check the belt on the pulley by looking in past the idlers before the motor is bolted down.
 
   - id: g3h
     refs: ["G3.16", "G3.17"]
@@ -180,6 +226,16 @@ steps:
         text: >-
           There is no main cable any more.
           The INDX Head-cable-clip is screwed to this motor mount in Phase 7, step 4.32.
+      - type: tip
+        by: "Prusa staff, reply on Gen 2 3.30; about ten builders, comments on Gen 2 3.17"
+        text: >-
+          About ten builders found this `M3x6` spinning freely or stripped its plastic thread.
+          Prusa staff say it only pre-positions the mount at first assembly and the four `M3x35` do the holding, so a stripped one is no reason to stop.
+      - type: tip
+        by: "Mike G., comment on Gen 2 3.19"
+        text: >-
+          The motor and mount have a little play in the frame holes.
+          One INDX builder advises pushing the assembly as far toward the front of the printer as it goes before tightening the four `M3x35`.
 
   - id: g3i
     refs: ["G3.18"]
@@ -205,6 +261,7 @@ steps:
       Turn the assembly so the cable faces outward and cut its zip tie without nicking the cable.
       Take the motor out of the mount and the mount out of the printer.
       Rest the motor on the frame, loosen the two set screws and remove the old pulley.
+      File any burr on the shaft flat here too.
 
   - id: g3k
     refs: ["G3.20", "G3.22"]
@@ -222,6 +279,12 @@ steps:
         text: >-
           The two motors are not the same:
           right is set-screws toward the motor with side Y, left is set-screws away from the motor with side X.
+      - type: warn
+        by: "many builders, comments on Gen 2 3.22"
+        text: >-
+          The same tight fit is reported here, sometimes on one motor only.
+          Set screws out and shaft burrs filed before you push.
+          One builder's pulley stopped halfway and could be neither seated nor removed.
 
   - id: g3l
     refs: ["G3.21"]
@@ -272,6 +335,11 @@ steps:
       Motor cable into its channel as pictured, zip tie through the hole in the printed part.
       Turn the assembly so the idlers face the rear and the tab sits in the frame cutout.
       Through the hexagonal hole, confirm the upper belt is seated on the idler.
+    notes:
+      - type: tip
+        by: "Trainman, darksharpie, comments on Gen 2 3.28 and 3.15"
+        text: >-
+          The upper belt is only just visible through the hexagonal hole, and early CORE One mounts have no hole at all.
 
   - id: g3q
     refs: ["G3.29", "G3.30"]
@@ -281,6 +349,22 @@ steps:
     text: >-
       Fix the left motor from below with four `M3x35`, then the mount with the `M3x6`, gently.
       Have the two belt tensioner idlers ready.
+    notes:
+      - type: tip
+        by: "Prusa staff, reply on Gen 2 3.30"
+        text: >-
+          Same `M3x6` into plastic as on the right.
+          If it strips or spins, Prusa staff say it is not critical:
+          it only pre-positions the mount, and the four `M3x35` carry the motor.
+      - type: tip
+        by: "Mike G., comment on Gen 2 3.19"
+        text: >-
+          As on the right, push the motor and mount as far toward the front of the printer as the play in the frame holes allows before tightening the four `M3x35`.
+      - type: tip
+        by: "Trainman, Seeker, comments on Gen 2 3.30 and 3.5"
+        text: >-
+          If your motors carry a grounding wire, check its spade connector is still pushed together once the screws are back in.
+          One builder found his had come apart during this work.
 
   - id: g3r
     refs: ["G3.31", "G3.32"]
@@ -291,7 +375,25 @@ steps:
       Left front.
       Take the upper belt coming from the left motor and wrap it round the idler marked L, mark facing up, with the smooth back of the belt on the idler and no twist.
       Slide the idler into the rails of the left tensioner.
-      Turn the greased screw until the idler starts to move and stop when the sliding part is flush with the fixed part.
+      Leave the tensioning screw out.
+      The Gen 2 guide fits it here;
+      in this build it goes back at the end of the phase, as the INDX guide has it.
+    notes:
+      - type: why
+        by: "about fifteen builders, comments on INDX 4.9 to 4.11"
+        text: >-
+          Builders who followed Prusa's article had both tensioners engaged when the belt ends had to go into the Head-mounting-plate, and could not get enough slack on the 1.5GT belts.
+          Almost all of them ended up taking the screws back out.
+          The INDX guide's own order, screws out at step 4.2 and back in at 4.13, avoids that.
+      - type: tip
+        by: "plan"
+        text: >-
+          If the idler will not stay in its rails while you route the belt, start the screw two turns to hold it, and take it out again before the belt ends go into the plate.
+      - type: tip
+        by: "sworcester, comment on Gen 2 3.32"
+        text: >-
+          Check the `M3nS` nut is still inside the idler before it goes into the rails.
+          Without it the tensioning screw has nothing to pull on.
 
   - id: g3s
     refs: ["G3.33", "G3.34"]
@@ -310,7 +412,8 @@ steps:
       Right front.
       Cut the zip tie on the two free ends if you used one.
       Take the lower belt coming from the right motor and wrap it round the idler marked R, mark facing up, smooth back on the idler, no twist.
-      Into the rails of the right tensioner, screw until it moves, stop when flush.
+      Into the rails of the right tensioner.
+      Leave this tensioning screw out as well.
 
   - id: g3u
     refs: ["G3.37", "G3.38"]
@@ -320,6 +423,7 @@ steps:
       Lead the free end from that idler round the lower idler at the right end of the gantry and pull at least 8 cm through.
       Take the upper belt coming from the right motor round the upper gantry idler and pull 8 cm through.
       All four belt ends now hang at the gantry, which is where the INDX guide resumes.
+      Both idlers ride free in their rails, exactly as on a build without Gen 2.
     notes:
       - type: why
         by: "Prusa's Gen 2 companion article"
@@ -327,24 +431,72 @@ steps:
           The Gen 2 guide goes on to refit the Nextruder holder from step 39.
           An INDX build returns to INDX step 4.4 instead.
 
+  - id: p6cx
+    refs: ["4.4", "4.5", "4.6", "4.7", "4.8"]
+    kind: skip
+    when: [noalign]
+    text: >-
+      Skip the gantry aligner tools and the linear rail re-alignment, as you chose under Your build.
+      Do not loosen the rear gantry screws or the rail screws.
+      Slide the gantry front to back by hand and note how freely it runs, so you have something to compare against later.
+    notes:
+      - type: warn
+        by: "several builders, comments on INDX 4.4 to 4.8"
+        text: >-
+          This goes against Prusa's manual.
+          One builder who skipped these steps reports a finished build that prints well;
+          six who did them on a printer that was square say it came out worse.
+          Prusa has not replied.
+          If X-axis, homing or dock calibration fails in Phase 13, come back and do these steps:
+          the head and the right side have to come apart again to get here.
+      - type: tip
+        by: "SchuimSpaan88, langjai, comments on INDX 4.4 and 4.7"
+        text: >-
+          With the head off, the X linear rail and its bearing block are fully exposed.
+          Two builders lubricated them at this point, using Prusa's rail lubrication set.
+
   - id: p6c
     refs: ["4.4", "4.5", "4.6"]
     kind: asis
+    unless: [noalign]
     tools: ["2.5 mm"]
     text: >-
       Slightly loosen the three screws on the back of the gantry at each end.
       Slide an `INDX-Gantry-aligner-tool` onto the front of the X-axis at the right end and another at the left, fork toward the pulleys, rail in the cutout, pushed fully onto the profile.
       Lead both free belt ends over the top of each tool.
-      Then tighten the three rear gantry screws on each side.
+      Then tighten the rear gantry screws on each side while holding the tool against the frame:
+      the upper two first.
+      The tool covers the lowest one, so slide the tool back just far enough to reach it, tighten it, and push the tool home again.
     notes:
       - type: tip
         by: "forum digest"
         text: >-
           Builders who moved on with a rear gantry screw still loose had to come back to it.
+      - type: warn
+        by: "several builders, comments on INDX 4.4 to 4.8"
+        text: >-
+          Builders disagree on doing this at all.
+          Six say a machine that was square before came out worse, with X-axis or dock calibration failing later.
+          One skipped steps 4.4 to 4.8 and finished with good prints.
+          Prusa has not answered.
+          Decide before loosening anything:
+          the choice Leave the gantry alignment alone, under Your build, hides these rows.
+      - type: why
+        by: "several builders, comments on INDX 4.6"
+        text: >-
+          About ten builders found the aligner tool covers the lowest of the three rear screws at each end, whichever tool goes where.
+          The manual does not mention it.
+          They tightened the upper two, moved the tool, then tightened the third.
+      - type: tip
+        by: "MadVinnie, iKriz, FergyMcFerguson, comments on INDX 4.6"
+        text: >-
+          The tools have play and nothing keeps the two ends parallel, so either end can still shift with them fitted.
+          Hold each tool pressed against the frame profile while you tighten that side.
 
   - id: p6d
     refs: ["4.7"]
     kind: asis
+    unless: [noalign]
     tools: ["2.5 mm"]
     text: >-
       Loosen all six linear rail screws two to three turns, no more.
@@ -353,17 +505,44 @@ steps:
       - type: tip
         by: "forum digest"
         text: "Take a rail screw right out and the block behind it can drop."
+      - type: warn
+        by: "several builders, comments on INDX 4.7"
+        text: >-
+          The same split as the row before.
+          Three builders left the rail screws untouched.
+          Two who loosened them on a machine that had run well said the alignment was worse afterwards.
+      - type: tip
+        by: "SchuimSpaan88, langjai, comments on INDX 4.4 and 4.7"
+        text: >-
+          With the head off, the X linear rail and its bearing block are fully exposed.
+          Two builders lubricated them at this point, using Prusa's rail lubrication set.
 
   - id: p6e
     refs: ["4.8"]
     kind: asis
-    text: "Remove both aligner tools. They are not needed again."
+    unless: [noalign]
+    text: >-
+      Remove both aligner tools;
+      they are not needed again.
+      Check all six rear gantry screws once more, the lowest one at each end especially, then slide the gantry front to back by hand:
+      it must run freely along its whole travel.
+    notes:
+      - type: warn
+        by: "Martin Majewski, Biscuit's 3D Workshop, baldrick, comments on INDX 4.8"
+        text: >-
+          With the tools off, slide the gantry front to back by hand.
+          One builder found it binding and stuttering after this procedure.
+          Two others only found out at dock calibration and had to strip the printer back to this step.
 
   - id: p6f
     refs: ["4.9", "4.10"]
     kind: asis
+    unless: [gen2]
     text: >-
-      Belts into the Head-mounting-plate, held the right way round by its protrusion.
+      Belts into the Head-mounting-plate.
+      First press the two `M3nS` nuts into the plate's protrusion;
+      the manual does this after the belts, when both hands are busy.
+      Hold the plate the right way round by that protrusion.
       From the right:
       lower belt through the rear centre opening, round the post and back out with 4 to 5 teeth showing;
       upper belt the same through the front centre opening.
@@ -377,21 +556,105 @@ steps:
           Identical overlap on all four ends is not critical as long as the teeth mesh;
           the tensioners take up the difference.
           This is why the belt helper print is not needed.
+      - type: why
+        by: "several builders, comments on INDX 4.10 and 4.11"
+        unless: [gen2]
+        text: >-
+          Many commenters only got the belts in after undoing the front tensioners.
+          In this order they already are undone:
+          both `M3x30` screws came out in step 4.2 and go back once the plate is on.
+      - type: tip
+        by: "Fnord Prefect, Bartgalok, comments on INDX 4.10"
+        text: >-
+          A thumb is not enough for long.
+          Two builders held the right-hand pair of belt ends with a zip tie or a small clamp on the plate while they threaded the left pair.
+      - type: tip
+        by: "FergyMcFerguson, cyberjunaid, comments on INDX 4.9 and 4.11"
+        text: >-
+          The two `M3nS` nuts drop out of the protrusion easily.
+          Two builders held each with a short screw threaded in lightly from outside.
+          Take those screws out again afterwards:
+          the fan shroud's `M3x14` screws use these nuts in step 4.19.
+
+  - id: p6fg
+    refs: ["4.9", "4.10"]
+    kind: asis
+    when: [gen2]
+    text: >-
+      Belts into the Head-mounting-plate.
+      First press the two `M3nS` nuts into the plate's protrusion;
+      the manual does this after the belts, when both hands are busy.
+      Hold the plate the right way round by that protrusion.
+      Your belts are 1.5GT, so count more teeth than the manual says for the same length.
+      From the right:
+      lower belt through the rear centre opening, round the post and back out with 6 to 7 teeth showing, about 9 mm;
+      upper belt the same through the front centre opening.
+      Keep them uncrossed and pinned with your thumb.
+      From the left:
+      upper belt down through the front centre opening and lower belt down through the rear centre opening, 8 to 9 teeth each, about 13 mm, then press both ends into the left opening so 6 to 7 teeth show at the rear.
+    notes:
+      - type: why
+        by: "cyberjunaid, Nicolas Marsal, Meow and three others, comments on INDX 4.10 and 4.11"
+        text: >-
+          The manual's 4 to 5 and 6 to 7 teeth are counted on the old belts, which have a 2 mm pitch.
+          On 1.5GT belts the same length is a third more teeth.
+          One builder redid this step three times after ends with 4 to 5 teeth slipped out.
+          Prusa has not confirmed the figures.
+      - type: tip
+        by: "Chris Hill, forum"
+        text: >-
+          Identical overlap on all four ends is not critical as long as the teeth mesh;
+          the tensioners take up the difference.
+      - type: tip
+        by: "Fnord Prefect, Bartgalok, comments on INDX 4.10"
+        text: >-
+          A thumb is not enough for long.
+          Two builders held the right-hand pair of belt ends with a zip tie or a small clamp on the plate while they threaded the left pair.
+      - type: tip
+        by: "FergyMcFerguson, cyberjunaid, comments on INDX 4.9 and 4.11"
+        text: >-
+          The two `M3nS` nuts drop out of the protrusion easily.
+          Two builders held each with a short screw threaded in lightly from outside.
+          Take those screws out again afterwards:
+          the fan shroud's `M3x14` screws use these nuts in step 4.19.
 
   - id: p6g
     refs: ["4.11"]
     kind: asis
+    unless: [gen2]
     tools: ["2.0 mm"]
     text: >-
-      Check all four ends show 4 to 5 teeth inward.
-      Put two `M3nS` nuts into the plate's protrusion, set the plate on the linear bearing, and fix it with four `M3x8b` screws, firm but gentle.
+      Check all four ends show 4 to 5 teeth inward and both `M3nS` nuts are still in the protrusion.
+      Set the plate on the linear bearing and fix it with four `M3x8b` screws, firm but gentle.
       Look along both sides:
       every belt in its channel and none pinched.
+    notes:
+      - type: warn
+        by: "n8petersen, Meow, comments on INDX 4.10"
+        text: >-
+          A belt end that is short of teeth can pull out of the plate when you tension, and refitting it means taking the head off again.
+          Look at all four ends once more after the four screws are tight.
+
+  - id: p6gg
+    refs: ["4.11"]
+    kind: asis
+    when: [gen2]
+    tools: ["2.0 mm"]
+    text: >-
+      Check all four ends show 6 to 7 teeth inward and both `M3nS` nuts are still in the protrusion.
+      Set the plate on the linear bearing and fix it with four `M3x8b` screws, firm but gentle.
+      Look along both sides:
+      every belt in its channel and none pinched.
+    notes:
+      - type: warn
+        by: "n8petersen, Meow, comments on INDX 4.10"
+        text: >-
+          A belt end that is short of teeth can pull out of the plate when you tension, and refitting it means taking the head off again.
+          Look at all four ends once more after the four screws are tight.
 
   - id: p6h
     refs: ["4.12"]
     kind: asis
-    unless: [gen2]
     text: >-
       Lubricate both `M3x30` tensioning screws with the Prusa lubricant from the Fasteners 2/2 bag, spread round the whole thread with the tip of a zip tie.
       The manual limits this step to the original CORE One, which is what you have.
@@ -402,22 +665,32 @@ steps:
           A builder who skipped the grease had the right tensioner seize:
           stainless screw galling in a stainless nut.
           The cure was cutting the screw head off.
+      - type: why
+        by: "Prusa's Gen 2 companion article"
+        when: [gen2]
+        text: >-
+          The article moves this step ahead of the belt swap, because the Gen 2 guide refits the screws there.
+          This plan refits them in the next row instead, so the greasing stays where the INDX guide has it.
 
   - id: p6i
     refs: ["4.13"]
     kind: asis
-    unless: [gen2]
     tools: ["2.5 mm"]
     text: >-
-      Refit both tensioning screws so each Belt-tensioner-pulley engages its tensioner, and tension until both sit about 8 mm from the edge, typically 8 to 10 turns.
+      Check the `M3nS` nut is still inside each Belt-tensioner-pulley.
+      Refit both tensioning screws so each pulley engages its tensioner, and tension until both sit about 8 mm from the edge, typically 8 to 10 turns.
+      Look at the four belt ends in the plate once more:
+      none has crept out.
       Fine tuning happens in the wizard.
-
-  - id: p6ig
-    refs: ["4.13"]
-    kind: asis
-    when: [gen2]
-    tools: ["2.5 mm"]
-    text: >-
-      The greased tensioning screws are already in from the Gen 2 steps.
-      Tension both belts until each Belt-tensioner-pulley sits about 8 mm from the edge of its tensioner.
-      Fine tuning happens in the wizard.
+    notes:
+      - type: tip
+        by: "A_Str8, comment on INDX 4.13"
+        text: >-
+          Treat 8 mm as a starting point.
+          One builder who tensioned to the picture ended up too tight for the belt tuning wizard and had to slacken before it would run.
+      - type: tip
+        by: "A_Str8, baldrick, comments on INDX 4.13"
+        when: [gen2]
+        text: >-
+          Expect the 1.5GT belts to feel very tight at 8 mm.
+          One builder who started looser had belt calibration fail until he tightened them.

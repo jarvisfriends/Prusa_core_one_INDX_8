@@ -41,6 +41,13 @@ steps:
     text: >-
       Insert the nozzle cleaner from Phase 1 into the hole in the right side panel and turn the lock to hold it.
       Set the panel somewhere safe.
+    notes:
+      - type: tip
+        by: "several builders, comments on INDX 5.11"
+        text: >-
+          If the lock will not swing fully home, loosen its `M3nN` nut further:
+          six builders needed more than the quarter turn, one a full turn.
+          Then tighten a little at a time until the lock turns with some resistance and stays where you leave it.
 
   - id: p4d
     refs: ["5.74", "5.75", "5.76", "5.77"]
@@ -50,6 +57,12 @@ steps:
       Top cover.
       Turn it upside down and fix each hinge cover from below with two `M3x12cT`, not too tight.
       Lay the grille on with its longer side to the left, exactly as in the photo, insert the two Grill-flexi parts and fix them with two `M3x8rT`.
+    notes:
+      - type: tip
+        by: "billiam3d, comment on INDX 5.76"
+        text: >-
+          The holes in the hinge covers are tight.
+          Run an `M3x12cT` into each and out again before fitting the covers to the lid.
 
   - id: p4e
     refs: ["5.78", "5.79"]
@@ -64,3 +77,8 @@ steps:
         by: "plan"
         text: >-
           The whole lid is a bench job with no link to the printer until step 5.84.
+      - type: tip
+        by: "Probe3254, comment on INDX 5.78"
+        text: >-
+          Pre-thread each cover-knob with its `M3x10` before you assemble the lock;
+          it is much easier than cutting the thread through the lid.

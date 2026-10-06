@@ -32,6 +32,30 @@ steps:
         when: [bucket]
         text: >-
           Follow Prusa's larger-bucket article for the bin parts instead of the stock Wiper-base.
+      - type: tip
+        by: "several builders, comments on INDX 5.8 and 5.11"
+        text: >-
+          Do not fuss over the Wiper-lock nut now.
+          Six builders found the quarter turn too tight once the cleaner sat in the side panel.
+          The final setting is made there, in Phase 4.
+      - type: tip
+        by: "kuzu, StLuke, comments on INDX 5.10"
+        text: >-
+          The silicone wiper is the right way round when its low edge faces the middle of the base and its hole meets the screw hole.
+          A few millimetres of offset between the holes means it is in backwards.
+      - type: warn
+        by: "Andi_D, Jeff K, Brandon, comments on INDX 5.10"
+        text: >-
+          Only just snug the two `M3x12rT`:
+          two builders cracked the wiper slot along a layer line with very little force.
+          The access holes pass the slim Prusa T10 key but not most bit drivers.
+      - type: tip
+        by: "SuperCuriousFox, comment on INDX 5.10"
+        when: [bucket]
+        text: >-
+          In a self-printed PCCF bin base the silicone blocks were very tight.
+          One builder packed them in edge by edge with the largest Allen key until the screw holes lined up;
+          the silicone took it without damage.
 
   - id: p1b
     refs: ["5.25", "5.26", "5.33", "5.34"]
@@ -49,6 +73,11 @@ steps:
         text: >-
           The manual splits this into two sittings between printer steps.
           Done here, Phase 10 is only mounting.
+      - type: tip
+        by: "Ben Dover, comment on INDX 5.33"
+        text: >-
+          There is no Pucks bag.
+          All eight `Puck-universal` parts are in the Telescopic Spoolholder Set bags, alongside the `3x12sT` screws.
 
   - id: p1c
     refs: ["5.65", "5.66", "5.67"]
@@ -60,7 +89,9 @@ steps:
       run an `M3x12cT` fully into both holes and take it out again to cut the thread.
       Countersinks up, thimble into the oval hole, large spring into the thimble, two small springs into the side holes.
       Fix to the underside of the profile with two `M3x12cT`, working 1 to 4 and then 8 to 5.
-      No spring pinched, and each holder must keep a barely perceptible wiggle.
+      No spring pinched, and no holder screwed down rigid:
+      the manual asks for a barely perceptible wiggle.
+      The final setting is made in Phase 13, where dock calibration has you snug these screws and then back each off one full turn.
     notes:
       - type: tip
         by: "hyiger, domble, forum"
@@ -68,6 +99,26 @@ steps:
           These threads are the easiest thing in the kit to strip.
           Hand tools only, go slowly, and stop at the first firm resistance.
           One builder reamed each hole with the Torx driver before pre-threading.
+      - type: tip
+        by: "HChar, comment on INDX 5.65"
+        text: >-
+          Sight along the INDX C1 front profile before you start.
+          One builder's was slightly bowed at the top edge of the large opening, and it showed up in dock calibration.
+          The sheet bends by hand, so never lean on it.
+      - type: warn
+        by: "several builders, comments on INDX 5.66"
+        text: >-
+          The `M3x12cT` gets hot enough to burn when it cuts hole after hole.
+          Swap between several screws, or run all sixteen in, wait ten minutes and back them out slowly.
+          Three builders used a powered driver at low speed;
+          others say hand tools only.
+      - type: tip
+        by: "several builders, comments on INDX 5.67"
+        text: >-
+          Do not chase an identical wiggle on all eight.
+          Six builders could not tell how loose is right, and it is reset anyway:
+          dock calibration in Phase 13 has you snug these screws, then back each off one full turn.
+          Just never overtighten.
 
   - id: p1d
     refs: ["5.68", "5.69", "5.70", "5.71"]
@@ -75,9 +126,11 @@ steps:
     tools: ["T10"]
     text: >-
       Nozzle seals.
-      Slide a silicone seal onto each of the eight parking plates;
+      First run an `M3x8rT` into and out of the two profile-side holes of each Nozzle-seal-holder, while it can still lie flat.
+      Fix two parking plates to each holder with one `M3x8rT` each, bent end facing up.
+      Then slide a silicone seal onto each of the eight plates, with a drop of isopropyl alcohol inside the seal, pushing it over the bent end;
       the plate edges are sharp.
-      Fix two plates to each Nozzle-seal-holder with one `M3x8rT` each, bent part of the seal facing up and the seal not overhanging the holder.
+      No seal may overhang its holder.
       Turn the holders over and fix them to the profile from the other side with two `M3x8rT` each, starting at positions 1 and 2.
       Check no plate got bent.
     notes:
@@ -88,6 +141,18 @@ steps:
           Chamber light mount:
           fit its holders here in place of the stock ones and keep the stock set.
           The light bar step in Phase 11 changes with it.
+      - type: tip
+        by: "several builders, comments on INDX 5.69"
+        text: >-
+          A drop of IPA inside each silicone sleeve lets it slide on;
+          seven builders say so.
+          Hold the plate by its flat end and push the sleeve over the bent end.
+          Two builders cut through a seal on the plate edge.
+      - type: why
+        by: "Dave Avery and three others, comments on INDX 5.69"
+        text: >-
+          The manual slides each seal onto its bare plate first.
+          Four builders screwed the plates to the holder first, for something to grip and to keep fingers off the sharp edge, and five recommend pre-threading the profile-side holes before any plate goes on.
 
   - id: p1e
     refs: ["5.72", "5.73"]
@@ -99,3 +164,10 @@ steps:
       Hold the holder against the inside of the front profile with TOP toward the bent edge and fix it from the front with two `M3x8rT`.
       Store the finished profile with the tool holders facing up and nothing resting on the parking plates or holders;
       a bent plate will not seal.
+    notes:
+      - type: warn
+        by: "several builders, comments on INDX 5.73"
+        text: >-
+          The `M3x8rT` screws into the `Vent-lever-holder` barely bite:
+          four builders had them spin without ever going tight.
+          Stop as soon as the part no longer moves, and keep the profile's weight off the parking plates while you drive them.

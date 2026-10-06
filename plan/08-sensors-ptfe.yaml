@@ -16,6 +16,13 @@ steps:
       Remove the two `M3x4` that hold the top rear profile.
       Fix the `INDX-PTFE-holder-left` (marked L) at the left hole and the `INDX-PTFE-holder-right` (marked R) at the right hole, each with one kept `M3x10`, fully tight.
       Compare both with the photo.
+    notes:
+      - type: warn
+        by: "several builders, comments on INDX 4.39"
+        text: >-
+          The `M3x10` sits deep in a short, awkward channel in each PTFE holder.
+          Eight builders fought it and some chewed the key's ball end or the screw head.
+          Use the ball-end 2.5 mm key and seat it fully before every turn.
 
   - id: p8b
     refs: ["4.41", "4.42", "4.43"]
@@ -29,6 +36,24 @@ steps:
       - type: tip
         by: "Filamentalist, Printables"
         text: "A builder who forgot the sleeves had filament catching in the sensor."
+      - type: tip
+        by: "z073, NORM, comments on INDX 4.38 and 4.41"
+        text: >-
+          The 8-tool kit has two identical bags labelled `Fasteners Tools INDX`, each holding half the sleeves, collets, magnets and balls.
+          The printed sensor parts are in the bags labelled `Filament Sensor Holder Left` and `Right`.
+      - type: tip
+        by: "ftess, dr_blue, TC96728, comments on INDX 4.42 and 4.49"
+        text: >-
+          A sleeve can tip over sideways in the square opening.
+          Check it is upright and in line with the filament path before pressing.
+          The short arm of the 2.0 mm Allen key works as the pusher, and the click is loud.
+      - type: tip
+        by: "Ch4s3r, John, Stephen, comments on INDX 4.43 and 4.44"
+        text: >-
+          Collets go in with no force.
+          One that fights you is on the wrong face of the part.
+          For some builders they fell out again when the part was handled, for others they stayed put.
+          One left them until last.
 
   - id: p8c
     refs: ["4.44"]
@@ -37,6 +62,23 @@ steps:
     text: >-
       Put a 5×2 magnet (the parts list calls it Magnet 3.2 × 5) into each of the four pockets with the cut-out facing up and hold it down with an `M3x12cT`.
       The magnet tries to follow the key, so keep a finger on it.
+    notes:
+      - type: tip
+        by: "several builders, comments on INDX 4.44, 4.50 and 4.52"
+        text: >-
+          The `M3x12cT` holes in the `INDX-C1-FS-top` are tight.
+          Eight builders pre-threaded them.
+          Run a screw a few turns into each of the board and holder holes and back out now, before the balls and large magnets go in.
+      - type: warn
+        by: "My3DPrintzz, comment on INDX 4.44"
+        text: >-
+          Keep the loose magnets well apart until each is in its pocket.
+          One builder let two of the small ones snap together and one broke in half.
+      - type: tip
+        by: "Pyron, comment on INDX 4.44"
+        text: >-
+          One early builder says this screw should only retain the small magnet, leaving it about 0.5 mm of float, or the sensor may not reset when filament is pulled out.
+          The manual's photos show it screwed down and Prusa has not commented.
 
   - id: p8d
     refs: ["4.45", "4.47", "4.48"]
@@ -60,6 +102,18 @@ steps:
       - type: warn
         by: "manual"
         text: "Boards out of the ESD bag only now, held by the edges."
+      - type: tip
+        by: "gadget01, HChar, Mythmon, comments on INDX 4.42 and 4.49"
+        text: >-
+          If the board will not sit flat in its ridge, a sleeve is not fully clicked home.
+          Push the sleeves in again and do not pull the board down with the screws.
+          Three builders seated the board without trouble over fully seated sleeves.
+      - type: tip
+        by: "iKriz, tim, chew2c, comments on INDX 4.50"
+        text: >-
+          The holder's screw holes are deep and narrow, so a bit holder will not reach:
+          use the long T10 key.
+          If a screw will not bite, two builders eased the mouth of the hole with a knife tip instead of forcing it.
 
   - id: p8f
     refs: ["4.51", "4.52"]
@@ -105,6 +159,23 @@ steps:
       Put a `3x12sT` from the inside through the empty upper-centre rivet hole of the left window.
       Plug both filament sensor cables into the left block and lead them out through its cable channels.
       Hang the block on the screw with the collets up, its top tab in the gap above the window, and tighten.
+    notes:
+      - type: tip
+        by: "Pri Pri, SuperTux88, tlchandler, comments on INDX 4.53 and 4.62"
+        text: >-
+          The `3x12sT` screws are in the Fasteners 2/2 bag, although its label does not list them.
+          One per side is all you need.
+          It cuts into the printed block, so stop when the block is held firm.
+      - type: tip
+        by: "Kevinverelst, jche, comments on INDX 4.54"
+        text: >-
+          Both cables must leave the block toward the rear of the printer.
+          The manual's wording about the left side describes the block lying upside down, so go by its third picture.
+      - type: tip
+        by: "Skirfir, comment on INDX 4.52"
+        text: >-
+          Push both plugs in until they latch, and tug them.
+          With the holder on, the connector latches face its wall, so a cable cannot be released later without a hook or taking the block apart.
 
   - id: p8i
     refs: ["4.56"]
@@ -121,6 +192,16 @@ steps:
       Put two kept `M3x10` through an `INDX-PTFE-holder-cover`.
       Lay the four tubes in the channels of the PTFE-holder with the cables below them, and fit the cover longer side down, loose enough that the tubes still slide.
       The lengths between sensor and holder come from the scale on the Prusa cheatsheet (back of the welcome letter) or a tape measure.
+    notes:
+      - type: tip
+        by: "Jim, comment on INDX 4.58"
+        text: >-
+          Tube order in the holder channels is 1, 2, 3, 4 from the top, with the cables in the channels below.
+          The manual only shows this in its next step.
+      - type: tip
+        by: "several builders, comments on INDX 4.58 and 4.66"
+        text: >-
+          Four builders found it easier to screw the cover on loosely first and then push each tube's free end through its channel, instead of holding four tubes, the cables and the cover at once.
 
   - id: p8k
     refs: ["4.60", "4.61"]
@@ -136,6 +217,11 @@ steps:
         text: >-
           The stepped lengths are for neat routing under the lid, not function.
           Be tidy, not obsessive.
+      - type: tip
+        by: "Sepur, billiam3d, langjai, comments on INDX 4.60"
+        text: >-
+          Three builders measured from inside the tube.
+          Push the gauge in from the tube's loose end with a piece of spare filament until it reaches the sensor, slide the tube in the holder to match, then push the gauge on out.
 
   - id: p8l
     refs: ["4.62", "4.63", "4.64"]
@@ -146,6 +232,12 @@ steps:
       `3x12sT` from the inside through the upper-centre hole of the right window.
       Take either of the two cables coming from the left block and plug it into the right block, led through a cable channel.
       Hang the block on the screw, collets up, tab in the gap, and tighten.
+    notes:
+      - type: tip
+        by: "SuperTux88, Brandon, comments on INDX 4.62"
+        text: >-
+          As on the left:
+          one `3x12sT`, from the Fasteners 2/2 bag whatever the manual's parts list says, stopped when the block is held firm.
 
   - id: p8m
     refs: ["4.65", "4.66"]
@@ -155,6 +247,15 @@ steps:
       Sensor cable into the lower channel of the PTFE-holder-right, with the excess left hanging at the back.
       Four more 880 mm tubes into the collets, each tugged.
       Second holder cover with two kept `M3x10`, longer side down, loose.
+    notes:
+      - type: tip
+        by: "Ben Dover, comment on INDX 4.66"
+        text: >-
+          Tube order in the holder channels on this side is 8, 7, 6, 5 from the top, with the cable below.
+      - type: tip
+        by: "ggiwin, John Scott, comments on INDX 4.58 and 4.66"
+        text: >-
+          As on the left, builders found it easier to fit the cover loosely first and then push each tube's free end through its channel.
 
   - id: p8n
     refs: ["4.67", "4.68"]

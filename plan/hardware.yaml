@@ -12,7 +12,7 @@ rows:
   - ["`M3x4bT` and `M3x12bT` heatbed screws", "8 + 1", "Heatbed. With Gen 2 the centre `M3x12bT` is replaced by the kit's `M3x14bT`.", "3.24–3.25"]
   - ["Heatbed spacer 6×3.1×8 and textile sleeve", "1 + 1", "Heatbed. With Gen 2 the spacer is replaced by the 10 mm one.", "3.24, 3.26"]
   - ["6-32 terminal screws", "2", "xBuddy heatbed terminals (leave threaded in)", "3.37"]
-  - ["`M3x30` belt tensioning screws", "2", "Front profiles", "4.13. With Gen 2: greased and refitted before the belt swap."]
+  - ["`M3x30` belt tensioning screws", "2", "Front profiles", "4.13"]
   - ["Gen 2 only: belt tensioner idlers, each with its `M3nS` nut", "2", "Come out on the old belts", "Gen 2 3.32, 3.36"]
   - ["Gen 2 only: `M3x35` and `M3x6` motor screws", "8 + 2", "Under the two rear motors", "Gen 2 3.17, 3.30"]
   - ["Print fan, two cable straps", "1 + 2", "Nextruder, left-side harness", "4.22, 4.31"]

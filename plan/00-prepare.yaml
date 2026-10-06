@@ -37,6 +37,17 @@ steps:
       - type: warn
         by: "manual"
         text: "A T10 screwdriver was only supplied with kit-built printers."
+      - type: tip
+        by: "langjai, jliss, comments on INDX 1.4 and 3.17"
+        text: >-
+          A bit driver with a flexible extension reaches screws the L-keys cannot turn squarely, such as the offset sensor screw driven from below in Phase 5.
+          Fine tweezers help with connector latches and stuck collets in Phase 3.
+      - type: tip
+        by: "OversizedHat, 4nozzle, comments on INDX 1.4 and 2.25"
+        text: >-
+          Find the universal wrench that came with the printer before you start;
+          two builders no longer had theirs.
+          An ordinary 8 mm spanner undoes the Nextruder fitting in Phase 3.
 
   - id: p0c
     refs: ["1.5", "1.6"]
@@ -54,7 +65,10 @@ steps:
       Inventory the kit now.
       Count the `M3x12cT` countersunk screws:
       the build uses 32 (4 + 8 in the filament sensors, 16 in the tool holders, 4 in the lid hinges).
-      Confirm the Tool Dock Fan bag holds two `M3x35`.
+      Find the two `M3x35` for the dock fan:
+      most kits have them in the Fasteners 2/2 INDX bag and have no Tool Dock Fan bag.
+      Count the `M3nS` and `M3nN` nuts against the cheatsheet.
+      Check the Electronics box holds the offset sensor, its cable and its sticker.
       Look over the printed parts for cracks;
       parts marked E, F or G are factory prints and identical files exist on Printables.
       Report anything missing to Prusa support before teardown.
@@ -63,6 +77,23 @@ steps:
         by: "gb160, vhubbard, forum digest"
         text: >-
           Builders reported being one `M3x12cT` short, no usable spares of that screw, and Tool Dock Fan bags with one `M3x35` instead of two.
+      - type: tip
+        by: "JanV, comment on INDX 2.2"
+        text: >-
+          Compare the eight Nozzle tools side by side now, without touching their rectangular sensing areas.
+          One builder found a tool with its top pin missing and another 2.2 mm longer than the rest, but only after the whole build was finished.
+      - type: tip
+        by: "JDepto, Rich Adlam, comments on INDX 4.18 and 4.24"
+        text: >-
+          If the `Swingarm-clip` or `Head-cable-clip` seems to be missing from the Toolhead bag, look inside the `INDX-C1-Fan-shroud`.
+          At least four builders found a clip wedged in there, one of them only after contacting support.
+      - type: tip
+        by: "several builders, comments on INDX 5.59"
+        text: >-
+          Many kits have no Tool Dock Fan bag.
+          Ten builders found the two `M3x35` in the Fasteners 2/2 INDX bag, some with no spare.
+          Count the `M3nS` nuts too:
+          three builders used their very last one on the dock fan.
 
   - id: p0d2
     refs: []
@@ -71,6 +102,22 @@ steps:
     text: >-
       Lay out the Gen 2 parts as well:
       eight new expansion joints, eight expansion joint screws, sixteen M3 PTFE washers, the 10 mm heatbed spacer, one `M3x14bT` screw, two T21-1.5GT pulleys, two 1.5GT belts, the Pulley-offset-tool and the Expansion-joint-aligner.
+      Look at each of the eight expansion joint screws:
+      every one needs a thread, and the kit has no spare.
+      Add a fine flat file to your tools for the pulley swap.
+    notes:
+      - type: tip
+        by: "HChar, shmafoo, Jeff K, comments on Gen 2 4.5 and 3.8"
+        text: >-
+          In an INDX kit that includes Gen 2, look in the large `INDX base` box for a small cardboard box marked UPGRADE.
+          The pulleys, PTFE washers and 10 mm spacer are in the `Belts, Exp.
+          joints (Gen 2)` bag.
+      - type: warn
+        by: "TMaa, Ren, Luis, comments on Gen 2 4.5"
+        text: >-
+          The kit holds exactly eight expansion joint screws and no spare.
+          Two builders found one with no thread cut on it.
+          Check all eight now and ask support for a replacement while the printer still works.
 
   - id: p0e
     refs: ["1.9", "1.10"]
@@ -128,6 +175,11 @@ steps:
         by: "plan"
         text: >-
           One trip to the computer instead of two, and the file is waiting when the build is done.
+      - type: tip
+        by: "A_Str8, comment on INDX 6.5"
+        text: >-
+          The INDX firmware is a separate build from the stock CORE One firmware.
+          Being up to date on stock firmware does not let you skip this download.
 
   - id: p0j
     refs: []
@@ -146,6 +198,52 @@ steps:
           The kit's eight 880 mm tubes are all used between the sensors and the tools.
           The printed sensor top with couplers in the print list is one way to hold a tube at the sensor;
           I could not confirm which side its couplers sit on.
+
+  - id: p0k
+    refs: []
+    kind: added
+    when: [picam]
+    text: >-
+      Raspberry Pi camera:
+      get it working on the desk before the printer comes apart.
+      You need a Raspberry Pi (a Zero 2 W is enough), a Camera Module 3 (the Wide version sees more of the bed), a ribbon cable long enough to reach from the front corner of the chamber to wherever the Pi will sit outside it, a 5 V supply for the Pi, and a printed corner mount with its magnets.
+      Print the mount now, in ASA or PETG.
+      Flash Raspberry Pi OS Lite, then in Prusa Connect open the printer's Camera tab, choose Add new other camera and copy the token.
+      Install an upload script on the Pi, give it the token and a fingerprint of your own, and check that a snapshot appears in Connect.
+    notes:
+      - type: tip
+        by: "upload scripts"
+        text: >-
+          Two maintained scripts do the uploading:
+          [prusa-connect-camera-script](https://github.com/nvtkaszpir/prusa-connect-camera-script) and
+          [a shorter gist](https://gist.github.com/cannikin/4954d050b72ff61ef0719c42922464e5).
+          Both take a still with `rpicam-still` and send it to Prusa Connect with the token and fingerprint.
+          Pick the fingerprint once, 16 to 40 characters, and never change it.
+      - type: tip
+        by: "Printables"
+        text: >-
+          Magnetic corner mounts for the CORE One:
+          [Pi Cam 3 corner mount](https://www.printables.com/model/1287989-core-one-corner-mount-for-pi-cam-3),
+          [Magnetic Pi Camera v3 mount](https://www.printables.com/model/1313769-core-one-magnetic-pi-camera-v3-mount),
+          [Raspberry Pi Camera Bracket](https://www.printables.com/model/1288678-core-one-raspberry-pi-camera-bracket) (Camera Module 2).
+          Each lists its own magnets and screws.
+      - type: warn
+        by: "unverified"
+        text: >-
+          None of these mounts says it was tested with INDX fitted.
+          Forum builders report the Buddy3D camera still sees the bed from the front left corner of an INDX printer, so a corner mount is the best guess.
+          A mount that clips to the light bar is the riskiest: the light bar moves onto the tool dock.
+      - type: warn
+        by: "Raspberry Pi datasheets"
+        text: >-
+          Camera Module 3 is rated for 0 to 50 °C, which a heated chamber can exceed.
+          The Pi itself stays outside the chamber on its own power supply:
+          the printer's camera port is specified for the Buddy3D, at 5 V and 1 A.
+      - type: tip
+        by: "Prusa Connect"
+        text: >-
+          Connect takes at most one picture every ten seconds from a camera added this way, and shows none while the printer is offline.
+          There is no live video.
 
   - id: p0i
     refs: ["1.13", "1.14"]

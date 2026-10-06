@@ -14,23 +14,50 @@ steps:
     tools: ["2.5 mm", "T10"]
     text: >-
       Dock fan, at the bench.
-      `M3nS` nut into the Dock-fan-holder, then both `M3x35` screws into it before the fan goes in.
+      `M3nS` nut into the Dock-fan-holder, then both `M3x35` screws (Fasteners 2/2 INDX bag) into it before the fan goes in.
       Seat the Print fan blower so the highlighted holes line up and fix it with an `M3x25`.
       Turn it sticker side up, lay the Dock fan splitter board in its ridge, fix it with an `M3x8rT`, and plug the fan's own cable into the slot nearer the fan.
     notes:
       - type: warn
         by: "manual"
         text: "Touch metal first and hold the board by its edges."
+      - type: tip
+        by: "several builders, comments on INDX 5.59"
+        text: >-
+          The two `M3x35` are in the Fasteners 2/2 INDX bag;
+          most kits have no Tool Dock Fan bag.
+          This `M3nS` was the last one in the kit for three builders, so do not drop it.
+      - type: warn
+        by: "Matt-G, comment on INDX 5.60"
+        text: >-
+          Go lightly on the `M3x25`:
+          over-tightened, it breaks the blower housing.
 
   - id: p11b
     refs: ["5.62", "5.63"]
     kind: asis
-    tools: ["2.5 mm"]
+    tools: ["2.5 mm ball end"]
     text: >-
-      At the Belt-tensioner where the dock fan cable emerges, remove the two highlighted `M3x30` and leave the third.
+      First take the tension off the belts:
+      back both belt tensioning screws off until the belts go slack.
+      Then, at the Belt-tensioner where the dock fan cable emerges, remove the two highlighted `M3x30` and leave the third.
       Plug the dock fan cable into the free slot on the board until it latches.
-      Turn the assembly over carefully, lower both `M3x35` into the Belt-tensioner and tighten.
+      Turn the assembly over carefully, lower both `M3x35` into the Belt-tensioner and tighten;
+      the ball end of the 2.5 mm key reaches the screw behind the blower.
       Mind the two protruding screws against the paintwork.
+      Bring both belts back to the 8 mm position.
+    notes:
+      - type: why
+        by: "several builders, comments on INDX 5.62 and 5.63"
+        text: >-
+          Four builders say to take the tension off the belts before these two `M3x30` come out of the Belt-tensioner.
+          The manual does not mention it.
+      - type: tip
+        by: "several builders, comments on INDX 5.60 and 5.63"
+        text: >-
+          Builders disagree about the `M3x35` behind the blower.
+          Four could not tighten it with the blower in the holder and fitted the bare holder first, blower after.
+          Two say the ball end of the Prusa 2.5 mm key reaches it with the blower in place.
 
   - id: p11c
     refs: ["5.64"]
@@ -55,6 +82,21 @@ steps:
       Left base (marked L) at the front left hole of the top cover back:
       screw up from inside the printer, base held on top, tighten.
       Right base (marked R) the same at the front right hole.
+    notes:
+      - type: tip
+        by: "several builders, comments on INDX 5.82 and 5.83"
+        text: >-
+          Eight builders found it far easier to push the `3x12sT` up through the hole, hold it still with the T10, and spin the pre-threaded Hinge-base down onto it like a nut.
+          With a turn or two left, square the base and finish from below.
+      - type: warn
+        by: "several builders, comments on INDX 5.82 and 5.83"
+        text: >-
+          Nothing keys the Hinge-base:
+          it turns with the last turn of the screw.
+          Hold it square;
+          the universal wrench's square slot fits over its raised notch.
+          Stop when snug:
+          one builder broke a base, another stripped one, and the screw tip nearly comes through.
 
   - id: p11f
     refs: ["5.84", "5.85"]
@@ -67,6 +109,18 @@ steps:
       Open the lid all the way:
       the springs must compress and hold it open.
       If it drops, adjust those two screws.
+    notes:
+      - type: warn
+        by: "Nick Dollimount, coffeeFueledDiy, Steve Stratoti, comments on INDX 5.84 and 5.85"
+        text: >-
+          Stop well short of the photo:
+          two builders found springs compressed that far too tight.
+          One who ran the `M3x25` screws fully home snapped the right hinge cover the first time he opened the lid.
+      - type: tip
+        by: "shmafoo, langjai, comments on INDX 5.80 and 5.84"
+        text: >-
+          The bag for these springs is labelled `Spring 0,8x5x15x10`, not 15x5.
+          A little Prusa lubricant on each spring stops the hinge creaking.
 
   - id: p11g
     refs: ["5.86", "5.87"]
@@ -83,6 +137,13 @@ steps:
         text: >-
           Never touch the rectangular sensing area on a Nozzle tool.
           Grease or a scratch there upsets temperature readings.
+      - type: tip
+        by: "gadget01, HChar, KoCMoHaBTa, comments on INDX 5.65, 5.87 and 5.89"
+        unless: [light]
+        text: >-
+          The stock position leaves the first layers dim.
+          Without printing anything, builders peeled the LED strip off its metal bar now and stuck it to the back of the dock's front profile, behind the PRUSA INDX logo, LEDs toward the bed.
+          Peel slowly, no sharp bends.
 
   - id: p11h
     refs: ["5.88"]
@@ -90,13 +151,19 @@ steps:
     tools: ["2.5 mm", "T10"]
     text: >-
       Fix the dock to the top profiles with one `M3x4` each side, to the front of the printer with two `M3x4rT` in the top holes, and with the two `M3x4rT` from the LED panel in the lower holes.
+    notes:
+      - type: tip
+        by: "vhubbard, SveeP, z073, comments on INDX 5.88"
+        text: >-
+          If a screw will not start, the dock's two lower holes may be clogged with powder coat:
+          clear them.
+          Two builders also had to squeeze the dock and frame together, one with a clamp, before the holes lined up.
 
   - id: p11i
     refs: ["5.89"]
     kind: asis
     text: >-
       Mount the LED panel on the inner side of the tool dock with two nylon rivets, easing a little more cable through if it is short.
-      Close the lid.
     notes:
       - type: warn
         by: "your build"
@@ -105,6 +172,13 @@ steps:
           Chamber light mount:
           the bar snaps into the printed holders instead and the two rivets are not used.
           Its author notes that loosening the two bottom front-plate screws can help.
+      - type: warn
+        by: "several builders, comments on INDX 5.89"
+        text: >-
+          Five builders found the LED cable too short here and could not pull more through:
+          zip ties tightened earlier held it, and one had to take the left side panel off again to reach them.
+          Do not tug;
+          find the tie and loosen it.
 
   - id: p11j
     refs: ["5.90"]
@@ -112,7 +186,28 @@ steps:
     when: [camera]
     text: >-
       Buddy3D camera:
-      mount it magnetically in the front left corner on the upper profiles, following the camera's own guide.
+      mount it magnetically in the front left corner on the upper profiles, following the camera's own guide, while the lid is still open.
+
+  - id: p11jp
+    refs: ["5.90"]
+    kind: opt
+    when: [picam]
+    text: >-
+      Raspberry Pi camera, while the lid is still open.
+      Set its mount in the front left corner on the upper profiles, where the manual puts the Buddy3D.
+      Lead the ribbon out of the chamber to the Pi by the shortest gap that does not pinch it, and keep it clear of the belts, the gantry and the tool dock.
+      Before any tool is docked, push the toolhead by hand to every dock position and into the front left corner, and open and close the lid and the door:
+      nothing may touch the camera or drag on the ribbon.
+    notes:
+      - type: warn
+        by: "unverified"
+        text: >-
+          Nobody has reported a Pi camera on an INDX printer, so the position is a guess based on where the Buddy3D sits.
+          If the mount fouls the dock or the head, try the rear corner or stop and report what you found.
+      - type: tip
+        by: "esox, Printables; forum, BuddyCam alternatives thread"
+        text: >-
+          Builders on the stock CORE One led the ribbon out through the gap at a frame corner or under the lower edge of a transparent side cover, and kept the Pi outside because the chamber is too hot for it.
 
   - id: p11k
     refs: ["5.91", "5.92"]
@@ -128,6 +223,12 @@ steps:
           Two builders each found one tool with a reversed magnet or pin that would not stay docked.
           If a tool will not hold, do not force it;
           contact support.
+      - type: tip
+        by: "Darth Caboose, JanV, comments on INDX 5.92"
+        text: >-
+          Dock each tool, then pull it off once and check its two pins.
+          One builder's pin stayed in the dock and another tool arrived with a pin missing.
+          Support told the first that superglue was fine, pin polarity matching the other pin.
 
   - id: p11l
     refs: ["5.93", "5.94"]
@@ -145,9 +246,3 @@ steps:
       Take the cardboard box out of the printer for the last time.
       Leave the lid unlocked;
       the wizard needs it open.
-
-  - id: p11n
-    refs: ["5.96", "5.97"]
-    kind: asis
-    text: >-
-      Peel off your temporary tape, then peel the backing from the offset sensor sticker (Tool Dock Fan bag) and lay it over the whole sensor.

@@ -6,6 +6,33 @@ power: "off"
 where: "Printer"
 steps:
 
+  - id: p12b
+    refs: ["5.100", "5.101", "5.102"]
+    kind: moved
+    text: >-
+      Stickers first, while the door still lies flat on the bench.
+      Upgrade sticker on the door beside ONE, pressed down before the clear layer is peeled;
+      if you fitted Gen 2, the plus sticker to use is the orange one.
+      INDX serial number label on the back of the printer, above the existing serial label.
+    notes:
+      - type: why
+        by: "mikrom, comment on Gen 2 4.40"
+        text: >-
+          The manual applies the door sticker after the door is hung.
+          One builder recommends doing it flat on the desk, where the door cannot swing.
+      - type: tip
+        by: "several builders, comments on INDX 5.101"
+        text: >-
+          The sticker's backing may be white, not blue.
+          Peel away the thicker backing and keep the thin clear film with the plus on it;
+          rub the film first so the plus lifts with it.
+          Two builders ended up placing a crooked plus by hand.
+      - type: tip
+        by: "mikrom, comment on Gen 2 5.2"
+        text: >-
+          When you lift the sticker off its base, the plus must come away on the thin transfer film.
+          On one kit it stayed behind on the thick backing.
+
   - id: p12a
     refs: ["5.98", "5.99"]
     kind: asis
@@ -14,14 +41,12 @@ steps:
       Peel the backing from the new top door seal and press it onto the front profile.
       Reassemble a hinge now if its shaft came out.
       Slide the door fully into the hinges, handle outward, and fix it with two `M3x5rT` per hinge, gently.
-
-  - id: p12b
-    refs: ["5.100", "5.101", "5.102"]
-    kind: asis
-    text: >-
-      Upgrade sticker on the door beside ONE, pressed down before the clear layer is peeled;
-      if you fitted Gen 2, the plus sticker to use is the orange one.
-      INDX serial number label on the back, above the existing serial label.
+    notes:
+      - type: tip
+        by: "henke, Nick Dollimount, comments on INDX 5.98 and 5.99"
+        text: >-
+          If a door screw will not hold, check it is an `M3x5rT` and not a shorter `M3x4rT`.
+          One builder's door would not close because the lower front panel with the LCD had crept up on the left.
 
   - id: p12b2
     refs: ["G5.2"]

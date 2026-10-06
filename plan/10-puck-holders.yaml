@@ -10,7 +10,8 @@ note: >-
   The black Spoolholder-assembly-tool holds the nuts on the inside.
   The manual names the nut pocket by the arrow printed beside it:
   always the pocket nearer the top edge of the tool, except rear top left, which uses the pocket nearer the bottom edge.
-  Match how the tool sits to the manual photo for each corner.
+  Builders dispute the manual's photos of the tool at the top corners, so do not trust a photo over your eyes:
+  hold the tool in place, look through the holder's screw holes, and turn the tool over if the nuts are not centred behind them.
   With dryer boxes ticked, this whole phase is one skip row.
 steps:
 
@@ -33,7 +34,11 @@ steps:
         text: >-
           A builder asked whether the spool holder steps could be skipped;
           another who had finished the conversion thought it should be fine.
-          Nobody reported trying it.
+      - type: tip
+        by: "PetrichorPete, chew2c, comments on INDX 5.25 and 5.19"
+        text: >-
+          One commenter on Prusa's manual tells builders who do not want spool holders to jump from here to the dock fan, and another said he was leaving them off.
+          Neither reported back on the finished printer.
 
   - id: p10a
     refs: ["5.27", "5.28"]
@@ -46,6 +51,27 @@ steps:
       if this panel went back on with three rivets after Gen 2, those holes are already empty.
       Remove the upper `M3x4rT` from the front and back corners of the panel.
       Hang a Puck holder bottom in the rear corner and one in the front corner, each the right way round, each with one `M3x12rT`.
+    notes:
+      - type: warn
+        by: "WarezMonkey, chew2c, sworcester, comments on INDX 5.19 and 5.28"
+        text: >-
+          From here on a side panel only comes off by undoing puck-holder nuts.
+          One builder found an X/Y fault at the first self-test and had to do exactly that;
+          two others left the panels and holders off until the printer had passed its tests.
+          This plan keeps the manual's order and first powers up in Phase 13.
+          Nobody has reported how far the INDX wizard runs without the dock and tools.
+      - type: warn
+        by: "mtbrider, comment on INDX 5.27"
+        unless: [gen2]
+        text: >-
+          Two rivets come out of each lower corner, four in all, and the lower one of each pair is easy to miss in the photo.
+          A builder who pulled only two had to take both bottom holders off again.
+      - type: tip
+        by: "katespace, comment on INDX 5.28"
+        text: >-
+          While tightening the first screw, push a spare Allen key through another hole of the holder into the panel.
+          It keeps the remaining holes lined up for the nut screws that follow.
+          The same works on the right side.
 
   - id: p10b
     refs: ["5.29", "5.30"]
@@ -56,6 +82,18 @@ steps:
       Front bottom left.
       One `M3nN` in the assembly tool, pushed fully home, rubber-free face outward, in the pocket by the arrow pointing UP.
       Hook the tool's ridge on the metal profile inside the front left corner with the nut toward the panel, hold it, and drive an `M3x12rT` into it.
+    notes:
+      - type: tip
+        by: "several builders, comments on INDX 5.30, 5.31 and 5.44"
+        text: >-
+          If your hand will not reach the lower corners, wind the bed up 3 to 5 cm by turning a Z lead screw by hand.
+          Five builders did this and then reached in beneath the bed.
+          The rear corners are the tightest.
+      - type: tip
+        by: "atxkev and others, comments on INDX 5.31 and 5.36"
+        text: >-
+          To find a nut you cannot see, poke a thin Allen key through the holder's screw hole into the nut in the tool, hold the tool there, then swap the key for the `M3x12rT`.
+          Sighting the nut through the hole also works.
 
   - id: p10c
     refs: ["5.31", "5.32"]
@@ -75,8 +113,18 @@ steps:
     text: >-
       Pull the rivets from the two marked holes at each top corner on the left, if any are there.
       Front top left:
-      two nuts in the tool as in the manual's photo, hook it on the profile and push gently upward.
+      two nuts in the tool, hook it on the profile and push gently upward.
+      Before driving anything, sight both nuts through the holder's holes;
+      if they are not centred, turn the tool over.
       Start an `M3x12rT` in the puck holder top before offering it up, then tighten the top screw and the lower screw.
+    notes:
+      - type: warn
+        by: "several builders, comments on INDX 5.36"
+        text: >-
+          Do not trust this step's photos of the tool:
+          five builders say they are wrong or swapped with the rear corner's, one found them correct.
+          Before driving a screw, look through the holder's holes for both nuts.
+          If they are not centred, turn the tool over.
 
   - id: p10e
     refs: ["5.38", "5.39"]
@@ -85,8 +133,14 @@ steps:
     tools: ["T10"]
     text: >-
       Rear top left.
-      Two nuts as in the photo, using the pocket nearer the bottom edge, by the arrow pointing DOWN.
-      Hook, push up, top screw then lower screw.
+      Two nuts, using the pocket nearer the bottom edge, by the arrow pointing DOWN.
+      Hook, push up, sight the nuts through the holes and turn the tool over if they are off, then top screw and lower screw.
+    notes:
+      - type: tip
+        by: "several builders, comments on INDX 5.38"
+        text: >-
+          Four builders got this corner first try with the tool turned upside down, short end on top, sighting the nuts through the holes before inserting a screw.
+          Three others dropped the tool and held each nut with long-nose pliers.
 
   - id: p10f
     refs: ["5.40", "5.41"]
@@ -134,6 +188,11 @@ steps:
           The manual fits the two right-hand tops after the tilt.
           They are reached upright exactly like the left-hand tops, so they are done here and the tilt finishes the job.
           If a photo does not match what you see, do these two after the tilt as printed.
+      - type: why
+        by: "bioxz, comment on INDX 5.46"
+        text: >-
+          A builder on Prusa's manual recommends this same order.
+          The assembly tool is needed for the top holders and can break during the work under the printer, where a wrench can hold the nuts instead.
 
   - id: p10j
     refs: ["5.57", "5.58"]
@@ -165,6 +224,13 @@ steps:
       Rear bottom left, from underneath.
       One nut, arrow pointing RIGHT.
       Set the tool's highlighted ridge against the bottom profile, nut toward the panel, hold from inside and drive the third `M3x12rT`.
+    notes:
+      - type: tip
+        by: "several builders, comments on INDX 5.47 and 5.54"
+        text: >-
+          Under the tilted printer the corners are open.
+          Eight builders put the tool down and held the nut with long-nose pliers or a 5.5 mm nut driver or spanner.
+          One found the tool fine once its ridge sat on the profile.
 
   - id: p10m
     refs: ["5.49", "5.50"]

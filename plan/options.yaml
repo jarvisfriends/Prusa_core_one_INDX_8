@@ -2,10 +2,17 @@
 # name these ids under `when:` (shown only if every listed option is on) and `unless:`
 # (hidden if any listed option is on). tools/check.py proves that every combination of
 # options still covers every manual step.
+#
+# Options that share a `group` are alternatives: the page shows them as one pick-one
+# question (plus "none"), and check.py never turns two of them on together.
 title: Your build
 note: >-
-  Tick what applies and the rows below adjust.
+  Pick what applies and the rows below adjust.
   Your choices are saved with your ticks.
+groups:
+  camera:
+    label: Camera
+    none: No camera
 options:
   - id: gen2
     label: Gen 2 upgrade
@@ -23,9 +30,21 @@ options:
       Removes the eight puck holders, the tilt and the telescopic spool holders, and rivets both side panels fully.
       You plan the filament path from each box to the sensor inlets yourself.
   - id: camera
+    group: camera
     label: Buddy3D camera
     default: false
-    text: Adds the three rows that unplug the camera, route its USB-C cable and refit it.
+    text: >-
+      Prusa's own camera, on its magnets in the front left corner.
+      Adds the manual's three camera rows: unplug it, route its USB-C cable, refit it.
+  - id: picam
+    group: camera
+    label: Raspberry Pi camera
+    default: false
+    text: >-
+      A Pi camera on a printed corner mount, with a Raspberry Pi outside the chamber that uploads a snapshot
+      to Prusa Connect every ten seconds or slower.
+      The printer cannot drive this camera itself, and nobody has reported a Pi camera mount tested with INDX fitted,
+      so its rows are marked unverified.
   - id: bucket
     label: Prusa larger waste bucket
     default: false
@@ -42,3 +61,12 @@ options:
       [Printed holders](https://www.printables.com/model/1795637-chamber-light-mount-indx-core-one) that replace the four nozzle seal
       holders and keep the light bar where it lights the first layers.
       Print them before teardown.
+  - id: noalign
+    label: Leave the gantry alignment alone
+    default: false
+    text: >-
+      Skips the gantry aligner tools and the linear rail re-alignment (INDX steps 4.4 to 4.8).
+      Only for a printer that was square and printing well before the build.
+      This is contested: Prusa's manual does these steps and Prusa has not answered the question,
+      six builders say the steps left a good printer worse, and one who skipped them reports a finished build that prints fine.
+      Leave this off to follow the manual.

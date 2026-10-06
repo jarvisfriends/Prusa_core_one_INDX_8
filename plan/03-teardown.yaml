@@ -8,6 +8,7 @@ note: >-
   Worked station by station:
   top and front, inside, back, left, the Nextruder, then the right side.
   The manual's order inside each station is unchanged.
+  With Gen 2 ticked, three of the four side pieces come off straight after the door, so both hands reach everything that follows.
 steps:
 
   - id: p3a
@@ -31,6 +32,19 @@ steps:
         by: "forum digest"
         text: >-
           Pushing a rivet's centre pin from the inside first gives better control.
+      - type: tip
+        by: "Taeke, langjai and Prusa staff, comments on INDX 2.8 and 1.4"
+        text: >-
+          Small flush cutters slid under the rivet head and used gently as a lever lift rivets cleanly.
+          One builder found the printed remover wore out after a few rivets.
+          Prusa staff:
+          any method that leaves the panel unmarked is fine.
+      - type: tip
+        by: "Balu, Imelda Blackburn, Trainman, comments on Gen 2 2.3"
+        text: >-
+          Two builders rated the rivet extraction tool, Printables model 1349886, the best they tried.
+          Where the back of a rivet is hard to reach, a fingernail under its head pulls it from the front.
+          Flush cutters work but can scratch the panel.
 
   - id: p3c
     refs: ["2.10"]
@@ -39,6 +53,12 @@ steps:
     text: >-
       Remove the two `M3x4` screws from the top front panel and the two `M3x4rT` from the front, then lift out the top profile.
       Keep all four.
+    notes:
+      - type: tip
+        by: "Danshari, comment on INDX 2.10"
+        text: >-
+          On one builder's printer the two top screws were Torx as well.
+          If the 2.5 mm key does not seat, try the T10.
 
   - id: p3d
     refs: ["2.11"]
@@ -49,6 +69,12 @@ steps:
       Hold the panel, remove the two `M3x5rT` from each hinge starting with the lowest, and slide the door out.
       If a hinge shaft drops out, push it back or bag it with the hinge.
       Keep these four screws apart from the `M3x4rT`.
+    notes:
+      - type: tip
+        by: "several builders, comments on INDX 2.11"
+        text: >-
+          Thread the four `M3x5rT` straight back into the empty hinges once the door is out.
+          They look almost identical to the `M3x4rT` that come out next, and one builder who set them aside lost them.
 
   - id: p3e
     refs: ["2.32"]
@@ -65,6 +91,33 @@ steps:
           The T10 is already in your hand and the door is out of the way.
           In the manual this is the last teardown step;
           nothing depends on that.
+
+  - id: p3s
+    refs: ["G2.6", "G2.4", "G2.5"]
+    kind: gen2
+    when: [gen2]
+    tools: ["Rivet tool"]
+    text: >-
+      Three of the four side pieces come off now.
+      Five rivets and the transparent side cover on the right.
+      Five rivets and the transparent side cover on the left.
+      Then the eleven rivets of the left steel panel, bottom ones first, with a hand on the panel as the last come out.
+      Store them flat and clean.
+      The right steel panel has to wait until its handle and filament sensor are off, at the end of this phase.
+    notes:
+      - type: why
+        by: "plan"
+        text: >-
+          Prusa's article removes the left pair after step 3.10 and the right pair after step 4.3.
+          Off now, they leave both sides open for the electronics box, the cable straps on the left and the whole Nextruder teardown.
+      - type: tip
+        by: "several builders, comments on INDX 2.11, 2.19, 2.32, 2.36 and 3.10"
+        text: >-
+          Six builders took side pieces off before the Nextruder teardown, some of them right after the door, and found the following steps much easier for it.
+      - type: tip
+        by: "vhubbard, chmax, forum"
+        text: >-
+          A builder who did Gen 2 and INDX together advised taking all the side panels off to begin with.
 
   - id: p3f
     refs: ["2.12"]
@@ -89,13 +142,24 @@ steps:
     text: >-
       Undo the two 6-32 terminal screws and free the heatbed power cables, then thread both screws back in at least three turns.
       Press the latch and unplug the heatbed thermistor.
-      Cut the zip ties down the right side of the box but leave the lowest one, and keep the cutters clear of the cables.
+      Cut the zip ties down the right side of the box and keep the cutters clear of the cables.
+      The manual leaves the lowest tie in place;
+      cut it too if the thermistor cable runs under it.
     notes:
       - type: tip
         by: "FoxRun3D, forum"
         text: >-
           One builder dropped a terminal screw into the electronics box and never found it.
           Thread them back in before you do anything else.
+      - type: tip
+        by: "Skirfir, comment on INDX 2.14"
+        text: >-
+          To keep the cutters away from the wires, snip through the head of each zip tie, not its strap.
+      - type: tip
+        by: "several builders, comments on INDX 2.14"
+        text: >-
+          On five builders' printers the thermistor cable was also held by the lowest tie, the one marked not to cut.
+          It would not come free until that tie was cut as well.
 
   - id: p3i
     refs: ["2.15"]
@@ -110,8 +174,22 @@ steps:
     text: >-
       Feed the loose cables out through the openings at the top of the box without forcing them, and cut the zip ties on the harness without nicking a cable.
       Ease the upper grommet outward, push the Nextruder main cable fully into the printer through the upper oval opening, and reseat the grommet.
-      Push the filament sensor cable in through the lower opening.
+      Push the side filament sensor cable in through whichever oval opening it uses.
+      The manual shows the lower one;
+      on most printers it shares the upper one with the Nextruder cable.
       Cut the tie on the heatbed bundle and guide that inside too.
+    notes:
+      - type: tip
+        by: "several builders, comments on INDX 2.17"
+        text: >-
+          On at least six printers the side filament sensor cable ran through the upper oval opening with the Nextruder cable, and the lower oval was empty with no grommet.
+          Push the cable in through whichever opening it actually uses.
+      - type: tip
+        by: "several builders, comments on INDX 2.18"
+        text: >-
+          The heatbed bundle goes in more easily with its round rubber grommet pulled out of the panel first.
+          Left in, the grommet tends to get pushed into the printer.
+          Keep it for Phase 5.
 
   - id: p3i2
     refs: ["G2.12"]
@@ -128,6 +206,16 @@ steps:
         text: >-
           Prusa's companion article sends you back to the electronics box for this after step 3.10.
           The box is open now.
+      - type: tip
+        by: "Sembazuru, Paul, comments on Gen 2 2.12 and 2.14"
+        text: >-
+          If a fingertip cannot press a connector latch, press it with the end of a hex key.
+          The plug then comes out with almost no force.
+      - type: tip
+        by: "Prusa staff, reply on Gen 2 4.35"
+        text: >-
+          The slot right of the Y motor cable may be empty on your board, with the Z cable one place further over than in the photo.
+          Either Z port works, so leave it as you found it.
 
   - id: p3k
     refs: ["2.19"]
@@ -137,6 +225,12 @@ steps:
       Left side of the printer:
       release the five cable straps, then loosen the M3 screw of the cable clip behind the Y motor and let the cable hang with the clip.
       Keep two of the straps for step 4.31.
+    notes:
+      - type: tip
+        by: "Danshari, comment on INDX 2.19"
+        text: >-
+          One builder's cable clip screw was Torx.
+          If the 2.5 mm key does not fit, try the T10.
 
   - id: p3l
     refs: ["2.20", "2.21", "2.22", "2.23"]
@@ -148,6 +242,23 @@ steps:
       Unplug every cable on the left of the LoveBoard except the main cable, then the extruder motor cable on top.
       Remove the two `M3x6` and the right cover, and unplug both cables on the right.
       Press every latch first.
+    notes:
+      - type: tip
+        by: "Probe3254, btarlton, comments on INDX 2.20 and 2.21"
+        text: >-
+          Two builders unplugged the left-hand cables before opening the idler:
+          the open idler arm keeps dropping in front of the connectors.
+      - type: tip
+        by: "several builders, comments on INDX 2.21"
+        text: >-
+          Five plugs come off on the left:
+          four white and one black, sideways at the top and easy to miss.
+          The black one lets go when its wire side is squeezed.
+          Tweezers or a small flat screwdriver hold a latch down while you ease a plug out.
+      - type: tip
+        by: "Ben Dover, comment on INDX 2.23"
+        text: >-
+          On an original CORE One the right cover is the older trapezoid-shaped part, not the one in the photo.
 
   - id: p3m
     refs: ["2.24", "2.25"]
@@ -157,6 +268,17 @@ steps:
       Slide the bowden-bend over the fitting, press the black collet down with two fingers and pull the PTFE tube out.
       Unscrew the M5-4 fitting with the 8 mm cutout of the wrench.
       Remove the two `M3x18` from the heatsink fan and let it hang on its cable.
+    notes:
+      - type: tip
+        by: "several builders, comments on INDX 2.24"
+        text: >-
+          If the tube will not let go, press the collet down with needle-nose pliers instead of fingers, push the tube in slightly, then pull.
+          Two builders unscrewed the `M5-4` fitting first and pulled the tube off it afterwards.
+      - type: tip
+        by: "Zarderxio, Pete, comments on Gen 2 2.13"
+        text: >-
+          The `M5-4` fitting has a small washer that drops off as it unscrews.
+          Catch it and bag it with the fitting if you are keeping the Nextruder as a spare.
 
   - id: p3n
     refs: ["2.26"]
@@ -165,6 +287,13 @@ steps:
     text: >-
       Hold the Nextruder and remove the three `M3x10` that fix it to the X-axis.
       Lift it out, unhook the heatsink fan cable and remove the fan.
+    notes:
+      - type: tip
+        by: "Ben Dover, btarlton, 4nozzle, comments on INDX 2.26"
+        text: >-
+          Three small spacers sit behind the Nextruder at these screws.
+          They may stay on the holder or come away with the Nextruder;
+          catch any that drop.
 
   - id: p3o
     refs: ["2.27", "2.28", "2.29"]
@@ -184,6 +313,12 @@ steps:
         text: >-
           The holder is what keeps the belts on the motor pulleys.
           It comes off in Phase 6, once the work under the gantry is finished.
+      - type: tip
+        by: "iKriz, MartinD, comments on INDX 2.29"
+        text: >-
+          The two `M3x4rT` of the Cable-clip drop into the printer easily;
+          keep a hand under them.
+          One builder's printer had no Cable-clip at all.
 
   - id: p3p
     refs: ["2.30", "2.31"]
@@ -194,6 +329,22 @@ steps:
       press the collet in the handle and pull the PTFE tube out.
       Remove the two `M3x8rT` that hold the handle and the filament sensor and take the handle off.
       Inside, cut the zip tie near the PTFE tube to free the sensor cable from under the CoreXY frame, and take the sensor out.
+    notes:
+      - type: tip
+        by: "several builders, comments on INDX 2.30 and 2.31"
+        text: >-
+          If the tube stays stuck, hold the collet in with tweezers and pull the tube with pliers, or undo the handle screws first and draw the tube out from behind.
+          Handle, tube, sensor and its cable can also leave as one piece.
+      - type: tip
+        by: "John, comment on INDX 2.30; manual's parts recap"
+        text: >-
+          One builder snapped the tube and broke a collet getting it out.
+          No harm done:
+          the old handle, tube and side sensor are not on the manual's keep list.
+      - type: tip
+        by: "Paul, ygram, comments on Gen 2 2.7"
+        text: >-
+          If the PTFE tube will not pull out of the handle, undo the two `M3x8rT` first, then push the tube further into the fitting until it comes out the other side.
 
   - id: p3q
     refs: ["5.2"]
@@ -209,6 +360,8 @@ steps:
         text: >-
           The INDX guide removes this panel in chapter 5.
           With it off now, the right bed spacer, offset sensor cable, gantry tool and dock fan cable are all reached from an open side, and it goes back at the guide's own step 5.24.
+          It cannot come off earlier:
+          the handle and the side filament sensor are screwed together through it.
       - type: tip
         by: "chmax, vhubbard, forum"
         text: >-
@@ -223,28 +376,13 @@ steps:
     text: >-
       While the rivet tool is out, also pull the upper-centre rivet from each transparent side cover.
       The filament sensor blocks screw into those holes in Phase 8 (steps 4.54 and 4.63).
-
-  - id: p3s
-    refs: ["G2.6", "G2.4", "G2.5"]
-    kind: gen2
-    when: [gen2]
-    tools: ["Rivet tool"]
-    text: >-
-      The other three side pieces come off too.
-      Five rivets and the transparent side cover on the right.
-      Five rivets and the transparent side cover on the left.
-      Then the eleven rivets of the left steel panel, bottom ones first, with a hand on the panel as the last come out.
-      Store all four pieces flat and clean.
     notes:
-      - type: why
-        by: "plan"
-        text: >-
-          Prusa's article removes the left pair after step 3.10 and the right pair after step 4.3.
-          One rivet session now leaves both sides open for everything that follows.
       - type: tip
-        by: "vhubbard, chmax, forum"
+        by: "several builders, comments on INDX 2.11, 2.19 and 5.14"
         text: >-
-          A builder who did Gen 2 and INDX together advised taking all the side panels off to begin with.
+          Some builders without Gen 2 still took both transparent covers right off, five rivets each, for hand access to the gantry, the dock fan cable and the sensors.
+          If you do, hang them back with four rivets each before the sensor blocks go on in Phase 8.
+          This plan does not need it.
 
   - id: p3r
     refs: ["2.33", "2.34", "2.35", "2.36"]

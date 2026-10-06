@@ -35,6 +35,13 @@ steps:
     text: >-
       Choose the language, then printer model COREONEINDX, then Done.
       Network setup can be skipped and done later.
+    notes:
+      - type: warn
+        by: "Stephen, comment on INDX 6.7"
+        text: >-
+          One builder was not offered COREONEINDX at all, only COREONEGEN2, although he had flashed the INDX firmware, and could not go back from the calibration screen.
+          He ran every calibration from the menu instead.
+          If the list looks wrong, stop and check the firmware file before choosing.
 
   - id: p13d
     refs: []
@@ -88,6 +95,11 @@ steps:
         text: >-
           Larger bucket:
           also set Settings → Nozzle Cleaner → Nozzle Cleaner Capacity to Extended.
+      - type: tip
+        by: "Prusa staff, replies on Gen 2 5.4 and 5.7"
+        text: >-
+          Prusa staff confirm the edition has to be changed before the self-test runs.
+          On stock firmware the Edition entry only exists from 6.8.1, so a Settings → Hardware menu without it means the firmware is too old.
 
   - id: p13e
     refs: ["6.9", "6.10"]
@@ -118,6 +130,18 @@ steps:
         text: >-
           Dock calibration is far more sensitive to belt tension and gantry squareness than the stock printer was.
           Loose belts showed up later as every tool being off by the same amount in Y.
+      - type: tip
+        by: "shmafoo, comment on INDX 6.11"
+        when: [gen2]
+        text: >-
+          On one INDX plus Gen 2 build the wizard never asked for belt tuning:
+          it went from the axis tests straight to dock calibration.
+          If yours does the same, look for belt tuning under Control → Calibrations & Tests before trusting the dock results.
+      - type: tip
+        by: "A_Str8, comment on INDX 6.11"
+        text: >-
+          If the belt never appears to move however far you turn the screw, the tension is far outside the range:
+          much too tight or much too loose.
 
   - id: p13g
     refs: ["6.12", "6.13", "6.14"]
@@ -126,7 +150,7 @@ steps:
     text: >-
       Dock calibration.
       Enter 8 docks and confirm every position is enabled.
-      Snug the silver screws on all docks with the T10, lightly.
+      Snug the silver screws on all docks with the T10: seated, not stiff.
       Wait until the printer says it is safe to touch, then with the lid open slide the toolhead by hand onto dock 1 until it clicks, watching from above that it seats squarely on the hotend.
       Continue, and repeat for each dock.
       When all are done, loosen every silver screw one full turn.
@@ -135,6 +159,22 @@ steps:
         by: "chmax, forum"
         text: >-
           Hold the head fully over the tool and flush before the first button press.
+      - type: tip
+        by: "HChar, Brian Flores, SceneGreen, comments on INDX 6.14"
+        text: >-
+          If dock calibration fails with a difference above 1 mm, two builders passed only after backing the silver screws off one to two turns from snug, so each dock had a slight wiggle.
+          A third passed with them snug, as written.
+      - type: tip
+        by: "DGP_Maluco, jche, iKriz, comments on INDX 6.14"
+        text: >-
+          A tool can sit slightly tilted in its dock.
+          Look from above, push the head on straight, then snug that dock's screw.
+          One builder never felt the click on any dock and calibration still passed.
+      - type: tip
+        by: "Danny, comment on INDX 6.14"
+        text: >-
+          Stray plastic on a printed dock can block calibration.
+          One builder had to trim material sticking out of two docks before they passed.
 
   - id: p13h
     refs: ["6.15", "6.16"]
@@ -161,6 +201,11 @@ steps:
         by: "Prusa article #36130"
         text: >-
           For an out-of-bounds result, heat the nozzle and clean it with a brass brush, kept away from the hotend cables, then rerun the tool offsets calibration from Control → Calibrations and Tests.
+      - type: tip
+        by: "That Mohawk Kid, and Prusa staff, replies on INDX 6.17"
+        text: >-
+          Rolling the firmware back from 6.9.0 to 6.6.3 did not cure repeated failures for one builder.
+          Prusa staff's answer to a calibration that keeps failing is the support chat.
 
   - id: p13j
     refs: ["6.18", "6.19", "6.20"]
@@ -170,8 +215,8 @@ steps:
       Nozzle cleaner.
       Through the opening under dock position 8, move the head by hand until the nozzle sits in the V of the silicone priming block.
       When the motors lock, take your hands out and turn the Wiper-adjuster with the universal wrench until the nozzle fills the V, touching both sides and the bottom.
-      Then set Y:
-      nozzle in the V-shaped cutout marked Y on the left of the bin, touching no wall.
+      If the screen then asks for Y, put the nozzle in the V-shaped cutout marked Y on the left of the bin, touching no wall.
+      Current firmware finds Y by itself and never asks.
     notes:
       - type: tip
         by: "Chris Hill, forum"
@@ -180,9 +225,22 @@ steps:
           He centres in X, gets close in Z, and uses the notch in the opposite corner of the tray as the Y reference.
           He also sets Z a touch past contact so the silicone deforms very slightly.
       - type: tip
-        by: "forum"
+        by: "forum; NickT_in_SD, Jim, Ben Dover, comments on INDX 6.19 and 6.20"
         text: >-
           Firmware 6.9.0 and later calibrate the wiper's X and Y automatically, leaving only Z by hand.
+          Three builders confirm the Y step in the manual no longer appears:
+          the printer probes the bin with the nozzle.
+      - type: tip
+        by: "Bartgalok, jche, comments on INDX 6.18"
+        text: >-
+          Point a phone camera through the opening and zoom in:
+          the nozzle's contact with the V is far easier to judge on the screen.
+          The V sits further back from the tool dock than the manual's picture suggests.
+      - type: tip
+        by: "HChar, comment on INDX 6.19"
+        text: >-
+          This height matters on every print.
+          With even a small drop of filament left on the nozzle tip, the tool offset check at print start fails and the print does not begin.
 
   - id: p13k
     refs: ["6.21"]
@@ -197,6 +255,11 @@ steps:
         text: >-
           There is no sensor in the toolhead.
           Loading means feeding about a metre of tube by hand, and auto-load works only for the tool currently picked up.
+      - type: tip
+        by: "n8petersen, MrTheHans, comments on INDX 6.21"
+        text: >-
+          No spool is needed.
+          A few centimetres of filament is enough, so the marked gauge piece from Phase 8 does all eight positions.
 
   - id: p13l
     refs: ["6.22", "6.23"]
@@ -215,3 +278,13 @@ steps:
     text: >-
       Getting-started material is at prusa.io/coreoneindx.
       Prusa asks for a few minutes of feedback on the manual, and your first test prints are on Printables.
+
+  - id: p13n
+    refs: []
+    kind: added
+    when: [picam]
+    text: >-
+      Raspberry Pi camera:
+      power the Pi, aim the camera at the bed and check a fresh snapshot arrives in Prusa Connect.
+      Run a short print with a tool change and watch the first few changes:
+      the ribbon must not move, and no tool or the head may touch the mount.

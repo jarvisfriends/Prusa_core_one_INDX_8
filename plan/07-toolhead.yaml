@@ -1,10 +1,12 @@
 # Phase 7. Row ids are the keys for saved ticks: never rename or reuse one.
 id: p7
 name: "Toolhead"
-title: "Toolhead and head cable"
+title: "Toolhead, head cable, dock fan cable"
 power: "off"
 where: "Printer"
-note: "Manual order throughout."
+note: >-
+  Manual order for the toolhead and head cable.
+  Then the dock fan cable from the start of INDX chapter 5 is routed straight away, while the right side is still wide open.
 steps:
 
   - id: p7a
@@ -21,6 +23,13 @@ steps:
       - type: warn
         by: "manual"
         text: "The toolhead is electronics. Out of its bag only now."
+      - type: tip
+        by: "several builders, comments on INDX 4.15 and 4.17"
+        text: >-
+          Expect screws in two of the four mounting holes:
+          top right and bottom left, seen from the back of the toolhead.
+          Five builders found them there.
+          Take them out now.
 
   - id: p7b
     refs: ["4.16", "4.17"]
@@ -30,6 +39,13 @@ steps:
       Push two `M3x14` through the upper holes of the Head-mounting-plate from the rear, hang the toolhead on them from the front and tighten firmly.
       Add two `M3x14` in the lower holes.
       Keep the toolhead clear of the metal LED holder at the front.
+    notes:
+      - type: warn
+        by: "Nick Dollimount, comment on INDX 4.17"
+        text: >-
+          The `M3x14` screws clamp against the printed `Head-mounting-plate`.
+          One builder saw the plate start to crush when tightening hard.
+          Stop once the toolhead is seated and the screws are snug.
 
   - id: p7c
     refs: ["4.18", "4.19", "4.20"]
@@ -38,6 +54,18 @@ steps:
     text: >-
       Offer the `INDX-C1-Fan-shroud` up from below so its ridge slides onto the bottom of the mounting plate, and fix it with one `M3x14` from each side.
       Push an `M3nS` nut into the protrusion on the left of the toolhead and check it through the screw hole.
+    notes:
+      - type: tip
+        by: "several builders, comments on INDX 4.18, 4.19 and 4.24"
+        text: >-
+          Look inside the `INDX-C1-Fan-shroud` before fitting it.
+          At least four builders found another printed part wedged in there, usually a cable clip needed a few rows later.
+      - type: warn
+        by: "thorthekitten, sworcester, comments on INDX 4.19"
+        text: >-
+          The two side `M3x14` screws thread into the `M3nS` nuts fitted to the mounting plate's protrusion in step 4.11.
+          If a screw finds no thread, a nut was missed or has dropped out.
+          There is no thread in the toolhead itself.
 
   - id: p7d
     refs: ["4.21", "4.22", "4.23"]
@@ -47,6 +75,12 @@ steps:
       From the rear, seat the kept print fan in the shroud opening and fix it with the new `M3x25`, lightly;
       the housing cracks.
       Hook the cable under the shroud's cable hook and plug it into the toolhead without leaving a loop sticking out sideways.
+    notes:
+      - type: tip
+        by: "sworcester, Patrik Hadorn, comments on INDX 4.22 and 4.23"
+        text: >-
+          Two builders found it easier to plug the fan in first and tuck the cable under the hook afterwards, with tweezers.
+          Winding the slack into a few small loops helped the hook grip and kept the cable from sticking out sideways.
 
   - id: p7e
     refs: ["4.24", "4.25", "4.26"]
@@ -55,6 +89,18 @@ steps:
       Gather the Head-cable-clip, Swingarm-clip, head cable cover back, a kept `M3x10`, an `M3x8rT`, the black `3x8sT`, the INDX head cable, the nylon string and two kept straps.
       At the back, pass the toolhead end of the head cable through the lower oval opening on the left and feed most of the braid inside, keeping the grommet from following it.
       Inside, run the cable up the corner behind the gantry.
+    notes:
+      - type: tip
+        by: "tlchandler, nilleb, MrTheHans, comments on INDX 4.25"
+        text: >-
+          The nylon string is a stiff length of nylon filament, not string.
+          Three builders found it in the bag labelled `Top Door Seal & Nylon String`.
+      - type: tip
+        by: "several builders, comments on INDX 4.26"
+        text: >-
+          Many printers have no grommet in the lower oval opening.
+          The manual says to carry on without.
+          Six builders fitted a spare grommet left over from their printer kit first, to keep the braid off the bare steel edge.
 
   - id: p7f
     refs: ["4.27"]
@@ -62,6 +108,19 @@ steps:
     text: >-
       Slide the nylon string into the cable sleeve from the connector end, bent tip pointing down, along the whole length, leaving the far end sticking out and pointing down.
       Twist the sleeve gently to close it round cable and string.
+    notes:
+      - type: tip
+        by: "k1mu, sworcester, comments on INDX 4.27 and 4.28"
+        text: >-
+          Two builders could not keep the bent tip pointing the right way when feeding the whole length first.
+          They seated the tip in the toolhead slot, fed in a few centimetres, fitted the cover from the next row, then ran the rest along the sleeve.
+      - type: tip
+        by: "gadget01, comment on INDX 4.27"
+        text: >-
+          The ball end of a 2.0 or 2.5 mm hex key opens the sleeve and guides the nylon in.
+          Run it along the far side afterwards to check the sleeve has not folded over on itself.
+          Nothing sharp:
+          it pokes through the braid.
 
   - id: p7g
     refs: ["4.28"]
@@ -76,6 +135,18 @@ steps:
         by: "forum digest"
         text: >-
           If the nylon keeps springing out of its slot, builders fed only the first 1.5 cm, fixed the cover, then fed the rest of the string along the sleeve.
+      - type: warn
+        by: "Prusa staff, reply on INDX 4.28; several builders, comments on INDX 4.28"
+        text: >-
+          Use the black `3x8sT` whatever the photo shows.
+          Staff said the picture of a silver screw was corrected, but later builders still saw it.
+          Three who fitted the `M3x10` instead bulged or pierced the head cable cover front.
+      - type: tip
+        by: "langjai, comment on INDX 4.28"
+        text: >-
+          If the cover back will not close flush, do not force the screw.
+          One builder's nylon tip was a few millimetres too long and pushed the cable off-centre in the channel.
+          Trimming the tip let the cover seat.
 
   - id: p7h
     refs: ["4.29", "4.30"]
@@ -84,6 +155,13 @@ steps:
     text: >-
       Open the Swingarm-clip carefully and snap it round the cable and nylon, protruding side and screw cutout toward the front, 1.4 cm from the bend in the nylon.
       Seat the clip on the rightmost narrowing of the swing arm from above, put the nylon end into the hole in the arm without pinching the sleeve, and fix with the `M3x8rT`.
+    notes:
+      - type: tip
+        by: "coffeeFueledDiy, jche, comments on INDX 4.30"
+        text: >-
+          Putting the nylon end into the swing arm hole first lines the clip up as you lower it.
+          If the clip sits tilted or slides about, press harder:
+          it snaps onto the narrowing.
 
   - id: p7i
     refs: ["4.31"]
@@ -98,6 +176,19 @@ steps:
     text: >-
       Twist the sleeve snug.
       Snap the Head-cable-clip round the cable, using the X mark and screw cutout for orientation, pre-thread a kept `M3x10` into it, and fix it to the protrusion on the Y motor mount.
+    notes:
+      - type: tip
+        by: "several builders, comments on INDX 4.32"
+        text: >-
+          The most disliked screw of the build.
+          Five builders swapped the `M3x10` for an `M3x12` of their own and found it far easier.
+          Two managed with the `M3x10` by pre-threading it until the tip just shows and driving it with a ball-end key.
+      - type: tip
+        by: "tomtomav, comment on INDX 4.32"
+        when: [gen2]
+        text: >-
+          With the side panels off, hold and position the cable and clip from below through the open side.
+          One builder found that much easier than reaching in from above.
 
   - id: p7k
     refs: []
@@ -116,9 +207,53 @@ steps:
     refs: ["4.33", "4.34", "4.35"]
     kind: asis
     text: >-
-      Thread three zip ties through the perforations in the xBuddy box, under all the cables.
+      The three zip ties you threaded through the xBuddy box in Phase 5 must still lie under all the cables;
+      thread them now if you left that out.
       Bring the head cable in through the left opening:
       narrow connector into the MMU slot on the extension board, wide connector into the Nextruder slot on the xBuddy board.
+    notes:
+      - type: tip
+        by: "Taeke, comment on INDX 4.35"
+        text: >-
+          One builder's reading of the three connectors:
+          the wide one and the dock fan one share the branched lead, and the narrow connector on a lead of its own is the one for the MMU slot.
+
+  - id: p7s
+    refs: []
+    kind: added
+    text: >-
+      LED panel cable, before any zip tie in the box is tightened.
+      In Phase 11 the white LED panel moves from the front profile onto the inside of the tool dock, and its cable has to reach.
+      Find that cable (follow it back from the panel at the top front of the chamber), ease as much slack as it will give toward the front, and keep it out of the ties you are about to tighten, or loose inside them.
+    notes:
+      - type: why
+        by: "Theo Hartmann, shmafoo, Tortoc, MartinD, mtbrider, comments on INDX 5.89"
+        text: >-
+          Five builders found this cable too short at step 5.89 and could not pull more through, because ties they had tightened earlier held it.
+          One had to take the left side panels off again.
+          All of them asked for the check to come earlier.
+      - type: warn
+        by: "unverified"
+        text: >-
+          Neither manual shows where this cable runs or which ties hold it, and nobody said how much extra length is needed.
+          If yours runs along the left side of the frame, free it there too while that side is open.
+
+  - id: g4j
+    refs: ["G4.35"]
+    kind: gen2
+    when: [gen2]
+    text: >-
+      Still at the open electronics box:
+      ease the two motor cables back toward the electronics, stopping at any resistance.
+      Plug the left motor cable into the connector labelled X on the xBuddy board and the right motor cable into the one labelled Y, until each latch clicks.
+
+    notes:
+      - type: why
+        by: "Matt Cooper, btarlton, bioxz and four others, comments on INDX 4.35 and 4.36"
+        text: >-
+          Prusa's article reconnects these two cables after the heatbed alignment, by which time the zip ties in the box are tight and trimmed.
+          Seven builders noticed the manual's photos already show X and Y plugged in here, and three say this is the moment.
+          Both motors have been bolted down since Phase 6, so nothing later needs the slack.
 
   - id: p7m
     refs: ["4.36"]
@@ -127,8 +262,57 @@ steps:
     text: >-
       Dress the cables along the edges as in the manual's photo, then tighten and trim the zip ties on the right, not hard.
       One branch of the head cable stays unplugged:
-      it is the dock fan cable, routed in Phase 9.
-      Hang it over the other cables so it is not crushed when the printer is turned.
+      it is the dock fan cable, routed in the next rows.
+    notes:
+      - type: tip
+        by: "several builders, comments on INDX 4.36"
+        text: >-
+          The manual's photo shows the Z motor in the ZL slot.
+          Yours may be in ZR.
+          Four builders compared notes and concluded either is fine, so leave it where it is.
+
+  - id: p7n
+    refs: ["5.12", "5.13"]
+    kind: asis
+    text: >-
+      Dock fan cable, the loose branch of the head cable.
+      Take three zip ties.
+      Push the dock fan connector back into the printer through the lower oval opening on the left of the rear panel, and draw the cable through from inside.
+    notes:
+      - type: why
+        by: "tdcsf, badabinski, SuperCuriousFox, comments on INDX 4.52 and 4.63; chew2c and four others, comments on INDX 5.14"
+        text: >-
+          The manual routes this cable after the sensors and tubes, and Prusa's Gen 2 article has the transparent side cover back on by then.
+          Three builders did it before the cover went back and say it is much easier;
+          five more wished they had, calling the zip ties a fight with the side closed.
+          Here the whole right side is still open.
+
+  - id: p7o
+    refs: ["5.14", "5.15"]
+    kind: asis
+    text: >-
+      Move the toolhead forward so it sits between the front and middle pairs of holes on the right.
+      Insert a zip tie at each of the three pairs of holes, rear first, as in the photo:
+      not round a belt, not round the smooth rod.
+      Close the three ties loosely and run the dock fan cable through all of them, behind the rod holder and above the smooth rod.
+      Bring its end inside the printer without wrapping it round the front right profile.
+
+  - id: p7p
+    refs: ["5.16", "5.17"]
+    kind: asis
+    tools: ["Cutters"]
+    text: >-
+      Lead the cable through the gap between the CoreXY and the frame until 8 cm protrudes and take up the slack between ties.
+      Close the three ties only far enough to hold the cable, so it can still be slid through them.
+      Push the toolhead right to the back, watching that the cable never fouls the motion.
+      The ties get their final pull and trim when the right side panel goes on in Phase 9.
+    notes:
+      - type: why
+        by: "chew2c, Luis, Stephen, comments on INDX 5.16"
+        text: >-
+          Three builders did not trust the 8 cm and would not finish these ties until the dock fan was on.
+          Nobody reported the 8 cm being wrong.
+          Left just closed, the ties still let the cable slide if the length has to change before the panel covers them.
 
   - id: p7q
     refs: ["4.37"]

@@ -20,8 +20,9 @@ steps:
     kind: asis
     text: >-
       Door closed.
-      Control → Auto Home, then Control → Move Axis → Move Z until the bed is at 200 mm or lower.
-      This exposes the spool holder screws and the underside of the bed.
+      Control → Auto Home, then Control → Move Axis → Move Z until the bed is at 200 mm.
+      Not lower.
+      This exposes the spool holder screws and the underside of the bed, and still leaves room to get a hand to the lower corners in Phase 10.
     notes:
       - type: tip
         by: "forum digest"
@@ -36,12 +37,18 @@ steps:
       While the spool is in your hand, cut a straight piece of filament exactly 300 mm long (PETG if you have it) for the tube measuring in Phase 8.
       The manual cuts two;
       one is enough if you mark it.
+      Afterwards look at the Z position again and move the bed back to 200 mm if unloading shifted it.
     notes:
       - type: tip
         by: "iKriz, forum"
         text: >-
           Mark 270, 240 and 210 mm on the filament with a pen instead of cutting it down each time.
           One piece then does both sides.
+      - type: tip
+        by: "katespace, comment on INDX 4.60"
+        text: >-
+          Pick a light-coloured filament for the gauge.
+          Pen marks at 270, 240 and 210 mm are much easier to see on it.
 
   - id: p2d
     refs: ["2.5"]
@@ -49,9 +56,32 @@ steps:
     text: >-
       Wait for everything to reach room temperature.
       Switch off at the back, unplug, remove the steel sheet and the USB drive, and put an empty cardboard box on the heatbed.
+    notes:
+      - type: tip
+        by: "kuzu, Raegin, comments on INDX 2.5"
+        text: >-
+          The manual's picture shows the steel sheet going on.
+          The instruction is the opposite:
+          take it off.
 
   - id: p2e
     refs: ["2.6"]
     kind: opt
     when: [camera]
     text: "Buddy3D camera: unplug it and lift it off its magnets. Cap the lens."
+    notes:
+      - type: warn
+        by: "alvivi, comment on INDX 2.6"
+        text: >-
+          The camera has a flat stick-on antenna on a thin lead, stuck to the frame beside it.
+          Peel the antenna off before you lift the camera away;
+          one builder missed it and tore the lead.
+
+  - id: p2ep
+    refs: ["2.6"]
+    kind: opt
+    when: [picam]
+    text: >-
+      Raspberry Pi camera:
+      the manual's step is about the Buddy3D, so there is nothing to unplug from the printer.
+      If a Pi camera is already in the chamber, unplug its ribbon at the camera, lift the mount off and draw the ribbon out of the printer.
