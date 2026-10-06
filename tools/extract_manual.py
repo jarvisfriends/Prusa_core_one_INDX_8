@@ -2,12 +2,17 @@
 """Pull every step's pictures and colour-keyed text out of Prusa's PDF manuals.
 
 Reads the PDFs in manuals/ (see manuals/manuals.yaml), writes:
-  build/manual/<id>.json   one entry per step: title, picture count, picture file, text items
-  build/img/<prefix><chapter>-<step>.jpg   the step's pictures side by side, 800x600 each
+  manuals/steps/<id>.json   one entry per step: title, picture count, picture file, text items
+  manuals/img/<prefix><chapter>-<step>.jpg   the step's pictures side by side, 800x600 each
+  manuals/PICTURES.md       every picture file with a link to the step it came from on Prusa's site
 
 The pictures are the JPEGs embedded in the PDF, copied out as they are. Nothing is
-rendered or screenshotted. The output is Prusa's material: it is git-ignored and is
-only used to build your own local copy of the page.
+rendered or screenshotted. The output is Prusa Research's material; it is committed so
+the page builds anywhere, and every picture links back to its step on help.prusa3d.com.
+
+You only need to run this when Prusa revises a manual:
+  python tools/extract_manual.py          # needs the PDFs in manuals/, PyMuPDF and Pillow
+  python tools/extract_manual.py --index  # only rewrite manuals/PICTURES.md
 """
 from __future__ import annotations
 
@@ -19,8 +24,6 @@ import os
 import re
 import sys
 
-import pymupdf
-from PIL import Image
 
 import planlib as pl
 
@@ -41,6 +44,7 @@ def page_order(name: str):
 
 
 def read_steps(paths: list[str]) -> "collections.OrderedDict[str, dict]":
+    import pymupdf
     steps: collections.OrderedDict[str, dict] = collections.OrderedDict()
     cur = None
     chapter = None
@@ -151,6 +155,7 @@ def to_text(segs: list) -> str:
 
 
 def write_manual(key: str, man: dict, out_json: str, out_img: str) -> tuple[int, int]:
+    from PIL import Image
     files = sorted(glob.glob(pl.path("manuals", man["files"])), key=page_order)
     if not files:
         print(f"  {man['label']}: no PDF matching manuals/{man['files']} (skipped)")
@@ -193,10 +198,42 @@ def write_manual(key: str, man: dict, out_json: str, out_img: str) -> tuple[int,
     return len(result), pictures
 
 
+def write_picture_index(manuals: dict) -> int:
+    """manuals/PICTURES.md: where every picture file came from."""
+    data = pl.load_steps(manuals)
+    out = ["# Where the pictures come from", "",
+           "Every file in `manuals/img/` holds the pictures of one manual step, side by side. They are the",
+           "JPEGs embedded in Prusa Research's PDF manuals, copied out by `tools/extract_manual.py` and",
+           "re-saved as one strip per step. The pictures and the step text in `manuals/steps/` are Prusa's;",
+           "they are here so the build plan can show them next to each row. Each line below links to the",
+           "step on help.prusa3d.com, where the original full-size pictures and the readers' comments are.", "",
+           "This file is generated. Do not edit it by hand.", ""]
+    count = 0
+    for key, man in manuals.items():
+        out += [f"## {man['title']}", "", f"Manual: <{man['url']}> ({man['version']})", ""]
+        for ch, steps in man["chapters"].items():
+            rows = []
+            for n in range(1, steps + 1):
+                ref = f"{man['prefix']}{ch}.{n}"
+                step = data.get(ref)
+                if not step or not step["img"]:
+                    continue
+                rows.append(f"| `{step['img']}` | {step['n']} | [{ch}.{n} {step['title']}]({pl.step_url(ref, manuals)}) |")
+                count += 1
+            if rows:
+                out += [f"### Chapter {ch}", "", "| File | Pictures | Step on Prusa's site |", "|---|---|---|", *rows, ""]
+    with open(pl.path("manuals", "PICTURES.md"), "w", encoding="utf-8") as fh:
+        fh.write("\n".join(out))
+    return count
+
+
 def main() -> int:
     manuals = pl.load_manuals()
-    out_manual = pl.path("build", "manual")
-    out_img = pl.path("build", "img")
+    if "--index" in sys.argv[1:]:
+        print(f"manuals/PICTURES.md: {write_picture_index(manuals)} picture files listed")
+        return 0
+    out_manual = pl.path("manuals", "steps")
+    out_img = pl.path("manuals", "img")
     os.makedirs(out_manual, exist_ok=True)
     os.makedirs(out_img, exist_ok=True)
     print("Extracting manuals:")
@@ -207,6 +244,7 @@ def main() -> int:
     if not total:
         print("No PDFs found. See manuals/README.md for where to download them.")
         return 1
+    print(f"manuals/PICTURES.md: {write_picture_index(manuals)} picture files listed")
     return 0
 
 

@@ -44,6 +44,18 @@ def load_options() -> list[dict]:
     return load_yaml("plan", "options.yaml")["options"]
 
 
+def option_combinations(options: list[dict]):
+    """Every set of option ids a builder can have on: any mix, but at most one per `group`."""
+    import itertools
+    ids = [o["id"] for o in options]
+    group = {o["id"]: o.get("group") for o in options}
+    for bits in itertools.product([False, True], repeat=len(ids)):
+        on = {i for i, b in zip(ids, bits) if b}
+        groups = [group[i] for i in on if group[i]]
+        if len(groups) == len(set(groups)):
+            yield on
+
+
 def visible(item: dict, on: set) -> bool:
     """A row or note shows if every `when` option is on and no `unless` option is on."""
     return all(o in on for o in item.get("when") or []) and not any(o in on for o in item.get("unless") or [])
@@ -58,6 +70,27 @@ def manual_for_ref(ref: str, manuals: dict) -> tuple[str, int, int]:
         if man["prefix"] == m.group(1):
             return key, int(m.group(2)), int(m.group(3))
     raise ValueError(f"no manual with prefix {m.group(1)!r} for ref {ref!r}")
+
+
+def step_url(ref: str, manuals: dict) -> str:
+    """Link to the step on help.prusa3d.com: the chapter page plus '#<step id>' when the id is known."""
+    key, ch, n = manual_for_ref(ref, manuals)
+    man = manuals[key]
+    url = (man.get("chapter_urls") or {}).get(ch, man["url"])
+    ids = (man.get("step_ids") or {}).get(ch) or []
+    return f"{url}#{ids[n - 1]}" if 0 < n <= len(ids) else url
+
+
+def load_steps(manuals: dict) -> dict:
+    """manuals/steps/<id>.json merged: ref -> {title, n, img, items}. Empty if not extracted."""
+    import json
+    data: dict = {}
+    for key in manuals:
+        f = path("manuals", "steps", f"{key}.json")
+        if os.path.exists(f):
+            with open(f, encoding="utf-8") as fh:
+                data.update(json.load(fh))
+    return data
 
 
 def all_steps(manuals: dict, key: str) -> list[str]:

@@ -1,18 +1,17 @@
 #!/usr/bin/env python3
-"""Assemble the page from plan/, site/ and (if present) the extracted manuals in build/.
+"""Assemble the page from plan/, site/ and the manual pictures and text in manuals/.
 
 Writes:
-  dist/index.html      a complete page: open it in a browser
+  dist/index.html      a complete page: open it in a browser, or serve dist/ (GitHub Pages does)
   dist/artifact.html   the same page without <html>/<head>, the form claude.ai artifacts take
-  dist/img/            the step pictures the page uses
+  dist/img/            the step pictures the page uses, copied from manuals/img/
 
-Run tools/extract_manual.py first to get pictures. Without it the page still builds,
-with a link to Prusa's online guide in place of each picture set.
+Needs only PyYAML. If manuals/steps/ or a picture is missing, the page still builds, with a
+link to Prusa's online guide in place of that picture set.
 """
 from __future__ import annotations
 
 import html
-import json
 import os
 import re
 import shutil
@@ -21,6 +20,7 @@ import sys
 import planlib as pl
 
 KIND_LABEL = {"asis": "as printed", "moved": "moved", "gen2": "Gen 2", "added": "added", "opt": "optional", "skip": "skip"}
+TOOL_CLASS = (("mm", "hex"), ("t10", "torx"), ("ph2", "ph"), ("cutter", "cut"))
 NOTE_LABEL = {"why": "Why here", "tip": "Tip", "warn": "Watch"}
 SUB_LABEL = {"info": "Note", "warn": "Careful"}
 LINK_RE = re.compile(r"\[([^\]]+)\]\((https?://[^)\s]+)\)")
@@ -59,13 +59,34 @@ def option_css(options: list[dict]) -> str:
 
 
 def render_options(opts: dict) -> dict:
-    items = []
+    # Plain options are tick boxes. Options that share a group become one pick-one question.
+    items, done_groups = [], set()
+    groups = opts.get("groups") or {}
+
+    def label(i: str, name: str, text: str) -> str:
+        body = f'<span class="opt-text">{fmt(text)}</span>' if text else ""
+        return f'<label for="opt-{esc(i)}"><span class="opt-name">{esc(name)}</span>{body}</label>'
+
     for o in opts["options"]:
-        checked = " checked" if o["default"] else ""
-        items.append(
-            f'      <li class="option"><input type="checkbox" id="opt-{esc(o["id"])}" data-opt="{esc(o["id"])}"{checked}>'
-            f'<label for="opt-{esc(o["id"])}"><span class="opt-name">{esc(o["label"])}</span>'
-            f'<span class="opt-text">{fmt(o["text"])}</span></label></li>')
+        g = o.get("group")
+        if not g:
+            checked = " checked" if o["default"] else ""
+            items.append(f'      <li class="option"><input type="checkbox" id="opt-{esc(o["id"])}" data-opt="{esc(o["id"])}"{checked}>'
+                         + label(o["id"], o["label"], o["text"]) + "</li>")
+            continue
+        if g in done_groups:
+            continue
+        done_groups.add(g)
+        members = [m for m in opts["options"] if m.get("group") == g]
+        none_checked = "" if any(m["default"] for m in members) else " checked"
+        rows = [f'<div class="choice"><input type="radio" name="grp-{esc(g)}" id="opt-{esc(g)}-none" data-group="{esc(g)}" data-opt=""{none_checked}>'
+                + label(f"{g}-none", groups[g]["none"], "") + "</div>"]
+        for m in members:
+            checked = " checked" if m["default"] else ""
+            rows.append(f'<div class="choice"><input type="radio" name="grp-{esc(g)}" id="opt-{esc(m["id"])}" data-group="{esc(g)}" data-opt="{esc(m["id"])}"{checked}>'
+                        + label(m["id"], m["label"], m["text"]) + "</div>")
+        items.append(f'      <li class="option"><fieldset class="optgroup"><legend>{esc(groups[g]["label"])}</legend>'
+                     f'<div class="choices">{"".join(rows)}</div></fieldset></li>')
     return {"options_title": esc(opts["title"]), "options_note": fmt(opts["note"]), "options": "\n".join(items),
             "option_classes": "".join(f' on-{o["id"]}' for o in opts["options"] if o["default"])}
 
@@ -93,18 +114,19 @@ def manual_block(ref: str, manuals: dict, data: dict, used_images: set) -> str:
     key, ch, n = pl.manual_for_ref(ref, manuals)
     man = manuals[key]
     label = f"{man['label']} {ch}.{n}"
+    url = pl.step_url(ref, manuals)
     step = data.get(ref)
     if step is None:
-        url = man.get("chapter_urls", {}).get(ch, man["url"])
         return (f'<p class="pending"><span class="mref">{esc(label)}</span> Pictures are not built into this copy. '
-                f'<a href="{esc(url)}">Open chapter {ch} of Prusa\'s {esc(man["label"])} guide</a>, step {n}.</p>')
+                f'<a href="{esc(url)}">Open step {ch}.{n} of Prusa\'s {esc(man["label"])} guide</a>.</p>')
     body = []
-    if step["img"]:
+    if step["img"] and os.path.exists(pl.path("manuals", "img", step["img"])):
         used_images.add(step["img"])
         cells = "".join(
             f'<button type="button" class="pic" data-i="{i}" aria-label="Enlarge picture {i + 1} of {step["n"]}, {esc(label)}"></button>'
             for i in range(step["n"]))
-        body.append(f'<div class="pics" data-img="img/{step["img"]}" data-n="{step["n"]}" data-label="{esc(label)} · {esc(step["title"])}">{cells}</div>')
+        body.append(f'<div class="pics" data-img="img/{step["img"]}" data-n="{step["n"]}" data-src="{esc(url)}" '
+                    f'data-label="{esc(label)} · {esc(step["title"])}">{cells}</div>')
     items = []
     for it in step["items"]:
         text = fmt(it["t"])
@@ -118,18 +140,20 @@ def manual_block(ref: str, manuals: dict, data: dict, used_images: set) -> str:
             items.append(f'<li class="plain"><span>{text}</span></li>')
     if items:
         body.append('<ul class="mtext">' + "".join(items) + "</ul>")
-    return (f'<details class="man" open><summary><span class="mref">{esc(label)}</span>{esc(step["title"])}</summary>'
-            f'<div class="man-body">{"".join(body)}</div></details>')
+    return (f'<details class="man" open><summary><span class="mref">{esc(label)}</span><span class="mtitle">{esc(step["title"])}</span>'
+            f'<a class="msrc" href="{esc(url)}" title="Pictures and text: Prusa Research. Opens this step, with its comments, on help.prusa3d.com">'
+            f'Prusa\'s page for this step</a></summary><div class="man-body">{"".join(body)}</div></details>')
 
 
 def render_phases(phases: list[dict], manuals: dict, data: dict, used_images: set) -> tuple[str, str, int]:
     out, nav, rows = [], [], 0
     for i, p in enumerate(phases):
-        nav.append(f'<a href="#{esc(p["id"])}" data-phase="{esc(p["id"])}">{i} {esc(p["name"])}</a>')
+        nav.append(f'<a href="#{esc(p["id"])}" data-phase="{esc(p["id"])}"><b>{i:02d}</b>{esc(p["name"])}</a>')
         on = p["power"] == "on"
-        out.append(f'<section class="phase" id="{esc(p["id"])}"><div class="phase-head"><span class="phase-num">Phase {i}</span>'
-                   f'<h2>{esc(p["title"])}</h2><span class="chip{" pwr-on" if on else ""}">{"Power on" if on else "Unplugged"}</span>'
-                   f'<span class="chip">{esc(p["where"])}</span></div>')
+        out.append(f'<section class="phase{" pwr-on" if on else ""}" id="{esc(p["id"])}"><div class="phase-head">'
+                   f'<span class="phase-num" aria-label="Phase {i}">{i:02d}</span><h2>{esc(p["title"])}</h2>'
+                   f'<div class="chips"><span class="chip{" pwr-on" if on else ""}">{"Power on" if on else "Unplugged"}</span>'
+                   f'<span class="chip">{esc(p["where"])}</span></div></div>')
         if p.get("note"):
             out.append(f'<p class="phase-note">{fmt(p["note"])}</p>')
         out.append('<ul class="steps">')
@@ -139,14 +163,17 @@ def render_phases(phases: list[dict], manuals: dict, data: dict, used_images: se
             if s["refs"]:
                 meta += f'<span class="refs">{esc(ref_text(s["refs"], manuals))}</span>'
             meta += f'<span class="tag tag-{s["kind"]}">{KIND_LABEL[s["kind"]]}</span>'
-            meta += "".join(f'<span class="tool">{esc(t)}</span>' for t in s.get("tools") or [])
+            for tool in s.get("tools") or []:
+                cls = next((c for key, c in TOOL_CLASS if key in tool.lower()), "")
+                meta += f'<span class="tool{" " + cls if cls else ""}">{esc(tool)}</span>'
+            meta += f'<a class="rowid" href="#{esc(s["id"])}" title="Link to this row">#{esc(s["id"])}</a>'
             notes = "".join(
                 f'<li class="{n["type"]}"{conditions(n)}><b>{NOTE_LABEL[n["type"]]}</b>{fmt(n["text"])} <span class="by">({esc(n["by"])})</span></li>'
                 for n in s.get("notes") or [])
             # a skipped step gets no pictures: there is nothing to do
             blocks = "" if s["kind"] == "skip" else "".join(manual_block(r, manuals, data, used_images) for r in s["refs"])
             out.append(
-                f'<li class="step" data-phase="{esc(p["id"])}"{conditions(s)}><input type="checkbox" id="cb-{esc(s["id"])}" data-id="{esc(s["id"])}" '
+                f'<li class="step" id="{esc(s["id"])}" data-phase="{esc(p["id"])}"{conditions(s)}><input type="checkbox" id="cb-{esc(s["id"])}" data-id="{esc(s["id"])}" '
                 f'aria-label="Done: {esc(p["name"])}, row {esc(s["id"])}"><div class="body"><div class="meta">{meta}</div>'
                 f'<div class="text">{fmt(s["text"])}</div>'
                 + (f'<ul class="notes">{notes}</ul>' if notes else "") + blocks + "</div></li>")
@@ -162,6 +189,8 @@ def render_intro(intro: dict, prints: dict, hardware: dict, sources: dict) -> di
     v["changes"] = "\n".join(f"      <li>{fmt(c)}</li>" for c in intro["changes"])
     v["assumptions"] = "\n".join(f"    <p>{fmt(a)}</p>" for a in intro["assumptions"])
     v["pictures_note"] = fmt(intro["pictures_note"])
+    v["legend_title"] = esc(intro["legend_title"])
+    v["fields"] = "\n".join(f'    <div><dt>{esc(k)}</dt><dd>{fmt(val)}</dd></div>' for k, val in intro["fields"])
     v["legend"] = "\n".join(
         f'    <span><span class="tag tag-{esc(l["kind"])}">{KIND_LABEL[l["kind"]]}</span> {esc(l["text"])}</span>' for l in intro["legend"])
     v["prints_title"] = esc(prints["title"])
@@ -186,6 +215,8 @@ def render_intro(intro: dict, prints: dict, hardware: dict, sources: dict) -> di
 
 SKELETON = ('<!doctype html><html lang="en"><head><meta charset="utf-8">'
             '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
+            '<meta name="description" content="One build order for converting a Prusa CORE One to the INDX 8-tool toolchanger, '
+            'with the Gen 2 upgrade and other add-ons merged in. A community plan, not from Prusa.">'
             "<style>:root{color-scheme:light;box-sizing:border-box}body{margin:0}img{max-width:100%}"
             "[hidden]{display:none!important}</style></head><body>\n")
 
@@ -193,12 +224,7 @@ SKELETON = ('<!doctype html><html lang="en"><head><meta charset="utf-8">'
 def main() -> int:
     manuals = pl.load_manuals()
     phases = pl.load_phases()
-    data: dict = {}
-    for key in manuals:
-        f = pl.path("build", "manual", f"{key}.json")
-        if os.path.exists(f):
-            with open(f, encoding="utf-8") as fh:
-                data.update(json.load(fh))
+    data = pl.load_steps(manuals)
     used_images: set = set()
     values = render_intro(pl.load_yaml("plan", "intro.yaml"), pl.load_yaml("plan", "prints.yaml"),
                           pl.load_yaml("plan", "hardware.yaml"), pl.load_yaml("plan", "sources.yaml"))
@@ -220,7 +246,7 @@ def main() -> int:
         if old not in used_images:
             os.remove(os.path.join(dist, "img", old))
     for name in sorted(used_images):
-        shutil.copyfile(pl.path("build", "img", name), os.path.join(dist, "img", name))
+        shutil.copyfile(pl.path("manuals", "img", name), os.path.join(dist, "img", name))
     with open(os.path.join(dist, "artifact.html"), "w", encoding="utf-8") as fh:
         fh.write(page)
     with open(os.path.join(dist, "index.html"), "w", encoding="utf-8") as fh:
@@ -229,7 +255,7 @@ def main() -> int:
     missing = sorted({r for p in phases for s in p["steps"] if s["kind"] != "skip" for r in s["refs"] if r not in data})
     print(f"Built dist/index.html: {len(phases)} phases, {rows} rows, {len(used_images)} picture files, {len(page) // 1024} KB of HTML")
     if missing:
-        print(f"{len(missing)} referenced steps have no extracted pictures (run tools/extract_manual.py with the PDFs in manuals/).")
+        print(f"{len(missing)} referenced steps have no extracted text or pictures (see manuals/README.md).")
     return 0
 
 

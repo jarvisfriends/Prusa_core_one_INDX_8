@@ -1,3 +1,4 @@
-pymupdf>=1.24
-pillow>=10
-pyyaml>=6
+pyyaml
+# only for tools/extract_manual.py, when Prusa revises a manual:
+pymupdf
+pillow

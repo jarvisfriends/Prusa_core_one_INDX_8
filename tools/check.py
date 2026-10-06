@@ -5,7 +5,8 @@ Structure checks:
   * every row has a unique id, a known kind, text, and well-formed refs, notes, when/unless
   * no ref points at a step that does not exist
 
-Coverage checks, repeated for every combination of the options in plan/options.yaml:
+Coverage checks, repeated for every combination of the options in plan/options.yaml
+(options that share a group are alternatives, so at most one of them is on):
   * every INDX manual step is referenced by exactly one visible row
     (a step whose only row is an optional row hidden by an option counts as covered)
   * with Gen 2 on, every Gen 2 step is referenced by exactly one visible row or listed in
@@ -14,7 +15,7 @@ Coverage checks, repeated for every combination of the options in plan/options.y
 from __future__ import annotations
 
 import collections
-import itertools
+import os
 import sys
 
 import planlib as pl
@@ -32,12 +33,21 @@ def main() -> int:
 
     if len(set(option_ids)) != len(option_ids):
         errors.append("plan/options.yaml: option ids must be unique")
+    groups = pl.load_yaml("plan", "options.yaml").get("groups") or {}
     for o in options:
         for key in ("id", "label", "text"):
             if not o.get(key):
                 errors.append(f"plan/options.yaml: option {o.get('id')!r} is missing '{key}'")
         if not isinstance(o.get("default"), bool):
             errors.append(f"plan/options.yaml: option {o.get('id')!r} needs default: true or false")
+        if o.get("group") and o["group"] not in groups:
+            errors.append(f"plan/options.yaml: option {o.get('id')!r} names group {o['group']!r}, which is not under groups:")
+    for g, members in collections.Counter(o["group"] for o in options if o.get("group")).items():
+        if sum(1 for o in options if o.get("group") == g and o.get("default")) > 1:
+            errors.append(f"plan/options.yaml: group {g!r} has more than one option on by default")
+    for g, spec in groups.items():
+        if not spec.get("label") or not spec.get("none"):
+            errors.append(f"plan/options.yaml: group {g!r} needs 'label' and 'none' (the text of the no-choice answer)")
 
     def check_conditions(where: str, item: dict) -> None:
         for key in ("when", "unless"):
@@ -115,9 +125,8 @@ def main() -> int:
     combos = 0
     coverage_errors: dict[str, list[str]] = {}
     row_range = [10 ** 9, 0]
-    for bits in itertools.product([False, True], repeat=len(option_ids)):
+    for on in pl.option_combinations(options):
         combos += 1
-        on = {o for o, b in zip(option_ids, bits) if b}
         name = " + ".join(sorted(on)) or "no options"
         shown = [s for s in all_rows if pl.visible(s, on)]
         hidden_optional = {r for s in all_rows if not pl.visible(s, on) and s.get("kind") == "opt" for r in s["refs"]}
@@ -145,6 +154,19 @@ def main() -> int:
 
     print(f"{len(phases)} phases, {len(all_rows)} rows in the files  ({', '.join(f'{k}: {v}' for k, v in sorted(kinds.items()))})")
     print(f"{len(option_ids)} options, {combos} combinations checked; a build shows between {row_range[0]} and {row_range[1]} rows")
+    data = pl.load_steps(manuals)
+    if data:
+        no_text = [r for r in indx + gen2 if r not in data]
+        no_file = sorted({s["img"] for s in data.values() if s.get("img") and not os.path.exists(pl.path("manuals", "img", s["img"]))})
+        for key, man in manuals.items():
+            for ch, count in man["chapters"].items():
+                if len((man.get("step_ids") or {}).get(ch) or []) not in (0, count):
+                    errors.append(f"manuals/manuals.yaml: {key} chapter {ch} lists {len(man['step_ids'][ch])} step ids for {count} steps")
+        if no_text:
+            errors.append(f"manuals/steps/ has no entry for {len(no_text)} steps, e.g. {no_text[0]} (rerun tools/extract_manual.py)")
+        if no_file:
+            errors.append(f"manuals/img/ is missing {len(no_file)} picture files, e.g. {no_file[0]}")
+        print(f"Manual text and pictures: {len(data)} steps extracted, {sum(1 for s in data.values() if s.get('img'))} picture files")
     print(f"INDX steps: {len(indx)}.  Gen 2 steps: {len(gen2)}, of which {len(unused)} are listed as deliberately unused")
     if errors:
         print(f"\n{len(errors)} problem(s):")
