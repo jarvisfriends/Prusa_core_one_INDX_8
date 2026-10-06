@@ -33,6 +33,14 @@ steps:
           When you lift the sticker off its base, the plus must come away on the thin transfer film.
           On one kit it stayed behind on the thick backing.
 
+  - id: p12b2
+    refs: ["G5.2"]
+    kind: gen2
+    when: [gen2]
+    text: >-
+      The Gen 2 serial number sticker also goes on the back, above the original serial number sticker.
+      Each manual says above the original label; neither says which of the two new labels goes higher.
+
   - id: p12a
     refs: ["5.98", "5.99"]
     kind: asis
@@ -47,13 +55,6 @@ steps:
         text: >-
           If a door screw will not hold, check it is an `M3x5rT` and not a shorter `M3x4rT`.
           One builder's door would not close because the lower front panel with the LCD had crept up on the left.
-
-  - id: p12b2
-    refs: ["G5.2"]
-    kind: gen2
-    when: [gen2]
-    text: >-
-      The Gen 2 serial number sticker also goes on the back, above the original serial number sticker.
 
   - id: p12c
     refs: ["5.103", "5.104"]

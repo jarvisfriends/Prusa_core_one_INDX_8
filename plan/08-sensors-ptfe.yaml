@@ -149,6 +149,17 @@ steps:
         text: >-
           The article refits both covers at this point, four rivets and no rivet in the top-middle hole on an 8-tool build.
           The Gen 2 guide's own picture shows five because it has no sensor there.
+      - type: why
+        by: "plan"
+        text: >-
+          The Gen 2 step shown under this row covers the right cover only.
+          The left cover is the second half of Gen 2 step 4.34, which is shown in Phase 9 with the left steel panel.
+          Fit both covers now.
+      - type: tip
+        by: "SpiceWeasel, Coldbird, comments on Gen 2 4.25 and 4.29"
+        text: >-
+          Two builders' Gen 2 kits held enough new rivets to replace every one they had pulled, and they found new rivets easier to fit than used ones.
+          Look in the Gen 2 box before reusing old ones.
 
   - id: p8h
     refs: ["4.53", "4.54", "4.55"]
@@ -176,6 +187,13 @@ steps:
         text: >-
           Push both plugs in until they latch, and tug them.
           With the holder on, the connector latches face its wall, so a cable cannot be released later without a hook or taking the block apart.
+      - type: warn
+        by: "plan"
+        when: [picam]
+        text: >-
+          Pi camera:
+          decide now where the ribbon will leave the chamber.
+          If it is to pass under the edge of a transparent cover, lay it in before this block is hung on that cover.
 
   - id: p8i
     refs: ["4.56"]

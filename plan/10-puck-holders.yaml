@@ -8,8 +8,7 @@ note: >-
   Each bottom holder takes three screws, two reachable upright and one only from underneath.
   Each top holder takes two.
   The black Spoolholder-assembly-tool holds the nuts on the inside.
-  The manual names the nut pocket by the arrow printed beside it:
-  always the pocket nearer the top edge of the tool, except rear top left, which uses the pocket nearer the bottom edge.
+  The manual names the nut pocket by the arrow printed beside it, except at the front top left, where it only shows a photo.
   Builders dispute the manual's photos of the tool at the top corners, so do not trust a photo over your eyes:
   hold the tool in place, look through the holder's screw holes, and turn the tool over if the nuts are not centred behind them.
   With dryer boxes ticked, this whole phase is one skip row.
@@ -57,7 +56,7 @@ steps:
         text: >-
           From here on a side panel only comes off by undoing puck-holder nuts.
           One builder found an X/Y fault at the first self-test and had to do exactly that;
-          two others left the panels and holders off until the printer had passed its tests.
+          two others said they would leave the panels and holders off until the printer had passed its tests.
           This plan keeps the manual's order and first powers up in Phase 13.
           Nobody has reported how far the INDX wizard runs without the dock and tools.
       - type: warn
@@ -86,8 +85,9 @@ steps:
       - type: tip
         by: "several builders, comments on INDX 5.30, 5.31 and 5.44"
         text: >-
-          If your hand will not reach the lower corners, wind the bed up 3 to 5 cm by turning a Z lead screw by hand.
-          Five builders did this and then reached in beneath the bed.
+          If your hand will not reach the lower corners, raise the bed 3 to 5 cm by hand:
+          turn all three Z lead screws by the same amount, a turn at a time in rotation, so the bed stays level.
+          Five builders raised theirs this way and then reached in beneath the bed.
           The rear corners are the tightest.
       - type: tip
         by: "atxkev and others, comments on INDX 5.31 and 5.36"
@@ -113,7 +113,7 @@ steps:
     text: >-
       Pull the rivets from the two marked holes at each top corner on the left, if any are there.
       Front top left:
-      two nuts in the tool, hook it on the profile and push gently upward.
+      two nuts in the tool (the manual names no arrow for this corner, only a photo that builders dispute), hook it on the profile and push gently upward.
       Before driving anything, sight both nuts through the holder's holes;
       if they are not centred, turn the tool over.
       Start an `M3x12rT` in the puck holder top before offering it up, then tighten the top screw and the lower screw.
@@ -229,7 +229,7 @@ steps:
         by: "several builders, comments on INDX 5.47 and 5.54"
         text: >-
           Under the tilted printer the corners are open.
-          Eight builders put the tool down and held the nut with long-nose pliers or a 5.5 mm nut driver or spanner.
+          Seven builders put the tool down and held the nut with long-nose pliers or a 5.5 mm nut driver or spanner.
           One found the tool fine once its ridge sat on the profile.
 
   - id: p10m

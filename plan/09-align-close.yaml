@@ -1,15 +1,15 @@
 # Phase 9. Row ids are the keys for saved ticks: never rename or reuse one.
 id: p9
 name: "Align & close"
-title: "Heatbed alignment, electronics covers, side panels"
+title: "Electronics covers and side panels"
 power: "off"
 where: "Printer"
 note: >-
   INDX chapter 5 resumes at step 18;
   everything before it is already done.
   Every cable that enters the xBuddy box is in place.
-  With Gen 2 ticked, the heatbed is aligned first, while both sides are still open.
-  The electronics covers go on before either steel side panel, because the rear cover is screwed from inside the printer.
+  With Gen 2 picked, the heatbed is aligned first, while both sides are still open.
+  The electronics covers go on before the right steel panel and, with Gen 2, the left one, because the rear cover is screwed from inside the printer.
 steps:
 
   - id: p9z
@@ -23,6 +23,7 @@ steps:
     when: [gen2]
     text: >-
       Lift the box off the heatbed.
+      Hang the loose PTFE tube ends out over the back of the printer so they stay clear of the bed.
       Take the Expansion-joint-aligner.
       Yours is black;
       the guide shows an orange one.
@@ -45,7 +46,7 @@ steps:
         by: "c10l, Jenda, greymouser, Trainman, Drew65, comments on Gen 2 4.7, 4.8 and 4.20"
         text: >-
           With the grooves facing out as the guide says, pushing the aligner on can slide a joint inward off its screw, and the bed must come off to refit it.
-          Two builders turned the grooves inward instead.
+          At least two builders turned the grooves inward instead.
           Prusa has not said whether that is safe.
       - type: tip
         by: "kuzu, Stephen, comments on Gen 2 4.14 and 4.20"
@@ -72,7 +73,7 @@ steps:
     text: >-
       Middle of the right side with the straight fork.
       Then the front right corner with the straight fork:
-      move the offset sensor out of the way to reach this joint, and put it back afterwards.
+      swing the offset sensor out of the way to reach this joint, and leave it aside until the final tightening in the next row is done.
       Its screw is underneath the Z-carriage and only a few turns in;
       mind the sticker on the sensor.
     notes:
@@ -94,8 +95,8 @@ steps:
     text: >-
       Now tighten the heatbed properly.
       Centre screw, then the four edge screws, then the four corner screws, gently but firmly, for at least two full rounds.
-      After the first light pass each round is only a sixteenth to an eighth of a turn.
-      Put the aligner back on each joint while its screw gets its final tightening, or the joint turns with the screw.
+      Work in small increments.
+      For the eight screws round the edge, put the aligner back on each joint while its screw gets its final tightening, or the joint turns with the screw.
       Check that no expansion joint has rotated:
       every groove still faces outward.
       Put the box back on the bed.
@@ -119,7 +120,7 @@ steps:
     when: [gen2]
     tools: ["2.5 mm"]
     text: >-
-      Check the offset sensor holder still sits on the Z-carriage exactly as in the photo of INDX step 3.16, then tighten its `M3x10` from below, the one left at a few turns in Phase 5.
+      Swing the offset sensor holder back so it sits on the Z-carriage exactly as in the photo of INDX step 3.16, then tighten its `M3x10` from below, the one left at a few turns in Phase 5.
       It cuts its own thread in the plastic, so stop when it is snug.
     notes:
       - type: why
@@ -257,7 +258,14 @@ steps:
       Toolhead right to the back so the wiper cannot hit it.
       Hang the right side panel, with its handle and nozzle cleaner, and fix it with three new nylon rivets in the positions the manual shows for the 8-tool version.
       The puck holders supply the rest of the fixing.
-      Before the first rivet, check the offset sensor cable and the dock fan cable lie inside the panel line, check once more that 8 cm of dock fan cable is free at the front right, then pull its three zip ties tight and trim them.
+      Before the first rivet, check the offset sensor cable and the dock fan cable lie inside the panel line, and that 8 cm of dock fan cable is still free at the front right.
+    notes:
+      - type: tip
+        by: "Five-Toed Sloth Bear, comment on Gen 2 4.29"
+        text: >-
+          If the rivet holes will not line up, the stamped panel has sprung open.
+          Push its middle up to line up the holes, and for the bottom edge lift the panel a millimetre with a plastic spudger in the gap below it.
+          Plastic does not mark the paint.
 
   - id: p9ed
     refs: ["5.23", "5.24"]
@@ -267,7 +275,7 @@ steps:
       Toolhead right to the back so the wiper cannot hit it.
       Hang the right side panel, with its handle and nozzle cleaner, and fix it with all eleven nylon rivets, as the manual shows for the 4-tool version.
       With no puck holders on this side the rivets carry the panel.
-      Before the first rivet, check the offset sensor cable and the dock fan cable lie inside the panel line, check once more that 8 cm of dock fan cable is free at the front right, then pull its three zip ties tight and trim them.
+      Before the first rivet, check the offset sensor cable and the dock fan cable lie inside the panel line, and that 8 cm of dock fan cable is still free at the front right.
     notes:
       - type: why
         by: "plan"
@@ -275,3 +283,9 @@ steps:
           The 8-tool picture uses three rivets only because the puck holders bolt through the same corners.
           Reuse the rivets you pulled;
           the 8-tool kit supplies three new ones here.
+      - type: tip
+        by: "Five-Toed Sloth Bear, comment on Gen 2 4.29"
+        text: >-
+          If the rivet holes will not line up, the stamped panel has sprung open.
+          Push its middle up to line up the holes, and for the bottom edge lift the panel a millimetre with a plastic spudger in the gap below it.
+          Plastic does not mark the paint.

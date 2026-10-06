@@ -26,6 +26,11 @@ steps:
           The drilling takes ten minutes and the clean-up takes longer;
           metal shards go everywhere.
           That is the reason to do it with the panel off.
+      - type: tip
+        by: "Bpendragon, comment on Prusa's article"
+        text: >-
+          A builder following Prusa's article picked the same moment:
+          drill while the right side panel is off.
 
   - id: p4b
     refs: ["5.3", "5.4"]

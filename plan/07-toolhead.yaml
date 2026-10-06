@@ -6,7 +6,7 @@ power: "off"
 where: "Printer"
 note: >-
   Manual order for the toolhead and head cable.
-  Then the dock fan cable from the start of INDX chapter 5 is routed straight away, while the right side is still wide open.
+  Then the dock fan cable from the start of INDX chapter 5 is routed straight away, while the right steel panel is still off.
 steps:
 
   - id: p7a
@@ -65,7 +65,8 @@ steps:
         text: >-
           The two side `M3x14` screws thread into the `M3nS` nuts fitted to the mounting plate's protrusion in step 4.11.
           If a screw finds no thread, a nut was missed or has dropped out.
-          There is no thread in the toolhead itself.
+          Most builders found no thread in the toolhead itself;
+          one says his has one.
 
   - id: p7d
     refs: ["4.21", "4.22", "4.23"]
@@ -77,7 +78,7 @@ steps:
       Hook the cable under the shroud's cable hook and plug it into the toolhead without leaving a loop sticking out sideways.
     notes:
       - type: tip
-        by: "sworcester, Patrik Hadorn, comments on INDX 4.22 and 4.23"
+        by: "sworcester, btarlton, langjai, Patrik Hadorn, comments on INDX 4.22 and 4.23"
         text: >-
           Two builders found it easier to plug the fan in first and tuck the cable under the hook afterwards, with tweezers.
           Winding the slack into a few small loops helped the hook grip and kept the cable from sticking out sideways.
@@ -100,7 +101,7 @@ steps:
         text: >-
           Many printers have no grommet in the lower oval opening.
           The manual says to carry on without.
-          Six builders fitted a spare grommet left over from their printer kit first, to keep the braid off the bare steel edge.
+          Five builders fitted a spare grommet left over from their printer kit first, to keep the braid off the bare steel edge.
 
   - id: p7f
     refs: ["4.27"]
@@ -222,21 +223,27 @@ steps:
     refs: []
     kind: added
     text: >-
-      LED panel cable, before any zip tie in the box is tightened.
+      LED panel cable, before any zip tie is tightened and while the sides are open.
       In Phase 11 the white LED panel moves from the front profile onto the inside of the tool dock, and its cable has to reach.
-      Find that cable (follow it back from the panel at the top front of the chamber), ease as much slack as it will give toward the front, and keep it out of the ties you are about to tighten, or loose inside them.
+      Follow the cable back from the panel at the top front of the chamber, free it wherever a tie holds it, and ease spare length toward the front.
+      Tuck the slack along the top front profile, clear of the gantry and the belts, and keep the cable out of the ties you are about to tighten, or loose inside them.
     notes:
       - type: why
         by: "Theo Hartmann, shmafoo, Tortoc, MartinD, mtbrider, comments on INDX 5.89"
         text: >-
-          Five builders found this cable too short at step 5.89 and could not pull more through, because ties they had tightened earlier held it.
-          One had to take the left side panels off again.
-          All of them asked for the check to come earlier.
+          Five builders found this cable too short at step 5.89.
+          Four could not pull more through because ties tightened earlier held it, and one had to take the left side panels off again.
+          Three say the place to free it is the left side, while that panel is off.
       - type: warn
         by: "unverified"
         text: >-
           Neither manual shows where this cable runs or which ties hold it, and nobody said how much extra length is needed.
-          If yours runs along the left side of the frame, free it there too while that side is open.
+      - type: warn
+        by: "plan"
+        unless: [gen2]
+        text: >-
+          Without Gen 2 your left steel panel is still on, so a tie behind it cannot be reached.
+          Free what you can from inside the chamber and in the electronics box, and expect that step 5.89 may still need the cable eased.
 
   - id: g4j
     refs: ["G4.35"]
@@ -244,15 +251,15 @@ steps:
     when: [gen2]
     text: >-
       Still at the open electronics box:
-      ease the two motor cables back toward the electronics, stopping at any resistance.
+      ease the two motor cables back toward the electronics, over the three open zip ties, stopping at any resistance.
       Plug the left motor cable into the connector labelled X on the xBuddy board and the right motor cable into the one labelled Y, until each latch clicks.
 
     notes:
       - type: why
-        by: "Matt Cooper, btarlton, bioxz and four others, comments on INDX 4.35 and 4.36"
+        by: "Matt Cooper, btarlton, bioxz, SceneGreen, julian, iKriz, jabdoa, comments on INDX 4.35 and 4.36"
         text: >-
           Prusa's article reconnects these two cables after the heatbed alignment, by which time the zip ties in the box are tight and trimmed.
-          Seven builders noticed the manual's photos already show X and Y plugged in here, and three say this is the moment.
+          Four builders noticed at this point that nothing had told them to plug X and Y back in, and three more say this is the moment.
           Both motors have been bolted down since Phase 6, so nothing later needs the slack.
 
   - id: p7m
@@ -265,15 +272,15 @@ steps:
       it is the dock fan cable, routed in the next rows.
     notes:
       - type: tip
-        by: "several builders, comments on INDX 4.36"
+        by: "Prusa staff, reply on Gen 2 4.35; Ben Dover, comment on INDX 4.36"
         text: >-
           The manual's photo shows the Z motor in the ZL slot.
           Yours may be in ZR.
-          Four builders compared notes and concluded either is fine, so leave it where it is.
+          Prusa staff say it makes no difference which Z port is used, so leave it where it is.
 
   - id: p7n
     refs: ["5.12", "5.13"]
-    kind: asis
+    kind: moved
     text: >-
       Dock fan cable, the loose branch of the head cable.
       Take three zip ties.
@@ -282,14 +289,26 @@ steps:
       - type: why
         by: "tdcsf, badabinski, SuperCuriousFox, comments on INDX 4.52 and 4.63; chew2c and four others, comments on INDX 5.14"
         text: >-
-          The manual routes this cable after the sensors and tubes, and Prusa's Gen 2 article has the transparent side cover back on by then.
-          Three builders did it before the cover went back and say it is much easier;
+          The manual routes this cable after the sensors and tubes.
+          Three builders did it earlier and say it is much easier;
           five more wished they had, calling the zip ties a fight with the side closed.
-          Here the whole right side is still open.
+          Nothing in Phase 8 needs the cable out of the way.
+      - type: why
+        by: "plan"
+        when: [gen2]
+        text: >-
+          With Gen 2 the transparent cover on this side is off as well, so the whole side is open.
+          Prusa's article has that cover back on before this step.
+      - type: tip
+        by: "plan"
+        unless: [gen2]
+        text: >-
+          Your right transparent cover is still on, as in the manual's photos.
+          The gain here is only that the sensor block and tubes are not yet in the way.
 
   - id: p7o
     refs: ["5.14", "5.15"]
-    kind: asis
+    kind: moved
     text: >-
       Move the toolhead forward so it sits between the front and middle pairs of holes on the right.
       Insert a zip tie at each of the three pairs of holes, rear first, as in the photo:
@@ -299,20 +318,26 @@ steps:
 
   - id: p7p
     refs: ["5.16", "5.17"]
-    kind: asis
+    kind: moved
     tools: ["Cutters"]
     text: >-
-      Lead the cable through the gap between the CoreXY and the frame until 8 cm protrudes and take up the slack between ties.
-      Close the three ties only far enough to hold the cable, so it can still be slid through them.
-      Push the toolhead right to the back, watching that the cable never fouls the motion.
-      The ties get their final pull and trim when the right side panel goes on in Phase 9.
+      Lead the cable through the gap between the CoreXY and the frame until 8 cm protrudes, take up the slack between ties, and tighten them.
+      Push the toolhead right to the back, watching that the cable never fouls the motion, and trim the ties.
     notes:
-      - type: why
-        by: "chew2c, Luis, Stephen, comments on INDX 5.16"
+      - type: tip
+        by: "chew2c, Luis, Stephen, comments on INDX 5.16; SuperCuriousFox, comment on INDX 4.63"
         text: >-
-          Three builders did not trust the 8 cm and would not finish these ties until the dock fan was on.
+          Three builders did not trust the 8 cm and would not tighten these ties until the dock fan was on.
           Nobody reported the 8 cm being wrong.
-          Left just closed, the ties still let the cable slide if the length has to change before the panel covers them.
+          One settled it by fitting the dock fan at this point.
+          If you want the same proof before trimming, build the dock fan now (the bench row that opens Phase 11) and hold it against the front right Belt-tensioner.
+      - type: warn
+        by: "plan"
+        when: [gen2]
+        text: >-
+          Ignore the manual's last line about returning to the Gen 2 article.
+          The article's jobs at that point are the heatbed alignment and the left panel, which this plan does in Phase 9.
+          X and Y are already plugged in.
 
   - id: p7q
     refs: ["4.37"]

@@ -39,13 +39,15 @@ steps:
     tools: ["2.5 mm ball end"]
     text: >-
       First take the tension off the belts:
-      back both belt tensioning screws off until the belts go slack.
-      Then, at the Belt-tensioner where the dock fan cable emerges, remove the two highlighted `M3x30` and leave the third.
+      back both belt tensioning screws off until the belts go slack, counting the turns.
+      Then, at the Belt-tensioner where the dock fan cable emerges, remove the two `M3x30` highlighted in the photo, on top of the block, and leave the third.
+      These are not the belt tensioning screw in the front profile, which is also an `M3x30`.
       Plug the dock fan cable into the free slot on the board until it latches.
       Turn the assembly over carefully, lower both `M3x35` into the Belt-tensioner and tighten;
       the ball end of the 2.5 mm key reaches the screw behind the blower.
       Mind the two protruding screws against the paintwork.
-      Bring both belts back to the 8 mm position.
+      Give both tensioning screws their turns back, to about 8 mm, and look at the four belt ends in the head plate:
+      none may have crept out.
     notes:
       - type: why
         by: "several builders, comments on INDX 5.62 and 5.63"
@@ -97,6 +99,13 @@ steps:
           the universal wrench's square slot fits over its raised notch.
           Stop when snug:
           one builder broke a base, another stripped one, and the screw tip nearly comes through.
+      - type: warn
+        by: "unverified; Mastakko, mtbrider, zalerion and three others, comments on INDX 5.80 to 5.83"
+        text: >-
+          Neither the manual nor this plan can tell you which way round the Hinge-base ends up.
+          Six builders asked for a picture;
+          one says the parts photo shows it reversed, another that the second photo of step 5.82 is misleading.
+          Before the last turn of each screw, offer the lid's hinge cover up to the base and check they mate.
 
   - id: p11f
     refs: ["5.84", "5.85"]
@@ -175,10 +184,16 @@ steps:
       - type: warn
         by: "several builders, comments on INDX 5.89"
         text: >-
-          Five builders found the LED cable too short here and could not pull more through:
-          zip ties tightened earlier held it, and one had to take the left side panel off again to reach them.
-          Do not tug;
-          find the tie and loosen it.
+          Five builders found the LED cable too short here.
+          Four could not pull more through because zip ties tightened earlier held it, and one had to take the left side panel off again to reach them.
+          Do not tug:
+          the tie that holds it has to be found, cut and replaced.
+      - type: tip
+        by: "plan"
+        unless: [light]
+        text: >-
+          If you stuck the LED strip behind the dock's logo two rows back, only the bare bar is left:
+          there is nothing to light from this position, so it need not be riveted here.
 
   - id: p11j
     refs: ["5.90"]
@@ -187,6 +202,7 @@ steps:
     text: >-
       Buddy3D camera:
       mount it magnetically in the front left corner on the upper profiles, following the camera's own guide, while the lid is still open.
+      Plug its USB-C cable back in and stick its antenna back where it was.
 
   - id: p11jp
     refs: ["5.90"]
@@ -205,9 +221,9 @@ steps:
           Nobody has reported a Pi camera on an INDX printer, so the position is a guess based on where the Buddy3D sits.
           If the mount fouls the dock or the head, try the rear corner or stop and report what you found.
       - type: tip
-        by: "esox, Printables; forum, BuddyCam alternatives thread"
+        by: "forum, BuddyCam alternatives thread; esox, Printables (not re-checked)"
         text: >-
-          Builders on the stock CORE One led the ribbon out through the gap at a frame corner or under the lower edge of a transparent side cover, and kept the Pi outside because the chamber is too hot for it.
+          Builders on the stock CORE One led the ribbon out under the lower edge of a transparent side cover or through the corner panels, and kept the Pi outside the chamber.
 
   - id: p11k
     refs: ["5.91", "5.92"]
@@ -245,4 +261,4 @@ steps:
       none swapped.
       Take the cardboard box out of the printer for the last time.
       Leave the lid unlocked;
-      the wizard needs it open.
+      it has to be opened again for the wizard.
