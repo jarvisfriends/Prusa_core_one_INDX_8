@@ -4,6 +4,7 @@
 Structure checks:
   * every row has a unique id, a known kind, text, and well-formed refs, notes, when/unless
   * no ref points at a step that does not exist
+  * no row reuses an id listed in plan/retired-ids.yaml
 
 Coverage checks, repeated for every combination of the options in plan/options.yaml
 (options that share a group are alternatives, so at most one of them is on):
@@ -107,6 +108,10 @@ def main() -> int:
                     errors.append(f"{where}: every note needs 'by' and 'text'")
                 check_conditions(where + " (note)", note)
             all_rows.append(s)
+
+    for entry in pl.load_yaml("plan", "retired-ids.yaml") or []:
+        if entry.get("id") in seen_ids:
+            errors.append(f"{seen_ids[entry['id']]}: row id {entry['id']} was retired ({entry.get('was', 'see plan/retired-ids.yaml')}); pick a new id")
 
     unused: set[str] = set()
     for entry in pl.load_yaml("plan", "gen2-unused.yaml"):
