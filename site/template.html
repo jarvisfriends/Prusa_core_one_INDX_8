@@ -1,6 +1,9 @@
 <title>{{page_title}}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders:wght@600;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:wght@700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;600&display=swap">
 <style>
 {{style}}
 </style>
@@ -11,6 +14,9 @@
   <p class="eyebrow">{{eyebrow}}</p>
   <h1>{{title}}</h1>
   <p class="lede">{{lede}}</p>
+  <dl class="fields">
+{{fields}}
+  </dl>
 </header>
 
 <div class="intro">
@@ -18,34 +24,34 @@
 {{power}}
   </div>
 
-  <div>
-    <h3>{{changes_title}}</h3>
-    <ol class="changes">
-{{changes}}
-    </ol>
-  </div>
+  <section class="sheet" aria-labelledby="h-options">
+    <h3 id="h-options">{{options_title}}</h3>
+    <p class="sheet-note">{{options_note}}</p>
+    <ul class="options">
+{{options}}
+    </ul>
+  </section>
 
   <div class="callout">
 {{assumptions}}
   </div>
 
-  <div>
-    <h3>{{options_title}}</h3>
-    <p class="phase-note" style="margin:2px 0 12px">{{options_note}}</p>
-    <ul class="options">
-{{options}}
-    </ul>
-  </div>
+  <section class="sheet" aria-labelledby="h-changes">
+    <h3 id="h-changes">{{changes_title}}</h3>
+    <ol class="changes">
+{{changes}}
+    </ol>
+  </section>
 
-  <div>
-    <h3>{{prints_title}}</h3>
-    <p class="phase-note" style="margin:2px 0 12px">{{prints_note}}</p>
+  <section class="sheet" aria-labelledby="h-prints">
+    <h3 id="h-prints">{{prints_title}}</h3>
+    <p class="sheet-note">{{prints_note}}</p>
     <ul class="prints">
 {{prints}}
     </ul>
-  </div>
+  </section>
 
-  <details>
+  <details class="sheet">
     <summary>{{hardware_title}}</summary>
     <div>
       <p>{{hardware_note}}</p>
@@ -55,22 +61,42 @@
     </div>
   </details>
 
-  <p class="note-line">{{pictures_note}}</p>
-  <div class="legend" aria-label="Legend">
+  <section class="sheet" aria-labelledby="h-legend">
+    <h3 id="h-legend">{{legend_title}}</h3>
+    <p class="sheet-note">{{pictures_note}}</p>
+    <div class="legend">
 {{legend}}
-  </div>
+    </div>
+  </section>
 </div>
 
-<nav class="phasenav" aria-label="Jump to phase">
-  <div class="navlinks" id="navlinks">{{nav}}</div>
-  <div class="bar">
-    <span><strong id="progress-n">0</strong> of <span id="progress-d">{{row_count}}</span> rows done</span>
-    <span id="sync">Ticks are saved in this browser.</span>
+<div class="viewbar">
+  <div class="bar small">
+    <span id="sync">Ticks and choices are saved in this browser.</span>
     <span class="grow"></span>
     <label for="show-pics"><input type="checkbox" id="show-pics" checked> Pictures</label>
     <label for="hide-done"><input type="checkbox" id="hide-done"> Hide done</label>
+    <button type="button" id="xfer-open" aria-expanded="false" aria-controls="xfer">Move to another device</button>
     <button type="button" id="reset">Clear ticks</button>
   </div>
+  <div class="xfer" id="xfer" hidden>
+    <p>Your ticks and choices as a code. Copy it here, open this page on the other device, paste it there and press Load.</p>
+    <textarea id="xfer-code" rows="3" spellcheck="false" aria-label="Progress code"></textarea>
+    <div class="xfer-bar">
+      <button type="button" id="xfer-copy">Copy code</button>
+      <button type="button" id="xfer-load">Load pasted code</button>
+      <span id="xfer-msg" role="status"></span>
+    </div>
+  </div>
+</div>
+
+<nav class="phasenav" aria-label="Progress and phases">
+  <div class="bar">
+    <span class="count"><strong id="progress-n">0</strong> of <span id="progress-d">{{row_count}}</span> rows done</span>
+    <span class="track" aria-hidden="true"><span id="progress-fill"></span></span>
+    <button type="button" id="next-open" class="go">Next open row</button>
+  </div>
+  <div class="navlinks" id="navlinks">{{nav}}</div>
 </nav>
 
 <main id="phases">
@@ -90,6 +116,7 @@
   <div class="lb-bar">
     <button type="button" id="lb-prev">Previous</button>
     <button type="button" id="lb-next">Next</button>
+    <a id="lb-src" href="#" target="_blank" rel="noopener">Open on Prusa's site</a>
     <button type="button" id="lb-close">Close</button>
   </div>
 </div>

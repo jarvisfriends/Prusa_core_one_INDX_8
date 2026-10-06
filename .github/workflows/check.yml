@@ -1,9 +1,8 @@
 name: Check plan
 
+# Runs on pull requests: proves every manual step is still accounted for and that the page builds.
 on:
   pull_request:
-  push:
-    branches: [main]
 
 permissions:
   contents: read
@@ -19,5 +18,5 @@ jobs:
       - run: pip install pyyaml
       - name: Every manual step accounted for
         run: python tools/check.py
-      - name: Page builds without the PDFs
+      - name: Page builds
         run: python tools/build.py
