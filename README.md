@@ -30,48 +30,48 @@ paste into the page on your phone or another computer.
 
 ## Where we left off (read this first when you come back)
 
-Last worked on 2026-10-05. State of things:
+Last worked on 2026-10-06. State of things:
 
 - The plan covers all 290 steps of the INDX manual and the 60 Gen 2 steps a combined build
   uses. `tools/check.py` proves that for every combination of options.
-- About 1,200 reader comments on Prusa's two online manuals were read on 2026-10-05 and
-  turned into notes and several order changes. Gen 2 comments were read only for the steps
-  this build uses (chapter 3 up to step 40, chapter 4 steps 1 to 21 and 32 onward).
+- About 1,250 reader comments on Prusa's two online manuals and on the companion article
+  were read on 2026-10-05 and 2026-10-06 and turned into notes and several order changes.
+  The only ones not read are on Gen 2 chapter 1 and chapter 3 steps 41 to 64, which this
+  build skips.
 - Nothing below has been checked on a real printer by us. The first of us to build should
   tick rows on the page, write down every row that was wrong or unclear, and fix it here.
-- `tools/check.py` passes and the page builds. The last round of changes has **not** had
-  its review pass (next step 1).
+- The reordered plan had an independent review on 2026-10-06: every phase read row by row
+  against the manual text, and about 200 comment-based notes checked against the comments
+  they cite. It found two real errors (raise the bed with all three Z screws, not one;
+  leave the offset sensor aside until the heatbed is finally tightened), one risk (do not
+  slide the gantry while the belts hang loose) and about sixty smaller fixes. All are
+  applied. The review reports are in `research/` on the machine that did the work (see
+  `CLAUDE.md`).
+- If you are picking this up with Claude Code, start with `CLAUDE.md` and
+  `docs/BACKLOG.md`.
 
 ### Next steps
 
-1. **Review pass on the reordered rows. Not done yet.** The 2026-10-05 session changed the
-   order in about fifteen places (table under "Out of order on purpose") and added about
-   190 notes from comments. An independent read-through of every phase, checking each row
-   against the manual text in `manuals/steps/` and each note against the comment it cites,
-   was started and did not finish. Do this before anyone builds from the page. Things to
-   look for: a row that needs something an earlier row has not done yet, a note that still
-   describes the old order, a count or a name that does not match the comment.
-2. Turn on GitHub Pages (Settings → Pages → Source: GitHub Actions) and check the site
-   loads at the address at the top of this file, with fonts and pictures.
-3. Answer the questions under "Decide before you start" for our own build: gantry
+The working list, with detail, is `docs/BACKLOG.md`. In short:
+
+1. Answer the questions under "Decide before you start" for our own build: gantry
    alignment or not, dryer box filament path, which camera.
-4. Find where the LED panel cable runs on a real printer and fix row `#p7s`.
-5. Read the rest of the Gen 2 manual's comments (chapter 3 steps 41 to 64 are skipped by
-   this build, but chapter 4 steps 22 to 31 were not read) and the comments on Prusa's
-   companion article.
-6. Look for a reply from Prusa on: gantry alignment, tight pulleys and short shafts,
+2. Find where the LED panel cable runs on a real printer and fix row `#p7s`.
+3. Look for a reply from Prusa on: gantry alignment, tight pulleys and short shafts,
    expansion joint direction, tooth counts on 1.5GT belts, the INDX firmware's Gen 2 setting.
-7. Build it, tick rows on the page, and send every correction back here as a pull request.
+4. Build it, tick rows on the page, and send every correction back here as a pull request.
+5. Tooling and page work for Claude Code: page tests, stricter checks, the smaller review
+   findings that were left open.
 
 ### Decide before you start
 
 | Question | What we know | Where |
 |---|---|---|
-| Run the gantry aligner and rail re-alignment (INDX 4.4 to 4.8) on a printer that was square? | Prusa's manual does it. Six builders say it left a good printer worse (X-axis or dock calibration failing, one stripped the build back to this step). One skipped it and reports good prints. Prusa has not answered. The page has a choice for it; default is to follow the manual. | `#p6c`, `#p6cx` |
+| Run the gantry aligner and rail re-alignment (INDX 4.4 to 4.8) on a printer that was square? | Prusa's manual does it. Six builders say it left a good printer worse (X-axis or dock calibration failing; one stripped the build back to this step and says Prusa support told him to redo it). One skipped it and reports good prints. Prusa has not answered in the comments. The page has a choice for it; default is to follow the manual. | `#p6c`, `#p6cx` |
 | Gen 2 parts on an original (non-plus) CORE One | Prusa's Gen 2 guide is written for the CORE One+. Builders report it works, but about twelve have a motor shaft roughly 3 mm shorter than pictured and about seventeen found the new pulleys very tight (one ruined a motor). Burrs from the old set screws are one known cause. No reply from Prusa. | `#g3d`, `#g3k` |
 | Dryer boxes instead of spool holders | Our own idea plus two commenters who said they would skip the spool holders. Nobody has reported a finished printer without them. How a tube is held at the sensor inlet (a bare hole on the underside) is unsolved. | `#p0j`, `#p10x`, `#p12dd` |
 | Power up once before the side panels are trapped? | With puck holders on, a side panel only comes off by undoing their nuts. One builder found an X/Y fault at the first self-test and had to. We kept "power it twice" because nobody has said how far the INDX wizard runs without dock and tools. | `#p10a` |
-| Larger waste bucket on an 8-tool machine | Not confirmed how it sits beside the right-hand spool holders. | `#p0g` |
+| Larger waste bucket on an 8-tool machine | Not confirmed how it sits beside the right-hand spool holders. One commenter (k1mu, INDX 5.81) says the extended chute cannot be used with spool holders "on the left"; unclear which machine he means. | `#p0g` |
 | Raspberry Pi camera | No report of any Pi camera mount on an INDX printer. Corner position, ribbon route and heat (Camera Module 3 is rated to 50 °C) are all guesses. | `#p0k`, `#p11jp` |
 
 ### Things in the plan that nobody has confirmed
@@ -83,21 +83,25 @@ a builder to confirm or correct it.
   We added a row to free slack before any zip tie is tightened, but we do not know where the
   cable runs, which ties hold it or how many centimetres are needed.
 - **Tooth counts on 1.5GT belts** (`#p6fg`, `#p6gg`). The manual's 4 to 5 and 6 to 7 teeth
-  are for 2 mm pitch. We use 6 to 7 and 8 to 9, from six builders' arithmetic. Not from Prusa.
+  are for 2 mm pitch. We use 6 to 7 and 8 to 9, from two builders' arithmetic and a third
+  whose belt ends slipped out at 4 to 5. Not from Prusa.
 - **Belt tensioning screws left out during the Gen 2 belt routing** (`#g3r`, `#g3t`).
   Prusa's article fits them at Gen 2 3.32 and 3.36. About fifteen builders had to take them
   out again to get the belt ends into the head plate, so we leave them out until INDX 4.13.
   Unknown: whether an idler stays in its rails without the screw while you route the belt.
 - **Offset sensor sticker on the bench** (`#p11n`, now in Phase 5). Five builders prefer it.
   We do not know why Prusa fits it last; possibly only to keep it clean.
-- **Dock fan cable routed before the sensors, ties closed in two visits** (`#p7n` to `#p7p`,
-  `#p9e`). Three builders did the routing early. The "just closed, final pull in Phase 9"
-  detail is ours.
+- **Dock fan cable routed before the sensors** (`#p7n` to `#p7p`). Two builders did the
+  routing early and a third recommends it. The ties are tightened and trimmed there, as in
+  the manual, long before the dock fan is fitted; nobody reported the manual's 8 cm being
+  wrong, but nobody has confirmed whether those ties can still be reached in Phase 11.
 - **X and Y motor cables plugged back in during Phase 7** (`#g4j`), before the box's zip
   ties are closed. Prusa's article does it after the heatbed alignment.
 - **Expansion joints**: groove facing out as the guide says, though five builders say the
-  aligner then pushes joints off their screws and two turned them inward (`#g4e`). Screw
-  first or joint first is also disputed (`#g4b`). No ruling from Prusa on either.
+  aligner then pushes joints off their screws and at least two turned them inward (`#g4e`).
+  Screw first or joint first is also disputed; we fit the joint before the screw is run
+  down, against the guide, because two builders tore a washer the guide's way (`#g4b`).
+  No ruling from Prusa on either.
 - **INDX firmware on Gen 2 hardware** (`#p13c`, `#p13dg`, `#p13f`). One builder was offered
   only COREONEGEN2 in the model list; another was never asked for belt tuning. What the
   edition or belt setting is called in the INDX firmware is unknown.
@@ -126,8 +130,9 @@ a builder to confirm or correct it.
 
 - The INDX manual's photos show a CORE One+. The Gen 2 guide's photos show the Nextruder
   still fitted, and its heatbed chapter assumes the bed is still in the printer.
-- INDX 5.17 says "return to the Prusa INDX Gen 2 article now" with nowhere to go. In this
-  plan it is simply the next row.
+- INDX 5.17 says "return to the Prusa INDX Gen 2 article now". The article's jobs at that
+  point are the heatbed alignment, the offset sensor screw, the X/Y motor cables and the
+  left panel. In this plan those are Phase 9, except X/Y, which is already done in Phase 7.
 - "Left" and "right" motor: the X motor is the left rear one, the Y motor the right rear
   one. INDX 2.19 and 4.32 describe the same corner from different sides.
 - Bag and box names that do not match the kit:
@@ -136,8 +141,8 @@ a builder to confirm or correct it.
   - Offset sensor "in the Filament Sensors box" (3.14): it is in the Electronics box. Its
     cable is the all-black one, part 25229-56, in the Cables bag.
   - "Pucks bag" (5.33): the pucks are in the Telescopic Spoolholder Set bags.
-  - `3x12sT` "in Fasteners 1/2" (4.53, 4.62): found in Fasteners 2/2, not on its label.
-    Both steps list two; you need one per side.
+  - `3x12sT`: 4.53 lists two from Fasteners 2/2 and 4.62 one from Fasteners 1/2. Builders
+    found them all in Fasteners 2/2, not on its label, and needed one per side.
   - Nylon string (4.25): in the bag labelled Top Door Seal & Nylon String.
   - "Filament holder L/R" bags (4.41): labelled Filament Sensor Holder Left / Right. The
     8-tool kit has two identical Fasteners Tools INDX bags.
@@ -187,20 +192,23 @@ Still awkward, and worth improving once someone has built it:
   of the right Belt-tensioner for the dock fan (`#p11b`). Could the dock fan go on before the
   belts are tensioned? Nobody has tried.
 - With Gen 2 the offset sensor still has to be swung aside once, for the front right
-  expansion joint (`#g4g`).
-- The dock fan cable ties are closed in Phase 7 and pulled tight in Phase 9.
+  expansion joint, and stays aside until the heatbed is finally tightened (`#g4g`, `#g4i`).
+- The offset sensor, its sticker and the zip ties round it are bench-like jobs that come
+  after the Z corners because the expansion joints have to go on first.
 - First power-on comes after everything is closed (see "Decide before you start").
 
 ### Good to remember
 
-- Row ids are permanent: saved ticks are stored by id. Ids `g4c`, `p6hg` and `p6ig` were
-  retired on 2026-10-05; do not reuse them.
+- Row ids are permanent: saved ticks are stored by id. Retired ids are listed in
+  `plan/retired-ids.yaml` and `tools/check.py` refuses to see them again.
 - Firmware: builders reported 6.9.0 failing tool offset calibration on a slightly dirty
   nozzle and 6.9.1 fixing it. Use the newest INDX firmware.
-- The kit has no spares of: `M3x12cT`, expansion joint screws, `M3nS` (some kits), `M3x35`.
+- The kit has no spares of: `M3x12cT`, expansion joint screws and their PTFE washers, and in
+  some kits `M3nS` and `M3x35`.
   Count before teardown, while support can still post parts and the printer still prints.
-- To re-read Prusa's comments later, see `manuals/README.md`. Step ids are in
-  `manuals/manuals.yaml`.
+- To re-read Prusa's comments later, open the step on Prusa's site (every step on the page
+  links to it) and press Comments. Do not script it: Prusa's robots.txt disallows automated
+  access to the comments. See `manuals/README.md`.
 - The pictures are plain files in git (about 40 MB), not Git LFS: GitHub Pages cannot serve
   LFS files without extra steps, and nothing here is near GitHub's size limits.
 - The same page is also published as a private claude.ai artifact. GitHub Pages is the copy
@@ -238,8 +246,12 @@ once: repo **Settings → Pages → Build and deployment → Source: GitHub Acti
 | `manuals/img/`, `manuals/steps/` | Prusa's step pictures and step text, copied out of the PDF manuals. |
 | `manuals/PICTURES.md` | Generated: every picture file with a link to its step on Prusa's site. |
 | `site/template.html`, `site/style.css`, `site/app.js` | Page shell, theme, behaviour (ticks, choices, picture viewer). |
+| `plan/retired-ids.yaml` | Row ids that were removed and must not be reused. |
 | `tools/check.py` | Validates the plan. Runs on every pull request. |
 | `tools/build.py` | Everything → `dist/`. |
+| `tools/render_text.py` | The build as plain text for one set of options, for reviewing and diffing. |
+| `CLAUDE.md` | Working rules for Claude Code (and a good read for human contributors). |
+| `docs/BACKLOG.md` | What is left to do. |
 | `tools/extract_manual.py` | Prusa's PDFs → `manuals/img/` and `manuals/steps/`. Only needed when a manual is revised. |
 
 ## Editing the plan
