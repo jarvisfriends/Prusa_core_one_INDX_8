@@ -21,13 +21,25 @@ steps:
     text: >-
       Door closed.
       Control → Auto Home, then Control → Move Axis → Move Z until the bed is at 200 mm.
-      Not lower.
-      This exposes the spool holder screws and the underside of the bed, and still leaves room to get a hand to the lower corners in Phase 10.
+      Not lower, although the manual says minimum 200 mm.
+      This exposes the spool holder screws and the underside of the bed.
     notes:
       - type: tip
         by: "forum digest"
         text: >-
           An earlier version of the guide said 180 mm, which exposed only two of the four spool holder screws.
+      - type: warn
+        by: "Steve Stratoti, comment on INDX 2.3"
+        text: >-
+          One builder read the manual's minimum as licence to go lower and had a bad time for the rest of the build.
+          His advice:
+          exactly 200.
+      - type: tip
+        by: "five builders, comments on INDX 5.30, 5.31 and 5.44"
+        unless: [dryer]
+        text: >-
+          Even at 200 mm five builders could not get a hand to the lower puck-holder corners.
+          Phase 10 says how to raise the bed by hand when you get there.
 
   - id: p2b
     refs: ["2.4"]
@@ -49,6 +61,11 @@ steps:
         text: >-
           Pick a light-coloured filament for the gauge.
           Pen marks at 270, 240 and 210 mm are much easier to see on it.
+      - type: why
+        by: "mechinn, comment on INDX 2.3"
+        text: >-
+          One builder found that unloading afterwards moved the bed further down, and suggests unloading before the bed move.
+          This plan keeps the manual's order and re-checks the height instead.
 
   - id: p2d
     refs: ["2.5"]

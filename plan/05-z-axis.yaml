@@ -5,14 +5,20 @@ title: "Z-axis: spacers, offset sensor, heatbed"
 power: "off"
 where: "Printer and bench"
 note: >-
-  Bench jobs first while the heatbed is out, then the Allen key work on the three Z corners, then the Torx work.
+  The heatbed's own bench jobs first, then the Allen key work on the three Z corners, then the offset sensor and the Torx work.
   With Gen 2 ticked, the new expansion joints go on the bare Z-carriage before the offset sensor is fitted beside them, and the bed stays only loosely screwed until Phase 9.
 steps:
 
   - id: p5a
     refs: ["3.1"]
     kind: asis
-    text: "Chapter 3 tools: 2.5 mm Allen key, T10, cutters."
+    text: "Chapter 3 tools: 2.5 mm Allen key, T10, cutters, and the PH2 for the heatbed terminals."
+    notes:
+      - type: tip
+        by: "plan"
+        when: [gen2]
+        text: >-
+          With Gen 2 add the 2.0 mm Allen key, for the expansion joint screws.
 
   - id: p5a2
     refs: ["3.2"]
@@ -28,7 +34,7 @@ steps:
         by: "Ch4s3r, comment on INDX 3.2"
         text: >-
           If you do fit the cable now, leave off any side panel or cover the camera guide tells you to refit.
-          They go back in Phase 9.
+          They go back in Phase 8 or 9.
 
   - id: p5a3
     refs: ["3.2"]
@@ -42,7 +48,7 @@ steps:
       - type: tip
         by: "forum, INDX and Buddy3D thread"
         text: >-
-          One builder who skipped this cable found it much harder to add once the printer was back together.
+          One builder who skipped this cable found it a bit harder to route once the printer was back together.
           If you might fit a Buddy3D one day and already own its cable, route it now.
 
   - id: p5b
@@ -99,7 +105,7 @@ steps:
       On the bench:
       remove the `M3x10rT` and the old cable cover bottom from the heatbed.
       Press all three `M3nN` nuts into the `INDX-C1-bed-cable-cover-bottom` now:
-      one in the bottom hole, and the two for the cover top in their pockets on the underside, nylon ring down, with a strip of tape over them if they are loose.
+      one in the bottom hole, and the two for the cover top in their pockets on the underside, nylon ring facing away from the cover's top face, with a strip of tape over them if they are loose.
       Route the thermistor cable outside the cover, slide the cover under the power cables and beneath the bed while holding the first nut with a finger, and fix it with the same `M3x10rT`.
     notes:
       - type: why
@@ -110,7 +116,7 @@ steps:
       - type: why
         by: "btarlton, vhubbard, Steve Stratoti, comments on INDX 3.22 and 3.26"
         text: >-
-          The manual pushes the two cover-top nuts in from underneath once the bed is back in the printer (step 3.27).
+          The manual pushes the two cover-top nuts in from underneath once the bed is back in the printer (steps 3.26 and 3.27).
           Three builders fitted all three on the bench and say it is far easier.
       - type: tip
         by: "JanV, coffeeFueledDiy, comments on INDX 3.22"
@@ -152,7 +158,7 @@ steps:
       Front bed spacers, left then right.
       Remove the two `M3x10` that hold the Z-carriage to the Bed-mount;
       leave the trapezoidal nut screws alone.
-      Lift the carriage about 8 mm, slide an `INDX-C1-bed-spacer-front` into the gap around the bed mount, and fix with two `M3x18`, inner screw first.
+      Lift the carriage about 8 mm, slide an `INDX-C1-bed-spacer-front` into the gap around the bed mount, and fix with two new `M3x18` from the Fasteners 1/2 bag, inner screw first.
       The two `M3nN` nuts already sitting in the Bed-mount from below must not drop out.
     notes:
       - type: tip
@@ -181,10 +187,10 @@ steps:
           Prop the Z-carriage while the old spacer is out.
           One builder stacked the two nozzle boxes from the 8-tool kit under it.
       - type: tip
-        by: "langjai, doctorflynt, comments on INDX 3.13"
+        by: "langjai, comment on INDX 3.13"
         text: >-
-          Tighten the two `M3x18` into the new spacer only until snug, about finger tight.
-          Its nuts sit in plastic, and one builder ended with a nut turning in its pocket before the screw was home.
+          Tighten the two `M3x18` into the new spacer only until snug, about finger tight:
+          its nuts sit in plastic.
 
   - id: p5j
     refs: ["3.31", "3.34", "3.35"]
@@ -210,9 +216,8 @@ steps:
       - type: tip
         by: "ManicPixieBoy, bretcobrageek, replies on INDX 3.34"
         text: >-
-          If the threaded rod presses hard on the back of the new stop, fit the fourth screw from the rear first;
-          it draws the stop back a little.
-          One builder instead loosened the rear trapezoidal nut screws to let the rod stand straighter.
+          If the threaded rod presses hard on the back of the new stop, one builder notes that the fourth screw, fitted from the rear, draws the stop back a little.
+          Another loosened the rear trapezoidal nut screws to let the rod stand straighter.
 
   - id: g4a
     refs: ["G4.4"]
@@ -256,16 +261,21 @@ steps:
     text: >-
       New expansion joints.
       At each of the eight threaded holes round the Z-carriage:
-      put two M3 PTFE washers on a new expansion joint screw, the silver ones from the Gen 2 bag, and run it into the hole with the 2.0 mm Allen key until it stops.
+      put two M3 PTFE washers on a new expansion joint screw (the new screws are silver and come in the Gen 2 bag) and run it into the hole with the 2.0 mm Allen key, stopping about a turn short.
+      Slide a new expansion joint onto the screw between the two washers, with its groove on the underside and the groove facing away from the Z-carriage.
+      Then run the screw down until it stops.
       Do not force it:
       the screw has a plain shoulder, and a small gap under its head is normal.
-      Then slide a new expansion joint onto the screw between the two washers, with its groove on the underside and the groove facing away from the Z-carriage.
-      If a joint will not go in without dragging on a washer, back that screw off a turn, slide the joint in, and run the screw down again.
       The joints stay loose on their screws until the heatbed clamps them.
       Go round all eight once more:
       every groove faces outward.
       Final positions are set in Phase 9.
     notes:
+      - type: why
+        by: "plan"
+        text: >-
+          The Gen 2 guide runs the screw fully down first and slides the joint in afterwards.
+          Two builders tore a washer that way and the kit has no spare washers, so this row follows the seven builders who left the screw slack until the joint was in.
       - type: warn
         by: "several builders, comments on Gen 2 4.6 and 4.7"
         text: >-
@@ -292,7 +302,7 @@ steps:
     tools: ["T10"]
     text: >-
       Offset sensor, out of its bag now.
-      It is in the Electronics box, with its cable and its sticker.
+      It is in the Electronics box with its sticker; its cable is in the Cables bag.
       Set it on the `INDX-C1-offset-sensor-holder` with the PRUSA logo up and the holes aligned, and fix it with one `M3x8rT` from the Fasteners 2/2 bag.
       Gentle on the screw:
       it bears on the board.
@@ -450,6 +460,8 @@ steps:
     tools: ["T10"]
     text: >-
       Heatbed back in, Gen 2 version.
+      Go round all eight expansion joints first:
+      each still on its screw, between its two washers, groove outward.
       Set the new 10 mm heatbed spacer on the threaded hole in the centre of the Z-carriage.
       Lower the bed onto the expansion joints, keeping the spacer in place, and start the new `M3x14bT` in the centre, lightly;
       the old `M3x12bT` is not used.
@@ -483,10 +495,11 @@ steps:
         text: >-
           The `M3x14bT` is in the bag labelled Fasteners CORE One+ (Gen 2) INDX.
       - type: tip
-        by: "Ch4s3r, comment on INDX 3.25"
+        by: "Ch4s3r, Paul, comments on INDX 3.25 and Gen 2 4.12"
         text: >-
-          If the eight `M3x4bT` will not find their threads, the new joints have slid out of line.
-          One builder lifted the bed off, centred each joint under its hole with an Allen key, and every screw then started.
+          If a screw will not find its thread, the joint under it has slid out of line.
+          Drop the 2.0 mm Allen key through the bed hole and the joint and wiggle the joint into place.
+          One builder lifted the bed off and centred every joint that way.
       - type: tip
         by: "Lefrom, Wolf, Stsfin, comments on Gen 2 4.10 and 4.8"
         text: >-
@@ -497,10 +510,6 @@ steps:
         text: >-
           A builder following Prusa's article (OversizedHat, comment on Gen 2 4.8) found the spacer left lying loose for many steps.
           Here it goes on in the same row as the bed.
-      - type: tip
-        by: "Paul, comment on Gen 2 4.12"
-        text: >-
-          If a bed hole and its expansion joint do not line up, drop the 2.0 mm Allen key through both and wiggle the joint into place before starting the screw.
 
   - id: p5n
     refs: ["3.26", "3.27"]
@@ -514,6 +523,7 @@ steps:
       The two `M3nN` nuts for the cover top should already be in the cover bottom from the bench;
       if not, press them in from underneath, nylon ring down.
       Check no wire can be pinched, fit the `INDX-C1-bed-cable-cover-top`, and fix it with the two kept `M3x10` while holding the nuts.
+      Peel off any tape you put over the nuts.
     notes:
       - type: tip
         by: "kaizoor, comment on INDX 3.27"
@@ -549,8 +559,9 @@ steps:
     tools: ["PH2"]
     text: >-
       At the back.
-      First thread three zip ties through the perforations in the xBuddy box and leave them open;
+      First thread three zip ties through the perforations in the xBuddy box, under every cable already lying there, and leave them open;
       every cable that enters the box from now on lies over them.
+      If you cut the lowest tie in Phase 3, thread a fourth one in its place.
       RGB LED and offset sensor cables through the upper right opening of the xBuddy box:
       RGB into the rightmost RGBW LED slot on the extension board, offset sensor into the upper right PUB CAN slot.
       Heatbed power and thermistor through the left opening:

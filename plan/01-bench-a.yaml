@@ -5,7 +5,7 @@ title: "Bench session A, while the prints run"
 power: "on"
 where: "Bench"
 note: >-
-  Three sub-assemblies that use only new kit parts and no electronics.
+  Sub-assemblies that use only new kit parts and no electronics.
   The manual builds them in the middle of chapter 5;
   nothing stops you building them now.
   Mostly one tool:
@@ -149,7 +149,7 @@ steps:
           Hold the plate by its flat end and push the sleeve over the bent end.
           Two builders cut through a seal on the plate edge.
       - type: why
-        by: "Dave Avery and three others, comments on INDX 5.69"
+        by: "Dave Avery and three others, comments on INDX 5.69; five builders, comments on INDX 5.70 and 5.71"
         text: >-
           The manual slides each seal onto its bare plate first.
           Four builders screwed the plates to the holder first, for something to grip and to keep fingers off the sharp edge, and five recommend pre-threading the profile-side holes before any plate goes on.

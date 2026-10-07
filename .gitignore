@@ -4,3 +4,6 @@ dist/
 __pycache__/
 *.pyc
 .DS_Store
+
+# Local working notes: raw comment dumps and review reports. Not for the public repo.
+research/

@@ -14,7 +14,7 @@ steps:
     kind: added
     text: >-
       Before plugging in:
-      nothing loose on the bed or in the chamber, the toolhead slides to all four corners by hand, every tool is docked flush, and the box and tape are out.
+      nothing loose on the bed or in the chamber, the toolhead slides to all four corners by hand, every tool is docked flush, and the box is out.
 
   - id: p13b
     refs: ["6.6"]
@@ -37,11 +37,13 @@ steps:
       Network setup can be skipped and done later.
     notes:
       - type: warn
-        by: "Stephen, comment on INDX 6.7"
+        by: "Stephen, comment on INDX 6.7; unverified"
+        when: [gen2]
         text: >-
-          One builder was not offered COREONEINDX at all, only COREONEGEN2, although he had flashed the INDX firmware, and could not go back from the calibration screen.
-          He ran every calibration from the menu instead.
-          If the list looks wrong, stop and check the firmware file before choosing.
+          With Gen 2 it is not known which entry is right.
+          One builder who had flashed the INDX firmware saw COREONEGEN2 and, as far as his comment can be read, no COREONEINDX;
+          he ended up running every calibration from the menu.
+          Photograph the list before you choose, and check the belt setting in the next row whatever you pick.
 
   - id: p13d
     refs: []
@@ -63,6 +65,12 @@ steps:
         text: >-
           Larger bucket:
           also set Settings → Nozzle Cleaner → Nozzle Cleaner Capacity to Extended.
+      - type: warn
+        by: "unverified"
+        text: >-
+          Neither manual says what this setting is called in the INDX firmware.
+          If you cannot find it, note what Settings → Hardware does offer and carry on:
+          a wrong setting shows up as every dock reading about 3 mm out in Y.
 
   - id: p13dg
     refs: ["G5.6", "G5.7"]
@@ -276,7 +284,7 @@ steps:
     refs: ["6.24", "6.25", "6.26"]
     kind: asis
     text: >-
-      Getting-started material is at prusa.io/coreoneindx.
+      Getting-started material is at prusa.io/coreone-indx.
       Prusa asks for a few minutes of feedback on the manual, and your first test prints are on Printables.
 
   - id: p13n

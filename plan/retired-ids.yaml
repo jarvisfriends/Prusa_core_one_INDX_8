@@ -1,0 +1,11 @@
+# Row ids that were used once and then removed. Saved ticks are stored by row id, so an id
+# must never come back with a different meaning. tools/check.py fails if a row uses one.
+- id: g4c
+  retired: 2026-10-05
+  was: "Gen 2 4.8: set the 10 mm heatbed spacer. Merged into p5mg."
+- id: p6hg
+  retired: 2026-10-05
+  was: "Gen 2: grease the tensioning screws before the belt swap. Replaced by p6h for every build."
+- id: p6ig
+  retired: 2026-10-05
+  was: "Gen 2: tension the belts. Replaced by p6i for every build."

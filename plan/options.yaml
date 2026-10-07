@@ -44,7 +44,7 @@ options:
       A Pi camera on a printed corner mount, with a Raspberry Pi outside the chamber that uploads a snapshot
       to Prusa Connect every ten seconds or slower.
       The printer cannot drive this camera itself, and nobody has reported a Pi camera mount tested with INDX fitted,
-      so its rows are marked unverified.
+      so treat its rows as a starting point.
   - id: bucket
     label: Prusa larger waste bucket
     default: false
@@ -68,5 +68,5 @@ options:
       Skips the gantry aligner tools and the linear rail re-alignment (INDX steps 4.4 to 4.8).
       Only for a printer that was square and printing well before the build.
       This is contested: Prusa's manual does these steps and Prusa has not answered the question,
-      six builders say the steps left a good printer worse, and one who skipped them reports a finished build that prints fine.
+      six builders say the steps left a good printer worse (Prusa support told one of them to redo the steps), and one who skipped them reports a finished build that prints fine.
       Leave this off to follow the manual.

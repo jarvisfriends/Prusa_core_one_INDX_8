@@ -111,9 +111,10 @@ steps:
           Prusa's article removes the left pair after step 3.10 and the right pair after step 4.3.
           Off now, they leave both sides open for the electronics box, the cable straps on the left and the whole Nextruder teardown.
       - type: tip
-        by: "several builders, comments on INDX 2.11, 2.19, 2.32, 2.36 and 3.10"
+        by: "4nozzle, Steve Stratoti, Jason K, Paul, langjai, comments on INDX 2.11, 2.19, 2.32, 2.36 and 3.10; Tkadla, comment on Prusa's article"
         text: >-
-          Six builders took side pieces off before the Nextruder teardown, some of them right after the door, and found the following steps much easier for it.
+          Five builders took side pieces off earlier than the manuals do, three of them before the Nextruder teardown, and say the steps after it were much easier.
+          A sixth asks Prusa to start the combined guide that way.
       - type: tip
         by: "vhubbard, chmax, forum"
         text: >-
@@ -124,7 +125,7 @@ steps:
     kind: asis
     tools: ["T10"]
     text: >-
-      Still inside:
+      Inside the printer:
       remove the two `M3x4rT` that hold the back cover.
       Go round the back, slide the centre cover down until its four hooks clear the chassis, and remove it.
       A screwdriver through the opening works as a lever if it sticks.
@@ -145,6 +146,7 @@ steps:
       Cut the zip ties down the right side of the box and keep the cutters clear of the cables.
       The manual leaves the lowest tie in place;
       cut it too if the thermistor cable runs under it.
+      If you cut it, a new tie goes in its place in Phase 5.
     notes:
       - type: tip
         by: "FoxRun3D, forum"
@@ -173,17 +175,16 @@ steps:
     tools: ["Cutters"]
     text: >-
       Feed the loose cables out through the openings at the top of the box without forcing them, and cut the zip ties on the harness without nicking a cable.
-      Ease the upper grommet outward, push the Nextruder main cable fully into the printer through the upper oval opening, and reseat the grommet.
-      Push the side filament sensor cable in through whichever oval opening it uses.
-      The manual shows the lower one;
-      on most printers it shares the upper one with the Nextruder cable.
+      Ease the upper grommet outward and push the Nextruder main cable fully into the printer through the upper oval opening.
+      Push the side filament sensor cable in through whichever oval opening it uses:
+      the manual shows the lower one, but on most printers it shares the upper one with the Nextruder cable.
+      Then reseat the grommet.
       Cut the tie on the heatbed bundle and guide that inside too.
     notes:
       - type: tip
         by: "several builders, comments on INDX 2.17"
         text: >-
           On at least six printers the side filament sensor cable ran through the upper oval opening with the Nextruder cable, and the lower oval was empty with no grommet.
-          Push the cable in through whichever opening it actually uses.
       - type: tip
         by: "several builders, comments on INDX 2.18"
         text: >-
@@ -211,11 +212,6 @@ steps:
         text: >-
           If a fingertip cannot press a connector latch, press it with the end of a hex key.
           The plug then comes out with almost no force.
-      - type: tip
-        by: "Prusa staff, reply on Gen 2 4.35"
-        text: >-
-          The slot right of the Y motor cable may be empty on your board, with the Z cable one place further over than in the photo.
-          Either Z port works, so leave it as you found it.
 
   - id: p3k
     refs: ["2.19"]
@@ -359,7 +355,7 @@ steps:
         by: "plan"
         text: >-
           The INDX guide removes this panel in chapter 5.
-          With it off now, the right bed spacer, offset sensor cable, gantry tool and dock fan cable are all reached from an open side, and it goes back at the guide's own step 5.24.
+          With it off now, the right bed spacer, offset sensor cable, gantry and dock fan cable are all reached from an open side, and it goes back at the guide's own step 5.24.
           It cannot come off earlier:
           the handle and the side filament sensor are screwed together through it.
       - type: tip
@@ -378,11 +374,12 @@ steps:
       The filament sensor blocks screw into those holes in Phase 8 (steps 4.54 and 4.63).
     notes:
       - type: tip
-        by: "several builders, comments on INDX 2.11, 2.19 and 5.14"
+        by: "Steve Stratoti, 4nozzle, chew2c and others, comments on INDX 2.11, 2.19 and 5.14"
         text: >-
-          Some builders without Gen 2 still took both transparent covers right off, five rivets each, for hand access to the gantry, the dock fan cable and the sensors.
-          If you do, hang them back with four rivets each before the sensor blocks go on in Phase 8.
-          This plan does not need it.
+          Some builders took both transparent covers right off, five rivets each, for hand access to the gantry, the dock fan cable and the sensors.
+          Without Gen 2 that is optional.
+          If you do it, hang them back with four rivets each before the sensor blocks go on in Phase 8.
+          With the covers left on, the dock fan cable ties in Phase 7 are reached through the open steel-panel side, as in the manual's photos.
 
   - id: p3r
     refs: ["2.33", "2.34", "2.35", "2.36"]

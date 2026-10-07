@@ -5,7 +5,7 @@ title: "Belts, gantry alignment, head mounting plate"
 power: "off"
 where: "Printer"
 note: >-
-  Without Gen 2 this is the INDX guide's order, unchanged.
+  Without Gen 2 this is the INDX guide's order, apart from two nuts that go into the head plate before the belts.
   With Gen 2 ticked, the old belts and pulleys come out first and the 1.5GT set goes in:
   right motor, then left, then the two front idlers.
   The tensioning screws stay out until the belt ends are fixed in the head plate, on every build.
@@ -87,6 +87,7 @@ steps:
       Loosen the two set screws with the 2.0 mm Allen key and pull the old pulley off;
       put it with the scrap.
       Feel the shaft where the set screws sat and file any raised burr flat, lightly, before the new pulley goes on.
+      Hold the motor with the shaft pointing down while you file, and wipe the shaft and the motor face afterwards.
       Carefully cut the zip tie holding the motor cable to the mount.
     notes:
       - type: tip
@@ -122,8 +123,10 @@ steps:
         by: "many builders, comments on Gen 2 3.9 and 3.22"
         text: >-
           Many builders found the new pulley far too tight on the shaft.
-          Before pushing, take both set screws right out and file flat the burrs the old set screws raised on the shaft.
+          Before pushing, back both set screws well out and file flat the burrs the old set screws raised on the shaft.
           A pulley forced halfway cost one builder a motor.
+          If there is no burr and it still will not go on by hand, stop and ask support:
+          one builder measured an undersized bore.
       - type: tip
         by: "several builders, comments on Gen 2 3.9"
         text: >-
@@ -261,7 +264,7 @@ steps:
       Turn the assembly so the cable faces outward and cut its zip tie without nicking the cable.
       Take the motor out of the mount and the mount out of the printer.
       Rest the motor on the frame, loosen the two set screws and remove the old pulley.
-      File any burr on the shaft flat here too.
+      File any burr on the shaft flat here too, shaft pointing down, and wipe it clean.
 
   - id: g3k
     refs: ["G3.20", "G3.22"]
@@ -370,7 +373,6 @@ steps:
     refs: ["G3.31", "G3.32"]
     kind: gen2
     when: [gen2]
-    tools: ["2.5 mm"]
     text: >-
       Left front.
       Take the upper belt coming from the left motor and wrap it round the idler marked L, mark facing up, with the smooth back of the belt on the idler and no twist.
@@ -407,7 +409,7 @@ steps:
     refs: ["G3.35", "G3.36"]
     kind: gen2
     when: [gen2]
-    tools: ["2.5 mm", "Cutters"]
+    tools: ["Cutters"]
     text: >-
       Right front.
       Cut the zip tie on the two free ends if you used one.
@@ -438,7 +440,6 @@ steps:
     text: >-
       Skip the gantry aligner tools and the linear rail re-alignment, as you chose under Your build.
       Do not loosen the rear gantry screws or the rail screws.
-      Slide the gantry front to back by hand and note how freely it runs, so you have something to compare against later.
     notes:
       - type: warn
         by: "several builders, comments on INDX 4.4 to 4.8"
@@ -450,10 +451,10 @@ steps:
           If X-axis, homing or dock calibration fails in Phase 13, come back and do these steps:
           the head and the right side have to come apart again to get here.
       - type: tip
-        by: "SchuimSpaan88, langjai, comments on INDX 4.4 and 4.7"
+        by: "langjai, SchuimSpaan88, comments on INDX 4.4 and 4.7"
         text: >-
           With the head off, the X linear rail and its bearing block are fully exposed.
-          Two builders lubricated them at this point, using Prusa's rail lubrication set.
+          One builder lubricated them at this point with Prusa's rail lubrication set, and another recommends it.
 
   - id: p6c
     refs: ["4.4", "4.5", "4.6"]
@@ -466,7 +467,7 @@ steps:
       Lead both free belt ends over the top of each tool.
       Then tighten the rear gantry screws on each side while holding the tool against the frame:
       the upper two first.
-      The tool covers the lowest one, so slide the tool back just far enough to reach it, tighten it, and push the tool home again.
+      The tool covers the lowest one, so pull the tool a little way off the profile, just far enough to reach that screw, tighten it, and push the tool home again.
     notes:
       - type: tip
         by: "forum digest"
@@ -510,12 +511,13 @@ steps:
         text: >-
           The same split as the row before.
           Three builders left the rail screws untouched.
-          Two who loosened them on a machine that had run well said the alignment was worse afterwards.
+          One who loosened them on a machine that had run well said the alignment was worse afterwards and had to redo the step;
+          another wished he had left them alone.
       - type: tip
-        by: "SchuimSpaan88, langjai, comments on INDX 4.4 and 4.7"
+        by: "langjai, SchuimSpaan88, comments on INDX 4.4 and 4.7"
         text: >-
           With the head off, the X linear rail and its bearing block are fully exposed.
-          Two builders lubricated them at this point, using Prusa's rail lubrication set.
+          One builder lubricated them at this point with Prusa's rail lubrication set, and another recommends it.
 
   - id: p6e
     refs: ["4.8"]
@@ -524,15 +526,9 @@ steps:
     text: >-
       Remove both aligner tools;
       they are not needed again.
-      Check all six rear gantry screws once more, the lowest one at each end especially, then slide the gantry front to back by hand:
-      it must run freely along its whole travel.
-    notes:
-      - type: warn
-        by: "Martin Majewski, Biscuit's 3D Workshop, baldrick, comments on INDX 4.8"
-        text: >-
-          With the tools off, slide the gantry front to back by hand.
-          One builder found it binding and stuttering after this procedure.
-          Two others only found out at dock calibration and had to strip the printer back to this step.
+      Check all six rear gantry screws once more, the lowest one at each end especially.
+      Leave the gantry where it is:
+      the belts are loose, and pushing it front to back now can draw a belt end back through its idler.
 
   - id: p6f
     refs: ["4.9", "4.10"]
@@ -558,10 +554,9 @@ steps:
           This is why the belt helper print is not needed.
       - type: why
         by: "several builders, comments on INDX 4.10 and 4.11"
-        unless: [gen2]
         text: >-
           Many commenters only got the belts in after undoing the front tensioners.
-          In this order they already are undone:
+          The manual's own order already has them undone here:
           both `M3x30` screws came out in step 4.2 and go back once the plate is on.
       - type: tip
         by: "Fnord Prefect, Bartgalok, comments on INDX 4.10"
@@ -587,18 +582,18 @@ steps:
       Hold the plate the right way round by that protrusion.
       Your belts are 1.5GT, so count more teeth than the manual says for the same length.
       From the right:
-      lower belt through the rear centre opening, round the post and back out with 6 to 7 teeth showing, about 9 mm;
+      lower belt through the rear centre opening, round the post and back out with 6 to 7 teeth showing, about 9 to 10 mm;
       upper belt the same through the front centre opening.
       Keep them uncrossed and pinned with your thumb.
       From the left:
-      upper belt down through the front centre opening and lower belt down through the rear centre opening, 8 to 9 teeth each, about 13 mm, then press both ends into the left opening so 6 to 7 teeth show at the rear.
+      upper belt down through the front centre opening and lower belt down through the rear centre opening, 8 to 9 teeth each, about 12 to 14 mm, then press both ends into the left opening so 6 to 7 teeth show at the rear.
     notes:
       - type: why
-        by: "cyberjunaid, Nicolas Marsal, Meow and three others, comments on INDX 4.10 and 4.11"
+        by: "cyberjunaid, Nicolas Marsal, Meow, comments on INDX 4.10 and 4.11"
         text: >-
           The manual's 4 to 5 and 6 to 7 teeth are counted on the old belts, which have a 2 mm pitch.
-          On 1.5GT belts the same length is a third more teeth.
-          One builder redid this step three times after ends with 4 to 5 teeth slipped out.
+          Two builders worked out that the same length on 1.5GT belts is a third more teeth.
+          A third redid this step three times after ends with 4 to 5 teeth slipped out.
           Prusa has not confirmed the figures.
       - type: tip
         by: "Chris Hill, forum"
@@ -617,6 +612,11 @@ steps:
           Two builders held each with a short screw threaded in lightly from outside.
           Take those screws out again afterwards:
           the fan shroud's `M3x14` screws use these nuts in step 4.19.
+      - type: tip
+        by: "John Scott, comment on INDX 4.10"
+        text: >-
+          One builder skipped the counting and set each belt end level with the edge of the plate.
+          His belts tensioned and ran.
 
   - id: p6g
     refs: ["4.11"]
@@ -641,7 +641,7 @@ steps:
     when: [gen2]
     tools: ["2.0 mm"]
     text: >-
-      Check all four ends show 6 to 7 teeth inward and both `M3nS` nuts are still in the protrusion.
+      Check all four ends show 6 to 7 teeth inward (the manual's text below says 4 to 5, for the old belts; see the row above) and both `M3nS` nuts are still in the protrusion.
       Set the plate on the linear bearing and fix it with four `M3x8b` screws, firm but gentle.
       Look along both sides:
       every belt in its channel and none pinched.
@@ -657,7 +657,8 @@ steps:
     kind: asis
     text: >-
       Lubricate both `M3x30` tensioning screws with the Prusa lubricant from the Fasteners 2/2 bag, spread round the whole thread with the tip of a zip tie.
-      The manual limits this step to the original CORE One, which is what you have.
+      The manual limits this step to the original CORE One;
+      do it on any printer whose screws were never greased.
     notes:
       - type: tip
         by: "Scotttomo, Chris Hill, forum"
@@ -681,6 +682,8 @@ steps:
       Refit both tensioning screws so each pulley engages its tensioner, and tension until both sit about 8 mm from the edge, typically 8 to 10 turns.
       Look at the four belt ends in the plate once more:
       none has crept out.
+      Then slide the gantry slowly front to back by hand:
+      it must run freely along its whole travel.
       Fine tuning happens in the wizard.
     notes:
       - type: tip
@@ -689,8 +692,16 @@ steps:
           Treat 8 mm as a starting point.
           One builder who tensioned to the picture ended up too tight for the belt tuning wizard and had to slacken before it would run.
       - type: tip
-        by: "A_Str8, baldrick, comments on INDX 4.13"
-        when: [gen2]
+        by: "Nicholas Borge, Luis, baldrick, comments on INDX 4.13"
         text: >-
-          Expect the 1.5GT belts to feel very tight at 8 mm.
-          One builder who started looser had belt calibration fail until he tightened them.
+          Two builders found the belts feel very tight at this position.
+          One on 1.5GT belts who started looser had belt calibration fail until he tightened them.
+          The note above reports the opposite problem, so expect to adjust in the wizard.
+      - type: warn
+        by: "Martin Majewski, Biscuit's 3D Workshop, baldrick, comments on INDX 4.8"
+        unless: [noalign]
+        text: >-
+          One builder found the gantry binding and stuttering after the alignment steps.
+          Another only found out at dock calibration and had to strip the printer back to them;
+          a third redid them several times.
+          If it does not run freely now, go back before the toolhead goes on.

@@ -17,7 +17,7 @@ steps:
       Three points apply to you:
       the photos show a CORE One+, the same guide covers 4-tool and 8-tool kits, and nothing gets thrown away until the guide says so.
       The Gen 2 upgrade (step 11) is optional:
-      tick it under Your build if you are fitting it and its steps appear where Prusa's companion article puts them.
+      pick it under Your build if you are fitting it and its steps appear in this plan's order, which mostly follows Prusa's companion article.
       MMU3 removal (step 12) is not covered here.
 
   - id: p0b
@@ -26,7 +26,7 @@ steps:
     text: >-
       Lay out the tools:
       needle-nose pliers, PH2 screwdriver, universal wrench, 2.0 and 2.5 mm Allen keys, T10 Torx, flush cutters.
-      They are the ones that came with the printer;
+      All but the flush cutters came with the printer;
       the kit ships without tools.
     notes:
       - type: tip
@@ -68,7 +68,7 @@ steps:
       Find the two `M3x35` for the dock fan:
       most kits have them in the Fasteners 2/2 INDX bag and have no Tool Dock Fan bag.
       Count the `M3nS` and `M3nN` nuts against the cheatsheet.
-      Check the Electronics box holds the offset sensor, its cable and its sticker.
+      Check the Electronics box holds the offset sensor and its sticker, and the Cables bag the all-black offset sensor cable, part 25229-56.
       Look over the printed parts for cracks;
       parts marked E, F or G are factory prints and identical files exist on Printables.
       Report anything missing to Prusa support before teardown.
@@ -155,6 +155,7 @@ steps:
     notes:
       - type: why
         by: "plan"
+        unless: [dryer]
         text: >-
           On an 8-tool build the right panel ends up held by four puck holders, two of which need the printer tilted to remove.
           Drilling later means undoing them.
@@ -214,11 +215,10 @@ steps:
       - type: tip
         by: "upload scripts"
         text: >-
-          Two maintained scripts do the uploading:
-          [prusa-connect-camera-script](https://github.com/nvtkaszpir/prusa-connect-camera-script) and
-          [a shorter gist](https://gist.github.com/cannikin/4954d050b72ff61ef0719c42922464e5).
-          Both take a still with `rpicam-still` and send it to Prusa Connect with the token and fingerprint.
-          Pick the fingerprint once, 16 to 40 characters, and never change it.
+          Two scripts do the uploading:
+          [prusa-connect-camera-script](https://github.com/nvtkaszpir/prusa-connect-camera-script) and [a shorter gist](https://gist.github.com/cannikin/4954d050b72ff61ef0719c42922464e5).
+          Both take a still with the Pi's camera tool (`rpicam-still` on current Raspberry Pi OS, `libcamera-still` on older ones) and send it to Prusa Connect with the token and fingerprint.
+          Pick the fingerprint once, at least 16 characters, and never change it.
       - type: tip
         by: "Printables"
         text: >-
@@ -231,14 +231,15 @@ steps:
         by: "unverified"
         text: >-
           None of these mounts says it was tested with INDX fitted.
-          Forum builders report the Buddy3D camera still sees the bed from the front left corner of an INDX printer, so a corner mount is the best guess.
-          A mount that clips to the light bar is the riskiest: the light bar moves onto the tool dock.
+          One forum poster saw Buddy3D pictures from an INDX printer with the bed in view, and the manual puts that camera in the front left corner, so a corner mount is the best guess.
+          A mount that clips to the light bar is the riskiest:
+          the light bar moves onto the tool dock.
       - type: warn
-        by: "Raspberry Pi datasheets"
+        by: "Raspberry Pi datasheets; plan"
         text: >-
           Camera Module 3 is rated for 0 to 50 °C, which a heated chamber can exceed.
-          The Pi itself stays outside the chamber on its own power supply:
-          the printer's camera port is specified for the Buddy3D, at 5 V and 1 A.
+          Keep the Pi itself outside the chamber on its own power supply:
+          nothing found says the printer's camera port can power a Pi.
       - type: tip
         by: "Prusa Connect"
         text: >-

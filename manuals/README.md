@@ -40,15 +40,13 @@ Each step of the online manual has a numeric id. A step's page is its chapter UR
 `manuals.yaml` lists the ids in step order under `step_ids`. They were read on 2026-10-05
 from the table of contents embedded in any chapter page of the online guide.
 
-The comments under a step are public. On 2026-10-05 they could be read, from a browser
-that has the guide open, at
+The comments under a step are public: open the step's page and press Comments. The
+notes on the page credited to "comment on INDX 4.10" and the like were collected that way,
+in a browser, on 2026-10-05 and 2026-10-06. The comments themselves are not stored in
+this repo; the notes retell them in our own words and name who said what.
 
-```
-https://help.prusa3d.com//edge/comments?lng=en&page=1&parent=<step id>&per_page=100&status=approve
-```
+Read them by hand. Prusa's `robots.txt` disallows automated access to the address the
+comments are served from, so do not write a script or a crawler for it.
 
-which returns JSON with each comment's author, date, text and replies. That is how the
-notes credited to "comment on INDX 4.10" and the like were collected. The comments
-themselves are not stored in this repo; the notes retell them in our own words and name
-who said what. When you re-read comments for a step, look for new replies from Prusa staff
-first: several open questions in the README are waiting for one.
+When you re-read comments for a step, look for new replies from Prusa staff first:
+several open questions in the README are waiting for one.

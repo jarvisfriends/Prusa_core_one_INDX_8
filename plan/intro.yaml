@@ -6,7 +6,7 @@ lede: >-
   Every step of Prusa's INDX conversion manual in one order, with the Gen 2 upgrade and a few other add-ons
   merged in when you pick them, Prusa's own pictures and text beside each row, and what several hundred
   builders wrote under those steps folded in as notes.
-  Nothing is fitted and then removed, the printer is switched on only at the very start and the very end,
+  Parts go on once wherever the build allows, the printer is switched on only at the very start and the very end,
   and the same tool stays in your hand for as long as possible.
 
 power:
@@ -44,8 +44,8 @@ changes:
   - >-
     Changes that come from builders' comments on Prusa's manual: the offset sensor gets its sticker on the bench,
     the belt tensioning screws stay out until the belt ends are fixed in the head plate (with Gen 2 as well),
-    the dock fan cable is routed while the right side is still wide open, the zip ties in the electronics box are
-    threaded before the box fills with cables, and the electronics covers go on before the left side panel.
+    the dock fan cable is routed while the right steel panel is still off, the zip ties in the electronics box are
+    threaded before the box fills with cables, and with Gen 2 the electronics covers go on before the left side panel.
     Each of those rows says who reported it.
   - >-
     All puck-holder screws that can be reached upright go in first, then the printer is tilted once for the four
@@ -74,8 +74,8 @@ fields:
   - ["Machine", "Prusa CORE One, original, no MMU3"]
   - ["Kit", "INDX conversion, 8 tools"]
   - ["Manuals", "INDX 1.00 (PDF of 2026-10-01) · Gen 2 (PDF of 2026-09-25)"]
-  - ["Comments read", "2026-10-05, about 1,200"]
-  - ["Status", "Not yet built end to end. Open questions are in the README."]
+  - ["Comments read", "2026-10-06, about 1,250"]
+  - ["Status", "Reviewed against the manuals on 2026-10-06. Not yet built end to end. Open questions are in the README."]
 
 legend_title: How to read a row
 pictures_note: >-
