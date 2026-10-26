@@ -153,10 +153,12 @@ steps:
       RGB LED in the rightmost RGBW slot, offset sensor in the upper right PUB CAN slot, narrow head cable connector in the MMU slot, filament sensor cable in the first EXT slot.
     notes:
       - type: warn
-        by: "Gen 2"
+        by: "Gen 2 guide; ForeverRed90, forum, Oct 2026"
         when: [gen2]
         text: >-
-          Also check the X and Y motor cables are in the connectors labelled X and Y on the xBuddy board.
+          Also check the X and Y motor cables:
+          the left rear motor goes to the connector labelled X, the right rear motor to Y.
+          One builder had them swapped and the X/Y calibration drove the head into the docked tools.
       - type: tip
         by: "forum digest"
         text: "Only one Z-motor connector (ZL or ZR) is used. An empty one is normal."

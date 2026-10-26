@@ -94,6 +94,12 @@ steps:
           Ten builders found the two `M3x35` in the Fasteners 2/2 INDX bag, some with no spare.
           Count the `M3nS` nuts too:
           three builders used their very last one on the dock fan.
+      - type: tip
+        by: "Bronk, forum, Oct 2026"
+        text: >-
+          A builder with a later kit found the nozzle wiper bracket and pad missing, and an `M3x25` and an `M3x12` short, with a sheet-metal screw in their place.
+          Support shipped the parts.
+          Count those too.
 
   - id: p0d2
     refs: []
@@ -133,7 +139,8 @@ steps:
     kind: added
     text: >-
       Print the helpers you chose from the list above.
-      At minimum the rivet remover and the hardware organizer.
+      At minimum the rivet remover.
+      If you are sorting the hardware into bins, fill them now too, from the Bins section at the top of the page.
     notes:
       - type: tip
         by: "your build"
@@ -181,6 +188,12 @@ steps:
         text: >-
           The INDX firmware is a separate build from the stock CORE One firmware.
           Being up to date on stock firmware does not let you skip this download.
+      - type: tip
+        by: "forum, Gantry Squaring Failing, Oct 2026"
+        text: >-
+          Put the 6.9.1 beta `.bbf` from GitHub on the stick as well.
+          Newer firmware fails the X/Y test on some original CORE One motors;
+          see the Phase 13 self-test row.
 
   - id: p0j
     refs: []

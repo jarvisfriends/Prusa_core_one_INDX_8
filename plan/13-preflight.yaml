@@ -24,10 +24,11 @@ steps:
       When New firmware available appears, choose FLASH.
     notes:
       - type: tip
-        by: "hyiger, Failopen, forum"
+        by: "hyiger, Failopen, forum; Prusa release notes for 8.0.0"
         text: >-
           Use the newest release.
-          Firmware 6.9.0 made tool offset calibration fail on a slightly dirty nozzle and 6.9.1 was reported to fix it.
+          Firmware 6.9.0 made tool offset calibration fail on a slightly dirty nozzle and 6.9.1 fixed it.
+          8.0.0 (October 2026) approaches the dock more gently during dock calibration and lowers the bed further when a calibration needs a hand underneath.
 
   - id: p13c
     refs: ["6.7", "6.8"]
@@ -50,10 +51,15 @@ steps:
     kind: added
     unless: [gen2]
     text: >-
-      Before the wizard, look under Settings → Hardware for the belt type and make sure it matches your belts.
-      An original CORE One has 2GT belts:
+      Before the wizard, go to Settings → Hardware → 1.5GT belts and turn it OFF.
+      The INDX firmware defaults to on, and your original CORE One has 2GT belts:
       15 teeth in 30 mm.
     notes:
+      - type: why
+        by: "Prusa developer, GitHub issue 5444; firmware 6.9.0 release notes"
+        text: >-
+          The INDX firmware has one switch for the belt type, Settings → Hardware → 1.5GT belts, and it is on by default because new INDX machines ship with 1.5GT belts.
+          With the old 2GT belts it must be off, or every dock reads about 3 mm out in Y.
       - type: tip
         by: "Art4 Tech, forum; GitHub issue 5444"
         text: >-
@@ -65,34 +71,31 @@ steps:
         text: >-
           Larger bucket:
           also set Settings → Nozzle Cleaner → Nozzle Cleaner Capacity to Extended.
-      - type: warn
-        by: "unverified"
-        text: >-
-          Neither manual says what this setting is called in the INDX firmware.
-          If you cannot find it, note what Settings → Hardware does offer and carry on:
-          a wrong setting shows up as every dock reading about 3 mm out in Y.
 
   - id: p13dg
     refs: ["G5.6", "G5.7"]
     kind: gen2
     when: [gen2]
     text: >-
-      Tell the firmware about the new belts before any calibration runs.
-      If the wizard prompt lets you decline, decline it, set the option, then start the self-test yourself from Control → Calibrations & Tests.
-      The Gen 2 guide's path on stock firmware is Settings → Hardware → Edition → CORE One+ Gen2;
-      in the INDX firmware pick the matching Gen 2 edition or 1.5GT belt option under Settings → Hardware and confirm.
-      The new belts are 1.5GT:
+      Check the belt setting before any calibration runs:
+      Settings → Hardware → 1.5GT belts must be ON.
+      It is the default in the INDX firmware, so normally there is nothing to change, but look.
+      If the wizard starts first and will not let you out, let it run and come back to this setting as soon as the menu is available;
+      rerun the axis, belt and dock calibrations if it was wrong.
+      The Gen 2 guide's Settings → Hardware → Edition path belongs to the stock firmware, not to the INDX firmware.
+      Your belts are 1.5GT:
       20 teeth in 30 mm.
     notes:
       - type: why
         by: "Gen 2 guide"
         text: >-
           Gen 2 uses belts and pulleys with a different tooth pitch, so the firmware has to be told.
-      - type: warn
-        by: "unverified"
+      - type: why
+        by: "Prusa developer, GitHub issue 5444; firmware 6.9.0 release notes"
         text: >-
-          Neither manual says what this option is called in the INDX firmware or whether the first-run wizard can be declined.
-          If the wizard starts before you can reach Settings, let it run, set the option as soon as the menu is available, and rerun the axis, belt and dock calibrations.
+          The INDX firmware has one switch for the belt type, Settings → Hardware → 1.5GT belts, on by default.
+          Firmware 6.9.0 added belt switching for CORE One+ Gen 2 machines converted to INDX.
+          What the first-run wizard shows on a Gen 2 build is still unconfirmed.
       - type: tip
         by: "Art4 Tech, forum; GitHub issue 5444"
         text: >-
@@ -117,6 +120,15 @@ steps:
       parts get hot and move.
       Skip the door sensor calibration.
       The X and Y tests and Z alignment then run by themselves.
+    notes:
+      - type: warn
+        by: "GitHub issue 5520 (open, Prusa developer replied); forum, Gantry Squaring Failing, Oct 2026"
+        text: >-
+          On some printers that started life as an original CORE One or an MK4, firmware from 6.9.1 final to 8.0.0 fails the X/Y test with early endstop trigger or Failed to measure axis:
+          it homes with less motor current.
+          One builder with Gen 2 and INDX passed only after flashing the 6.9.1 beta from GitHub.
+          If this hits you, do not strip the gantry:
+          try that firmware first.
 
   - id: p13f
     refs: ["6.11"]
@@ -183,6 +195,15 @@ steps:
         text: >-
           Stray plastic on a printed dock can block calibration.
           One builder had to trim material sticking out of two docks before they passed.
+      - type: tip
+        by: "mk and Red, forum, docking calibration fails, Oct 2026"
+        text: >-
+          On Gen 2 belts, two builders whose docks would not calibrate got all eight to pass by picking up a tool and tightening both tensioners a quarter turn at a time, about one and a half turns in all.
+      - type: tip
+        by: "chmax, forum"
+        text: >-
+          If one dock keeps failing, swap tools 1 and 8 and run it again:
+          if the failure moves with the tool, the tool is the problem, not the dock.
 
   - id: p13h
     refs: ["6.15", "6.16"]
@@ -193,6 +214,12 @@ steps:
       nothing is hot.
       Close the door.
       The Z test and a noisy fan test follow.
+    notes:
+      - type: tip
+        by: "GitHub issues 5518 and 5548, Oct 2026"
+        text: >-
+          If the loadcell test reports a noisy signal, abort it and run it again.
+          The extruder stepper can be left energised after a tool change, and that is enough to fail the test.
 
   - id: p13i
     refs: ["6.17"]
@@ -214,6 +241,13 @@ steps:
         text: >-
           Rolling the firmware back from 6.9.0 to 6.6.3 did not cure repeated failures for one builder.
           Prusa staff's answer to a calibration that keeps failing is the support chat.
+      - type: tip
+        by: "GitHub issue 5526; forum, tool offset calibration failing, Oct 2026"
+        text: >-
+          If it fails with error 36130 on a clean nozzle, turn off Settings → Lights → RGB Status Bar and rerun:
+          the bed's status strip puts noise on the loadcell for some builders.
+          Others added ferrite chokes on the LED cables or twisted the heater leads in the electronics box.
+          Prusa has not replied.
 
   - id: p13j
     refs: ["6.18", "6.19", "6.20"]
