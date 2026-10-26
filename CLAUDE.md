@@ -19,6 +19,7 @@ pip install pyyaml                       # all that check, build and render need
 python tools/check.py                    # must print OK before any commit that touches plan/ or manuals/
 python tools/build.py                    # writes dist/index.html, dist/artifact.html, dist/img/
 python tools/render_text.py --on gen2    # the build as plain text for one set of options; add --manual for Prusa's text
+python tools/kitting.py                  # plan/kits.yaml -> docs/KITTING.md, docs/labels.csv, docs/labels.html (bins and labels)
 python -m http.server -d dist 8000       # preview at http://localhost:8000
 ```
 
@@ -31,6 +32,9 @@ There are no unit tests yet. `check.py` is the test suite for the data; the page
 ## How it fits together
 
 - `plan/NN-*.yaml`: one file per phase, rows in build order. This is the product.
+- `plan/kits.yaml`: the Gridfinity bins, one set per phase. Counts there must match what the
+  rows use; when a row's screws change, change the bin. `tools/kitting.py` regenerates the
+  guide and the label files in `docs/`, which are committed.
 - `plan/options.yaml`: the choices at the top of the page. Rows and notes carry
   `when:` / `unless:` lists of option ids. Options that share a `group` are alternatives.
 - `manuals/steps/*.json` and `manuals/img/*.jpg`: Prusa's step text and pictures, extracted

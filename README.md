@@ -26,6 +26,11 @@ The page remembers your ticks and choices in the browser you use, so you can clo
 come back days later. "Move to another device" on the page turns them into a code you can
 paste into the page on your phone or another computer.
 
+**Bins.** `docs/KITTING.md` sorts every fastener and every piece of kept hardware into
+Gridfinity bins, one set per phase, so only the current phase's box is open on the bench.
+`docs/labels.csv` and `docs/labels.html` are the labels for 12 mm tape. Both are generated
+from `plan/kits.yaml` by `tools/kitting.py`.
+
 ---
 
 ## Where we left off (read this first when you come back)
@@ -247,9 +252,11 @@ once: repo **Settings → Pages → Build and deployment → Source: GitHub Acti
 | `manuals/PICTURES.md` | Generated: every picture file with a link to its step on Prusa's site. |
 | `site/template.html`, `site/style.css`, `site/app.js` | Page shell, theme, behaviour (ticks, choices, picture viewer). |
 | `plan/retired-ids.yaml` | Row ids that were removed and must not be reused. |
+| `plan/kits.yaml` | The bins: what goes in each, per phase. |
 | `tools/check.py` | Validates the plan. Runs on every pull request. |
 | `tools/build.py` | Everything → `dist/`. |
 | `tools/render_text.py` | The build as plain text for one set of options, for reviewing and diffing. |
+| `tools/kitting.py` | `plan/kits.yaml` → `docs/KITTING.md`, `docs/labels.csv`, `docs/labels.html`. |
 | `CLAUDE.md` | Working rules for Claude Code (and a good read for human contributors). |
 | `docs/BACKLOG.md` | What is left to do. |
 | `tools/extract_manual.py` | Prusa's PDFs → `manuals/img/` and `manuals/steps/`. Only needed when a manual is revised. |
