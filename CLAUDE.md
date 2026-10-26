@@ -42,6 +42,10 @@ There are no unit tests yet. `check.py` is the test suite for the data; the page
   counts and each step's id on help.prusa3d.com.
 - `tools/planlib.py`: loaders shared by the tools. `tools/build.py` renders everything into
   `site/template.html` with `site/style.css` and `site/app.js` inlined.
+- `site/kitting.js`: the Bins section. `build.py` embeds `plan/kits.yaml` as `window.KITS`;
+  the module reads option state through `window.PLAN` (from `app.js`), packs bins into the
+  builder's containers and divided bins, and renders labels. Its settings are saved under
+  the same storage key family and travel with the transfer code and the account sync.
 - `site/app.js`: ticks and choices in `localStorage` (keys start `indx-c1-8t-plan-v1`),
   option classes on `#wrap`, lazy picture strips, picture viewer, "Next open row", and a
   copy-paste code for moving progress between devices. The claude.ai account sync at the
