@@ -1,9 +1,9 @@
 line1,line2,size
-BOX 1,P1 Bench A + P4 Bench B + P9 Align & close,box
-BOX 2,P3 Teardown,box
-BOX 3,P5 Z-axis + P10 Puck holders,box
-BOX 4,P6 Belts & gantry + P7 Toolhead,box
-BOX 5,P8 Sensors & PTFE + P11 Dock & tools + P12 Door & finish,box
+BOX 1,P1 Bench A + P6 Belts & gantry,box
+BOX 2,P3 Teardown + P10 Puck holders,box
+BOX 3,P4 Bench B + P11 Dock & tools + P12 Door & finish,box
+BOX 4,P5 Z-axis + P9 Align & close,box
+BOX 5,P7 Toolhead + P8 Sensors & PTFE,box
 Kit spares,Spares,1x2
 Not needed again,Scrap,2x2
 P1 Nozzle cleaner,p1a  5.6,1x1

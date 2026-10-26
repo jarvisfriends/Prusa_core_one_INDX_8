@@ -25,13 +25,13 @@ Plus two standing bins: **Kit spares** (1x2, spares) and **Not needed again** (2
 
 ## Boxes (20 slots each)
 
-Only the current phase's box is open. A box can hold phases that are not next to each other; it is simply opened again when its next phase comes. Phase 3 has its own box because its bins are filled during the teardown and emptied into the phase bins at the end of it.
+Only the current phase's box is open. A box can hold phases that are not next to each other; it is simply opened again when its next phase comes. The Phase 3 bins are filled during the teardown and emptied into the phase bins at the end of it, so from then on their slots are free.
 
-- **Box 1** (18 of 20 slots): P1 Bench A, P4 Bench B, P9 Align & close
-- **Box 2** (17 of 20 slots): P3 Teardown
-- **Box 3** (19 of 20 slots): P5 Z-axis, P10 Puck holders
-- **Box 4** (18 of 20 slots): P6 Belts & gantry, P7 Toolhead
-- **Box 5** (17 of 20 slots): P8 Sensors & PTFE, P11 Dock & tools, P12 Door & finish
+- **Box 1** (18 of 20 slots): P1 Bench A, P6 Belts & gantry
+- **Box 2** (20 of 20 slots): P3 Teardown, P10 Puck holders
+- **Box 3** (13 of 20 slots): P4 Bench B, P11 Dock & tools, P12 Door & finish
+- **Box 4** (20 of 20 slots): P5 Z-axis, P9 Align & close
+- **Box 5** (18 of 20 slots): P7 Toolhead, P8 Sensors & PTFE
 
 ## P1 Bench A
 

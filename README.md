@@ -28,8 +28,9 @@ paste into the page on your phone or another computer.
 
 **Bins.** `docs/KITTING.md` sorts every fastener and every piece of kept hardware into
 Gridfinity bins, one set per phase, so only the current phase's box is open on the bench.
-`docs/labels.csv` and `docs/labels.html` are the labels for 12 mm tape. Both are generated
-from `plan/kits.yaml` by `tools/kitting.py`.
+`docs/labels.csv` and `docs/labels.html` are the labels for 12 mm tape. `docs/KITTING-trays.md`
+and `docs/labels-trays.*` are the same plan using 1x4 bins divided into 8 compartments, which
+needs one box fewer. All of it is generated from `plan/kits.yaml` by `tools/kitting.py`.
 
 ---
 
