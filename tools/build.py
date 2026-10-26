@@ -206,7 +206,10 @@ def render_intro(intro: dict, prints: dict, hardware: dict, sources: dict) -> di
     v["hardware_title"] = esc(hardware["title"])
     v["hardware_note"] = fmt(hardware["note"])
     head = "<thead><tr>" + "".join(f"<th>{esc(c)}</th>" for c in hardware["columns"]) + "</tr></thead>"
-    body = "".join("<tr>" + "".join(f'<td{" class=\"num\"" if i == 1 else ""}>{fmt(c)}</td>' for i, c in enumerate(r)) + "</tr>" for r in hardware["rows"])
+    def cell(i: int, c: str) -> str:
+        cls = ' class="num"' if i == 1 else ""
+        return f"<td{cls}>{fmt(c)}</td>"
+    body = "".join("<tr>" + "".join(cell(i, c) for i, c in enumerate(r)) + "</tr>" for r in hardware["rows"])
     v["hardware"] = f"        {head}\n        <tbody>{body}</tbody>"
     v["sources_title"] = esc(sources["title"])
     v["sources"] = ("\n".join(f"  <p>{fmt(p)}</p>" for p in sources["paragraphs"]) + "\n  <ul>\n"
@@ -239,7 +242,7 @@ def main() -> int:
         values["script"] = fh.read().rstrip()
     kits = pl.load_yaml("plan", "kits.yaml")
     kits_json = json.dumps({"phases": [{"id": p["id"], "name": p["name"]} for p in phases], "bins": kits["bins"], "spares": kits["spares"]},
-                           ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+                           ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")  # no </script> inside the page
     with open(pl.path("site", "kitting.js"), encoding="utf-8") as fh:
         values["script"] += "\n\nwindow.KITS = " + kits_json + ";\n" + fh.read().rstrip()
     values["kits_title"] = esc(kits["title"])
