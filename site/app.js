@@ -41,12 +41,24 @@
       b.checked = !Object.keys(opts).some(function (o) { return opts[o] && groupOf(o) === g; }); // the "none" answer of a group
     });
   }
-  function applies(el) {
-    var w = el.getAttribute("data-when"), u = el.getAttribute("data-unless");
-    if (w && !w.split(" ").every(function (k) { return opts[k]; })) return false;
-    if (u && u.split(" ").some(function (k) { return opts[k]; })) return false;
+  function appliesTo(when, unless) {
+    if (when && when.length && !when.every(function (k) { return opts[k]; })) return false;
+    if (unless && unless.length && unless.some(function (k) { return opts[k]; })) return false;
     return true;
   }
+  function applies(el) {
+    var w = el.getAttribute("data-when"), u = el.getAttribute("data-unless");
+    return appliesTo(w ? w.split(" ") : null, u ? u.split(" ") : null);
+  }
+  /* what other page modules (site/kitting.js) may use */
+  var listeners = [], restoring = false;
+  window.PLAN = {
+    key: KEY,
+    applies: appliesTo,
+    onOptionsChange: function (fn) { listeners.push(fn); },
+    kitChanged: function () { if (!restoring) queue(); }
+  };
+  function notify() { listeners.forEach(function (fn) { try { fn(); } catch (e) {} }); }
 
   function paint() {
     var done = 0, total = 0, per = {};
@@ -74,7 +86,11 @@
 
   /* ---- account sync (only inside a claude.ai artifact; otherwise ticks stay in this browser) ---- */
   var docRef = null, writing = false, dirty = false, timer = null, dead = false, retried = false;
-  function body() { return { checked: Object.keys(state).filter(function (k) { return state[k]; }).sort(), options: opts }; }
+  function body() {
+    var b = { checked: Object.keys(state).filter(function (k) { return state[k]; }).sort(), options: opts };
+    if (window.KITTING) b.kit = window.KITTING.get();
+    return b;
+  }
   function flush() {
     if (!docRef || dead || writing || !dirty) return;
     writing = true; dirty = false;
@@ -104,7 +120,7 @@
       var k = b.getAttribute("data-opt"), g = b.getAttribute("data-group");
       if (g) Object.keys(opts).forEach(function (o) { if (groupOf(o) === g) opts[o] = false; });
       if (k) opts[k] = b.checked;
-      saveOpts(); applyOpts(); paint(); queue();
+      saveOpts(); applyOpts(); paint(); queue(); notify();
     });
   });
   applyOpts();
@@ -164,7 +180,8 @@
     state = {};
     d.checked.forEach(function (k) { if (typeof k === "string") state[k] = true; });
     if (d.options && typeof d.options === "object") Object.keys(opts).forEach(function (k) { if (typeof d.options[k] === "boolean") opts[k] = d.options[k]; });
-    saveOpts(); applyOpts(); changed();
+    saveOpts(); applyOpts(); changed(); notify();
+    if (d.kit && window.KITTING) { restoring = true; try { window.KITTING.set(d.kit); } finally { restoring = false; } }
     xferMsg.textContent = "Loaded " + d.checked.length + " ticks and your choices.";
   });
 
@@ -247,8 +264,9 @@
           state = next; saveLocal();
           if (d.options && typeof d.options === "object") {
             Object.keys(opts).forEach(function (k) { if (typeof d.options[k] === "boolean") opts[k] = d.options[k]; });
-            saveOpts(); applyOpts();
+            saveOpts(); applyOpts(); notify();
           }
+          if (d.kit && window.KITTING) { restoring = true; try { window.KITTING.set(d.kit); } finally { restoring = false; } }
           paint(); say("Ticks and choices are saved to your account.");
         }, function () { dead = true; say("Ticks and choices are saved in this browser only."); });
       });

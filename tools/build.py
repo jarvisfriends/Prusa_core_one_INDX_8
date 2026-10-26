@@ -12,6 +12,7 @@ link to Prusa's online guide in place of that picture set.
 from __future__ import annotations
 
 import html
+import json
 import os
 import re
 import shutil
@@ -236,6 +237,13 @@ def main() -> int:
         values["style"] = fh.read().rstrip() + "\n\n/* generated from plan/options.yaml */\n" + option_css(opts["options"])
     with open(pl.path("site", "app.js"), encoding="utf-8") as fh:
         values["script"] = fh.read().rstrip()
+    kits = pl.load_yaml("plan", "kits.yaml")
+    kits_json = json.dumps({"phases": [{"id": p["id"], "name": p["name"]} for p in phases], "bins": kits["bins"], "spares": kits["spares"]},
+                           ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    with open(pl.path("site", "kitting.js"), encoding="utf-8") as fh:
+        values["script"] += "\n\nwindow.KITS = " + kits_json + ";\n" + fh.read().rstrip()
+    values["kits_title"] = esc(kits["title"])
+    values["kits_note"] = fmt(kits["note"])
     with open(pl.path("site", "template.html"), encoding="utf-8") as fh:
         page = fh.read()
     page = re.sub(r"\{\{(\w+)\}\}", lambda m: values[m.group(1)], page)
