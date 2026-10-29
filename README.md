@@ -26,11 +26,18 @@ The page remembers your ticks and choices in the browser you use, so you can clo
 come back days later. "Move to another device" on the page turns them into a code you can
 paste into the page on your phone or another computer.
 
+**Bins.** The page's "Bins" section sorts every fastener and every piece of kept hardware
+into Gridfinity bins, one set per phase, from the containers, divided bins and plain bins you
+say you own, so only the current phase's box is open on the bench. It prints the labels for
+12 mm tape or copies them as CSV for a label printer. The same plan as text, for the default
+options, is `docs/KITTING.md` (and `docs/KITTING-trays.md` with divided bins), generated
+from `plan/kits.yaml` by `tools/kitting.py`.
+
 ---
 
 ## Where we left off (read this first when you come back)
 
-Last worked on 2026-10-06. State of things:
+Last worked on 2026-10-26. State of things:
 
 - The plan covers all 290 steps of the INDX manual and the 60 Gen 2 steps a combined build
   uses. `tools/check.py` proves that for every combination of options.
@@ -47,8 +54,33 @@ Last worked on 2026-10-06. State of things:
   slide the gantry while the belts hang loose) and about sixty smaller fixes. All are
   applied. The review reports are in `research/` on the machine that did the work (see
   `CLAUDE.md`).
+- 2026-10-26: the page gained the bins section (say what Gridfinity containers you own and
+  it sorts the hardware per phase and prints the labels), and a scan of the forum and the
+  firmware issue tracker for what builders hit in October went into Phase 13 and Phase 0.
+  See "New since October" below.
 - If you are picking this up with Claude Code, start with `CLAUDE.md` and
   `docs/BACKLOG.md`.
+
+### New since October (from the forum and the firmware tracker, read 2026-10-26)
+
+- **The belt setting is known**: Settings → Hardware → 1.5GT belts, on by default in the
+  INDX firmware. Off for an original CORE One without Gen 2, on with Gen 2 (`#p13d`,
+  `#p13dg`). What the first-run wizard shows on a Gen 2 build is still unconfirmed.
+- **Early endstop trigger / Failed to measure axis** on some original-CORE-One motors with
+  firmware 6.9.1 final to 8.0.0 (less homing current). One Gen 2 + INDX builder passed only
+  on the 6.9.1 beta. Open on GitHub (issue 5520) with a Prusa developer replying (`#p13e`).
+- **Tool offset calibration failing from loadcell noise**: turning the RGB status bar off
+  helped several builders; ferrites and twisted heater leads helped some (`#p13i`).
+- **Noisy loadcell test after a tool change**: abort and rerun (`#p13h`).
+- **X and Y motor cables swapped** by one builder: the calibration drove the head into the
+  docked tools (`#p9b`).
+- **Later kits short of parts**: wiper bracket and pad, an `M3x25`, an `M3x12` (`#p0d`).
+- **Tight pulleys**: Prusa support called one motor out of spec and replaced it (`#g3d`).
+- Firmware 8.0.0 (22 October): dock calibration approaches the dock gently; the bed lowers
+  further for calibrations that need a hand under it. The INDX handbook 1.03 adds a gantry
+  squareness wizard. The manuals themselves are unchanged (INDX still 1.00, same step counts).
+- Not yet in the plan: PETG residue on the nozzle at the 150 °C probe giving a wrong Z offset
+  (GitHub issue 5567); the Prusa-edition guide's 4-tool link pointing at the Founders guide.
 
 ### Next steps
 
@@ -103,8 +135,8 @@ a builder to confirm or correct it.
   down, against the guide, because two builders tore a washer the guide's way (`#g4b`).
   No ruling from Prusa on either.
 - **INDX firmware on Gen 2 hardware** (`#p13c`, `#p13dg`, `#p13f`). One builder was offered
-  only COREONEGEN2 in the model list; another was never asked for belt tuning. What the
-  edition or belt setting is called in the INDX firmware is unknown.
+  only COREONEGEN2 in the model list; another was never asked for belt tuning. The belt
+  setting itself is now known (1.5GT belts, under Settings → Hardware).
 - **Left side panel with three rivets** (`#g4k`). We could not see the picture in Prusa's
   article that shows which three holes.
 - **Right-hand top puck holders before the tilt** (`#p10i`, `#p10j`). One builder
@@ -247,9 +279,11 @@ once: repo **Settings → Pages → Build and deployment → Source: GitHub Acti
 | `manuals/PICTURES.md` | Generated: every picture file with a link to its step on Prusa's site. |
 | `site/template.html`, `site/style.css`, `site/app.js` | Page shell, theme, behaviour (ticks, choices, picture viewer). |
 | `plan/retired-ids.yaml` | Row ids that were removed and must not be reused. |
+| `plan/kits.yaml` | The bins: what goes in each, per phase. |
 | `tools/check.py` | Validates the plan. Runs on every pull request. |
 | `tools/build.py` | Everything → `dist/`. |
 | `tools/render_text.py` | The build as plain text for one set of options, for reviewing and diffing. |
+| `tools/kitting.py` | `plan/kits.yaml` → `docs/KITTING.md`, `docs/labels.csv`, `docs/labels.html`. |
 | `CLAUDE.md` | Working rules for Claude Code (and a good read for human contributors). |
 | `docs/BACKLOG.md` | What is left to do. |
 | `tools/extract_manual.py` | Prusa's PDFs → `manuals/img/` and `manuals/steps/`. Only needed when a manual is revised. |

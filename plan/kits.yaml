@@ -1,0 +1,852 @@
+# Bins: how to sort the kit's fasteners and the hardware that comes off the printer into
+# Gridfinity bins, one set per phase, so only the current phase's bins are open on the bench.
+#
+# Each bin: what goes in, how many, where it comes from, and which rows use it. Counts are
+# what the rows need; spares stay in the kit bags (or the "spares" bin). Bins carry the same
+# when:/unless: option conditions as rows. `size` is in Gridfinity units (1x1 = 42 x 42 mm).
+# `kind`: new (from the kit), kept (removed from the printer in Phase 3), print (printed parts).
+#
+# tools/kitting.py turns this into docs/KITTING.md, docs/labels.html and docs/labels.csv.
+# `line2` overrides the second label line (default: the rows and steps).
+# `tray: false` keeps a bin out of a divided tray (magnets, balls, anything bulky).
+# `short` is the one-line label used when the bin becomes a compartment of a tray.
+# Label lines are made for 12 mm label tape: line 1 is "P5  M3x18 x4", line 2 the rows and steps.
+title: Bins, one set per phase
+note: >-
+  Sort everything in Phase 0, while the printer still prints. That is also the inventory the
+  plan asks for: a bag that comes up short shows up here, not mid-build. Removed hardware is
+  sorted in Phase 3 into the "keep" bins, then split into the phase bins at the end of the
+  teardown. Printed parts stay in their labelled kit bags unless a bin is listed for them.
+spares:
+  - id: kspare
+    phase: p0
+    part: Spares
+    label: Kit spares
+    text: Every new fastener left over after the bins below are filled. The counts on the bags include spares.
+    size: 1x2
+  - id: kscrap
+    phase: p3
+    part: Scrap
+    label: Not needed again
+    text: >-
+      Everything removed that no row needs again, so it cannot be mistaken for a kept part:
+      the old bed spacer, extra Nextruder screws, the Bowden-guide, the old belts and pulleys with Gen 2.
+    size: 2x2
+bins:
+  # ---------- Phase 1: bench session A ----------
+  - id: k1a
+    phase: p1
+    part: Nozzle cleaner screws
+    label: Nozzle cleaner
+    qty: "M3x20rT x1, M3nN x1, M3x8rT x1, M3x12rT x2"
+    kind: new
+    source: Fasteners 1/2 (nut) and 2/2
+    rows: [p1a]
+    steps: ["5.6"]
+  - id: k1b
+    phase: p1
+    part: 3x12sT
+    qty: 32
+    kind: new
+    source: Telescopic Spoolholder Set bags (8 per set)
+    rows: [p1b]
+    steps: ["5.25", "5.33"]
+    unless: [dryer]
+  - id: k1c
+    phase: p1
+    part: M3x12cT
+    qty: 16
+    kind: new
+    source: Fasteners 2/2
+    rows: [p1c]
+    steps: ["5.65"]
+  - id: k1d
+    phase: p1
+    part: Spring 0.5x8.5x30x15 (large)
+    label: Large springs
+    qty: 8
+    kind: new
+    source: Fasteners Tools INDX bag
+    rows: [p1c]
+    steps: ["5.65"]
+    tray: false
+
+  - id: k1e
+    phase: p1
+    part: Spring 0.63x5x15x11 (small)
+    label: Small springs
+    qty: 16
+    kind: new
+    source: Fasteners Tools INDX bag
+    rows: [p1c]
+    steps: ["5.65"]
+    tray: false
+
+  - id: k1f
+    phase: p1
+    part: Thimble
+    qty: 8
+    kind: print
+    source: Tools bag
+    rows: [p1c]
+    steps: ["5.65"]
+    tray: false
+
+  - id: k1g
+    phase: p1
+    part: M3x8rT
+    qty: 19
+    kind: new
+    source: Fasteners 2/2
+    rows: [p1d, p1e]
+    steps: ["5.68", "5.72"]
+    text: 16 for the nozzle seal holders, 3 for the vent lever. The vent lever's M3 washer goes in too.
+    line2: "p1d p1e  5.68 5.72"
+
+  - id: k1h
+    phase: p1
+    part: Nozzle parking plates and seals
+    label: Plates + seals
+    qty: 8 + 8
+    kind: new
+    source: Fasteners Tools INDX
+    rows: [p1d]
+    steps: ["5.68"]
+    size: 1x2
+    text: The plate edges are sharp. Keep them in their bag inside the bin if you like.
+
+  # ---------- Phase 3: hardware that comes off the printer and goes back on ----------
+    tray: false
+
+  - id: k3a
+    phase: p3
+    part: M3x10 (socket head)
+    label: Keep M3x10
+    qty: 12 of about 21
+    kind: kept
+    source: Nextruder, covers, bed mounts, Nextruder holder
+    rows: [p4e, p5g, p5n, p7j, p8a, p8j, p8l]
+    steps: ["5.78", "3.17", "3.27", "4.32", "4.39", "4.58", "4.66"]
+    text: Split at the end of teardown into P4 x2, P5 x3, P7 x1, P8 x6. The rest to spares.
+    line2: "P4 x2  P5 x3  P7 x1  P8 x6"
+    short: "M3x10 x12"
+
+  - id: k3b
+    phase: p3
+    part: M3x8rT
+    label: Keep M3x8rT
+    qty: 6 of 11
+    kind: kept
+    source: Spool holder, side handle, LoveBoard, rear bed stop
+    rows: [p4b, p5j]
+    steps: ["5.4", "3.34", "3.35"]
+    text: Split into P4 x2 and P5 x4.
+    line2: "P4 x2  P5 x4"
+    short: "M3x8rT x6"
+
+  - id: k3c
+    phase: p3
+    part: M3x4rT
+    label: Keep M3x4rT
+    qty: 10 of 12
+    kind: kept
+    source: Top profile front, back cover, xBuddy cover, Cable-clip
+    rows: [p9c, p9d, p11h]
+    steps: ["5.21", "5.22", "5.88"]
+    text: Split into P9 x8 and P11 x2. Do not mix with the M3x5rT door screws.
+    line2: "P9 x8  P11 x2"
+    short: "M3x4rT x10"
+
+  - id: k3d
+    phase: p3
+    part: M3x5rT
+    label: Keep M3x5rT
+    qty: 4
+    kind: kept
+    source: Door hinges
+    rows: [p12a]
+    steps: ["5.99"]
+    text: Or thread them straight back into the empty hinges, as the Phase 3 tip says, and leave this bin empty.
+    line2: "P12  5.99"
+
+  - id: k3e
+    phase: p3
+    part: M3x4 (top front panel)
+    label: Keep M3x4
+    qty: 2
+    kind: kept
+    source: Top front panel
+    rows: [p11h]
+    steps: ["5.88"]
+    line2: "P11  5.88"
+
+  - id: k3f
+    phase: p3
+    part: M3x10rT
+    label: Keep M3x10rT
+    qty: 1
+    kind: kept
+    source: Old bed cable cover, bottom
+    rows: [p5e]
+    steps: ["3.22"]
+    line2: "P5  3.22"
+
+  - id: k3g
+    phase: p3
+    part: Heatbed screws
+    label: Keep heatbed set
+    qty: "M3x4bT x8, M3x12bT x1, spacer, textile sleeve"
+    kind: kept
+    source: Heatbed
+    rows: [p5c, p5m, p5mg, p5n]
+    steps: ["3.4", "3.24", "3.25", "3.26"]
+    size: 1x2
+    text: With Gen 2 the M3x12bT and the 6x3.1x8 spacer are not refitted; keep the M3x12bT anyway, it is the pin for the spacer trick.
+    line2: "P5  3.24-3.26"
+    tray: false
+
+  - id: k3h
+    phase: p3
+    part: M3x30 tensioning screws
+    label: Keep M3x30
+    qty: 2
+    kind: kept
+    source: Front profiles, under the upper door hinges
+    rows: [p6a, p6h, p6i]
+    steps: ["4.2", "4.12", "4.13"]
+    text: The Prusa lubricant from Fasteners 2/2 can live here too.
+    line2: "P6  4.12 4.13"
+
+  - id: k3i
+    phase: p3
+    part: M3x35 + M3x6 motor screws
+    label: Keep motor screws
+    qty: "M3x35 x8, M3x6 x2"
+    kind: kept
+    source: Under the two rear motors
+    rows: [g3b, g3h, g3q]
+    steps: ["G3.5", "G3.6", "G3.17", "G3.30"]
+    when: [gen2]
+    line2: "P6  G3.17 G3.30"
+    short: "M3x35+M3x6"
+
+  - id: k3j
+    phase: p3
+    part: Belt tensioner idlers
+    label: Keep idlers x2
+    qty: 2, each with its M3nS nut
+    kind: kept
+    source: Come out on the old belts
+    rows: [g3a, g3r, g3t]
+    steps: ["G3.4", "G3.32", "G3.36"]
+    when: [gen2]
+    line2: "P6  G3.32 G3.36"
+    tray: false
+
+  - id: k3k
+    phase: p3
+    part: Print fan + 2 cable straps
+    label: Keep print fan
+    qty: 1 + 2
+    kind: kept
+    source: Nextruder, left-side harness
+    rows: [p7d, p7i]
+    steps: ["4.22", "4.31"]
+    size: 2x2
+    line2: "P7  4.22 4.31"
+    tray: false
+
+  - id: k3l
+    phase: p3
+    part: Nylon rivets (removed)
+    label: Keep rivets
+    qty: about 30
+    kind: kept
+    source: Top panel, side panels, side covers
+    rows: [p8w, g4k, g4kd, p9ed]
+    steps: ["G4.32", "G4.34", "5.24"]
+    size: 1x2
+    text: With Gen 2, 8 go back on the transparent covers and 3 (11 with dryer boxes) on the left panel. Builders report new ones are easier to fit; the Gen 2 box may hold a full set.
+
+  # ---------- Phase 4: bench session B ----------
+    line2: "P8 x8  P9 x3 (x11 dryer)"
+    tray: false
+
+  - id: k4a
+    phase: p4
+    part: Side handle screws
+    label: Side handle
+    qty: "M3x8rT x2 (kept), M3nN x2"
+    kind: kept
+    source: Kept M3x8rT; nuts from Fasteners 1/2
+    rows: [p4b]
+    steps: ["5.3", "5.4"]
+  - id: k4b
+    phase: p4
+    part: M3x12cT
+    qty: 4
+    kind: new
+    source: Fasteners 2/2
+    rows: [p4d]
+    steps: ["5.74", "5.76"]
+  - id: k4c
+    phase: p4
+    part: Lid screws
+    label: Lid screws
+    qty: "M3x8rT x2 (new), M3x10 x2 (kept)"
+    kind: new
+    source: Fasteners 2/2; kept M3x10
+    rows: [p4d, p4e]
+    steps: ["5.74", "5.77", "5.78", "5.79"]
+  - id: k4d
+    phase: p4
+    part: Top cover printed parts
+    label: Lid printed parts
+    qty: "2 knobs, 2 latches, 2 grill-flexi, 2 hinge covers"
+    kind: print
+    source: Top Cover Parts bag
+    rows: [p4d, p4e]
+    steps: ["5.74", "5.75"]
+    size: 1x2
+
+  # ---------- Phase 5: Z-axis ----------
+    tray: false
+
+  - id: k5a
+    phase: p5
+    part: M3nN
+    qty: 5
+    kind: new
+    source: Fasteners 1/2
+    rows: [p5e, p5f]
+    steps: ["3.21", "3.6"]
+    text: 3 for the bed cable cover bottom, 2 for the rear bed spacer.
+  - id: k5b
+    phase: p5
+    part: M3nS
+    qty: 3
+    kind: new
+    source: Fasteners 2/2
+    rows: [p5f]
+    steps: ["3.32"]
+  - id: k5c
+    phase: p5
+    part: M3x18
+    qty: 4
+    kind: new
+    source: Fasteners 1/2
+    rows: [p5h]
+    steps: ["3.6", "3.8", "3.10"]
+    text: New ones. The two M3x18 from the heatsink fan are scrap.
+  - id: k5d
+    phase: p5
+    part: M3x8rT
+    qty: 1 new + 4 kept
+    kind: new
+    source: Fasteners 2/2; kept from the rear bed stop
+    rows: [p5g, p5j]
+    steps: ["3.15", "3.34", "3.35"]
+  - id: k5e
+    phase: p5
+    part: M3x10 (kept) + M3x10rT (kept)
+    label: Kept M3x10/10rT
+    qty: 3 + 1
+    kind: kept
+    source: Keep bins
+    rows: [p5e, p5g, p5n]
+    steps: ["3.22", "3.17", "3.27"]
+    short: "M3x10/10rT"
+
+  - id: k5f
+    phase: p5
+    part: Heatbed set (kept)
+    label: Heatbed set
+    qty: "M3x4bT x8, M3x12bT, spacer, sleeve"
+    kind: kept
+    source: Keep bin
+    rows: [p5m, p5n]
+    steps: ["3.24", "3.25", "3.26"]
+    size: 1x2
+    unless: [gen2]
+    tray: false
+
+  - id: k5fg
+    phase: p5
+    part: Heatbed set (kept + Gen 2)
+    label: Heatbed set
+    qty: "M3x4bT x8, M3x14bT (new), 10 mm spacer (new), sleeve, old M3x12bT as a pin"
+    kind: kept
+    source: Keep bin; Gen 2 bag
+    rows: [p5mg, p5n]
+    steps: ["G4.8", "3.24", "3.25", "3.26"]
+    size: 1x2
+    when: [gen2]
+    tray: false
+
+  - id: k5g
+    phase: p5
+    part: Expansion joint screws
+    label: Joint screws
+    qty: 8
+    kind: new
+    source: Gen 2 bag (silver)
+    rows: [g4b]
+    steps: ["G4.5", "G4.6"]
+    when: [gen2]
+    text: No spares in the kit. Check all eight have a thread.
+    short: "Joint scr. x8"
+
+  - id: k5h
+    phase: p5
+    part: PTFE washers M3
+    label: PTFE washers
+    qty: 16
+    kind: new
+    source: Gen 2 bag
+    rows: [g4b]
+    steps: ["G4.5", "G4.6"]
+    when: [gen2]
+    short: "PTFE wash. x16"
+
+  - id: k5i
+    phase: p5
+    part: Expansion joints
+    label: Exp. joints x8
+    qty: 8
+    kind: new
+    source: Gen 2 bag
+    rows: [g4b]
+    steps: ["G4.7"]
+    when: [gen2]
+    size: 1x2
+    tray: false
+
+  - id: k5j
+    phase: p5
+    part: Zip ties
+    qty: 8
+    kind: new
+    source: Kit
+    rows: [p5k, p5kg, p5l, p5o, p5p]
+    steps: ["3.17", "3.18", "3.30", "4.34"]
+    text: 1 at the LED panel screw, 3 on the Z-carriage, 1 round the sleeve, 3 through the xBuddy box (left open).
+    line2: "p5k-p5p  3.17-4.34"
+
+  - id: k5k
+    phase: p5
+    part: Heatbed printed parts
+    label: Z-axis printed parts
+    qty: "2 front spacers, rear spacer, bed stop, cable cover bottom + top, sensor holder"
+    kind: print
+    source: Heatbed bag
+    rows: [p5e, p5f, p5g, p5h, p5i, p5j]
+    steps: ["3.6", "3.21", "3.32", "3.14"]
+    size: 2x2
+
+  # ---------- Phase 6: belts and gantry ----------
+    line2: "p5e-p5j  3.6-3.32"
+    tray: false
+
+  - id: k6a
+    phase: p6
+    part: M3nS
+    qty: 2
+    kind: new
+    source: Fasteners 2/2
+    rows: [p6f, p6fg]
+    steps: ["4.9", "4.11"]
+  - id: k6b
+    phase: p6
+    part: M3x8b
+    qty: 4
+    kind: new
+    source: Fasteners 1/2
+    rows: [p6g, p6gg]
+    steps: ["4.9", "4.11"]
+  - id: k6c
+    phase: p6
+    part: M3x30 (kept) + lubricant
+    label: M3x30 + grease
+    qty: 2
+    kind: kept
+    source: Keep bin
+    rows: [p6h, p6i]
+    steps: ["4.12", "4.13"]
+    short: "M3x30 x2"
+
+  - id: k6d
+    phase: p6
+    part: Pulleys + offset tool
+    label: Pulleys + tool
+    qty: "2 T21-1.5GT pulleys, Pulley-offset-tool"
+    kind: new
+    source: Belts, Exp. joints (Gen 2) bag
+    rows: [g3d, g3k]
+    steps: ["G3.8", "G3.9", "G3.20", "G3.22"]
+    when: [gen2]
+    text: The tool's X end is fragile.
+    tray: false
+
+  - id: k6e
+    phase: p6
+    part: 1.5GT belts
+    label: Belts
+    qty: 2
+    kind: new
+    source: Belts, Exp. joints (Gen 2) bag
+    rows: [g3e, g3f]
+    steps: ["G3.8", "G3.10"]
+    when: [gen2]
+    size: 1x2
+    tray: false
+
+  - id: k6f
+    phase: p6
+    part: Motor screws (kept)
+    label: Motor screws
+    qty: "M3x35 x8, M3x6 x2"
+    kind: kept
+    source: Keep bin
+    rows: [g3h, g3q]
+    steps: ["G3.17", "G3.30"]
+    when: [gen2]
+    short: "M3x35+M3x6"
+
+  - id: k6g
+    phase: p6
+    part: Idlers (kept)
+    label: Idlers
+    qty: 2, each with its M3nS nut
+    kind: kept
+    source: Keep bin
+    rows: [g3r, g3t]
+    steps: ["G3.32", "G3.36"]
+    when: [gen2]
+    tray: false
+
+  - id: k6h
+    phase: p6
+    part: Zip ties
+    qty: 2
+    kind: new
+    source: Kit
+    rows: [g3g, g3p]
+    steps: ["G3.14", "G3.27"]
+    when: [gen2]
+
+  # ---------- Phase 7: toolhead, head cable, dock fan cable ----------
+  - id: k7a
+    phase: p7
+    part: M3x14
+    qty: 6
+    kind: new
+    source: Fasteners 1/2
+    rows: [p7b, p7c]
+    steps: ["4.16", "4.17", "4.19"]
+  - id: k7b
+    phase: p7
+    part: Toolhead single screws
+    label: Toolhead singles
+    qty: "M3x18 x1, M3x25 x1, M3nS x1, 3x8sT x1 (black), M3x8rT x1 (new), M3x10 x1 (kept)"
+    kind: new
+    source: Fasteners 1/2 and 2/2; kept M3x10
+    rows: [p7a, p7c, p7d, p7g, p7h, p7j]
+    steps: ["4.15", "4.20", "4.22", "4.28", "4.30", "4.32"]
+    text: Six different screws, one of each. Lay them out on the cheatsheet before you start.
+    line2: "4.15 4.20 4.22 4.28 4.30 4.32"
+
+  - id: k7c
+    phase: p7
+    part: Clips and cable covers
+    label: Head cable parts
+    qty: "Head-cable-clip, Swingarm-clip, cover front + back, nylon string"
+    kind: print
+    source: Toolhead bag, Fasteners 1/2 bag, Top Door Seal & Nylon String bag
+    rows: [p7a, p7e, p7f, p7h, p7j]
+    steps: ["4.14", "4.24", "4.25"]
+    size: 1x2
+    text: Look inside the fan shroud for a clip wedged in it.
+    tray: false
+
+  - id: k7d
+    phase: p7
+    part: Print fan + straps (kept)
+    label: Print fan + straps
+    qty: 1 + 2
+    kind: kept
+    source: Keep bin
+    rows: [p7d, p7i]
+    steps: ["4.22", "4.31"]
+    size: 2x2
+    tray: false
+
+  - id: k7e
+    phase: p7
+    part: Zip ties
+    qty: 3
+    kind: new
+    source: Kit
+    rows: [p7n, p7o, p7p]
+    steps: ["5.12", "5.14", "5.16"]
+    text: For the dock fan cable. The three in the xBuddy box were threaded in Phase 5.
+
+  # ---------- Phase 8: filament sensors and PTFE ----------
+  - id: k8a
+    phase: p8
+    part: M3x12cT
+    qty: 12
+    kind: new
+    source: Fasteners 2/2
+    rows: [p8c, p8e, p8f]
+    steps: ["4.44", "4.49", "4.50", "4.51", "4.52"]
+  - id: k8b
+    phase: p8
+    part: M3x10 (kept)
+    label: Kept M3x10
+    qty: 6
+    kind: kept
+    source: Keep bin
+    rows: [p8a, p8j, p8m]
+    steps: ["4.39", "4.40", "4.58", "4.66"]
+  - id: k8c
+    phase: p8
+    part: 3x12sT
+    qty: 2
+    kind: new
+    source: Fasteners 2/2
+    rows: [p8h, p8l]
+    steps: ["4.53", "4.62"]
+  - id: k8d
+    phase: p8
+    part: Sleeve 2x5
+    label: Sleeves
+    qty: 8
+    kind: new
+    source: Fasteners Tools INDX bags
+    rows: [p8b]
+    steps: ["4.42"]
+  - id: k8e
+    phase: p8
+    part: Collet
+    label: Collets
+    qty: 8
+    kind: new
+    source: Fasteners Tools INDX bags
+    rows: [p8b]
+    steps: ["4.43"]
+  - id: k8f
+    phase: p8
+    part: Magnet 3.2x5 (small)
+    label: Small magnets
+    qty: 4
+    kind: new
+    source: Fasteners Tools INDX bags
+    rows: [p8c]
+    steps: ["4.44"]
+    text: Keep this bin away from the large magnets.
+    tray: false
+
+  - id: k8g
+    phase: p8
+    part: Magnet 7x8 (large)
+    label: Large magnets
+    qty: 8
+    kind: new
+    source: Fasteners Tools INDX bags
+    rows: [p8d]
+    steps: ["4.48"]
+    text: Away from the small magnets and the steel balls.
+    tray: false
+
+  - id: k8h
+    phase: p8
+    part: Steel ball 7 mm
+    label: Steel balls
+    qty: 8
+    kind: new
+    source: Fasteners Tools INDX bags
+    rows: [p8d]
+    steps: ["4.47"]
+    tray: false
+
+  - id: k8i
+    phase: p8
+    part: Nylon rivets (kept)
+    label: Cover rivets
+    qty: 8
+    kind: kept
+    source: Keep bin
+    rows: [p8w]
+    steps: ["G4.32", "G4.34"]
+    when: [gen2]
+    text: Four per transparent cover, none in the top-middle hole.
+
+  # ---------- Phase 9: covers and side panels ----------
+  - id: k9a
+    phase: p9
+    part: M3x4rT (kept)
+    label: Kept M3x4rT
+    qty: 8
+    kind: kept
+    source: Keep bin
+    rows: [p9c, p9d]
+    steps: ["5.21", "5.22"]
+  - id: k9b
+    phase: p9
+    part: Zip ties
+    qty: 2
+    kind: new
+    source: Kit
+    rows: [p9a]
+    steps: ["5.19"]
+    text: Or the three leftover hook-and-loop straps, which builders prefer here.
+  - id: k9c
+    phase: p9
+    part: Nylon rivets
+    label: R panel rivets
+    qty: 3 new
+    kind: new
+    source: Fasteners 1/2
+    rows: [p9e]
+    steps: ["5.23", "5.24"]
+    unless: [dryer]
+  - id: k9cd
+    phase: p9
+    part: Nylon rivets
+    label: R panel rivets
+    qty: 11 (3 new + 8 kept)
+    kind: new
+    source: Fasteners 1/2 and the keep bin
+    rows: [p9ed]
+    steps: ["5.23", "5.24"]
+    when: [dryer]
+  - id: k9d
+    phase: p9
+    part: Nylon rivets (kept)
+    label: L panel rivets
+    qty: 3
+    kind: kept
+    source: Keep bin
+    rows: [g4k]
+    steps: ["G4.34"]
+    when: [gen2]
+    unless: [dryer]
+  - id: k9dd
+    phase: p9
+    part: Nylon rivets (kept)
+    label: L panel rivets
+    qty: 11
+    kind: kept
+    source: Keep bin
+    rows: [g4kd]
+    steps: ["G4.34"]
+    when: [gen2, dryer]
+
+  # ---------- Phase 10: puck holders ----------
+  - id: k10a
+    phase: p10
+    part: M3x12rT
+    qty: 20
+    kind: new
+    source: Fasteners 2/2
+    rows: [p10a, p10b, p10c, p10d, p10e, p10f, p10g, p10h, p10i, p10j, p10l, p10m, p10n, p10o]
+    steps: ["5.28", "5.30", "5.32", "5.37", "5.39", "5.41", "5.43", "5.45", "5.48", "5.50", "5.52", "5.54", "5.56", "5.58"]
+    unless: [dryer]
+    line2: "all puck holders 5.27-5.58"
+
+  - id: k10b
+    phase: p10
+    part: M3nN
+    qty: 16
+    kind: new
+    source: Fasteners 1/2
+    rows: [p10b, p10c, p10d, p10e, p10g, p10h, p10i, p10j, p10l, p10m, p10n, p10o]
+    steps: ["5.29", "5.31", "5.36", "5.38", "5.42", "5.44", "5.47", "5.49", "5.51", "5.53", "5.55", "5.57"]
+    unless: [dryer]
+    line2: "all puck holders 5.29-5.57"
+
+  - id: k10c
+    phase: p10
+    part: Rivets and screws pulled here
+    label: Pulled here
+    qty: "rivets and the four upper M3x4rT corner screws"
+    kind: kept
+    source: The side panels
+    rows: [p10a, p10d, p10f]
+    steps: ["5.27", "5.35", "5.40"]
+    unless: [dryer]
+    text: An empty bin to drop them in. None goes back.
+
+  # ---------- Phase 11: dock fan, lid, tool dock, tools ----------
+    tray: false
+
+  - id: k11a
+    phase: p11
+    part: Dock fan screws
+    label: Dock fan
+    qty: "M3x35 x2, M3x25 x1, M3x8rT x1, M3nS x1"
+    kind: new
+    source: Fasteners 1/2 and 2/2 (most kits have no Tool Dock Fan bag)
+    rows: [p11a, p11b]
+    steps: ["5.59", "5.60", "5.61", "5.63"]
+  - id: k11b
+    phase: p11
+    part: Top cover back
+    label: Top cover back
+    qty: "3x12sT x2, nylon rivets x2, 2 Hinge-bases"
+    kind: new
+    source: Fasteners 2/2, Fasteners 1/2, Top Cover Parts bag
+    rows: [p11d, p11e]
+    steps: ["5.80", "5.81", "5.82", "5.83"]
+  - id: k11c
+    phase: p11
+    part: Lid hinge screws
+    label: Lid hinges
+    qty: "M3x25 x2, springs 15x5 x2"
+    kind: new
+    source: Fasteners 1/2 (bag marked Spring 0,8x5x15x10)
+    rows: [p11f]
+    steps: ["5.84", "5.85"]
+  - id: k11d
+    phase: p11
+    part: Tool dock screws
+    label: Tool dock
+    qty: "M3x4 x2 (kept), M3x4rT x2 (kept), nylon rivets x2 (new)"
+    kind: kept
+    source: Keep bins; Fasteners 1/2
+    rows: [p11g, p11h, p11i]
+    steps: ["5.86", "5.88", "5.89"]
+
+  # ---------- Phase 12: door and finish ----------
+  - id: k12a
+    phase: p12
+    part: M3x5rT (kept)
+    label: Door screws
+    qty: 4
+    kind: kept
+    source: Keep bin, or the hinges
+    rows: [p12a]
+    steps: ["5.99"]
+  - id: k12b
+    phase: p12
+    part: Stickers
+    label: Stickers
+    qty: "upgrade sticker, INDX SN label, Gen 2 SN sticker"
+    kind: new
+    source: INDX Update Stickers bag; Gen 2 box
+    rows: [p12b, p12b2]
+    steps: ["5.100", "5.101", "5.102", "G5.2"]
+    text: Flat; a 1x2 bin or the envelope they came in.
+    size: 1x2
+    tray: false
+
+  - id: k12c
+    phase: p12
+    part: O-rings
+    label: O-rings
+    qty: 8
+    kind: new
+    source: Telescopic Spoolholder Set bag
+    rows: [p12d]
+    steps: ["6.1", "6.2"]
+    unless: [dryer]

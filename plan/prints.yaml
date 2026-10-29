@@ -1,8 +1,9 @@
 # Helper prints to make before the printer comes apart. verdict_class: yes | maybe | no | later
 title: Print before you take the printer apart
 note: >-
-  Verdicts on eight community models, the rivet tool the manual itself recommends, and three that builders
+  Verdicts on seven community models, the rivet tool the manual itself recommends, and three that builders
   named in the comments on Prusa's manuals.
+  A hardware organizer is not on the list: the bins section above sorts the hardware into Gridfinity bins instead.
   They are based on each model's description and download counts, not on its comment thread,
   so treat fit claims as the authors' own.
 items:
@@ -20,18 +21,6 @@ items:
       Two builders in the Gen 2 manual's comments preferred the
       [rivet extraction tool](https://www.printables.com/model/1349886-rivet-extraction-tool);
       one found a printed remover wore out after a few rivets, so print a spare.
-  - verdict: Print first
-    verdict_class: "yes"
-    models:
-      - name: INDX upgrade hardware organizer
-        url: https://www.printables.com/model/1794124-indx-upgrade-hardware-organizer
-        by: r0bdawg11
-    text: >-
-      A tray with a slot per fastener type, split into screws reused from the CORE One and new kit screws.
-      The build reuses 50 to 60 removed fasteners and the manual warns against mixing `M3x4rT` with `M3x5rT`,
-      so this pays for itself in Phase 3.
-      Plain PLA is fine.
-      15 reviews, 241 downloads.
   - verdict: Print first if you want it
     verdict_class: maybe
     models:

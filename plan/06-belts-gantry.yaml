@@ -23,6 +23,12 @@ steps:
       Under the upper door hinge on each side, back out the `M3x30` tensioning screw until it lets go of the idler, and remove it.
       The `M3nS` nut inside each Belt-tensioner-pulley must stay put.
       Keep both screws.
+    notes:
+      - type: tip
+        by: "Bronk, forum, Oct 2026"
+        text: >-
+          On a factory-assembled CORE One one builder found the left Y rod had slipped in its holder and the X-carriage screws were loose.
+          With the head off, check both before anything is aligned.
 
   - id: p6b
     refs: ["4.3"]
@@ -128,11 +134,11 @@ steps:
           If there is no burr and it still will not go on by hand, stop and ask support:
           one builder measured an undersized bore.
       - type: tip
-        by: "several builders, comments on Gen 2 3.9"
+        by: "several builders, comments on Gen 2 3.9; formula155, forum, Sep 2026"
         text: >-
           On many printers, original CORE Ones included, the shaft is about 3 mm shorter than pictured and ends inside the pulley.
-          Builders set the gap with the `Pulley-offset-tool` and carried on;
-          Prusa has not commented.
+          Builders set the gap with the `Pulley-offset-tool` and carried on.
+          For one builder whose second pulley would not go on at all, Prusa support called the motor out of spec and sent a new one.
       - type: tip
         by: "Prusa staff and Philcotigo, replies on Gen 2 3.9"
         text: >-

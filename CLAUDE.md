@@ -19,6 +19,7 @@ pip install pyyaml                       # all that check, build and render need
 python tools/check.py                    # must print OK before any commit that touches plan/ or manuals/
 python tools/build.py                    # writes dist/index.html, dist/artifact.html, dist/img/
 python tools/render_text.py --on gen2    # the build as plain text for one set of options; add --manual for Prusa's text
+python tools/kitting.py                  # plan/kits.yaml -> docs/KITTING.md, docs/labels.csv, docs/labels.html (bins and labels)
 python -m http.server -d dist 8000       # preview at http://localhost:8000
 ```
 
@@ -31,6 +32,9 @@ There are no unit tests yet. `check.py` is the test suite for the data; the page
 ## How it fits together
 
 - `plan/NN-*.yaml`: one file per phase, rows in build order. This is the product.
+- `plan/kits.yaml`: the Gridfinity bins, one set per phase. Counts there must match what the
+  rows use; when a row's screws change, change the bin. `tools/kitting.py` regenerates the
+  guide and the label files in `docs/`, which are committed.
 - `plan/options.yaml`: the choices at the top of the page. Rows and notes carry
   `when:` / `unless:` lists of option ids. Options that share a `group` are alternatives.
 - `manuals/steps/*.json` and `manuals/img/*.jpg`: Prusa's step text and pictures, extracted
@@ -38,6 +42,10 @@ There are no unit tests yet. `check.py` is the test suite for the data; the page
   counts and each step's id on help.prusa3d.com.
 - `tools/planlib.py`: loaders shared by the tools. `tools/build.py` renders everything into
   `site/template.html` with `site/style.css` and `site/app.js` inlined.
+- `site/kitting.js`: the Bins section. `build.py` embeds `plan/kits.yaml` as `window.KITS`;
+  the module reads option state through `window.PLAN` (from `app.js`), packs bins into the
+  builder's containers and divided bins, and renders labels. Its settings are saved under
+  the same storage key family and travel with the transfer code and the account sync.
 - `site/app.js`: ticks and choices in `localStorage` (keys start `indx-c1-8t-plan-v1`),
   option classes on `#wrap`, lazy picture strips, picture viewer, "Next open row", and a
   copy-paste code for moving progress between devices. The claude.ai account sync at the

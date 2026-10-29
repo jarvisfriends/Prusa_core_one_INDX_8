@@ -1,0 +1,79 @@
+line1,line2,size
+BOX 1,P1 Bench A + P6 Belts & gantry,box
+BOX 2,P3 Teardown + P10 Puck holders,box
+BOX 3,P4 Bench B + P11 Dock & tools + P12 Door & finish,box
+BOX 4,P5 Z-axis + P9 Align & close,box
+BOX 5,P7 Toolhead + P8 Sensors & PTFE,box
+Kit spares,Spares,1x2
+Not needed again,Scrap,2x2
+P1 Nozzle cleaner,p1a  5.6,1x1
+P1 3x12sT x32,p1b  5.25 5.33,1x1
+P1 M3x12cT x16,p1c  5.65,1x1
+P1 Large springs x8,p1c  5.65,1x1
+P1 Small springs x16,p1c  5.65,1x1
+P1 Thimble x8,p1c  5.65,1x1
+P1 M3x8rT x19,p1d p1e  5.68 5.72,1x1
+P1 Plates + seals,p1d  5.68,1x2
+P3 Keep M3x10,P4 x2  P5 x3  P7 x1  P8 x6,1x1
+P3 Keep M3x8rT,P4 x2  P5 x4,1x1
+P3 Keep M3x4rT,P9 x8  P11 x2,1x1
+P3 Keep M3x5rT x4,P12  5.99,1x1
+P3 Keep M3x4 x2,P11  5.88,1x1
+P3 Keep M3x10rT,P5  3.22,1x1
+P3 Keep heatbed set,P5  3.24-3.26,1x2
+P3 Keep M3x30 x2,P6  4.12 4.13,1x1
+P3 Keep motor screws,P6  G3.17 G3.30,1x1
+P3 Keep idlers x2,P6  G3.32 G3.36,1x1
+P3 Keep print fan,P7  4.22 4.31,2x2
+P3 Keep rivets,P8 x8  P9 x3 (x11 dryer),1x2
+P4 Side handle,p4b  5.3 5.4,1x1
+P4 M3x12cT x4,p4d  5.74 5.76,1x1
+P4 Lid screws,p4d p4e  5.74 5.77 5.78 5.79,1x1
+P4 Lid printed parts,p4d p4e  5.74 5.75,1x2
+P5 M3nN x5,p5e p5f  3.21 3.6,1x1
+P5 M3nS x3,p5f  3.32,1x1
+P5 M3x18 x4,p5h  3.6 3.8 3.10,1x1
+P5 M3x8rT,p5g p5j  3.15 3.34 3.35,1x1
+P5 Kept M3x10/10rT,p5e p5g p5n  3.22 3.17 3.27,1x1
+P5 Heatbed set,p5mg p5n  G4.8 3.24 3.25 3.26,1x2
+P5 Joint screws x8,g4b  G4.5 G4.6,1x1
+P5 PTFE washers x16,g4b  G4.5 G4.6,1x1
+P5 Exp. joints x8,g4b  G4.7,1x2
+P5 Zip ties x8,p5k-p5p  3.17-4.34,1x1
+P5 Z-axis printed parts,p5e-p5j  3.6-3.32,2x2
+P6 M3nS x2,p6f p6fg  4.9 4.11,1x1
+P6 M3x8b x4,p6g p6gg  4.9 4.11,1x1
+P6 M3x30 + grease x2,p6h p6i  4.12 4.13,1x1
+P6 Pulleys + tool,g3d g3k  G3.8 G3.9 G3.20 G3.22,1x1
+P6 Belts x2,g3e g3f  G3.8 G3.10,1x2
+P6 Motor screws,g3h g3q  G3.17 G3.30,1x1
+P6 Idlers,g3r g3t  G3.32 G3.36,1x1
+P6 Zip ties x2,g3g g3p  G3.14 G3.27,1x1
+P7 M3x14 x6,p7b p7c  4.16 4.17 4.19,1x1
+P7 Toolhead singles,4.15 4.20 4.22 4.28 4.30 4.32,1x1
+P7 Head cable parts,p7a p7e p7f p7h p7j  4.14 4.24 4.25,1x2
+P7 Print fan + straps,p7d p7i  4.22 4.31,2x2
+P7 Zip ties x3,p7n p7o p7p  5.12 5.14 5.16,1x1
+P8 M3x12cT,p8c p8e p8f  4.44 4.49 4.50 4.51 4.52,1x1
+P8 Kept M3x10 x6,p8a p8j p8m  4.39 4.40 4.58 4.66,1x1
+P8 3x12sT x2,p8h p8l  4.53 4.62,1x1
+P8 Sleeves x8,p8b  4.42,1x1
+P8 Collets x8,p8b  4.43,1x1
+P8 Small magnets x4,p8c  4.44,1x1
+P8 Large magnets x8,p8d  4.48,1x1
+P8 Steel balls x8,p8d  4.47,1x1
+P8 Cover rivets x8,p8w  G4.32 G4.34,1x1
+P9 Kept M3x4rT x8,p9c p9d  5.21 5.22,1x1
+P9 Zip ties x2,p9a  5.19,1x1
+P9 R panel rivets,p9e  5.23 5.24,1x1
+P9 L panel rivets x3,g4k  G4.34,1x1
+P10 M3x12rT x20,all puck holders 5.27-5.58,1x1
+P10 M3nN x16,all puck holders 5.29-5.57,1x1
+P10 Pulled here,p10a p10d p10f  5.27 5.35 5.40,1x1
+P11 Dock fan,p11a p11b  5.59 5.60 5.61 5.63,1x1
+P11 Top cover back,p11d p11e  5.80 5.81 5.82 5.83,1x1
+P11 Lid hinges,p11f  5.84 5.85,1x1
+P11 Tool dock,p11g p11h p11i  5.86 5.88 5.89,1x1
+P12 Door screws x4,p12a  5.99,1x1
+P12 Stickers,p12b p12b2  5.100 5.101 5.102 G5.2,1x2
+P12 O-rings x8,p12d  6.1 6.2,1x1

@@ -99,6 +99,19 @@ These cannot be closed by reading. Listed here so they are not forgotten.
 6. **Accessibility pass**: keyboard order through options, focus after "Next open row",
    contrast of the muted text on the mat in both themes, reduced motion.
 
+## D2. Bins and labels
+
+1. **Check the bin counts against the rows.** `plan/kits.yaml` was written from the manual's
+   parts lists and the plan on 2026-10-26 and has not been checked by a second pair of eyes.
+   A script that sums fastener counts per phase from the manual text (`manuals/steps/`) and
+   compares them with `kits.yaml` would catch drift when rows change.
+2. **Bins on the page**: done 2026-10-26 (`site/kitting.js`). Left to do: the Python
+   `tools/kitting.py` and the page implement the same packing twice; keep them in step or
+   drop the Python one once the page is trusted. The page cannot print from inside a
+   claude.ai artifact; on GitHub Pages it can.
+3. **Label layout.** The labels are text only. If the P-touch output is hard to read at 1x1
+   size, try a one-line variant ("P5 M3x18 x4 · p5h") and drop line 2 to the guide.
+
 ## E. Housekeeping
 
 1. A second, broken copy of the page exists as a claude.ai artifact (no pictures). The
